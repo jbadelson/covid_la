@@ -2,7 +2,25 @@
 """
 Created on Mon Mar 16 19:30:07 2020
 
-@author: jeff
+@author: jeff adelson
+
+This script will access the ArcGIS Rest endpoints of the dashboard used by
+the Louisiana Department of Health to track the coronavirus/COVID-19 pandemic
+and add the latest data to csv files to preserve this data for time-series
+analysis.
+
+As of this update, LDH provides the following data:
+Cases (Parish-level)
+Deaths (Parish-level)
+Tests (Statewide)
+Age groups of those who tested positve (Statewide)
+
+LDH is currently updating their dashboard twice a day,
+at 9:30 a.m. and 5:30 p.m. This script should be run after the last update of
+the day to capture the final tallies for each day. If it is run multiple 
+times per day, it will overwrite any previous data for the day with the updated
+data.
+
 """
 
 import pandas as pd
@@ -18,17 +36,22 @@ def esri_cleaner(url):
 
 def la_covid(parish_url, state_url, date):
     cases = pd.DataFrame(esri_cleaner(parish_url))
+    deaths = cases.copy()
     cases = cases.rename(columns = {'Cases' : date, 'PFIPS' : 'FIPS'})
-    print(cases.dtypes)
     cases.loc[cases['PARISH'] == 'Parish Under Investigation', 'FIPS'] = '22999'
-    
-    print(cases)
     case_file = pd.read_csv('data/cases.csv', dtype = {'FIPS' : object})
     if date in case_file.columns:
         case_file = case_file.drop(columns = date)
     case_file.merge(cases[['FIPS', date]], 
                     on='FIPS', 
                     how='outer').to_csv('data/cases.csv', index=False)
+    deaths = deaths.rename(columns = {'Deaths' : date, 'PFIPS' : 'FIPS'})
+    death_file = pd.read_csv('data/cases.csv', dtype = {'FIPS' : object})
+    if date in death_file.columns:
+        death_file = death_file.drop(columns = date)
+    death_file.merge(deaths[['FIPS', date]],
+                     on='FIPS',
+                     how='outer').to_csv('data/deaths.csv', index=False)
     state = pd.DataFrame(esri_cleaner(la_state_url))
     tests = state[state['Category'] == 'Test Completed'].rename(columns = ({'Value' : date}))
     tests['FIPS'] = 22
@@ -42,8 +65,6 @@ def la_covid(parish_url, state_url, date):
                     how='outer').to_csv('data/tests.csv', index=False)
     ages = state[state['Category'] != 'Test Completed'].rename(columns=({'Value' : date}))
     age_file = pd.read_csv('data/ages.csv')
-    print(ages)
-    print(age_file)
     if date in age_file.columns:
         age_file = age_file.drop(columns = date)
     age_file.merge(ages[['Category', date]], on='Category', how='outer').to_csv('data/ages.csv', index=False)
