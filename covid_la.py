@@ -46,7 +46,7 @@ def la_covid(parish_url, state_url, date):
                     on='FIPS', 
                     how='outer').to_csv('data/cases.csv', index=False)
     deaths = deaths.rename(columns = {'Deaths' : date, 'PFIPS' : 'FIPS'})
-    death_file = pd.read_csv('data/cases.csv', dtype = {'FIPS' : object})
+    death_file = pd.read_csv('data/deaths.csv', dtype = {'FIPS' : object})
     if date in death_file.columns:
         death_file = death_file.drop(columns = date)
     death_file.merge(deaths[['FIPS', date]],
