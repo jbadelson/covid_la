@@ -19,26 +19,34 @@ def esri_cleaner(url):
 def la_covid(parish_url, state_url, date):
     cases = pd.DataFrame(esri_cleaner(parish_url))
     cases = cases.rename(columns = {'Cases' : date, 'PFIPS' : 'FIPS'})
-    case_file = pd.read_csv('out/cases.csv', dtype = {'FIPS' : object})
+    print(cases.dtypes)
+    cases.loc[cases['PARISH'] == 'Parish Under Investigation', 'FIPS'] = '22999'
+    
+    print(cases)
+    case_file = pd.read_csv('data/cases.csv', dtype = {'FIPS' : object})
     if date in case_file.columns:
         case_file = case_file.drop(columns = date)
-    case_file.merge(cases[['FIPS', date]], on='FIPS').to_csv('out/cases.csv', index=False)
+    case_file.merge(cases[['FIPS', date]], 
+                    on='FIPS', 
+                    how='outer').to_csv('data/cases.csv', index=False)
     state = pd.DataFrame(esri_cleaner(la_state_url))
     tests = state[state['Category'] == 'Test Completed'].rename(columns = ({'Value' : date}))
     tests['FIPS'] = 22
-    test_file = pd.read_csv('out/tests.csv')
+    test_file = pd.read_csv('data/tests.csv')
 #    print(test_file)
 #    print(tests)
     if date in test_file.columns:
         test_file = test_file.drop(columns = date)
-    test_file.merge(tests[['FIPS', date]], on='FIPS').to_csv('out/tests.csv', index=False)
+    test_file.merge(tests[['FIPS', date]], 
+                    on='FIPS', 
+                    how='outer').to_csv('data/tests.csv', index=False)
     ages = state[state['Category'] != 'Test Completed'].rename(columns=({'Value' : date}))
-    age_file = pd.read_csv('out/ages.csv')
+    age_file = pd.read_csv('data/ages.csv')
     print(ages)
     print(age_file)
     if date in age_file.columns:
         age_file = age_file.drop(columns = date)
-    age_file.merge(ages[['Category', date]], on='Category', how='outer').to_csv('out/ages.csv', index=False)
+    age_file.merge(ages[['Category', date]], on='Category', how='outer').to_csv('data/ages.csv', index=False)
 
 update_date = datetime.now().strftime('%Y-%m-%d')
 
