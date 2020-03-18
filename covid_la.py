@@ -42,8 +42,6 @@ def la_covid(parish_url, state_url, date):
     case_file = pd.read_csv('data/cases.csv', dtype = {'FIPS' : object})
     if date in case_file.columns:
         case_file = case_file.drop(columns = date)
-    print(case_file)
-    print(date)
     case_file.merge(cases[['FIPS', date]], 
                     on='FIPS', 
                     how='outer').fillna(0).to_csv('data/cases.csv', index=False)
