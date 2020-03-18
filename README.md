@@ -11,3 +11,5 @@ Age groups of those who tested positve (Statewide)
 
 LDH is currently updating their dashboard twice a day, at 9:30 a.m. and 5:30 p.m. This script should be run after the last update of the day to capture the final tallies for each day. If it is run multiple 
 times per day, it will overwrite any previous data for the day with the updated data.
+
+The CSV files in this repository will be updated every day after 5:30 p.m.
