@@ -62,11 +62,11 @@ def la_covid(parish_url, state_url, date):
      test_file.merge(tests[['Category', date]], 
                      on='Category', 
                      how='outer').fillna(0).to_csv('data/tests.csv', index=False)
-     ages = state[state['Category'] != 'Test Completed'].rename(columns=({'Value' : date}))
-     age_file = pd.read_csv('data/ages.csv')
-     if date in age_file.columns:
-         age_file = age_file.drop(columns = date)
-     age_file.merge(ages[['Category', date]], on='Category', how='outer').to_csv('data/ages.csv', index=False)
+     case_demo = state[state['Category'] != 'Test Completed'].rename(columns=({'Value' : date}))
+     case_demo_file = pd.read_csv('data/case_demo.csv')
+     if date in case_demo_file.columns:
+         case_demo_file = case_demo_file.drop(columns = date)
+     case_demo_file.merge(case_demo[['Category', date]], on='Category', how='outer').to_csv('data/case_demo.csv', index=False)
      death_demo = state[state['Category'] != 'Test Completed'].rename(columns=({'Value2' : date}))
      death_demo_file = pd.read_csv('data/death_demo.csv')
      if date in death_demo_file.columns:
