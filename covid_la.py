@@ -36,22 +36,24 @@ def esri_cleaner(url):
 
 def la_covid(parish_url, state_url, date):
      cases = pd.DataFrame(esri_cleaner(parish_url))
-     deaths = cases.copy()
      cases = cases.rename(columns = {'Cases' : date, 'PFIPS' : 'FIPS'})
      cases.loc[cases['FIPS'] == '0', 'FIPS'] = '22000'
+     deaths = cases.copy()
      case_file = pd.read_csv('data/cases.csv', dtype = {'FIPS' : object})
      if date in case_file.columns:
          case_file = case_file.drop(columns = date)
      case_file.merge(cases[['FIPS', date]], 
                      on='FIPS', 
-                     how='outer').fillna(0).to_csv('data/cases.csv', index=False)
+                     how='outer').to_csv('data/cases.csv', index=False)
      deaths = deaths.rename(columns = {'Deaths' : date, 'PFIPS' : 'FIPS'})
+     deaths.to_csv('c:/users/jeff/desktop/deaths.csv')
      death_file = pd.read_csv('data/deaths.csv', dtype = {'FIPS' : object})
+     death_file.to_csv('c:/users/jeff/desktop/death_file.csv')
      if date in death_file.columns:
          death_file = death_file.drop(columns = date)
      death_file.merge(deaths[['FIPS', date]],
                        on='FIPS',
-                       how='outer').fillna(0).to_csv('data/deaths.csv', index=False)
+                       how='outer').to_csv('data/deaths.csv', index=False)
      state = pd.DataFrame(esri_cleaner(la_state_url))
      tests = state[state['Category'] == 'Test Completed'].rename(columns = ({'Value' : 'Public', 'Value2' : 'Private'}))
      tests['date'] = update_date
@@ -61,7 +63,7 @@ def la_covid(parish_url, state_url, date):
          test_file = test_file.drop(columns = date)
      test_file.merge(tests[['Category', date]], 
                      on='Category', 
-                     how='outer').fillna(0).to_csv('data/tests.csv', index=False)
+                     how='outer').to_csv('data/tests.csv', index=False)
      case_demo = state[state['Category'] != 'Test Completed'].rename(columns=({'Value' : date}))
      case_demo_file = pd.read_csv('data/case_demo.csv')
      if date in case_demo_file.columns:
