@@ -14,6 +14,8 @@ Cases (Parish-level)
 Deaths (Parish-level)
 Tests (Statewide)
 Age groups of those who tested positve (Statewide)
+Sex of those who tested positive (Statewide)
+Age groups of those who died statewide. 
 
 LDH is currently updating their dashboard twice a day,
 at 9:30 a.m. and 5:30 p.m. This script should be run after the last update of
