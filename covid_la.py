@@ -42,9 +42,6 @@ def la_covid(parish_url, state_url, date):
     cases.loc[cases['FIPS'] == '0', 'FIPS'] = '22000'
     deaths = cases.copy()
     cases = cases.rename(columns = {'Cases' : date})
-    print('Case fields:')
-    for c in cases.columns:
-        print(c)
     case_file = pd.read_csv('data/cases.csv', dtype = {'FIPS' : object})
     if date in case_file.columns:
         case_file = case_file.drop(columns = date)
