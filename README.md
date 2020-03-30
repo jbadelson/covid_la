@@ -14,3 +14,7 @@ Null fields in any file represent days in which that information was not made av
 LDH is currently updating their dashboard once a day at noon. This script should be run after the update to capture the data for each day. If it is run multiple times per day, it will overwrite any previous data for the day with the updated data.
 
 My goal is to update the CSV files in this repository will be every day.
+
+If you have questions about this data or find it useful, please email Jeff Adelson at jadelson@theadvocate.com.
+
+Data can be attributed to Jeff Adelson, The Times-Picayune | The New Orleans Advocate or simply to The Times-Picayune | The New Orleans Advocate.
