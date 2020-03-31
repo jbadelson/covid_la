@@ -71,15 +71,16 @@ def la_covid(parish_url, state_url, date):
                             right_on=['FIPS', 'Category'], 
                             how='outer').to_csv('data/tests_detail.csv', index=False)
     state = pd.DataFrame(esri_cleaner(la_state_url))
-    tests = state[state['Category'] == 'Test Completed'].rename(columns = ({'Value' : 'Public', 'Value2' : 'Private'}))
-    tests['date'] = update_date
-    tests = tests[['date', 'Public', 'Private']].set_index('date').transpose().reset_index().rename(columns={'index' : 'Category'})
-    test_file = pd.read_csv('data/tests.csv')
-    if date in test_file.columns:
-        test_file = test_file.drop(columns = date)
-    test_file.merge(tests[['Category', date]], 
-                    on='Category', 
-                    how='outer').to_csv('data/tests.csv', index=False)
+    # tests = state[state['Category'] == 'Test Completed'].rename(columns = ({'Value' : 'Public', 'Value2' : 'Private'}))
+    # print(tests.head())
+    # tests['date'] = update_date
+    # tests = tests[['date', 'Public', 'Private']].set_index('date').transpose().reset_index().rename(columns={'index' : 'Category'})
+    # test_file = pd.read_csv('data/tests.csv')
+    # if date in test_file.columns:
+    #     test_file = test_file.drop(columns = date)
+    # test_file.merge(tests[['Category', date]], 
+    #                 on='Category', 
+    #                 how='outer').to_csv('data/tests.csv', index=False)
     case_demo = state[state['Category'] != 'Test Completed'].rename(columns=({'Value' : date}))
     case_demo_file = pd.read_csv('data/case_demo.csv')
     if date in case_demo_file.columns:
