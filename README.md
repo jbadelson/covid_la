@@ -1,5 +1,7 @@
 # Tracking COVID-19 in Louisiana
 
+# Note: Louisiana now provides parish-level data on public and private tests. This information will be stored in test_details.csv until April 2, 2020, at which point all data will be saved to tests.csv. In order to distinguish between public and private tests, each parish will have two rows for each day indicating the total number of private tests and total number of public tests completed at that point. Be aware that this change may break applications that depend on the tests.csv file. 
+
 This script accesses the ArcGIS Rest endpoints of the dashboard used by the Louisiana Department of Health to track the coronavirus/COVID-19 pandemic and add the latest data to csv files to preserve this data for time-series analysis.
 
 As of this update, LDH provides the following data:<br>
