@@ -9,7 +9,7 @@ As of this update, LDH provides the following data:<br>
 * Public and private tests by parish in test_details.csv (Parish-level)
 * Age groups, median age, age range and sex of those who tested positve (Statewide) in case_demo.csv
 * Age groups of those who died (Statewide) in death_demo.csv
-* Number of hospital beds, ICUs and ventilators available, in use and total in each LDH Region (http://ldh.la.gov/index.cfm/page/2) in capacity.csv
+* Number of hospital beds, ICUs and ventilators available, in use and total in each LDH Region (http://ldh.la.gov/index.cfm/page/2) in capacity.csv. I will backfill this file with previous days' data as time allows.
 
 Null fields in any file represent days in which that information was not made available.
 
