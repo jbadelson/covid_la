@@ -39,13 +39,11 @@ def esri_cleaner(url):
 def capacity_table(df, file, date):
     r_type = ['Ventilators', 'Hospital Beds', 'ICU']
     r_table = pd.DataFrame()
-    print(df.columns)
     for r in r_type:
         resource = df[['Category', 'LDH_Region', r]].rename(columns = {r : date, 
                                                                        'LDH_Region' : 'LDH Region'})
         resource['Category'] = r+' '+resource['Category']
         resource_total = resource.groupby('LDH Region').sum().reset_index()
-        print(resource_total)
         resource_total['Category'] = r+' Total'
         resource = resource.append(resource_total, sort=False)
         # print(resource)
