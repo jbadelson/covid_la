@@ -74,6 +74,8 @@ def la_covid(parish_url, state_url, capacity_url, date):
     case_file.merge(cases[['FIPS', date]], 
                     on='FIPS',  
                     how='outer').to_csv('data/cases.csv', index=False)
+    
+    
     deaths = deaths.rename(columns = {'Deaths' : date, 'PFIPS' : 'FIPS'})
     death_file = pd.read_csv('data/deaths.csv', dtype = {'FIPS' : object})
     if date in death_file.columns:
@@ -119,7 +121,7 @@ def la_covid(parish_url, state_url, capacity_url, date):
     capacity = pd.DataFrame(esri_cleaner(capacity_url))
     capacity = capacity.rename(columns = {'HospVent' : 'Ventilators',
                                           'Bed' : 'Hospital Beds'})
-    capacity_file = pd.read_csv('data/capacity.csv')
+    capacity_file = pd.read_csv('data/capacity.csv', dtype=object)
     capacity_export = capacity_table(capacity, capacity_file, date)
     print(capacity_export)
     capacity_export.to_csv('data/capacity.csv', index=False)
