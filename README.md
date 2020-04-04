@@ -19,4 +19,4 @@ My goal is to update the CSV files in this repository every day, as soon after t
 
 If you have questions about this data or find it useful, please email Jeff Adelson at jadelson@theadvocate.com.
 
-Data can be attributed to Jeff Adelson, The Times-Picayune | The New Orleans Advocate or simply to The Times-Picayune | The New Orleans Advocate.
+Data can be attributed to: Louisiana Department of Health data compiled by Jeff Adelson, The Times-Picayune | The New Orleans Advocate or simply to Louisiana Department of Health data compiled by The Times-Picayune | The New Orleans Advocate.
