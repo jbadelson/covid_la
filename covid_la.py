@@ -121,6 +121,7 @@ def la_covid(parish_url, state_url, capacity_url, date):
                                           'Bed' : 'Hospital Beds'})
     capacity_file = pd.read_csv('data/capacity.csv')
     capacity_export = capacity_table(capacity, capacity_file, date)
+    print(capacity_export)
     capacity_export.to_csv('data/capacity.csv', index=False)
     
 
