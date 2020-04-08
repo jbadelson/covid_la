@@ -10,7 +10,7 @@ As of this update, LDH provides the following data:<br>
 * Age groups, median age, age range and sex of those who tested positve (Statewide) in case_demo.csv
 * Age groups of those who died (Statewide) in death_demo.csv
 * Number of hospital beds, ICUs and ventilators available, in use and total in each LDH Region (http://ldh.la.gov/index.cfm/page/2) in capacity.csv. (Note: Prior to LDH adding these statistics to their dashboard on 4/2/2020, capacity figures were reported somewhat sporatically. Data for previous days has been reconstructed as well as possible but may be missing data or include data that is not consistent with how LDH is currently counting resources.)
-* Number of patients confirmed positive for COVID-19 hospitalized and on ventilators (Statewide) in hospitalizations.csv. (Note: This file will also include PIU - Patient Under Investigation - information on days it is made available).
+* Number of patients confirmed positive for COVID-19 hospitalized and on ventilators (Statewide) in hospitalizations.csv. (Note: This file will also include PUI - Patient Under Investigation - information on days it is made available).
 
 Null fields in any file represent days in which that information was not made available.
 
