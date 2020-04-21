@@ -17,11 +17,10 @@ Age groups of those who tested positve (Statewide)
 Sex of those who tested positive (Statewide)
 Age groups of those who died statewide. 
 
-LDH is currently updating their dashboard twice a day,
-at 9:30 a.m. and 5:30 p.m. This script should be run after the last update of
-the day to capture the final tallies for each day. If it is run multiple 
-times per day, it will overwrite any previous data for the day with the updated
-data.
+LDH is currently updating their dashboard once a day at noon. 
+This script should be run after that update to capture the tallies for each 
+day. If it is run multiple  times per day, it will overwrite any previous data 
+for the day with the updated data.
 
 """
 
@@ -61,7 +60,7 @@ def capacity_table(df, file, date):
     return file
 
 
-def la_covid(parish_url, state_url, capacity_url, date):
+def la_covid(parish_url, state_url, capacity_url, la_tract_url, date):
     cases = pd.DataFrame(esri_cleaner(parish_url))
     cases = cases.rename(columns = {'PFIPS' : 'FIPS'})
     cases.loc[cases['FIPS'] == '0', 'FIPS'] = '22000'
@@ -75,7 +74,6 @@ def la_covid(parish_url, state_url, capacity_url, date):
                     on='FIPS',  
                     how='outer').to_csv('data/cases.csv', index=False)
     
-    
     deaths = deaths.rename(columns = {'Deaths' : date, 'PFIPS' : 'FIPS'})
     death_file = pd.read_csv('data/deaths.csv', dtype = {'FIPS' : object})
     if date in death_file.columns:
@@ -83,6 +81,14 @@ def la_covid(parish_url, state_url, capacity_url, date):
     death_file.merge(deaths[['FIPS', date]],
                       on='FIPS',
                       how='outer').to_csv('data/deaths.csv', index=False)
+    tracts = pd.DataFrame(esri_cleaner(la_tract_url))
+    tracts = tracts.rename(columns = {'TractID' : 'FIPS', 'CaseCount' : date})
+    tracts_file = pd.read_csv('data/tracts.csv', dtype = {'FIPS' : object})
+    if date in tracts_file.columns:
+        tracts_file = tracts_file.drop(columns = date)
+    tracts_file.merge(tracts[['FIPS', date]],
+                     on='FIPS',
+                     how='outer').to_csv('data/tracts.csv', index=False)
     tests_detail_file = pd.read_csv('data/tests.csv', dtype={'FIPS' : object})
     if date in tests_detail_file.columns:
         tests_detail_file = tests_detail_file.drop(columns = date)
@@ -125,6 +131,7 @@ def la_covid(parish_url, state_url, capacity_url, date):
     capacity_export = capacity_table(capacity, capacity_file, date)
     capacity_export.to_csv('data/capacity.csv', index=False)
     
+    
 
 
 update_date = '{d.month}/{d.day}/{d.year}'.format(d=datetime.now())
@@ -132,6 +139,7 @@ update_date = '{d.month}/{d.day}/{d.year}'.format(d=datetime.now())
 la_state_url = 'https://services5.arcgis.com/O5K6bb5dZVZcTo5M/arcgis/rest/services/State_Level_Information_2/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=false&f=pjson'
 la_county_url = 'https://services5.arcgis.com/O5K6bb5dZVZcTo5M/ArcGIS/rest/services/Cases_by_Parish/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=false&f=pjson'
 region_capacity_url = 'https://services5.arcgis.com/O5K6bb5dZVZcTo5M/ArcGIS/rest/services/Louisiana_Vent_and_Bed_Report/FeatureServer/0/query?where=1%3D1&outFields=*&f=pjson'
+la_tract_url = 'https://services5.arcgis.com/O5K6bb5dZVZcTo5M/ArcGIS/rest/services/Cases_by_Tract_04192020/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=false&f=pjson'
 
 
-la_covid(la_county_url,la_state_url, region_capacity_url, update_date)
+la_covid(la_county_url,la_state_url, region_capacity_url, la_tract_url, update_date)
