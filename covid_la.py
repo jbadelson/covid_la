@@ -60,7 +60,7 @@ def capacity_table(df, file, date):
     return file
 
 
-def la_covid(parish_url, state_url, capacity_url, la_tract_url, date):
+def la_covid(parish_url, state_url, capacity_url, la_tract_url, parish_deaths_url, region_deaths_url, date):
     cases = pd.DataFrame(esri_cleaner(parish_url))
     cases = cases.rename(columns = {'PFIPS' : 'FIPS'})
     cases.loc[cases['FIPS'] == '0', 'FIPS'] = '22000'
@@ -82,13 +82,45 @@ def la_covid(parish_url, state_url, capacity_url, la_tract_url, date):
                       on='FIPS',
                       how='outer').to_csv('data/deaths.csv', index=False)
     tracts = pd.DataFrame(esri_cleaner(la_tract_url))
-    tracts = tracts.rename(columns = {'TractID' : 'FIPS', 'CaseCount' : date})
+    tracts = tracts.rename(columns = {'TractID' : 'FIPS', 'Cases' : date})
     tracts_file = pd.read_csv('data/tracts.csv', dtype = {'FIPS' : object})
     if date in tracts_file.columns:
         tracts_file = tracts_file.drop(columns = date)
     tracts_file.merge(tracts[['FIPS', date]],
                      on='FIPS',
                      how='outer').to_csv('data/tracts.csv', index=False)
+    deaths_parish = pd.DataFrame(esri_cleaner(parish_deaths_url))
+    for c in deaths_parish.iloc[:, 6:13].columns:
+        deaths_parish[c] = pd.to_numeric(deaths_parish[c], errors='coerce')
+    deaths_parish = (pd.melt(deaths_parish, 
+                             id_vars=['PFIPS', 
+                                      'Parish', 
+                                      'LDHH'], 
+                             value_vars=['American_Indian_Alaskan_Native', 
+                                         'Asian', 
+                                         'Black', 
+                                         'Native_Hawaiian_Other_Pacific_Islander', 
+                                         'Other', 
+                                         'Unknown', 
+                                         'White'])
+                     .sort_values(by='PFIPS'))
+    deaths_parish = deaths_parish.rename(columns = {'variable' : 'Race',
+                                                    'PFIPS' : 'FIPS',
+                                                    'value' : date})
+    deaths_parish_file = pd.read_csv('data/deaths_by_race_parish.csv', dtype = {'FIPS' : object})
+    if date in deaths_parish_file.columns:
+        deaths_parish_file = deaths_parish_file.drop(columns = date)
+    deaths_parish_file.merge(deaths_parish[['FIPS', 'Race', date]], 
+                             on=['FIPS', 'Race'], 
+                             how='outer').to_csv('data/deaths_by_race_parish.csv', index=False)
+    deaths_region = pd.DataFrame(esri_cleaner(region_deaths_url))
+    deaths_region = deaths_region.rename(columns = {'Deaths' : date})
+    deaths_region_file = pd.read_csv('data/deaths_by_race_region.csv')
+    if date in deaths_region_file.columns:
+        deaths_region_file = deaths_region_file.drop(columns = date)
+    deaths_region_file.merge(deaths_region[['LDH_Region', 'Race', date]],
+                             on=['LDH_Region', 'Race'],
+                             how='outer').to_csv('data/deaths_by_race_region.csv', index=False)
     tests_detail_file = pd.read_csv('data/tests.csv', dtype={'FIPS' : object})
     if date in tests_detail_file.columns:
         tests_detail_file = tests_detail_file.drop(columns = date)
@@ -139,7 +171,8 @@ update_date = '{d.month}/{d.day}/{d.year}'.format(d=datetime.now())
 la_state_url = 'https://services5.arcgis.com/O5K6bb5dZVZcTo5M/arcgis/rest/services/State_Level_Information_2/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=false&f=pjson'
 la_county_url = 'https://services5.arcgis.com/O5K6bb5dZVZcTo5M/ArcGIS/rest/services/Cases_by_Parish/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=false&f=pjson'
 region_capacity_url = 'https://services5.arcgis.com/O5K6bb5dZVZcTo5M/ArcGIS/rest/services/Louisiana_Vent_and_Bed_Report/FeatureServer/0/query?where=1%3D1&outFields=*&f=pjson'
-la_tract_url = 'https://services5.arcgis.com/O5K6bb5dZVZcTo5M/ArcGIS/rest/services/Cases_by_Tract_04192020/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=false&f=pjson'
+la_tract_url = 'https://services5.arcgis.com/O5K6bb5dZVZcTo5M/ArcGIS/rest/services/Cases_by_Tract_04192020_updated/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=false&f=pjson'
+la_deaths_parish_url = 'https://services5.arcgis.com/O5K6bb5dZVZcTo5M/ArcGIS/rest/services/Deaths_by_Race_by_Parish/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=false&f=pjson'
+la_deaths_region_url = 'https://services5.arcgis.com/O5K6bb5dZVZcTo5M/ArcGIS/rest/services/Deaths_by_Race_by_Region/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=false&f=pjson'
 
-
-la_covid(la_county_url,la_state_url, region_capacity_url, la_tract_url, update_date)
+la_covid(la_county_url,la_state_url, region_capacity_url, la_tract_url, la_deaths_parish_url, la_deaths_region_url, update_date)
