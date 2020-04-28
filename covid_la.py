@@ -171,7 +171,7 @@ update_date = '{d.month}/{d.day}/{d.year}'.format(d=datetime.now())
 la_state_url = 'https://services5.arcgis.com/O5K6bb5dZVZcTo5M/arcgis/rest/services/State_Level_Information_2/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=false&f=pjson'
 la_county_url = 'https://services5.arcgis.com/O5K6bb5dZVZcTo5M/ArcGIS/rest/services/Cases_by_Parish/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=false&f=pjson'
 region_capacity_url = 'https://services5.arcgis.com/O5K6bb5dZVZcTo5M/ArcGIS/rest/services/Louisiana_Vent_and_Bed_Report/FeatureServer/0/query?where=1%3D1&outFields=*&f=pjson'
-la_tract_url = 'https://services5.arcgis.com/O5K6bb5dZVZcTo5M/ArcGIS/rest/services/Cases_by_Tract_04192020_updated/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=false&f=pjson'
+la_tract_url = 'https://services5.arcgis.com/O5K6bb5dZVZcTo5M/ArcGIS/rest/services/Cases_by_Tract_04262020/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=false&f=pjson'
 la_deaths_parish_url = 'https://services5.arcgis.com/O5K6bb5dZVZcTo5M/ArcGIS/rest/services/Deaths_by_Race_by_Parish/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=false&f=pjson'
 la_deaths_region_url = 'https://services5.arcgis.com/O5K6bb5dZVZcTo5M/ArcGIS/rest/services/Deaths_by_Race_by_Region/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=false&f=pjson'
 
