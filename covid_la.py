@@ -82,13 +82,13 @@ def la_covid(parish_url, state_url, capacity_url, la_tract_url, parish_deaths_ur
                       on='FIPS',
                       how='outer').to_csv('data/deaths.csv', index=False)
     tracts = pd.DataFrame(esri_cleaner(la_tract_url))
-    tracts = tracts.rename(columns = {'TractID' : 'FIPS', 'Cases' : date})
+    tracts = tracts.rename(columns = {'TractID_1' : 'FIPS', 'CaseCount' : date})
     tracts_file = pd.read_csv('data/tracts.csv', dtype = {'FIPS' : object})
     if date in tracts_file.columns:
         tracts_file = tracts_file.drop(columns = date)
     tracts_file.merge(tracts[['FIPS', date]],
-                     on='FIPS',
-                     how='outer').to_csv('data/tracts.csv', index=False)
+                      on='FIPS',
+                      how='outer').to_csv('data/tracts.csv', index=False)
     deaths_parish = pd.DataFrame(esri_cleaner(parish_deaths_url))
     for c in deaths_parish.iloc[:, 6:13].columns:
         deaths_parish[c] = pd.to_numeric(deaths_parish[c], errors='coerce')
@@ -171,7 +171,7 @@ update_date = '{d.month}/{d.day}/{d.year}'.format(d=datetime.now())
 la_state_url = 'https://services5.arcgis.com/O5K6bb5dZVZcTo5M/arcgis/rest/services/State_Level_Information_2/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=false&f=pjson'
 la_county_url = 'https://services5.arcgis.com/O5K6bb5dZVZcTo5M/ArcGIS/rest/services/Cases_by_Parish/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=false&f=pjson'
 region_capacity_url = 'https://services5.arcgis.com/O5K6bb5dZVZcTo5M/ArcGIS/rest/services/Louisiana_Vent_and_Bed_Report/FeatureServer/0/query?where=1%3D1&outFields=*&f=pjson'
-la_tract_url = 'https://services5.arcgis.com/O5K6bb5dZVZcTo5M/ArcGIS/rest/services/Cases_by_Tract_04262020/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=false&f=pjson'
+la_tract_url = 'https://services5.arcgis.com/O5K6bb5dZVZcTo5M/ArcGIS/rest/services/LA_2010_Tracts_04262020_2/FeatureServer/0/query?where=1%3D1&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=*&returnGeometry=true&returnCentroid=false&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token='
 la_deaths_parish_url = 'https://services5.arcgis.com/O5K6bb5dZVZcTo5M/ArcGIS/rest/services/Deaths_by_Race_by_Parish/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=false&f=pjson'
 la_deaths_region_url = 'https://services5.arcgis.com/O5K6bb5dZVZcTo5M/ArcGIS/rest/services/Deaths_by_Race_by_Region/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=false&f=pjson'
 
