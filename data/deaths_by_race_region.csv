@@ -1,64 +1,64 @@
-LDH_Region,Race,4/21/20,5/5/2020,5/6/2020,5/7/2020,5/8/2020,5/9/2020,5/10/2020
-Region 1,American Indian/Alaskan Native,0,0,0,0,0,0,0
-Region 1,Native Hawaiian/Other Pacific Islander,3,3,3,3,3,3,3
-Region 1,Other,12,12,12,12,12,12,12
-Region 1,White,269,269,269,269,269,269,269
-Region 1,Asian,10,10,10,10,10,10,10
-Region 1,Black,566,566,566,566,566,566,566
-Region 1,Unknown,3,3,3,3,3,3,3
-Region 2,American Indian/Alaskan Native,0,0,0,0,0,0,0
-Region 2,Native Hawaiian/Other Pacific Islander,1,1,1,1,1,1,1
-Region 2,Other,0,0,0,0,0,0,0
-Region 2,White,106,106,106,106,106,106,106
-Region 2,Asian,4,4,4,4,4,4,4
-Region 2,Black,172,172,172,172,172,172,172
-Region 2,Unknown,2,2,2,2,2,2,2
-Region 3,Other,0,0,0,0,0,0,0
-Region 3,Black,122,122,122,122,122,122,122
-Region 3,Unknown,2,2,2,2,2,2,2
-Region 3,Asian,1,1,1,1,1,1,1
-Region 3,White,115,115,115,115,115,115,115
-Region 3,American Indian/Alaskan Native,0,0,0,0,0,0,0
-Region 3,Native Hawaiian/Other Pacific Islander,0,0,0,0,0,0,0
-Region 4,Unknown,0,0,0,0,0,0,0
-Region 4,Asian,0,0,0,0,0,0,0
-Region 4,Black,40,40,40,40,40,40,40
-Region 4,Other,0,0,0,0,0,0,0
-Region 4,White,80,80,80,80,80,80,80
-Region 4,American Indian/Alaskan Native,0,0,0,0,0,0,0
-Region 4,Native Hawaiian/Other Pacific Islander,0,0,0,0,0,0,0
-Region 5,Unknown,1,1,1,1,1,1,1
-Region 5,Other,3,3,3,3,3,3,3
-Region 5,White,24,24,24,24,24,24,24
-Region 5,Native Hawaiian/Other Pacific Islander,0,0,0,0,0,0,0
-Region 5,American Indian/Alaskan Native,0,0,0,0,0,0,0
-Region 5,Black,21,21,21,21,21,21,21
-Region 5,Asian,0,0,0,0,0,0,0
-Region 6,Native Hawaiian/Other Pacific Islander,0,0,0,0,0,0,0
-Region 6,White,10,10,10,10,10,10,10
-Region 6,American Indian/Alaskan Native,0,0,0,0,0,0,0
-Region 6,Black,17,17,17,17,17,17,17
-Region 6,Other,0,0,0,0,0,0,0
-Region 6,Unknown,0,0,0,0,0,0,0
-Region 6,Asian,0,0,0,0,0,0,0
-Region 7,White,53,53,53,53,53,53,53
-Region 7,American Indian/Alaskan Native,0,0,0,0,0,0,0
-Region 7,Unknown,0,0,0,0,0,0,0
-Region 7,Asian,0,0,0,0,0,0,0
-Region 7,Native Hawaiian/Other Pacific Islander,0,0,0,0,0,0,0
-Region 7,Other,0,0,0,0,0,0,0
-Region 7,Black,126,126,126,126,126,126,126
-Region 8,Asian,0,0,0,0,0,0,0
-Region 8,White,20,20,20,20,20,20,20
-Region 8,Other,1,1,1,1,1,1,1
-Region 8,Unknown,0,0,0,0,0,0,0
-Region 8,Native Hawaiian/Other Pacific Islander,0,0,0,0,0,0,0
-Region 8,American Indian/Alaskan Native,0,0,0,0,0,0,0
-Region 8,Black,27,27,27,27,27,27,27
-Region 9,Native Hawaiian/Other Pacific Islander,0,0,0,0,0,0,0
-Region 9,American Indian/Alaskan Native,0,0,0,0,0,0,0
-Region 9,Asian,1,1,1,1,1,1,1
-Region 9,Unknown,0,0,0,0,0,0,0
-Region 9,Other,0,0,0,0,0,0,0
-Region 9,Black,51,51,51,51,51,51,51
-Region 9,White,128,128,128,128,128,128,128
+LDH_Region,Race,4/21/20,5/5/2020,5/6/2020,5/7/2020,5/8/2020,5/9/2020,5/10/2020,5/11/2020
+Region 1,American Indian/Alaskan Native,0,0,0,0,0,0,0,0
+Region 1,Native Hawaiian/Other Pacific Islander,3,3,3,3,3,3,3,3
+Region 1,Other,12,12,12,12,12,12,12,13
+Region 1,White,269,269,269,269,269,269,269,284
+Region 1,Asian,10,10,10,10,10,10,10,10
+Region 1,Black,566,566,566,566,566,566,566,593
+Region 1,Unknown,3,3,3,3,3,3,3,6
+Region 2,American Indian/Alaskan Native,0,0,0,0,0,0,0,0
+Region 2,Native Hawaiian/Other Pacific Islander,1,1,1,1,1,1,1,1
+Region 2,Other,0,0,0,0,0,0,0,0
+Region 2,White,106,106,106,106,106,106,106,129
+Region 2,Asian,4,4,4,4,4,4,4,6
+Region 2,Black,172,172,172,172,172,172,172,202
+Region 2,Unknown,2,2,2,2,2,2,2,6
+Region 3,Other,0,0,0,0,0,0,0,0
+Region 3,Black,122,122,122,122,122,122,122,138
+Region 3,Unknown,2,2,2,2,2,2,2,2
+Region 3,Asian,1,1,1,1,1,1,1,1
+Region 3,White,115,115,115,115,115,115,115,131
+Region 3,American Indian/Alaskan Native,0,0,0,0,0,0,0,1
+Region 3,Native Hawaiian/Other Pacific Islander,0,0,0,0,0,0,0,0
+Region 4,Unknown,0,0,0,0,0,0,0,0
+Region 4,Asian,0,0,0,0,0,0,0,0
+Region 4,Black,40,40,40,40,40,40,40,44
+Region 4,Other,0,0,0,0,0,0,0,0
+Region 4,White,80,80,80,80,80,80,80,91
+Region 4,American Indian/Alaskan Native,0,0,0,0,0,0,0,0
+Region 4,Native Hawaiian/Other Pacific Islander,0,0,0,0,0,0,0,0
+Region 5,Unknown,1,1,1,1,1,1,1,0
+Region 5,Other,3,3,3,3,3,3,3,3
+Region 5,White,24,24,24,24,24,24,24,31
+Region 5,Native Hawaiian/Other Pacific Islander,0,0,0,0,0,0,0,0
+Region 5,American Indian/Alaskan Native,0,0,0,0,0,0,0,0
+Region 5,Black,21,21,21,21,21,21,21,22
+Region 5,Asian,0,0,0,0,0,0,0,0
+Region 6,Native Hawaiian/Other Pacific Islander,0,0,0,0,0,0,0,0
+Region 6,White,10,10,10,10,10,10,10,11
+Region 6,American Indian/Alaskan Native,0,0,0,0,0,0,0,0
+Region 6,Black,17,17,17,17,17,17,17,19
+Region 6,Other,0,0,0,0,0,0,0,0
+Region 6,Unknown,0,0,0,0,0,0,0,1
+Region 6,Asian,0,0,0,0,0,0,0,0
+Region 7,White,53,53,53,53,53,53,53,65
+Region 7,American Indian/Alaskan Native,0,0,0,0,0,0,0,0
+Region 7,Unknown,0,0,0,0,0,0,0,3
+Region 7,Asian,0,0,0,0,0,0,0,0
+Region 7,Native Hawaiian/Other Pacific Islander,0,0,0,0,0,0,0,1
+Region 7,Other,0,0,0,0,0,0,0,0
+Region 7,Black,126,126,126,126,126,126,126,147
+Region 8,Asian,0,0,0,0,0,0,0,0
+Region 8,White,20,20,20,20,20,20,20,22
+Region 8,Other,1,1,1,1,1,1,1,1
+Region 8,Unknown,0,0,0,0,0,0,0,1
+Region 8,Native Hawaiian/Other Pacific Islander,0,0,0,0,0,0,0,0
+Region 8,American Indian/Alaskan Native,0,0,0,0,0,0,0,0
+Region 8,Black,27,27,27,27,27,27,27,36
+Region 9,Native Hawaiian/Other Pacific Islander,0,0,0,0,0,0,0,0
+Region 9,American Indian/Alaskan Native,0,0,0,0,0,0,0,0
+Region 9,Asian,1,1,1,1,1,1,1,1
+Region 9,Unknown,0,0,0,0,0,0,0,0
+Region 9,Other,0,0,0,0,0,0,0,0
+Region 9,Black,51,51,51,51,51,51,51,55
+Region 9,White,128,128,128,128,128,128,128,160
