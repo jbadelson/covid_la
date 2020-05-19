@@ -1,64 +1,64 @@
-LDH_Region,Race,4/21/20,5/5/2020,5/6/2020,5/7/2020,5/8/2020,5/9/2020,5/10/2020,5/11/2020,5/12/2020,5/13/2020,5/14/2020,5/15/2020,5/16/2020,5/17/2020,5/18/2020
-Region 1,American Indian/Alaskan Native,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Region 1,Native Hawaiian/Other Pacific Islander,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
-Region 1,Other,12,12,12,12,12,12,12,13,13,13,13,13,13,13,13
-Region 1,White,269,269,269,269,269,269,269,284,284,284,284,284,284,284,315
-Region 1,Asian,10,10,10,10,10,10,10,10,10,10,10,10,10,10,11
-Region 1,Black,566,566,566,566,566,566,566,593,593,593,593,593,593,593,617
-Region 1,Unknown,3,3,3,3,3,3,3,6,6,6,6,6,6,6,1
-Region 2,American Indian/Alaskan Native,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Region 2,Native Hawaiian/Other Pacific Islander,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
-Region 2,Other,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Region 2,White,106,106,106,106,106,106,106,129,129,129,129,129,129,129,154
-Region 2,Asian,4,4,4,4,4,4,4,6,6,6,6,6,6,6,7
-Region 2,Black,172,172,172,172,172,172,172,202,202,202,202,202,202,202,222
-Region 2,Unknown,2,2,2,2,2,2,2,6,6,6,6,6,6,6,1
-Region 3,Other,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Region 3,Black,122,122,122,122,122,122,122,138,138,138,138,138,138,138,142
-Region 3,Unknown,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1
-Region 3,Asian,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
-Region 3,White,115,115,115,115,115,115,115,131,131,131,131,131,131,131,140
-Region 3,American Indian/Alaskan Native,0,0,0,0,0,0,0,1,1,1,1,1,1,1,2
-Region 3,Native Hawaiian/Other Pacific Islander,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Region 4,Unknown,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Region 4,Asian,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Region 4,Black,40,40,40,40,40,40,40,44,44,44,44,44,44,44,46
-Region 4,Other,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Region 4,White,80,80,80,80,80,80,80,91,91,91,91,91,91,91,102
-Region 4,American Indian/Alaskan Native,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Region 4,Native Hawaiian/Other Pacific Islander,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Region 5,Unknown,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0
-Region 5,Other,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
-Region 5,White,24,24,24,24,24,24,24,31,31,31,31,31,31,31,35
-Region 5,Native Hawaiian/Other Pacific Islander,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Region 5,American Indian/Alaskan Native,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Region 5,Black,21,21,21,21,21,21,21,22,22,22,22,22,22,22,22
-Region 5,Asian,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Region 6,Native Hawaiian/Other Pacific Islander,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Region 6,White,10,10,10,10,10,10,10,11,11,11,11,11,11,11,13
-Region 6,American Indian/Alaskan Native,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Region 6,Black,17,17,17,17,17,17,17,19,19,19,19,19,19,19,22
-Region 6,Other,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
-Region 6,Unknown,0,0,0,0,0,0,0,1,1,1,1,1,1,1,0
-Region 6,Asian,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Region 7,White,53,53,53,53,53,53,53,65,65,65,65,65,65,65,73
-Region 7,American Indian/Alaskan Native,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Region 7,Unknown,0,0,0,0,0,0,0,3,3,3,3,3,3,3,0
-Region 7,Asian,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Region 7,Native Hawaiian/Other Pacific Islander,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1
-Region 7,Other,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Region 7,Black,126,126,126,126,126,126,126,147,147,147,147,147,147,147,174
-Region 8,Asian,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Region 8,White,20,20,20,20,20,20,20,22,22,22,22,22,22,22,33
-Region 8,Other,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2
-Region 8,Unknown,0,0,0,0,0,0,0,1,1,1,1,1,1,1,0
-Region 8,Native Hawaiian/Other Pacific Islander,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Region 8,American Indian/Alaskan Native,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Region 8,Black,27,27,27,27,27,27,27,36,36,36,36,36,36,36,47
-Region 9,Native Hawaiian/Other Pacific Islander,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Region 9,American Indian/Alaskan Native,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Region 9,Asian,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
-Region 9,Unknown,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
-Region 9,Other,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Region 9,Black,51,51,51,51,51,51,51,55,55,55,55,55,55,55,58
-Region 9,White,128,128,128,128,128,128,128,160,160,160,160,160,160,160,175
+LDH_Region,Race,4/21/20,5/5/2020,5/6/2020,5/7/2020,5/8/2020,5/9/2020,5/10/2020,5/11/2020,5/12/2020,5/13/2020,5/14/2020,5/15/2020,5/16/2020,5/17/2020,5/18/2020,5/19/2020
+Region 1,American Indian/Alaskan Native,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Region 1,Native Hawaiian/Other Pacific Islander,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+Region 1,Other,12,12,12,12,12,12,12,13,13,13,13,13,13,13,13,13
+Region 1,White,269,269,269,269,269,269,269,284,284,284,284,284,284,284,315,315
+Region 1,Asian,10,10,10,10,10,10,10,10,10,10,10,10,10,10,11,11
+Region 1,Black,566,566,566,566,566,566,566,593,593,593,593,593,593,593,617,617
+Region 1,Unknown,3,3,3,3,3,3,3,6,6,6,6,6,6,6,1,1
+Region 2,American Indian/Alaskan Native,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Region 2,Native Hawaiian/Other Pacific Islander,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Region 2,Other,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Region 2,White,106,106,106,106,106,106,106,129,129,129,129,129,129,129,154,154
+Region 2,Asian,4,4,4,4,4,4,4,6,6,6,6,6,6,6,7,7
+Region 2,Black,172,172,172,172,172,172,172,202,202,202,202,202,202,202,222,222
+Region 2,Unknown,2,2,2,2,2,2,2,6,6,6,6,6,6,6,1,1
+Region 3,Other,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Region 3,Black,122,122,122,122,122,122,122,138,138,138,138,138,138,138,142,142
+Region 3,Unknown,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1
+Region 3,Asian,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Region 3,White,115,115,115,115,115,115,115,131,131,131,131,131,131,131,140,140
+Region 3,American Indian/Alaskan Native,0,0,0,0,0,0,0,1,1,1,1,1,1,1,2,2
+Region 3,Native Hawaiian/Other Pacific Islander,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Region 4,Unknown,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Region 4,Asian,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Region 4,Black,40,40,40,40,40,40,40,44,44,44,44,44,44,44,46,46
+Region 4,Other,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Region 4,White,80,80,80,80,80,80,80,91,91,91,91,91,91,91,102,102
+Region 4,American Indian/Alaskan Native,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Region 4,Native Hawaiian/Other Pacific Islander,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Region 5,Unknown,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0
+Region 5,Other,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+Region 5,White,24,24,24,24,24,24,24,31,31,31,31,31,31,31,35,35
+Region 5,Native Hawaiian/Other Pacific Islander,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Region 5,American Indian/Alaskan Native,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Region 5,Black,21,21,21,21,21,21,21,22,22,22,22,22,22,22,22,22
+Region 5,Asian,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Region 6,Native Hawaiian/Other Pacific Islander,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Region 6,White,10,10,10,10,10,10,10,11,11,11,11,11,11,11,13,13
+Region 6,American Indian/Alaskan Native,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Region 6,Black,17,17,17,17,17,17,17,19,19,19,19,19,19,19,22,22
+Region 6,Other,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1
+Region 6,Unknown,0,0,0,0,0,0,0,1,1,1,1,1,1,1,0,0
+Region 6,Asian,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Region 7,White,53,53,53,53,53,53,53,65,65,65,65,65,65,65,73,73
+Region 7,American Indian/Alaskan Native,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Region 7,Unknown,0,0,0,0,0,0,0,3,3,3,3,3,3,3,0,0
+Region 7,Asian,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Region 7,Native Hawaiian/Other Pacific Islander,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1
+Region 7,Other,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Region 7,Black,126,126,126,126,126,126,126,147,147,147,147,147,147,147,174,174
+Region 8,Asian,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Region 8,White,20,20,20,20,20,20,20,22,22,22,22,22,22,22,33,33
+Region 8,Other,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2
+Region 8,Unknown,0,0,0,0,0,0,0,1,1,1,1,1,1,1,0,0
+Region 8,Native Hawaiian/Other Pacific Islander,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Region 8,American Indian/Alaskan Native,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Region 8,Black,27,27,27,27,27,27,27,36,36,36,36,36,36,36,47,47
+Region 9,Native Hawaiian/Other Pacific Islander,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Region 9,American Indian/Alaskan Native,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Region 9,Asian,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+Region 9,Unknown,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1
+Region 9,Other,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Region 9,Black,51,51,51,51,51,51,51,55,55,55,55,55,55,55,58,58
+Region 9,White,128,128,128,128,128,128,128,160,160,160,160,160,160,160,175,175
