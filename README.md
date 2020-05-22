@@ -2,6 +2,12 @@
 
 This script accesses the ArcGIS Rest endpoints of the dashboard used by the Louisiana Department of Health to track the coronavirus/COVID-19 pandemic and add the latest data to csv files to preserve this data for time-series analysis.
 
+There are two important notes about the current data:
+
+On May 22, LDH switched to a new schema for its data that required a rewrite of the script used to fetch the data. I am still double-checking this data to ensure it was downloaded correctly and attached to the correct files.
+
+It is also important to note that the update includes data on Onset of Symptoms and Date of Death that is more recent than the information publicly displayed on the LDH dashboard. Data for either of those categories should be considered incomplete until at least 8 days have passed.
+
 Given the amount of data LDH is producing and the variations between the different datasets, I intend to create data dictionaries for each of the files contained in this repository. Until then, here's a brief description of each file: <br>
 * Cases (Parish-level) in cases.csv
 * Deaths (Parish-level) reported to the state in deaths.csv
