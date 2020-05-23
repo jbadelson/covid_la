@@ -138,7 +138,7 @@ def la_covid(combined_url, tract_url, deaths_parish_race_url, deaths_region_race
                                   'ICU Beds' : 'ICU'}})
     capacity_total = capacity.groupby(['LDH Region', 'Measure']).agg({'Value' : 'sum'}).reset_index()
     capacity_total['Group'] = 'Total'
-    capacity = capacity.append(capacity_total).rename(columns = {'Value' : date})
+    capacity = capacity.append(capacity_total, sort=True).rename(columns = {'Value' : date})
     capacity['Category'] = capacity['Measure']+' '+capacity['Group']
     capacity_file = csv_loader('capacity.csv', date)
     capacity_file.merge(capacity[['LDH Region', 'Category', date]], on=['Category', 'LDH Region'], how='outer').to_csv('data/capacity.csv', index=False)
