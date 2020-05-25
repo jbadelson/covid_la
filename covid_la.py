@@ -58,8 +58,8 @@ def la_covid(combined_url, tract_url, deaths_parish_race_url, deaths_region_race
     deaths = data[data['Measure'] == 'Deaths'].copy()
     deaths.loc[:, 'Value'] = deaths['Value'].fillna(0).apply(np.int64)
     deaths = deaths[['Group', 'Value']].rename(columns = {'Group' : 'County', 'Value' : date})
-#    probable = pd.DataFrame(data = {'County' : ['Probable (Statewide)'], date : [int(input("Enter the count of probable deaths for this date:"))]})
-#    deaths = deaths.append(probable)
+    probable = pd.DataFrame(data = {'County' : ['Probable (Statewide)'], date : [int(input("Enter the count of probable deaths for this date:"))]})
+    deaths = deaths.append(probable)
     deaths_file = csv_loader('deaths.csv', date)
     deaths_file.merge(deaths, 
                       on='County', 
@@ -164,8 +164,8 @@ def la_covid(combined_url, tract_url, deaths_parish_race_url, deaths_region_race
     onset.to_csv('data/symptoms_date_of_death.csv', index=False)
     print('Onset/Date of Death exported.')
     
-#    recovered = pd.read_csv('data/recovered.csv')
-#    recovered[date] = int(input("Enter the value for today's count of recovered:"))
+    recovered = pd.read_csv('data/recovered.csv')
+    recovered[date] = int(input("Enter the value for today's count of recovered:"))
     recovered.to_csv('data/recovered.csv', index = False)
     
 combined_url = 'https://services5.arcgis.com/O5K6bb5dZVZcTo5M/arcgis/rest/services/Combined_COVID_Reporting/FeatureServer/0/query?where=1%3D1&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=*&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=json'
