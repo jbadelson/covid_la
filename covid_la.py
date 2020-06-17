@@ -9,14 +9,6 @@ the Louisiana Department of Health to track the coronavirus/COVID-19 pandemic
 and add the latest data to csv files to preserve this data for time-series
 analysis.
 
-As of this update, LDH provides the following data:
-Cases (Parish-level)
-Deaths (Parish-level)
-Tests (Statewide)
-Age groups of those who tested positve (Statewide)
-Sex of those who tested positive (Statewide)
-Age groups of those who died statewide. 
-
 LDH is currently updating their dashboard once a day at noon. 
 This script should be run after that update to capture the tallies for each 
 day. If it is run multiple  times per day, it will overwrite any previous data 
@@ -44,7 +36,26 @@ def csv_loader(file, date):
         df = df.drop(columns = date)
     return df
 
-def la_covid(combined_url, tract_url, deaths_parish_race_url, deaths_region_race_url, date):
+def la_covid(combined_url, deaths_parish_race_url, deaths_region_race_url, date):
+    if datetime.today().weekday() == 0:
+        print("Today is Monday. Please enter new values.")
+        probable = int(input("Probable deaths: "))
+        recoveries = int(input("Recovered: "))
+        tract = str(input("URL for tract data: "))
+        static_data = {"probable" : probable, "recovered" : recoveries, "tract" : tract}
+        with open("static_data.json", "w") as outfile:
+            json.dump(static_data, outfile)    
+    else:
+        with open("static_data.json") as infile:
+            static_data = json.load(infile)
+            probable = static_data["probable"]
+            recoveries = static_data["recovered"]
+            tract = static_data["tract"]
+    
+        
+    la_tract_prefix = 'https://services5.arcgis.com/O5K6bb5dZVZcTo5M/ArcGIS/rest/services/'
+    la_tract_suffix = '/FeatureServer/0/query?where=1%3D1&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=*&returnGeometry=true&returnCentroid=false&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson'
+    la_tract_url = la_tract_prefix+tract+la_tract_suffix
     data = pd.DataFrame(esri_cleaner(combined_url))
     cases = data[data['Measure'] == 'Case Count'].copy()
     cases['Value'] = cases['Value'].fillna(0).astype(int)
@@ -58,7 +69,7 @@ def la_covid(combined_url, tract_url, deaths_parish_race_url, deaths_region_race
     deaths = data[data['Measure'] == 'Deaths'].copy()
     deaths.loc[:, 'Value'] = deaths['Value'].fillna(0).apply(np.int64)
     deaths = deaths[['Group', 'Value']].rename(columns = {'Group' : 'County', 'Value' : date})
-    probable = pd.DataFrame(data = {'County' : ['Probable (Statewide)'], date : [int(input("Enter the count of probable deaths for this date:"))]})
+    probable = pd.DataFrame(data = {'County' : ['Probable (Statewide)'], date : probable})
     deaths = deaths.append(probable)
     deaths_file = csv_loader('deaths.csv', date)
     deaths_file.merge(deaths, 
@@ -163,16 +174,14 @@ def la_covid(combined_url, tract_url, deaths_parish_race_url, deaths_region_race
     onset = onset.replace({'Category' : {'Date of Death' : 'Deaths', 'Onset Date' : 'Cases'}})
     onset.to_csv('data/symptoms_date_of_death.csv', index=False)
     print('Onset/Date of Death exported.')
-    
     recovered = pd.read_csv('data/recovered.csv')
-    recovered[date] = int(input("Enter the value for today's count of recovered:"))
+    recovered[date] = recoveries
     recovered.to_csv('data/recovered.csv', index = False)
     
 combined_url = 'https://services5.arcgis.com/O5K6bb5dZVZcTo5M/arcgis/rest/services/Combined_COVID_Reporting/FeatureServer/0/query?where=1%3D1&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=*&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=json'
-la_tract_url = 'https://services5.arcgis.com/O5K6bb5dZVZcTo5M/ArcGIS/rest/services/LA_2018_Tracts_06142020/FeatureServer/0/query?where=1%3D1&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=*&returnGeometry=true&returnCentroid=false&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token='
 la_deaths_parish_url = 'https://services5.arcgis.com/O5K6bb5dZVZcTo5M/ArcGIS/rest/services/Deaths_by_Race_by_Parish/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=false&f=pjson'
 la_deaths_region_url = 'https://services5.arcgis.com/O5K6bb5dZVZcTo5M/ArcGIS/rest/services/Deaths_by_Race_by_Region/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=false&f=pjson'
 
 update_date = '{d.month}/{d.day}/{d.year}'.format(d=datetime.now())
 
-la_covid(combined_url, la_tract_url, la_deaths_parish_url, la_deaths_region_url, update_date)
+la_covid(combined_url, la_deaths_parish_url, la_deaths_region_url, update_date)
