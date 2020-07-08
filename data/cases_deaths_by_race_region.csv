@@ -1,0 +1,127 @@
+LDH_Region,Race,variable,7/8/2020
+Region 1,American Indian/Alaskan Native,Deaths,1
+Region 1,Unknown,Deaths,0
+Region 1,Native Hawaiian/Other Pacific Islander,Deaths,3
+Region 1,White,Deaths,371
+Region 1,American Indian/Alaskan Native,Cases,33
+Region 1,White,Cases,5443
+Region 1,Asian,Cases,298
+Region 1,Black,Cases,8842
+Region 1,Native Hawaiian/Other Pacific Islander,Cases,41
+Region 1,Black,Deaths,662
+Region 1,Other,Deaths,11
+Region 1,Other,Cases,1642
+Region 1,Unknown,Cases,2869
+Region 1,Asian,Deaths,14
+Region 2,American Indian/Alaskan Native,Deaths,0
+Region 2,Unknown,Deaths,0
+Region 2,White,Cases,2348
+Region 2,Native Hawaiian/Other Pacific Islander,Deaths,1
+Region 2,Unknown,Cases,1879
+Region 2,White,Deaths,196
+Region 2,Asian,Deaths,7
+Region 2,Black,Deaths,276
+Region 2,Other,Deaths,0
+Region 2,Asian,Cases,128
+Region 2,Black,Cases,4052
+Region 2,Native Hawaiian/Other Pacific Islander,Cases,9
+Region 2,Other,Cases,824
+Region 2,American Indian/Alaskan Native,Cases,14
+Region 3,Other,Cases,275
+Region 3,American Indian/Alaskan Native,Cases,39
+Region 3,Asian,Cases,91
+Region 3,Unknown,Cases,818
+Region 3,Black,Cases,2602
+Region 3,Unknown,Deaths,0
+Region 3,Native Hawaiian/Other Pacific Islander,Cases,5
+Region 3,White,Cases,1968
+Region 3,Other,Deaths,0
+Region 3,White,Deaths,194
+Region 3,American Indian/Alaskan Native,Deaths,3
+Region 3,Black,Deaths,168
+Region 3,Native Hawaiian/Other Pacific Islander,Deaths,0
+Region 3,Asian,Deaths,1
+Region 4,Asian,Cases,96
+Region 4,Black,Deaths,63
+Region 4,White,Cases,1992
+Region 4,White,Deaths,166
+Region 4,Unknown,Cases,1833
+Region 4,Black,Cases,2339
+Region 4,American Indian/Alaskan Native,Cases,5
+Region 4,Asian,Deaths,0
+Region 4,Native Hawaiian/Other Pacific Islander,Deaths,0
+Region 4,Native Hawaiian/Other Pacific Islander,Cases,8
+Region 4,Other,Cases,890
+Region 4,American Indian/Alaskan Native,Deaths,0
+Region 4,Other,Deaths,0
+Region 4,Unknown,Deaths,0
+Region 5,Black,Cases,764
+Region 5,Native Hawaiian/Other Pacific Islander,Cases,3
+Region 5,Asian,Deaths,0
+Region 5,Asian,Cases,55
+Region 5,Other,Cases,155
+Region 5,American Indian/Alaskan Native,Deaths,0
+Region 5,American Indian/Alaskan Native,Cases,7
+Region 5,Black,Deaths,34
+Region 5,Unknown,Cases,1339
+Region 5,White,Deaths,51
+Region 5,Other,Deaths,3
+Region 5,White,Cases,1117
+Region 5,Unknown,Deaths,0
+Region 5,Native Hawaiian/Other Pacific Islander,Deaths,0
+Region 6,Unknown,Deaths,0
+Region 6,Other,Cases,242
+Region 6,Asian,Cases,47
+Region 6,Native Hawaiian/Other Pacific Islander,Deaths,0
+Region 6,Black,Deaths,56
+Region 6,Asian,Deaths,0
+Region 6,White,Cases,809
+Region 6,White,Deaths,48
+Region 6,Native Hawaiian/Other Pacific Islander,Cases,0
+Region 6,American Indian/Alaskan Native,Deaths,0
+Region 6,American Indian/Alaskan Native,Cases,6
+Region 6,Other,Deaths,1
+Region 6,Unknown,Cases,862
+Region 6,Black,Cases,1064
+Region 7,White,Cases,1536
+Region 7,Native Hawaiian/Other Pacific Islander,Cases,3
+Region 7,Native Hawaiian/Other Pacific Islander,Deaths,1
+Region 7,Black,Deaths,240
+Region 7,Unknown,Deaths,0
+Region 7,Unknown,Cases,890
+Region 7,Asian,Deaths,0
+Region 7,Other,Cases,341
+Region 7,Asian,Cases,134
+Region 7,White,Deaths,129
+Region 7,Other,Deaths,0
+Region 7,American Indian/Alaskan Native,Cases,13
+Region 7,Black,Cases,3516
+Region 7,American Indian/Alaskan Native,Deaths,0
+Region 8,Other,Deaths,1
+Region 8,Other,Cases,757
+Region 8,Black,Cases,2611
+Region 8,Native Hawaiian/Other Pacific Islander,Cases,2
+Region 8,Unknown,Cases,1249
+Region 8,Unknown,Deaths,1
+Region 8,Asian,Cases,159
+Region 8,Black,Deaths,97
+Region 8,Asian,Deaths,0
+Region 8,American Indian/Alaskan Native,Cases,4
+Region 8,White,Deaths,81
+Region 8,White,Cases,1036
+Region 8,American Indian/Alaskan Native,Deaths,0
+Region 8,Native Hawaiian/Other Pacific Islander,Deaths,0
+Region 9,Unknown,Cases,780
+Region 9,White,Deaths,232
+Region 9,Native Hawaiian/Other Pacific Islander,Cases,4
+Region 9,Black,Cases,1633
+Region 9,Asian,Cases,111
+Region 9,American Indian/Alaskan Native,Cases,17
+Region 9,Unknown,Deaths,0
+Region 9,Other,Deaths,0
+Region 9,Native Hawaiian/Other Pacific Islander,Deaths,0
+Region 9,Black,Deaths,75
+Region 9,Asian,Deaths,1
+Region 9,American Indian/Alaskan Native,Deaths,0
+Region 9,Other,Cases,426
+Region 9,White,Cases,3252
