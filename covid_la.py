@@ -36,7 +36,7 @@ def csv_loader(file, date):
         df = df.drop(columns = date)
     return df
 
-def la_covid(combined_url, deaths_parish_race_url, deaths_region_race_url, cases_parish_race_url, cases_region_race_url, date):
+def la_covid(combined_url, deaths_parish_race_url, deaths_region_race_url, cases_parish_race_url, cases_region_race_url, cases_tests_dot_url, date):
     if datetime.today().weekday() == 2:
         print("Today is Wednesday. Please enter new values.")
         probable = int(input("Probable deaths: "))
@@ -56,6 +56,33 @@ def la_covid(combined_url, deaths_parish_race_url, deaths_region_race_url, cases
     la_tract_prefix = 'https://services5.arcgis.com/O5K6bb5dZVZcTo5M/ArcGIS/rest/services/'
     la_tract_suffix = '/FeatureServer/0/query?where=1%3D1&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=*&returnGeometry=true&returnCentroid=false&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson'
     la_tract_url = la_tract_prefix+tract+la_tract_suffix
+
+    dot = pd.DataFrame(esri_cleaner(cases_tests_dot_url))
+    dot['Lab_Collection_Date'] = pd.to_datetime(dot['Lab_Collection_Date'], unit='ms')
+    dot['Date'] = dot['Lab_Collection_Date'].apply(lambda x: x.strftime('%m/%d/%Y'))
+    dot_tests = pd.pivot(dot,
+                   index='Parish',
+                   columns='Date',
+                   values='Daily_Test_Count')
+    dot_tests.insert(0,'Category', '')
+    dot_tests['Category'] = 'Tests'
+    dot_cases = pd.pivot(dot,
+                        index='Parish',
+                        columns='Date',
+                        values='Daily_Case_Count')
+    dot_cases['Category'] = 'Cases'
+    dot_neg_tests = pd.pivot(dot,
+                        index='Parish',
+                        columns='Date',
+                        values='Daily_Negative_Test_Count')
+    dot_neg_tests['Category'] = 'Negative Tests'
+    dot_pos_tests = pd.pivot(dot,
+                            index='Parish',
+                            columns='Date',
+                            values='Daily_Positive_Test_Count')
+    dot_pos_tests['Category'] = 'Positive Tests'
+    dot_tests.append(dot_cases).append(dot_neg_tests).append(dot_pos_tests).sort_values(by=['Parish', 'Category']).to_csv('data/cases_tests_dot.csv')
+    print('Cases and tests by parish and date of test exported.')
     data = pd.DataFrame(esri_cleaner(combined_url))
     cases = data[data['Measure'] == 'Case Count'].copy()
     cases['Value'] = cases['Value'].fillna(0).astype(int)
@@ -218,12 +245,14 @@ def la_covid(combined_url, deaths_parish_race_url, deaths_region_race_url, cases
     recovered = pd.read_csv('data/recovered.csv')
     recovered[date] = recoveries
     recovered.to_csv('data/recovered.csv', index = False)
+    
 
 combined_url = 'https://services5.arcgis.com/O5K6bb5dZVZcTo5M/arcgis/rest/services/Combined_COVID_Reporting/FeatureServer/0/query?where=1%3D1&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=*&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=json'
 la_deaths_parish_url = 'https://services5.arcgis.com/O5K6bb5dZVZcTo5M/ArcGIS/rest/services/Deaths_by_Race_by_Parish/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=false&f=pjson'
 la_deaths_region_url = 'https://services5.arcgis.com/O5K6bb5dZVZcTo5M/ArcGIS/rest/services/Deaths_by_Race_by_Region/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=false&f=pjson'
 la_cases_parish_url = 'https://services5.arcgis.com/O5K6bb5dZVZcTo5M/ArcGIS/rest/services/Cases_and_Deaths_by_Race_by_Parish/FeatureServer/0/query?where=1%3D1&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=*&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token='
 la_cases_region_url = 'https://services5.arcgis.com/O5K6bb5dZVZcTo5M/ArcGIS/rest/services/Cases_and_Deaths_by_Race_by_Region/FeatureServer/0/query?where=1%3D1&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=*&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token='
+la_cases_tests_dot_url = 'https://services5.arcgis.com/O5K6bb5dZVZcTo5M/ArcGIS/rest/services/Parish_Case_and_Test_Counts_by_Collect_Date/FeatureServer/0/query?where=1%3D1&objectIds=&time=&resultType=none&outFields=*&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&sqlFormat=none&f=pjson&token='
 update_date = '{d.month}/{d.day}/{d.year}'.format(d=datetime.now())
 
-la_covid(combined_url, la_deaths_parish_url, la_deaths_region_url, la_cases_parish_url, la_cases_region_url, update_date)
+la_covid(combined_url, la_deaths_parish_url, la_deaths_region_url, la_cases_parish_url, la_cases_region_url, la_cases_tests_dot_url, update_date)
