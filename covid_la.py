@@ -145,31 +145,31 @@ def la_covid(combined_url, deaths_parish_race_url, deaths_region_race_url, cases
     # print('Deaths by race and region exported.')
 # Start cases by race
 
-    cases_race_parish = pd.DataFrame(esri_cleaner(cases_parish_race_url))
-    for c in cases_race_parish.iloc[:, 6:16].columns:
-        cases_race_parish[c] = pd.to_numeric(cases_race_parish[c], errors='coerce')
-    cases_race_parish = (pd.melt(cases_race_parish,
-                             id_vars=['PFIPS',
-                                      'Parish',
-                                      'LDHH'],
-                             value_vars=['Deaths_Black',
-                                         'Deaths_White',
-                                         'Deaths_Other',
-                                         'Deaths_Unknown',
-                                         'Cases_Black',
-                                         'Cases_White',
-                                         'Cases_Other',
-                                         'Cases_Unknown'])
-                     .sort_values(by='PFIPS'))
-    cases_race_parish['PFIPS'] = cases_race_parish.astype(str)
-    cases_race_parish = cases_race_parish.rename(columns = {'variable' : 'Race',
-                                                    'PFIPS' : 'FIPS',
-                                                    'value' : date})
-    cases_race_parish_file = csv_loader('cases_deaths_by_race_parish.csv', date)
-    cases_race_parish_file.merge(cases_race_parish[['FIPS', 'Race', date]],
-                             on=['FIPS', 'Race'],
-                             how='outer').to_csv('data/cases_deaths_by_race_parish.csv', index=False)
-    print('Cases and Deaths by race and parish exported.')
+    # cases_race_parish = pd.DataFrame(esri_cleaner(cases_parish_race_url))
+    # for c in cases_race_parish.iloc[:, 6:16].columns:
+    #     cases_race_parish[c] = pd.to_numeric(cases_race_parish[c], errors='coerce')
+    # cases_race_parish = (pd.melt(cases_race_parish,
+    #                          id_vars=['PFIPS',
+    #                                   'Parish',
+    #                                   'LDHH'],
+    #                          value_vars=['Deaths_Black',
+    #                                      'Deaths_White',
+    #                                      'Deaths_Other',
+    #                                      'Deaths_Unknown',
+    #                                      'Cases_Black',
+    #                                      'Cases_White',
+    #                                      'Cases_Other',
+    #                                      'Cases_Unknown'])
+    #                  .sort_values(by='PFIPS'))
+    # cases_race_parish['PFIPS'] = cases_race_parish.astype(str)
+    # cases_race_parish = cases_race_parish.rename(columns = {'variable' : 'Race',
+    #                                                 'PFIPS' : 'FIPS',
+    #                                                 'value' : date})
+    # cases_race_parish_file = csv_loader('cases_deaths_by_race_parish.csv', date)
+    # cases_race_parish_file.merge(cases_race_parish[['FIPS', 'Race', date]],
+    #                          on=['FIPS', 'Race'],
+    #                          how='outer').to_csv('data/cases_deaths_by_race_parish.csv', index=False)
+    # print('Cases and Deaths by race and parish exported.')
 
     cases_deaths_race_region = pd.DataFrame(esri_cleaner(cases_region_race_url))
     cases_deaths_race_region = (pd.melt(cases_deaths_race_region, id_vars=['LDH_Region', 'Race'], value_vars=['Deaths', 'Cases'])).sort_values(by='LDH_Region')
