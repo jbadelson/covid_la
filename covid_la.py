@@ -145,31 +145,31 @@ def la_covid(combined_url, deaths_parish_race_url, deaths_region_race_url, cases
     # print('Deaths by race and region exported.')
 # Start cases by race
 
-    # cases_race_parish = pd.DataFrame(esri_cleaner(cases_parish_race_url))
-    # for c in cases_race_parish.iloc[:, 6:16].columns:
-    #     cases_race_parish[c] = pd.to_numeric(cases_race_parish[c], errors='coerce')
-    # cases_race_parish = (pd.melt(cases_race_parish,
-    #                          id_vars=['PFIPS',
-    #                                   'Parish',
-    #                                   'LDHH'],
-    #                          value_vars=['Deaths_Black',
-    #                                      'Deaths_White',
-    #                                      'Deaths_Other',
-    #                                      'Deaths_Unknown',
-    #                                      'Cases_Black',
-    #                                      'Cases_White',
-    #                                      'Cases_Other',
-    #                                      'Cases_Unknown'])
-    #                  .sort_values(by='PFIPS'))
-    # cases_race_parish['PFIPS'] = cases_race_parish.astype(str)
-    # cases_race_parish = cases_race_parish.rename(columns = {'variable' : 'Race',
-    #                                                 'PFIPS' : 'FIPS',
-    #                                                 'value' : date})
-    # cases_race_parish_file = csv_loader('cases_deaths_by_race_parish.csv', date)
-    # cases_race_parish_file.merge(cases_race_parish[['FIPS', 'Race', date]],
-    #                          on=['FIPS', 'Race'],
-    #                          how='outer').to_csv('data/cases_deaths_by_race_parish.csv', index=False)
-    # print('Cases and Deaths by race and parish exported.')
+    cases_race_parish = pd.DataFrame(esri_cleaner(cases_parish_race_url))
+    for c in cases_race_parish.iloc[:, 6:16].columns:
+        cases_race_parish[c] = pd.to_numeric(cases_race_parish[c], errors='coerce')
+    cases_race_parish = (pd.melt(cases_race_parish,
+                              id_vars=['PFIPS',
+                                      'Parish',
+                                      'LDHH'],
+                              value_vars=['Deaths_Black',
+                                          'Deaths_White',
+                                          'Deaths_Other',
+                                          'Deaths_Unknown',
+                                          'Cases_Black',
+                                          'Cases_White',
+                                          'Cases_Other',
+                                          'Cases_Unknown'])
+                      .sort_values(by='PFIPS'))
+    cases_race_parish['PFIPS'] = cases_race_parish.astype(str)
+    cases_race_parish = cases_race_parish.rename(columns = {'variable' : 'Race',
+                                                    'PFIPS' : 'FIPS',
+                                                    'value' : date})
+    cases_race_parish_file = csv_loader('cases_deaths_by_race_parish.csv', date)
+    cases_race_parish_file.merge(cases_race_parish[['FIPS', 'Race', date]],
+                              on=['FIPS', 'Race'],
+                              how='outer').to_csv('data/cases_deaths_by_race_parish.csv', index=False)
+    print('Cases and Deaths by race and parish exported.')
 
     cases_deaths_race_region = pd.DataFrame(esri_cleaner(cases_region_race_url))
     cases_deaths_race_region = (pd.melt(cases_deaths_race_region, id_vars=['LDH_Region', 'Race'], value_vars=['Deaths', 'Cases'])).sort_values(by='LDH_Region')
@@ -250,7 +250,7 @@ def la_covid(combined_url, deaths_parish_race_url, deaths_region_race_url, cases
 combined_url = 'https://services5.arcgis.com/O5K6bb5dZVZcTo5M/arcgis/rest/services/Combined_COVID_Reporting/FeatureServer/0/query?where=1%3D1&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=*&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=json'
 la_deaths_parish_url = 'https://services5.arcgis.com/O5K6bb5dZVZcTo5M/ArcGIS/rest/services/Deaths_by_Race_by_Parish/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=false&f=pjson'
 la_deaths_region_url = 'https://services5.arcgis.com/O5K6bb5dZVZcTo5M/ArcGIS/rest/services/Deaths_by_Race_by_Region/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=false&f=pjson'
-la_cases_parish_url = 'https://services5.arcgis.com/O5K6bb5dZVZcTo5M/ArcGIS/rest/services/Cases_and_Deaths_by_Race_by_Parish/FeatureServer/0/query?where=1%3D1&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=*&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token='
+la_cases_parish_url = 'https://services5.arcgis.com/O5K6bb5dZVZcTo5M/ArcGIS/rest/services/Cases_and_Deaths_by_Race_by_Parish_and_Region_2/FeatureServer/0/query?where=1%3D1&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=*&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token='
 la_cases_region_url = 'https://services5.arcgis.com/O5K6bb5dZVZcTo5M/ArcGIS/rest/services/Cases_and_Deaths_by_Race_by_Region/FeatureServer/0/query?where=1%3D1&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=*&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token='
 la_cases_tests_dot_url = 'https://services5.arcgis.com/O5K6bb5dZVZcTo5M/ArcGIS/rest/services/Parish_Case_and_Test_Counts_by_Collect_Date/FeatureServer/0/query?where=1%3D1&objectIds=&time=&resultType=none&outFields=*&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&sqlFormat=none&f=pjson&token='
 update_date = '{d.month}/{d.day}/{d.year}'.format(d=datetime.now())
