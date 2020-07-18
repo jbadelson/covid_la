@@ -1,127 +1,127 @@
-LDH_Region,Race,variable,7/8/2020,7/9/2020,7/10/2020,7/11/2020,7/12/2020,7/13/2020,7/14/2020,7/15/2020,7/16/2020,7/17/2020
-Region 1,American Indian/Alaskan Native,Deaths,1,1,1,1,1,1,1,1,1,1
-Region 1,Unknown,Deaths,0,0,0,0,0,0,0,0,0,0
-Region 1,Native Hawaiian/Other Pacific Islander,Deaths,3,3,3,3,3,3,3,3,3,3
-Region 1,White,Deaths,371,371,371,371,371,371,371,380,380,380
-Region 1,American Indian/Alaskan Native,Cases,33,33,33,33,33,33,33,37,37,37
-Region 1,White,Cases,5443,5443,5443,5443,5443,5443,5443,6319,6319,6319
-Region 1,Asian,Cases,298,298,298,298,298,298,298,340,340,340
-Region 1,Black,Cases,8842,8842,8842,8842,8842,8842,8842,9320,9320,9320
-Region 1,Native Hawaiian/Other Pacific Islander,Cases,41,41,41,41,41,41,41,53,53,53
-Region 1,Black,Deaths,662,662,662,662,662,662,662,671,671,671
-Region 1,Other,Deaths,11,11,11,11,11,11,11,11,11,11
-Region 1,Other,Cases,1642,1642,1642,1642,1642,1642,1642,1913,1913,1913
-Region 1,Unknown,Cases,2869,2869,2869,2869,2869,2869,2869,3043,3043,3043
-Region 1,Asian,Deaths,14,14,14,14,14,14,14,14,14,14
-Region 2,American Indian/Alaskan Native,Deaths,0,0,0,0,0,0,0,0,0,0
-Region 2,Unknown,Deaths,0,0,0,0,0,0,0,0,0,0
-Region 2,White,Cases,2348,2348,2348,2348,2348,2348,2348,3095,3095,3095
-Region 2,Native Hawaiian/Other Pacific Islander,Deaths,1,1,1,1,1,1,1,1,1,1
-Region 2,Unknown,Cases,1879,1879,1879,1879,1879,1879,1879,1941,1941,1941
-Region 2,White,Deaths,196,196,196,196,196,196,196,204,204,204
-Region 2,Asian,Deaths,7,7,7,7,7,7,7,7,7,7
-Region 2,Black,Deaths,276,276,276,276,276,276,276,281,281,281
-Region 2,Other,Deaths,0,0,0,0,0,0,0,0,0,0
-Region 2,Asian,Cases,128,128,128,128,128,128,128,164,164,164
-Region 2,Black,Cases,4052,4052,4052,4052,4052,4052,4052,4916,4916,4916
-Region 2,Native Hawaiian/Other Pacific Islander,Cases,9,9,9,9,9,9,9,12,12,12
-Region 2,Other,Cases,824,824,824,824,824,824,824,1023,1023,1023
-Region 2,American Indian/Alaskan Native,Cases,14,14,14,14,14,14,14,18,18,18
-Region 3,Other,Cases,275,275,275,275,275,275,275,371,371,371
-Region 3,American Indian/Alaskan Native,Cases,39,39,39,39,39,39,39,58,58,58
-Region 3,Asian,Cases,91,91,91,91,91,91,91,117,117,117
-Region 3,Unknown,Cases,818,818,818,818,818,818,818,945,945,945
-Region 3,Black,Cases,2602,2602,2602,2602,2602,2602,2602,2971,2971,2971
-Region 3,Unknown,Deaths,0,0,0,0,0,0,0,0,0,0
-Region 3,Native Hawaiian/Other Pacific Islander,Cases,5,5,5,5,5,5,5,5,5,5
-Region 3,White,Cases,1968,1968,1968,1968,1968,1968,1968,2558,2558,2558
-Region 3,Other,Deaths,0,0,0,0,0,0,0,0,0,0
-Region 3,White,Deaths,194,194,194,194,194,194,194,201,201,201
-Region 3,American Indian/Alaskan Native,Deaths,3,3,3,3,3,3,3,3,3,3
-Region 3,Black,Deaths,168,168,168,168,168,168,168,173,173,173
-Region 3,Native Hawaiian/Other Pacific Islander,Deaths,0,0,0,0,0,0,0,0,0,0
-Region 3,Asian,Deaths,1,1,1,1,1,1,1,1,1,1
-Region 4,Asian,Cases,96,96,96,96,96,96,96,210,210,210
-Region 4,Black,Deaths,63,63,63,63,63,63,63,70,70,70
-Region 4,White,Cases,1992,1992,1992,1992,1992,1992,1992,3133,3133,3133
-Region 4,White,Deaths,166,166,166,166,166,166,166,184,184,184
-Region 4,Unknown,Cases,1833,1833,1833,1833,1833,1833,1833,2008,2008,2008
-Region 4,Black,Cases,2339,2339,2339,2339,2339,2339,2339,3309,3309,3309
-Region 4,American Indian/Alaskan Native,Cases,5,5,5,5,5,5,5,6,6,6
-Region 4,Asian,Deaths,0,0,0,0,0,0,0,0,0,0
-Region 4,Native Hawaiian/Other Pacific Islander,Deaths,0,0,0,0,0,0,0,0,0,0
-Region 4,Native Hawaiian/Other Pacific Islander,Cases,8,8,8,8,8,8,8,15,15,15
-Region 4,Other,Cases,890,890,890,890,890,890,890,1154,1154,1154
-Region 4,American Indian/Alaskan Native,Deaths,0,0,0,0,0,0,0,0,0,0
-Region 4,Other,Deaths,0,0,0,0,0,0,0,0,0,0
-Region 4,Unknown,Deaths,0,0,0,0,0,0,0,1,1,1
-Region 5,Black,Cases,764,764,764,764,764,764,764,1250,1250,1250
-Region 5,Native Hawaiian/Other Pacific Islander,Cases,3,3,3,3,3,3,3,3,3,3
-Region 5,Asian,Deaths,0,0,0,0,0,0,0,0,0,0
-Region 5,Asian,Cases,55,55,55,55,55,55,55,147,147,147
-Region 5,Other,Cases,155,155,155,155,155,155,155,248,248,248
-Region 5,American Indian/Alaskan Native,Deaths,0,0,0,0,0,0,0,0,0,0
-Region 5,American Indian/Alaskan Native,Cases,7,7,7,7,7,7,7,10,10,10
-Region 5,Black,Deaths,34,34,34,34,34,34,34,39,39,39
-Region 5,Unknown,Cases,1339,1339,1339,1339,1339,1339,1339,1271,1271,1271
-Region 5,White,Deaths,51,51,51,51,51,51,51,68,68,68
-Region 5,Other,Deaths,3,3,3,3,3,3,3,4,4,4
-Region 5,White,Cases,1117,1117,1117,1117,1117,1117,1117,1872,1872,1872
-Region 5,Unknown,Deaths,0,0,0,0,0,0,0,0,0,0
-Region 5,Native Hawaiian/Other Pacific Islander,Deaths,0,0,0,0,0,0,0,0,0,0
-Region 6,Unknown,Deaths,0,0,0,0,0,0,0,0,0,0
-Region 6,Other,Cases,242,242,242,242,242,242,242,309,309,309
-Region 6,Asian,Cases,47,47,47,47,47,47,47,104,104,104
-Region 6,Native Hawaiian/Other Pacific Islander,Deaths,0,0,0,0,0,0,0,0,0,0
-Region 6,Black,Deaths,56,56,56,56,56,56,56,62,62,62
-Region 6,Asian,Deaths,0,0,0,0,0,0,0,0,0,0
-Region 6,White,Cases,809,809,809,809,809,809,809,1022,1022,1022
-Region 6,White,Deaths,48,48,48,48,48,48,48,62,62,62
-Region 6,Native Hawaiian/Other Pacific Islander,Cases,0,0,0,0,0,0,0,0,0,0
-Region 6,American Indian/Alaskan Native,Deaths,0,0,0,0,0,0,0,0,0,0
-Region 6,American Indian/Alaskan Native,Cases,6,6,6,6,6,6,6,9,9,9
-Region 6,Other,Deaths,1,1,1,1,1,1,1,1,1,1
-Region 6,Unknown,Cases,862,862,862,862,862,862,862,1019,1019,1019
-Region 6,Black,Cases,1064,1064,1064,1064,1064,1064,1064,1253,1253,1253
-Region 7,White,Cases,1536,1536,1536,1536,1536,1536,1536,1996,1996,1996
-Region 7,Native Hawaiian/Other Pacific Islander,Cases,3,3,3,3,3,3,3,5,5,5
-Region 7,Native Hawaiian/Other Pacific Islander,Deaths,1,1,1,1,1,1,1,1,1,1
-Region 7,Black,Deaths,240,240,240,240,240,240,240,249,249,249
-Region 7,Unknown,Deaths,0,0,0,0,0,0,0,0,0,0
-Region 7,Unknown,Cases,890,890,890,890,890,890,890,954,954,954
-Region 7,Asian,Deaths,0,0,0,0,0,0,0,0,0,0
-Region 7,Other,Cases,341,341,341,341,341,341,341,474,474,474
-Region 7,Asian,Cases,134,134,134,134,134,134,134,255,255,255
-Region 7,White,Deaths,129,129,129,129,129,129,129,133,133,133
-Region 7,Other,Deaths,0,0,0,0,0,0,0,0,0,0
-Region 7,American Indian/Alaskan Native,Cases,13,13,13,13,13,13,13,18,18,18
-Region 7,Black,Cases,3516,3516,3516,3516,3516,3516,3516,4143,4143,4143
-Region 7,American Indian/Alaskan Native,Deaths,0,0,0,0,0,0,0,0,0,0
-Region 8,Other,Deaths,1,1,1,1,1,1,1,1,1,1
-Region 8,Other,Cases,757,757,757,757,757,757,757,997,997,997
-Region 8,Black,Cases,2611,2611,2611,2611,2611,2611,2611,3012,3012,3012
-Region 8,Native Hawaiian/Other Pacific Islander,Cases,2,2,2,2,2,2,2,1,1,1
-Region 8,Unknown,Cases,1249,1249,1249,1249,1249,1249,1249,1273,1273,1273
-Region 8,Unknown,Deaths,1,1,1,1,1,1,1,0,0,0
-Region 8,Asian,Cases,159,159,159,159,159,159,159,204,204,204
-Region 8,Black,Deaths,97,97,97,97,97,97,97,103,103,103
-Region 8,Asian,Deaths,0,0,0,0,0,0,0,0,0,0
-Region 8,American Indian/Alaskan Native,Cases,4,4,4,4,4,4,4,6,6,6
-Region 8,White,Deaths,81,81,81,81,81,81,81,92,92,92
-Region 8,White,Cases,1036,1036,1036,1036,1036,1036,1036,1226,1226,1226
-Region 8,American Indian/Alaskan Native,Deaths,0,0,0,0,0,0,0,0,0,0
-Region 8,Native Hawaiian/Other Pacific Islander,Deaths,0,0,0,0,0,0,0,0,0,0
-Region 9,Unknown,Cases,780,780,780,780,780,780,780,879,879,879
-Region 9,White,Deaths,232,232,232,232,232,232,232,247,247,247
-Region 9,Native Hawaiian/Other Pacific Islander,Cases,4,4,4,4,4,4,4,5,5,5
-Region 9,Black,Cases,1633,1633,1633,1633,1633,1633,1633,1963,1963,1963
-Region 9,Asian,Cases,111,111,111,111,111,111,111,185,185,185
-Region 9,American Indian/Alaskan Native,Cases,17,17,17,17,17,17,17,19,19,19
-Region 9,Unknown,Deaths,0,0,0,0,0,0,0,0,0,0
-Region 9,Other,Deaths,0,0,0,0,0,0,0,0,0,0
-Region 9,Native Hawaiian/Other Pacific Islander,Deaths,0,0,0,0,0,0,0,0,0,0
-Region 9,Black,Deaths,75,75,75,75,75,75,75,76,76,76
-Region 9,Asian,Deaths,1,1,1,1,1,1,1,1,1,1
-Region 9,American Indian/Alaskan Native,Deaths,0,0,0,0,0,0,0,0,0,0
-Region 9,Other,Cases,426,426,426,426,426,426,426,524,524,524
-Region 9,White,Cases,3252,3252,3252,3252,3252,3252,3252,4141,4141,4141
+LDH_Region,Race,variable,7/8/2020,7/9/2020,7/10/2020,7/11/2020,7/12/2020,7/13/2020,7/14/2020,7/15/2020,7/16/2020,7/17/2020,7/18/2020
+Region 1,American Indian/Alaskan Native,Deaths,1,1,1,1,1,1,1,1,1,1,1
+Region 1,Unknown,Deaths,0,0,0,0,0,0,0,0,0,0,0
+Region 1,Native Hawaiian/Other Pacific Islander,Deaths,3,3,3,3,3,3,3,3,3,3,3
+Region 1,White,Deaths,371,371,371,371,371,371,371,380,380,380,380
+Region 1,American Indian/Alaskan Native,Cases,33,33,33,33,33,33,33,37,37,37,37
+Region 1,White,Cases,5443,5443,5443,5443,5443,5443,5443,6319,6319,6319,6319
+Region 1,Asian,Cases,298,298,298,298,298,298,298,340,340,340,340
+Region 1,Black,Cases,8842,8842,8842,8842,8842,8842,8842,9320,9320,9320,9320
+Region 1,Native Hawaiian/Other Pacific Islander,Cases,41,41,41,41,41,41,41,53,53,53,53
+Region 1,Black,Deaths,662,662,662,662,662,662,662,671,671,671,671
+Region 1,Other,Deaths,11,11,11,11,11,11,11,11,11,11,11
+Region 1,Other,Cases,1642,1642,1642,1642,1642,1642,1642,1913,1913,1913,1913
+Region 1,Unknown,Cases,2869,2869,2869,2869,2869,2869,2869,3043,3043,3043,3043
+Region 1,Asian,Deaths,14,14,14,14,14,14,14,14,14,14,14
+Region 2,American Indian/Alaskan Native,Deaths,0,0,0,0,0,0,0,0,0,0,0
+Region 2,Unknown,Deaths,0,0,0,0,0,0,0,0,0,0,0
+Region 2,White,Cases,2348,2348,2348,2348,2348,2348,2348,3095,3095,3095,3095
+Region 2,Native Hawaiian/Other Pacific Islander,Deaths,1,1,1,1,1,1,1,1,1,1,1
+Region 2,Unknown,Cases,1879,1879,1879,1879,1879,1879,1879,1941,1941,1941,1941
+Region 2,White,Deaths,196,196,196,196,196,196,196,204,204,204,204
+Region 2,Asian,Deaths,7,7,7,7,7,7,7,7,7,7,7
+Region 2,Black,Deaths,276,276,276,276,276,276,276,281,281,281,281
+Region 2,Other,Deaths,0,0,0,0,0,0,0,0,0,0,0
+Region 2,Asian,Cases,128,128,128,128,128,128,128,164,164,164,164
+Region 2,Black,Cases,4052,4052,4052,4052,4052,4052,4052,4916,4916,4916,4916
+Region 2,Native Hawaiian/Other Pacific Islander,Cases,9,9,9,9,9,9,9,12,12,12,12
+Region 2,Other,Cases,824,824,824,824,824,824,824,1023,1023,1023,1023
+Region 2,American Indian/Alaskan Native,Cases,14,14,14,14,14,14,14,18,18,18,18
+Region 3,Other,Cases,275,275,275,275,275,275,275,371,371,371,371
+Region 3,American Indian/Alaskan Native,Cases,39,39,39,39,39,39,39,58,58,58,58
+Region 3,Asian,Cases,91,91,91,91,91,91,91,117,117,117,117
+Region 3,Unknown,Cases,818,818,818,818,818,818,818,945,945,945,945
+Region 3,Black,Cases,2602,2602,2602,2602,2602,2602,2602,2971,2971,2971,2971
+Region 3,Unknown,Deaths,0,0,0,0,0,0,0,0,0,0,0
+Region 3,Native Hawaiian/Other Pacific Islander,Cases,5,5,5,5,5,5,5,5,5,5,5
+Region 3,White,Cases,1968,1968,1968,1968,1968,1968,1968,2558,2558,2558,2558
+Region 3,Other,Deaths,0,0,0,0,0,0,0,0,0,0,0
+Region 3,White,Deaths,194,194,194,194,194,194,194,201,201,201,201
+Region 3,American Indian/Alaskan Native,Deaths,3,3,3,3,3,3,3,3,3,3,3
+Region 3,Black,Deaths,168,168,168,168,168,168,168,173,173,173,173
+Region 3,Native Hawaiian/Other Pacific Islander,Deaths,0,0,0,0,0,0,0,0,0,0,0
+Region 3,Asian,Deaths,1,1,1,1,1,1,1,1,1,1,1
+Region 4,Asian,Cases,96,96,96,96,96,96,96,210,210,210,210
+Region 4,Black,Deaths,63,63,63,63,63,63,63,70,70,70,70
+Region 4,White,Cases,1992,1992,1992,1992,1992,1992,1992,3133,3133,3133,3133
+Region 4,White,Deaths,166,166,166,166,166,166,166,184,184,184,184
+Region 4,Unknown,Cases,1833,1833,1833,1833,1833,1833,1833,2008,2008,2008,2008
+Region 4,Black,Cases,2339,2339,2339,2339,2339,2339,2339,3309,3309,3309,3309
+Region 4,American Indian/Alaskan Native,Cases,5,5,5,5,5,5,5,6,6,6,6
+Region 4,Asian,Deaths,0,0,0,0,0,0,0,0,0,0,0
+Region 4,Native Hawaiian/Other Pacific Islander,Deaths,0,0,0,0,0,0,0,0,0,0,0
+Region 4,Native Hawaiian/Other Pacific Islander,Cases,8,8,8,8,8,8,8,15,15,15,15
+Region 4,Other,Cases,890,890,890,890,890,890,890,1154,1154,1154,1154
+Region 4,American Indian/Alaskan Native,Deaths,0,0,0,0,0,0,0,0,0,0,0
+Region 4,Other,Deaths,0,0,0,0,0,0,0,0,0,0,0
+Region 4,Unknown,Deaths,0,0,0,0,0,0,0,1,1,1,1
+Region 5,Black,Cases,764,764,764,764,764,764,764,1250,1250,1250,1250
+Region 5,Native Hawaiian/Other Pacific Islander,Cases,3,3,3,3,3,3,3,3,3,3,3
+Region 5,Asian,Deaths,0,0,0,0,0,0,0,0,0,0,0
+Region 5,Asian,Cases,55,55,55,55,55,55,55,147,147,147,147
+Region 5,Other,Cases,155,155,155,155,155,155,155,248,248,248,248
+Region 5,American Indian/Alaskan Native,Deaths,0,0,0,0,0,0,0,0,0,0,0
+Region 5,American Indian/Alaskan Native,Cases,7,7,7,7,7,7,7,10,10,10,10
+Region 5,Black,Deaths,34,34,34,34,34,34,34,39,39,39,39
+Region 5,Unknown,Cases,1339,1339,1339,1339,1339,1339,1339,1271,1271,1271,1271
+Region 5,White,Deaths,51,51,51,51,51,51,51,68,68,68,68
+Region 5,Other,Deaths,3,3,3,3,3,3,3,4,4,4,4
+Region 5,White,Cases,1117,1117,1117,1117,1117,1117,1117,1872,1872,1872,1872
+Region 5,Unknown,Deaths,0,0,0,0,0,0,0,0,0,0,0
+Region 5,Native Hawaiian/Other Pacific Islander,Deaths,0,0,0,0,0,0,0,0,0,0,0
+Region 6,Unknown,Deaths,0,0,0,0,0,0,0,0,0,0,0
+Region 6,Other,Cases,242,242,242,242,242,242,242,309,309,309,309
+Region 6,Asian,Cases,47,47,47,47,47,47,47,104,104,104,104
+Region 6,Native Hawaiian/Other Pacific Islander,Deaths,0,0,0,0,0,0,0,0,0,0,0
+Region 6,Black,Deaths,56,56,56,56,56,56,56,62,62,62,62
+Region 6,Asian,Deaths,0,0,0,0,0,0,0,0,0,0,0
+Region 6,White,Cases,809,809,809,809,809,809,809,1022,1022,1022,1022
+Region 6,White,Deaths,48,48,48,48,48,48,48,62,62,62,62
+Region 6,Native Hawaiian/Other Pacific Islander,Cases,0,0,0,0,0,0,0,0,0,0,0
+Region 6,American Indian/Alaskan Native,Deaths,0,0,0,0,0,0,0,0,0,0,0
+Region 6,American Indian/Alaskan Native,Cases,6,6,6,6,6,6,6,9,9,9,9
+Region 6,Other,Deaths,1,1,1,1,1,1,1,1,1,1,1
+Region 6,Unknown,Cases,862,862,862,862,862,862,862,1019,1019,1019,1019
+Region 6,Black,Cases,1064,1064,1064,1064,1064,1064,1064,1253,1253,1253,1253
+Region 7,White,Cases,1536,1536,1536,1536,1536,1536,1536,1996,1996,1996,1996
+Region 7,Native Hawaiian/Other Pacific Islander,Cases,3,3,3,3,3,3,3,5,5,5,5
+Region 7,Native Hawaiian/Other Pacific Islander,Deaths,1,1,1,1,1,1,1,1,1,1,1
+Region 7,Black,Deaths,240,240,240,240,240,240,240,249,249,249,249
+Region 7,Unknown,Deaths,0,0,0,0,0,0,0,0,0,0,0
+Region 7,Unknown,Cases,890,890,890,890,890,890,890,954,954,954,954
+Region 7,Asian,Deaths,0,0,0,0,0,0,0,0,0,0,0
+Region 7,Other,Cases,341,341,341,341,341,341,341,474,474,474,474
+Region 7,Asian,Cases,134,134,134,134,134,134,134,255,255,255,255
+Region 7,White,Deaths,129,129,129,129,129,129,129,133,133,133,133
+Region 7,Other,Deaths,0,0,0,0,0,0,0,0,0,0,0
+Region 7,American Indian/Alaskan Native,Cases,13,13,13,13,13,13,13,18,18,18,18
+Region 7,Black,Cases,3516,3516,3516,3516,3516,3516,3516,4143,4143,4143,4143
+Region 7,American Indian/Alaskan Native,Deaths,0,0,0,0,0,0,0,0,0,0,0
+Region 8,Other,Deaths,1,1,1,1,1,1,1,1,1,1,1
+Region 8,Other,Cases,757,757,757,757,757,757,757,997,997,997,997
+Region 8,Black,Cases,2611,2611,2611,2611,2611,2611,2611,3012,3012,3012,3012
+Region 8,Native Hawaiian/Other Pacific Islander,Cases,2,2,2,2,2,2,2,1,1,1,1
+Region 8,Unknown,Cases,1249,1249,1249,1249,1249,1249,1249,1273,1273,1273,1273
+Region 8,Unknown,Deaths,1,1,1,1,1,1,1,0,0,0,0
+Region 8,Asian,Cases,159,159,159,159,159,159,159,204,204,204,204
+Region 8,Black,Deaths,97,97,97,97,97,97,97,103,103,103,103
+Region 8,Asian,Deaths,0,0,0,0,0,0,0,0,0,0,0
+Region 8,American Indian/Alaskan Native,Cases,4,4,4,4,4,4,4,6,6,6,6
+Region 8,White,Deaths,81,81,81,81,81,81,81,92,92,92,92
+Region 8,White,Cases,1036,1036,1036,1036,1036,1036,1036,1226,1226,1226,1226
+Region 8,American Indian/Alaskan Native,Deaths,0,0,0,0,0,0,0,0,0,0,0
+Region 8,Native Hawaiian/Other Pacific Islander,Deaths,0,0,0,0,0,0,0,0,0,0,0
+Region 9,Unknown,Cases,780,780,780,780,780,780,780,879,879,879,879
+Region 9,White,Deaths,232,232,232,232,232,232,232,247,247,247,247
+Region 9,Native Hawaiian/Other Pacific Islander,Cases,4,4,4,4,4,4,4,5,5,5,5
+Region 9,Black,Cases,1633,1633,1633,1633,1633,1633,1633,1963,1963,1963,1963
+Region 9,Asian,Cases,111,111,111,111,111,111,111,185,185,185,185
+Region 9,American Indian/Alaskan Native,Cases,17,17,17,17,17,17,17,19,19,19,19
+Region 9,Unknown,Deaths,0,0,0,0,0,0,0,0,0,0,0
+Region 9,Other,Deaths,0,0,0,0,0,0,0,0,0,0,0
+Region 9,Native Hawaiian/Other Pacific Islander,Deaths,0,0,0,0,0,0,0,0,0,0,0
+Region 9,Black,Deaths,75,75,75,75,75,75,75,76,76,76,76
+Region 9,Asian,Deaths,1,1,1,1,1,1,1,1,1,1,1
+Region 9,American Indian/Alaskan Native,Deaths,0,0,0,0,0,0,0,0,0,0,0
+Region 9,Other,Cases,426,426,426,426,426,426,426,524,524,524,524
+Region 9,White,Cases,3252,3252,3252,3252,3252,3252,3252,4141,4141,4141,4141
