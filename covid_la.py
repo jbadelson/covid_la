@@ -57,29 +57,29 @@ def la_covid(combined_url, deaths_parish_race_url, deaths_region_race_url, cases
     la_tract_suffix = '/FeatureServer/0/query?where=1%3D1&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=*&returnGeometry=true&returnCentroid=false&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson'
     la_tract_url = la_tract_prefix+tract+la_tract_suffix
 
-    dot = pd.DataFrame(esri_cleaner(cases_tests_dot_url))
-    dot['Lab_Collection_Date'] = pd.to_datetime(dot['Lab_Collection_Date'], unit='ms')
-    dot['Date'] = dot['Lab_Collection_Date'].apply(lambda x: x.strftime('%m/%d/%Y'))
+    dot = pd.read_excel('http://ldh.la.gov/assets/oph/Coronavirus/data/LA_COVID_TESTBYDAY_PARISH_PUBLICUSE.xlsx')
+    dot['Lab Collection Date'] = dot['Lab Collection Date'].apply(lambda x: x.strftime('%m/%d/%Y'))
+    
     dot_tests = pd.pivot(dot,
                    index='Parish',
-                   columns='Date',
-                   values='Daily_Test_Count')
+                   columns='Lab Collection Date',
+                   values='Daily Test Count')
     dot_tests.insert(0,'Category', '')
     dot_tests['Category'] = 'Tests'
     dot_cases = pd.pivot(dot,
                         index='Parish',
-                        columns='Date',
-                        values='Daily_Case_Count')
+                        columns='Lab Collection Date',
+                        values='Daily Case Count')
     dot_cases['Category'] = 'Cases'
     dot_neg_tests = pd.pivot(dot,
                         index='Parish',
-                        columns='Date',
-                        values='Daily_Negative_Test_Count')
+                        columns='Lab Collection Date',
+                        values='Daily Negative Test Count')
     dot_neg_tests['Category'] = 'Negative Tests'
     dot_pos_tests = pd.pivot(dot,
                             index='Parish',
-                            columns='Date',
-                            values='Daily_Positive_Test_Count')
+                            columns='Lab Collection Date',
+                            values='Daily Positive Test Count')
     dot_pos_tests['Category'] = 'Positive Tests'
     dot_tests.append(dot_cases).append(dot_neg_tests).append(dot_pos_tests).sort_values(by=['Parish', 'Category']).to_csv('data/cases_tests_dot.csv')
     print('Cases and tests by parish and date of test exported.')
