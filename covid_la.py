@@ -59,7 +59,7 @@ def la_covid(combined_url, deaths_parish_race_url, deaths_region_race_url, cases
 
     dot = pd.read_excel('http://ldh.la.gov/assets/oph/Coronavirus/data/LA_COVID_TESTBYDAY_PARISH_PUBLICUSE.xlsx')
     dot['Lab Collection Date'] = dot['Lab Collection Date'].apply(lambda x: x.strftime('%m/%d/%Y'))
-    
+
     dot_tests = pd.pivot(dot,
                    index='Parish',
                    columns='Lab Collection Date',
@@ -86,7 +86,7 @@ def la_covid(combined_url, deaths_parish_race_url, deaths_region_race_url, cases
     data = pd.DataFrame(esri_cleaner(combined_url))
     cases = data[data['Measure'] == 'Case Count'].copy()
     cases['Value'] = cases['Value'].fillna(0).astype(int)
-    cases = cases[['Group', 'Value']].rename(columns = {'Group' : 'County', 'Value' : date})
+    cases = cases[['Group_', 'Value']].rename(columns = {'Group_' : 'County', 'Value' : date})
     cases_file = csv_loader('cases.csv', date)
     cases_file.merge(cases,
                      on='County',
@@ -95,7 +95,7 @@ def la_covid(combined_url, deaths_parish_race_url, deaths_region_race_url, cases
 
     deaths = data[data['Measure'] == 'Deaths'].copy()
     deaths.loc[:, 'Value'] = deaths['Value'].fillna(0).apply(np.int64)
-    deaths = deaths[['Group', 'Value']].rename(columns = {'Group' : 'County', 'Value' : date})
+    deaths = deaths[['Group_', 'Value']].rename(columns = {'Group_' : 'County', 'Value' : date})
     probable = pd.DataFrame(data = {'County' : ['Probable (Statewide)'], date : probable})
     deaths = deaths.append(probable)
     deaths_file = csv_loader('deaths.csv', date)
@@ -187,10 +187,10 @@ def la_covid(combined_url, deaths_parish_race_url, deaths_region_race_url, cases
 
     tests_detail_file = csv_loader('tests.csv', date)
     tests_public = data[data['Measure'] == 'State Tests'].copy()
-    tests_public = tests_public.rename(columns = {'Value' : date, 'Group' : 'County'})
+    tests_public = tests_public.rename(columns = {'Value' : date, 'Group_' : 'County'})
     tests_public['Category'] = 'Public'
     tests_private = data[data['Measure'] == 'Commercial Tests'].copy()
-    tests_private = tests_private.rename(columns = {'Value' : date, 'Group' : 'County'})
+    tests_private = tests_private.rename(columns = {'Value' : date, 'Group_' : 'County'})
     tests_private['Category'] = 'Private'
     tests = tests_public[['County', 'Category', date]].append(tests_private[['County', 'Category', date]])
     tests_detail_file.merge(tests,
@@ -200,13 +200,13 @@ def la_covid(combined_url, deaths_parish_race_url, deaths_region_race_url, cases
     print('Tests exported.')
 
     case_demo = data[(data['Measure'].isin(['Age', 'Gender'])) & (data['ValueType'] == 'case')].copy()
-    case_demo = case_demo.rename(columns = {'Value' : date, 'Group' : 'Category'})
+    case_demo = case_demo.rename(columns = {'Value' : date, 'Group_' : 'Category'})
     case_demo_file = csv_loader('case_demo.csv', date)
     case_demo_file.merge(case_demo[['Category', date]], on='Category', how='outer').to_csv('data/case_demo.csv', index=False)
     print('Case demographics exported.')
 
     death_demo = data[(data['Measure'].isin(['Age', 'Gender'])) & (data['ValueType'] == 'death')].copy()
-    death_demo = death_demo.rename(columns = {'Value' : date, 'Group' : 'Category'})
+    death_demo = death_demo.rename(columns = {'Value' : date, 'Group_' : 'Category'})
     death_demo_file = csv_loader('death_demo.csv', date)
     death_demo_file.merge(death_demo[['Category', date]], on='Category', how='outer').to_csv('data/death_demo.csv', index=False)
     print('Death demographics exported.')
@@ -218,9 +218,9 @@ def la_covid(combined_url, deaths_parish_race_url, deaths_region_race_url, cases
                                   'Beds' : 'Hospital Beds',
                                   'ICU Beds' : 'ICU'}})
     capacity_total = capacity.groupby(['LDH Region', 'Measure']).agg({'Value' : 'sum'}).reset_index()
-    capacity_total['Group'] = 'Total'
+    capacity_total['Group_'] = 'Total'
     capacity = capacity.append(capacity_total, sort=True).rename(columns = {'Value' : date})
-    capacity['Category'] = capacity['Measure']+' '+capacity['Group']
+    capacity['Category'] = capacity['Measure']+' '+capacity['Group_']
     capacity_file = csv_loader('capacity.csv', date)
     capacity_file.merge(capacity[['LDH Region', 'Category', date]], on=['Category', 'LDH Region'], how='outer').to_csv('data/capacity.csv', index=False)
     print('Capacity exported.')
@@ -245,7 +245,7 @@ def la_covid(combined_url, deaths_parish_race_url, deaths_region_race_url, cases
     recovered = pd.read_csv('data/recovered.csv')
     recovered[date] = recoveries
     recovered.to_csv('data/recovered.csv', index = False)
-    
+
 
 combined_url = 'https://services5.arcgis.com/O5K6bb5dZVZcTo5M/arcgis/rest/services/Combined_COVID_Reporting/FeatureServer/0/query?where=1%3D1&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=*&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=json'
 la_deaths_parish_url = 'https://services5.arcgis.com/O5K6bb5dZVZcTo5M/ArcGIS/rest/services/Deaths_by_Race_by_Parish/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=false&f=pjson'
