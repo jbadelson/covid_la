@@ -141,19 +141,33 @@ def la_covid(combined_url, deaths_parish_race_url, deaths_region_race_url, cases
                              how='outer').to_csv('data/cases_deaths_by_race_region.csv', index=False)
     print('Deaths by race and region exported.')
 
-    tests_detail_file = csv_loader('tests.csv', date)
-    tests_antigen = data[data['Measure'] == 'Antigen Tests'].copy()
-    tests_antigen = tests_antigen.rename(columns = {'Value' : date, 'Group_' : 'County'})
-    tests_antigen['Category'] = 'Antigen Tests'
+    tests_molecular_file = csv_loader('tests_molecular.csv', date)
     tests_molecular = data[data['Measure'] == 'Molecular Tests'].copy()
     tests_molecular = tests_molecular.rename(columns = {'Value' : date, 'Group_' : 'County'})
     tests_molecular['Category'] = 'Molecular Tests'
-    tests = tests_antigen[['County', 'Category', date]].append(tests_molecular[['County', 'Category', date]])
-    tests_detail_file.merge(tests,
+    tests_molecular = tests_molecular[['County', 'Category', date]]
+    tests_molecular_file.merge(tests_molecular,
                             left_on=['County', 'Category'],
                             right_on=['County', 'Category'],
-                            how='outer').to_csv('data/tests.csv', index=False)
-    print('Tests exported.')
+                            how='outer').to_csv('data/tests_molecular.csv', index=False)
+    print('Molecular Tests exported.')
+
+    tests_antigen_file = csv_loader('tests_antigen.csv', date)
+    tests_antigen = data[data['Measure'] == 'Antigen Tests'].copy()
+    tests_antigen = tests_antigen.rename(columns = {'Value' : date, 'Group_' : 'County'})
+    tests_antigen['Category'] = 'Antigen Tests'
+    tests_antigen = tests_antigen[['County', 'Category', date]]
+    tests_antigen_file.merge(tests_antigen,
+                            left_on=['County', 'Category'],
+                            right_on=['County', 'Category'],
+                            how='outer').to_csv('data/tests_antigen.csv', index=False)
+
+    tests_file = csv_loader('tests.csv', date)
+    tests = tests_antigen[['County', 'Category', date]].append(tests_molecular[['County', 'Category', date]])
+    tests_file.merge(tests,
+                     left_on=['County', 'Category'],
+                     right_on=['County', 'Category'],
+                     how='outer').to_csv('data/tests.csv', index=False)
 
     cases = data[data['Measure'] == 'Confirmed Cases'].copy()
     cases['Value'] = cases['Value'].fillna(0).astype(int)
@@ -177,39 +191,39 @@ def la_covid(combined_url, deaths_parish_race_url, deaths_region_race_url, cases
     probable_cases = data[data['Measure'] == 'Probable Cases'].copy()
     probable_cases['Value'] = probable_cases['Value'].fillna(0).astype(int)
     probable_cases = probable_cases[['Group_', 'Value']].rename(columns = {'Group_' : 'County', 'Value' : date})
-    probable_cases_file = csv_loader('probable_cases.csv', date)
+    probable_cases_file = csv_loader('cases_probable.csv', date)
     probable_cases_file.merge(probable_cases,
                      on='County',
-                     how='outer').to_csv('data/probable_cases.csv', index=False)
+                     how='outer').to_csv('data/cases_probable.csv', index=False)
     print('Probable Cases exported.')
 
     probable_deaths = data[data['Measure'] == 'Probable Deaths'].copy()
     probable_deaths.loc[:, 'Value'] = probable_deaths['Value'].fillna(0).apply(np.int64)
     probable_deaths = probable_deaths[['Group_', 'Value']].rename(columns = {'Group_' : 'County', 'Value' : date})
 
-    probable_deaths_file = csv_loader('probable_deaths.csv', date)
+    probable_deaths_file = csv_loader('deaths_probable.csv', date)
     probable_deaths_file.merge(probable_deaths,
                       on='County',
-                      how='outer').to_csv('data/probable_deaths.csv', index=False)
+                      how='outer').to_csv('data/deaths_probable.csv', index=False)
     print('Probable Deaths exported.')
 
     total_cases = data[data['Measure'] == 'Total Cases'].copy()
     total_cases['Value'] = total_cases['Value'].fillna(0).astype(int)
     total_cases = total_cases[['Group_', 'Value']].rename(columns = {'Group_' : 'County', 'Value' : date})
-    total_cases_file = csv_loader('total_cases.csv', date)
+    total_cases_file = csv_loader('cases_total.csv', date)
     total_cases_file.merge(total_cases,
                      on='County',
-                     how='outer').to_csv('data/total_cases.csv', index=False)
+                     how='outer').to_csv('data/cases_total.csv', index=False)
     print('Total Cases exported.')
 
     total_deaths = data[data['Measure'] == 'Total Deaths'].copy()
     total_deaths.loc[:, 'Value'] = total_deaths['Value'].fillna(0).apply(np.int64)
     total_deaths = total_deaths[['Group_', 'Value']].rename(columns = {'Group_' : 'County', 'Value' : date})
 
-    total_deaths_file = csv_loader('total_deaths.csv', date)
+    total_deaths_file = csv_loader('deaths_total.csv', date)
     total_deaths_file.merge(total_deaths,
                       on='County',
-                      how='outer').to_csv('data/total_deaths.csv', index=False)
+                      how='outer').to_csv('data/deaths_total.csv', index=False)
     print('Total Deaths exported.')
 
     recovered_file = pd.read_csv('data/recovered.csv')
