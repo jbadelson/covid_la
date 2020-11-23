@@ -19,6 +19,21 @@ def csv_loader(file, date):
     return df
 
 def la_covid(combined_url, deaths_parish_race_url, deaths_region_race_url, cases_parish_race_url, cases_region_race_url, cases_tests_dot_url, date):
+    if datetime.today().weekday() == 2:
+        print("Today is Wednesday. Please enter new values.")
+        tract = str(input("URL for tract data (get URL at https://services5.arcgis.com/O5K6bb5dZVZcTo5M/ArcGIS/rest/services): "))
+        static_data = {"probable" : probable, "recovered" : recoveries, "tract" : tract}
+        with open("static_data.json", "w") as outfile:
+            json.dump(static_data, outfile)
+    else:
+        with open("static_data.json") as infile:
+            static_data = json.load(infile)
+            tract = static_data["tract"]
+
+
+    la_tract_prefix = 'https://services5.arcgis.com/O5K6bb5dZVZcTo5M/ArcGIS/rest/services/'
+    la_tract_suffix = '/FeatureServer/0/query?where=1%3D1&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=*&returnGeometry=true&returnCentroid=false&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson'
+    la_tract_url = la_tract_prefix+tract+la_tract_suffix
 
     data = pd.DataFrame(esri_cleaner(combined_url))
 
@@ -48,6 +63,29 @@ def la_covid(combined_url, deaths_parish_race_url, deaths_region_race_url, cases
     dot_pos_tests['Category'] = 'Positive Tests'
     dot_tests.append(dot_cases).append(dot_neg_tests).append(dot_pos_tests).sort_values(by=['Parish', 'Category']).to_csv('data/cases_tests_dot.csv')
     print('Cases and tests by parish and date of test exported.')
+
+    tract_week = pd.read_excel('https://ldh.la.gov/assets/oph/Coronavirus/data/LA_COVID_TESTBYWEEK_TRACT_PUBLICUSE.xlsx')
+    tract_cases = pd.pivot(tract_week,
+                            index='Tract',
+                            columns='Date for end of week',
+                            values='Weekly Case Count')
+    tract_cases['Category'] = 'Cases'
+    tract_neg_tests = pd.pivot(tract_week,
+                                index='Tract',
+                                columns='Date for end of week',
+                                values='Weekly Negative Test Count')
+    tract_neg_tests['Category'] = 'Negative Tests'
+    tract_pos_tests = pd.pivot(tract_week,
+                            index='Tract',
+                            columns='Date for end of week',
+                            values='Weekly Positive Test Count')
+    tract_pos_tests['Category'] = 'Positive Tests'
+    tract_tests = pd.pivot(tract_week,
+                            index='Tract',
+                            columns='Date for end of week',
+                            values='Weekly Test Count')
+    tract_tests['Category'] = 'Tests'
+    tract_week.append(tract_cases).append(tract_neg_tests).append(tract_pos_tests).sort_values(by=['Tract', 'Category']).to_csv('data/cases_tests_tracts.csv')
 
     case_demo = data[(data['Measure'].isin(['Age', 'Gender'])) & (data['ValueType'] == 'case')].copy()
     case_demo = case_demo.rename(columns = {'Value' : date, 'Group_' : 'Category'})
@@ -230,6 +268,13 @@ def la_covid(combined_url, deaths_parish_race_url, deaths_region_race_url, cases
     recovered_file[date] = data[data['Measure'] == 'Presumed Recovered']['Value'].values[0]
     recovered_file = recovered_file.to_csv('data/recovered.csv')
 
+    tracts = pd.DataFrame(esri_cleaner(la_tract_url))
+    tracts = tracts.rename(columns = {'TractID' : 'FIPS', 'CaseCount' : date})
+    tracts_file = csv_loader('tracts.csv', date)
+    tracts_file.merge(tracts[['FIPS', date]],
+                      on='FIPS',
+                      how='outer').to_csv('data/tracts.csv', index=False)
+    print('Tracts exported.')
     # deaths_parish = pd.DataFrame(esri_cleaner(deaths_parish_race_url))
     # for c in deaths_parish.iloc[:, 6:13].columns:
     #     deaths_parish[c] = pd.to_numeric(deaths_parish[c], errors='coerce')
