@@ -22,7 +22,7 @@ def la_covid(combined_url, deaths_parish_race_url, deaths_region_race_url, cases
     if datetime.today().weekday() == 2:
         print("Today is Wednesday. Please enter new values.")
         tract = str(input("URL for tract data (get URL at https://services5.arcgis.com/O5K6bb5dZVZcTo5M/ArcGIS/rest/services): "))
-        static_data = {"probable" : probable, "recovered" : recoveries, "tract" : tract}
+        static_data = {"tract" : tract}
         with open("static_data.json", "w") as outfile:
             json.dump(static_data, outfile)
     else:
