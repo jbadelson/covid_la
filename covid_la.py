@@ -145,18 +145,6 @@ def la_covid(combined_url, deaths_parish_race_url, deaths_region_race_url, cases
     onset.to_csv('data/symptoms_date_of_death.csv', index=False)
     print('Onset/Date of Death exported.')
 
-    # la_tract_prefix = 'https://services5.arcgis.com/O5K6bb5dZVZcTo5M/ArcGIS/rest/services/'
-    # la_tract_suffix = '/FeatureServer/0/query?where=1%3D1&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=*&returnGeometry=true&returnCentroid=false&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson'
-    # la_tract_url = la_tract_prefix+tract+la_tract_suffix
-    #
-    # tracts = pd.DataFrame(esri_cleaner(la_tract_url))
-    # tracts = tracts.rename(columns = {'TractID' : 'FIPS', 'CaseCount' : date})
-    # tracts_file = csv_loader('tracts.csv', date)
-    # tracts_file.merge(tracts[['FIPS', date]],
-    #                   on='FIPS',
-    #                   how='outer').to_csv('data/tracts.csv', index=False)
-    # print('Tracts exported.')
-
     cases_race_parish = pd.DataFrame(esri_cleaner(cases_parish_race_url))
     for c in cases_race_parish.iloc[:, 6:16].columns:
         cases_race_parish[c] = pd.to_numeric(cases_race_parish[c], errors='coerce')
@@ -186,7 +174,6 @@ def la_covid(combined_url, deaths_parish_race_url, deaths_region_race_url, cases
     cases_deaths_race_region = pd.DataFrame(esri_cleaner(cases_region_race_url))
     cases_deaths_race_region = (pd.melt(cases_deaths_race_region, id_vars=['LDH_Region', 'Race'], value_vars=['Deaths', 'Cases'])).sort_values(by='LDH_Region')
     cases_deaths_race_region = cases_deaths_race_region.rename(columns = {'value' : date})
-    # cases_deaths_region = cases_deaths_region.rename(columns = {'Deaths' : date})
     cases_deaths_race_region_file = csv_loader('cases_deaths_by_race_region.csv', date)
     cases_deaths_race_region_file.merge(cases_deaths_race_region[['LDH_Region', 'Race', 'variable', date]],
                              on=['LDH_Region', 'Race', 'variable'],
@@ -313,37 +300,6 @@ def la_covid(combined_url, deaths_parish_race_url, deaths_region_race_url, cases
     vaccines_file.merge(vaccines,
                         on='Category',
                         how='outer').to_csv('data/vaccines.csv', index=False)
-    # deaths_parish = pd.DataFrame(esri_cleaner(deaths_parish_race_url))
-    # for c in deaths_parish.iloc[:, 6:13].columns:
-    #     deaths_parish[c] = pd.to_numeric(deaths_parish[c], errors='coerce')
-    # deaths_parish = (pd.melt(deaths_parish,
-    #                          id_vars=['PFIPS',
-    #                                   'Parish',
-    #                                   'LDHH'],
-    #                          value_vars=['American_Indian_Alaskan_Native',
-    #                                      'Asian',
-    #                                      'Black',
-    #                                      'Native_Hawaiian_Other_Pacific_Islander',
-    #                                      'Other',
-    #                                      'Unknown',
-    #                                      'White'])
-    #                  .sort_values(by='PFIPS'))
-    # deaths_parish = deaths_parish.rename(columns = {'variable' : 'Race',
-    #                                                 'PFIPS' : 'FIPS',
-    #                                                 'value' : date})
-    # deaths_parish_file = csv_loader('deaths_by_race_parish.csv', date)
-    # deaths_parish_file.merge(deaths_parish[['FIPS', 'Race', date]],
-    #                          on=['FIPS', 'Race'],
-    #                          how='outer').to_csv('data/deaths_by_race_parish.csv', index=False)
-    # print('Deaths by race and parish exported.')
-
-    # deaths_region = pd.DataFrame(esri_cleaner(deaths_region_race_url))
-    # deaths_region = deaths_region.rename(columns = {'Deaths' : date})
-    # deaths_region_file = csv_loader('deaths_by_race_region.csv', date)
-    # deaths_region_file.merge(deaths_region[['LDH_Region', 'Race', date]],
-    #                          on=['LDH_Region', 'Race'],
-    #                          how='outer').to_csv('data/deaths_by_race_region.csv', index=False)
-    # print('Deaths by race and region exported.')
 
 combined_url = 'https://services5.arcgis.com/O5K6bb5dZVZcTo5M/ArcGIS/rest/services/test_this_sheet/FeatureServer/0/query?where=1%3D1&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=*&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token='
 la_deaths_parish_url = 'https://services5.arcgis.com/O5K6bb5dZVZcTo5M/ArcGIS/rest/services/Deaths_by_Race_by_Parish/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=false&f=pjson'
