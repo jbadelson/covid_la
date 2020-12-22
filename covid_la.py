@@ -281,7 +281,7 @@ def la_covid(combined_url, deaths_parish_race_url, deaths_region_race_url, cases
 
     recovered_file = pd.read_csv('data/recovered.csv')
     recovered_file[date] = data[data['Measure'] == 'Presumed Recovered']['Value'].values[0]
-    recovered_file = recovered_file.to_csv('data/recovered.csv', index=False)
+    recovered_file.to_csv('data/recovered.csv', index=False)
 
     tracts = pd.DataFrame(esri_cleaner(la_tract_url))
     tracts = tracts.rename(columns = {'TractID' : 'FIPS', 'CaseCount' : date})
