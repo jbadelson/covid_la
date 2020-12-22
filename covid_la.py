@@ -19,17 +19,16 @@ def csv_loader(file, date):
     return df
 
 def la_covid(combined_url, deaths_parish_race_url, deaths_region_race_url, cases_parish_race_url, cases_region_race_url, cases_tests_dot_url, date):
+    with open("static_data.json") as infile:
+        static_data = json.load(infile)
+
     if datetime.today().weekday() == 2:
         print("Today is Wednesday. Please enter new location of tract data.")
         tract = str(input("URL for tract data (get URL at https://services5.arcgis.com/O5K6bb5dZVZcTo5M/ArcGIS/rest/services): "))
-        with open("static_data.json") as infile:
-            static_data = json.load(infile)
         static_data["tract"] = tract
         with open("static_data.json", "w") as outfile:
             json.dump(static_data, outfile)
     elif datetime.today().weekday() == 1 or datetime.today().weekday() == 3:
-        with open("static_data.json") as infile:
-            static_data = json.load(infile)
         print("Please enter new vaccine information.")
         vacInitiated = int(input("Vaccine series initiated: ") or static_data["vacInitiated"])
         vacCompleted = int(input("Vaccine series completed: ") or static_data["vacCompleted"])
