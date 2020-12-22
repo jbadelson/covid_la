@@ -28,15 +28,15 @@ def la_covid(combined_url, deaths_parish_race_url, deaths_region_race_url, cases
         with open("static_data.json", "w") as outfile:
             json.dump(static_data, outfile)
     elif datetime.today().weekday() == 1 or datetime.today().weekday() == 3:
-        print("Please enter new vaccine information.")
-        vacInitiated = int(input("Vaccine series initiated: "))
-        vacCompleted = int(input("Vaccine series completed: "))
-        vacAdministered = int(input("Vaccine doses administered: "))
-        newVacAdministered = int(input("New vaccine doses administered since last update: "))
-        vacProviders = int(input("Providers enrolled: "))
-        vacDistPhase = str(input("Current distribution phase: "))
         with open("static_data.json") as infile:
             static_data = json.load(infile)
+        print("Please enter new vaccine information.")
+        vacInitiated = int(input("Vaccine series initiated: ") or static_data["vacInitiated"])
+        vacCompleted = int(input("Vaccine series completed: ") or static_data["vacCompleted"])
+        vacAdministered = int(input("Vaccine doses administered: ") or static_data["vacAdministered"])
+        newVacAdministered = int(input("New vaccine doses administered since last update: ") or static_data["newVacAdministered"])
+        vacProviders = int(input("Providers enrolled: ") or static_data["vacProviders"])
+        vacDistPhase = str(input("Current distribution phase: ") or static_data["vacDistPhase"])
         static_data["vacInitiated"] = vacInitiated
         static_data["vacCompleted"] = vacCompleted
         static_data["vacAdministered"] = vacAdministered
