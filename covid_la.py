@@ -20,20 +20,35 @@ def csv_loader(file, date):
 
 def la_covid(combined_url, deaths_parish_race_url, deaths_region_race_url, cases_parish_race_url, cases_region_race_url, cases_tests_dot_url, date):
     if datetime.today().weekday() == 2:
-        print("Today is Wednesday. Please enter new values.")
+        print("Today is Wednesday. Please enter new location of tract data.")
         tract = str(input("URL for tract data (get URL at https://services5.arcgis.com/O5K6bb5dZVZcTo5M/ArcGIS/rest/services): "))
-        static_data = {"tract" : tract}
-        with open("static_data.json", "w") as outfile:
-            json.dump(static_data, outfile)
-    else:
         with open("static_data.json") as infile:
             static_data = json.load(infile)
-            tract = static_data["tract"]
-
+        static_data["tract"] = tract
+        with open("static_data.json", "w") as outfile:
+            json.dump(static_data, outfile)
+    elif datetime.today().weekday() == 1 or datetime.today().weekday() == 3:
+        print("Please enter new vaccine information.")
+        vacInitiated = int(input("Vaccine series initiated: "))
+        vacCompleted = int(input("Vaccine series completed: "))
+        vacAdministered = int(input("Vaccine doses administered: "))
+        newVacAdministered = int(input("New vaccine doses administered since last update: "))
+        vacProviders = int(input("Providers enrolled: "))
+        vacDistPhase = str(input("Current distribution phase: "))
+        with open("static_data.json") as infile:
+            static_data = json.load(infile)
+        static_data["vacInitiated"] = vacInitiated
+        static_data["vacCompleted"] = vacCompleted
+        static_data["vacAdministered"] = vacAdministered
+        static_data["newVacAdministered"] = newVacAdministered
+        static_data["vacProviders"] = vacProviders
+        static_data["vacDistPhase"] = vacDistPhase
+        with open("static_data.json", "w") as outfile:
+            json.dump(static_data, outfile)
 
     la_tract_prefix = 'https://services5.arcgis.com/O5K6bb5dZVZcTo5M/ArcGIS/rest/services/'
     la_tract_suffix = '/FeatureServer/0/query?where=1%3D1&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=*&returnGeometry=true&returnCentroid=false&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson'
-    la_tract_url = la_tract_prefix+tract+la_tract_suffix
+    la_tract_url = la_tract_prefix+static_data["tract"]+la_tract_suffix
 
     data = pd.DataFrame(esri_cleaner(combined_url))
 
@@ -275,6 +290,30 @@ def la_covid(combined_url, deaths_parish_race_url, deaths_region_race_url, cases
                       on='FIPS',
                       how='outer').to_csv('data/tracts.csv', index=False)
     print('Tracts exported.')
+
+    vaccines = pd.DataFrame({
+                            "Category" :[
+                                            "Vaccines Initiated",
+                                            "Vaccines Completed",
+                                            "Vaccines Administered",
+                                            "New Vaccines Administered",
+                                            "Vaccine Providers",
+                                            "Vaccine Distribution Phase"
+                                        ],
+                            date :      [
+                                            static_data["vacInitiated"],
+                                            static_data["vacCompleted"],
+                                            static_data["vacAdministered"],
+                                            static_data["newVacAdministered"],
+                                            static_data["vacProviders"],
+                                            static_data["vacDistPhase"]
+                                        ]
+
+                            })
+    vaccines_file = csv_loader('vaccines.csv', date)
+    vaccines_file.merge(vaccines,
+                        on='Category',
+                        how='outer').to_csv('data/vaccines.csv', index=False)
     # deaths_parish = pd.DataFrame(esri_cleaner(deaths_parish_race_url))
     # for c in deaths_parish.iloc[:, 6:13].columns:
     #     deaths_parish[c] = pd.to_numeric(deaths_parish[c], errors='coerce')
