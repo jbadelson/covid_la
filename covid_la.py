@@ -18,7 +18,7 @@ def csv_loader(file, date):
         df = df.drop(columns = date)
     return df
 
-def la_covid(combined_url, deaths_parish_race_url, deaths_region_race_url, cases_parish_race_url, cases_region_race_url, cases_tests_dot_url, date):
+def la_covid(combined_url, deaths_parish_race_url, deaths_region_race_url, cases_parish_race_url, cases_region_race_url, cases_tests_dot_url, vaccines_url, date):
     with open("static_data.json") as infile:
         static_data = json.load(infile)
 
@@ -28,22 +28,22 @@ def la_covid(combined_url, deaths_parish_race_url, deaths_region_race_url, cases
         static_data["tract"] = tract
         with open("static_data.json", "w") as outfile:
             json.dump(static_data, outfile)
-    elif datetime.today().weekday() == 1 or datetime.today().weekday() == 3:
-        print("Please enter new vaccine information.")
-        vacInitiated = int(input("Vaccine series initiated: ") or static_data["vacInitiated"])
-        vacCompleted = int(input("Vaccine series completed: ") or static_data["vacCompleted"])
-        vacAdministered = int(input("Vaccine doses administered: ") or static_data["vacAdministered"])
-        newVacAdministered = int(input("New vaccine doses administered since last update: ") or static_data["newVacAdministered"])
-        vacProviders = int(input("Providers enrolled: ") or static_data["vacProviders"])
-        vacDistPhase = str(input("Current distribution phase: ") or static_data["vacDistPhase"])
-        static_data["vacInitiated"] = vacInitiated
-        static_data["vacCompleted"] = vacCompleted
-        static_data["vacAdministered"] = vacAdministered
-        static_data["newVacAdministered"] = newVacAdministered
-        static_data["vacProviders"] = vacProviders
-        static_data["vacDistPhase"] = vacDistPhase
-        with open("static_data.json", "w") as outfile:
-            json.dump(static_data, outfile)
+    # elif datetime.today().weekday() == 1 or datetime.today().weekday() == 3:
+    #     print("Please enter new vaccine information.")
+    #     vacInitiated = int(input("Vaccine series initiated: ") or static_data["vacInitiated"])
+    #     vacCompleted = int(input("Vaccine series completed: ") or static_data["vacCompleted"])
+    #     vacAdministered = int(input("Vaccine doses administered: ") or static_data["vacAdministered"])
+    #     newVacAdministered = int(input("New vaccine doses administered since last update: ") or static_data["newVacAdministered"])
+    #     vacProviders = int(input("Providers enrolled: ") or static_data["vacProviders"])
+    #     vacDistPhase = str(input("Current distribution phase: ") or static_data["vacDistPhase"])
+    #     static_data["vacInitiated"] = vacInitiated
+    #     static_data["vacCompleted"] = vacCompleted
+    #     static_data["vacAdministered"] = vacAdministered
+    #     static_data["newVacAdministered"] = newVacAdministered
+    #     static_data["vacProviders"] = vacProviders
+    #     static_data["vacDistPhase"] = vacDistPhase
+    #     with open("static_data.json", "w") as outfile:
+    #         json.dump(static_data, outfile)
 
     la_tract_prefix = 'https://services5.arcgis.com/O5K6bb5dZVZcTo5M/ArcGIS/rest/services/'
     la_tract_suffix = '/FeatureServer/0/query?where=1%3D1&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=*&returnGeometry=true&returnCentroid=false&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson'
@@ -277,25 +277,34 @@ def la_covid(combined_url, deaths_parish_race_url, deaths_region_race_url, cases
                       how='outer').to_csv('data/tracts.csv', index=False)
     print('Tracts exported.')
 
-    vaccines = pd.DataFrame({
-                            "Category" :[
-                                            "Vaccines Initiated",
-                                            "Vaccines Completed",
-                                            "Vaccines Administered",
-                                            "New Vaccines Administered",
-                                            "Vaccine Providers",
-                                            "Vaccine Distribution Phase"
-                                        ],
-                            date :      [
-                                            static_data["vacInitiated"],
-                                            static_data["vacCompleted"],
-                                            static_data["vacAdministered"],
-                                            static_data["newVacAdministered"],
-                                            static_data["vacProviders"],
-                                            static_data["vacDistPhase"]
-                                        ]
-
-                            })
+    vaccines = pd.DataFrame(esri_cleaner(vaccines_url))
+    vaccines['Category'] = vaccines['Measure']+' '+vaccines['Group_']
+    vaccines['Category'] =vaccines['Category'].replace({'Total Series Initiated N/A' : 'Statewide - Series Initiated',
+                                                      'Total Series Completed N/A' : 'Statewide - Series Completed',
+                                                      'Total Doses Administered N/A' : 'Statewide - Doses Administered',
+                                                      'Doses Since Last Update N/A' : 'Statewide - New Doses Administered',
+                                                      'Providers Enrolled N/A' : 'Statewide - Vaccine Providers',
+                                                      'Age - Series Initiated Age 0-4 Years' : 'Age - Series Initiated Age 0-4 Years (Pct)',
+                                                      'Age - Series Initiated Age 5-17 Years' : 'Age - Series Initiated Age 5-17 Years (Pct)',
+                                                        'Age - Series Initiated Age 18-29 Years' : 'Age - Series Initiated Age 18-29 Years (Pct)',
+                                                        'Age - Series Initiated Age 30-39 Years' : 'Age - Series Initiated Age 30-39 Years (Pct)',
+                                                        'Age - Series Initiated Age 40-49 Years' : 'Age - Series Initiated Age 40-49 Years (Pct)',
+                                                        'Age - Series Initiated Age 50-59 Years' : 'Age - Series Initiated Age 50-59 Years (Pct)',
+                                                        'Age - Series Initiated Age 60-69 Years' : 'Age - Series Initiated Age 60-69 Years (Pct)',
+                                                        'Age - Series Initiated Age 70+ Years' : 'Age - Series Initiated Age 70+ Years (Pct)',
+                                                        'Age - Series Initiated Age Unknown' : 'Age - Series Initiated Age Unknown (Pct)',
+                                                        'Gender - Series Initiated Female' : 'Gender - Series Initiated Female (Pct)',
+                                                        'Gender - Series Initiated Male' : 'Gender - Series Initiated Male (Pct)',
+                                                        'Gender - Series Initiated Unknown' : 'Gender - Series Initiated Unknown (Pct)',
+                                                        'Race - Series Initiated Asian' : 'Race - Series Initiated Asian (Pct)',
+                                                        'Race - Series Initiated Black' : 'Race - Series Initiated Black (Pct)',
+                                                        'Race - Series Initiated Native Hawaiian' : 'Race - Series Initiated Native Hawaiian (Pct)',
+                                                        'Race - Series Initiated American Indian' : 'Race - Series Initiated American Indian (Pct)',
+                                                        'Race - Series Initiated White' : 'Race - Series Initiated White (Pct)',
+                                                        'Race - Series Initiated Other' : 'Race - Series Initiated Other (Pct)',
+                                                        'Race - Series Initiated Unknown' : 'Race - Series Initiated Unknown (Pct)'})
+    vaccines = vaccines.set_index('Category')['Value']
+    vaccines = vaccines.rename(date)
     vaccines_file = csv_loader('vaccines.csv', date)
     vaccines_file.merge(vaccines,
                         on='Category',
@@ -307,5 +316,6 @@ la_deaths_region_url = 'https://services5.arcgis.com/O5K6bb5dZVZcTo5M/ArcGIS/res
 la_cases_parish_url = 'https://services5.arcgis.com/O5K6bb5dZVZcTo5M/ArcGIS/rest/services/Cases_and_Deaths_by_Race_by_Parish_and_Region/FeatureServer/0/query?where=1%3D1&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=*&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token='
 la_cases_region_url = 'https://services5.arcgis.com/O5K6bb5dZVZcTo5M/ArcGIS/rest/services/Case_Deaths_Race_Region_new/FeatureServer/0/query?where=1%3D1&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=*&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token='
 la_cases_tests_dot_url = 'https://services5.arcgis.com/O5K6bb5dZVZcTo5M/ArcGIS/rest/services/Parish_Case_and_Test_Counts_by_Collect_Date/FeatureServer/0/query?where=1%3D1&objectIds=&time=&resultType=none&outFields=*&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&sqlFormat=none&f=pjson&token='
+la_vaccines_url = 'https://services5.arcgis.com/O5K6bb5dZVZcTo5M/ArcGIS/rest/services/Louisiana_COVID_Vaccination_Information/FeatureServer/0/query?where=1%3D1&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=*&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token='
 update_date = '{d.month}/{d.day}/{d.year}'.format(d=datetime.now())
-la_covid(combined_url, la_deaths_parish_url, la_deaths_region_url, la_cases_parish_url, la_cases_region_url, la_cases_tests_dot_url, update_date)
+la_covid(combined_url, la_deaths_parish_url, la_deaths_region_url, la_cases_parish_url, la_cases_region_url, la_cases_tests_dot_url, la_vaccines_url, update_date)
