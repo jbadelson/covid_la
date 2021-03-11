@@ -279,7 +279,7 @@ def la_covid(combined_url, deaths_parish_race_url, deaths_region_race_url, cases
 
     vaccines = pd.DataFrame(esri_cleaner(vaccines_url))
     vaccines['Category'] = vaccines['Measure']+' '+vaccines['Group_']
-    vaccines['Category'] =vaccines['Category'].replace({'Total Series Initiated N/A' : 'Statewide - Series Initiated',
+    vaccines['Category'] = vaccines['Category'].replace({'Total Series Initiated N/A' : 'Statewide - Series Initiated',
                                                       'Total Series Completed N/A' : 'Statewide - Series Completed',
                                                       'Total Doses Administered N/A' : 'Statewide - Doses Administered',
                                                       'Doses Since Last Update N/A' : 'Statewide - New Doses Administered',
@@ -303,20 +303,20 @@ def la_covid(combined_url, deaths_parish_race_url, deaths_region_race_url, cases
                                                         'Race - Series Initiated White' : 'Race - Series Initiated White (Pct)',
                                                         'Race - Series Initiated Other' : 'Race - Series Initiated Other (Pct)',
                                                         'Race - Series Initiated Unknown' : 'Race - Series Initiated Unknown (Pct)'})
-    vaccines = vaccines.set_index('Category')['Value']
+    vaccines = vaccines[vaccines['Geography'] == 'State'].set_index('Category')['Value']
     vaccines_race_parish = pd.DataFrame(esri_cleaner('https://services5.arcgis.com/O5K6bb5dZVZcTo5M/ArcGIS/rest/services/Vaccinations_by_Race_by_Parish/FeatureServer/0/query?where=1%3D1&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=*&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token='))
 
-    vaccine_parish_total = pd.melt(vaccines_race_parish, id_vars=['Parish'], value_vars=['SeriesInt', 'SeriesComp', 'Total_2018pop','PercInt_Black', 'PercInt_White', 'PercInt_Other', 'PercInt_Unk', 'PercComp_Black', 'PercComp_White', 'PercComp_Other', 'PercComp_Unk', 'PercPop_Black', 'PercPop_White', 'PercPop_Other'])
+    vaccine_parish_total = pd.melt(vaccines_race_parish, id_vars=['Parish'], value_vars=['SeriesInt', 'SeriesComp', 'Total_2018pop','PercInt_Black', 'PercInt_White', 'PercInt_Other', 'PercInt_RaceUnk', 'PercComp_Black', 'PercComp_White', 'PercComp_Other', 'PercComp_RaceUnk', 'PercPop_Black', 'PercPop_White', 'PercPop_Other'])
     vaccine_parish_total['variable'] = vaccine_parish_total['variable'].replace({'SeriesInt' : 'Series Initiated',
                                                                      'SeriesComp' : 'Series Complete',
                                                                      'PercComp_Black' : 'Series Complete Black (Pct)',
                                                                      'PercComp_White' : 'Series Complete White (Pct)',
                                                                      'PercComp_Other' : 'Series Complete Other (Pct)',
-                                                                     'PercComp_Unk' : 'Series Complete Unknown (Pct)',
+                                                                     'PercComp_RaceUnk' : 'Series Complete Unknown (Pct)',
                                                                      'PercInt_Black' : 'Series Initiated Black (Pct)',
                                                                      'PercInt_White' : 'Series Initiated White (Pct)',
                                                                      'PercInt_Other' : 'Series Initiated Other (Pct)',
-                                                                     'PercInt_Unk' : 'Series Initiated Unknown (Pct)',
+                                                                     'PercInt_RaceUnk' : 'Series Initiated Unknown (Pct)',
                                                                      'PercPop_Black' : 'Population Black (Pct)',
                                                                      'PercPop_White' : 'Population White (Pct)',
                                                                      'PercPop_Other' : 'Population Other (Pct)',
