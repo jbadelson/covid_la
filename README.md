@@ -7,7 +7,7 @@ At the moment, I'm doing a full rewrite of this script and considering various a
 
 I don't know if anyone is still using the data contained in this repository. If you are, please get in touch with me at jadelson@theadvocate.com to ensure that I do not make any changes that will cause problems for your application.
 
-At this point I intend to update the scripts and data on Sunday, March 21, 2021. 
+At this point I intend to update the scripts and data on Sunday, March 21, 2021. I will continue updating in the current formats until then.
 
 ## Old description
 
