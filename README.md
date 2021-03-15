@@ -1,5 +1,16 @@
 # Tracking COVID-19 in Louisiana
 
+## Update (March 14, 2021):
+We're a year into the pandemic and it's time for a bit of an update to this repository. Keeping up with LDH's data and various other work has meant I haven't ever gotten around to fully documenting this code and the script itself is full of kludges that I've been meaning to fix for some time.
+
+At the moment, I'm doing a full rewrite of this script and considering various approaches for storing the data in the repository for ease of use. 
+
+I don't know if anyone is still using the data contained in this repository. If you are, please get in touch with me at jadelson@theadvocate.com to ensure that I do not make any changes that will cause problems for your application.
+
+At this point I intend to update the scripts and data on Sunday, March 21, 2021. I will continue updating in the current formats until then.
+
+## Old description
+
 This script accesses the ArcGIS Rest endpoints of the dashboard used by the Louisiana Department of Health to track the coronavirus/COVID-19 pandemic and add the latest data to csv files to preserve this data for time-series analysis.
 
 There are two important notes about the current data:
