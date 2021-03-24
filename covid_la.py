@@ -1,10 +1,129 @@
-import pandas as pd
-import json
+# TODO: Add long format?
+
+import os
+import sys
+
+module_path = os.path.abspath(os.path.join('code'))
+if module_path not in sys.path:
+    sys.path.append(module_path)
 from urllib.request import urlopen
-from datetime import datetime
-import numpy as np
-pd.options.display.max_rows = 500
-pd.options.display.max_columns = 500
+import json
+from datetime import datetime, timedelta
+import pandas as pd
+
+import logging
+
+
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
+log_date_fmt = "%Y-%m-%d %H:%M:%S"
+
+file_handler = logging.FileHandler(filename='covid_la.log', mode='w')
+stdout_handler = logging.StreamHandler(sys.stdout)
+
+file_handler.setLevel(logging.DEBUG)
+stdout_handler.setLevel(logging.DEBUG)
+
+file_log_format = logging.Formatter('[%(asctime)s] {%(filename)s:%(lineno)d} %(levelname)s - %(message)s', log_date_fmt)
+stdout_log_format = logging.Formatter('%(message)s')
+
+file_handler.setFormatter(file_log_format)
+stdout_handler.setFormatter(stdout_log_format)
+
+logger.addHandler(file_handler)
+logger.addHandler(stdout_handler)
+
+with open('static_data.json') as f:
+    static_data = json.load(f)
+
+
+update_date = datetime.now()
+if os.name == 'nt':
+    update_date_string = update_date.strftime('%#m/%#d/%#Y')
+else:
+    update_date_string = update_date.strftime('%-m/%-d/%Y')
+file_date = f'{update_date.year}{update_date.month}{update_date.day}'
+url_prefix = 'https://services5.arcgis.com/O5K6bb5dZVZcTo5M/ArcGIS/rest/services/'
+url_suffix = '/FeatureServer/0/query?where=1%3D1&outFields=*&f=pjson&token='
+
+
+def tract_date():
+    if datetime.today().weekday() >= 2:
+        return update_date - timedelta(days=update_date.weekday())
+    else:
+        return update_date - timedelta(days=update_date.weekday(), weeks=1)
+
+
+needed_datasets = {'cases_deaths_primary': 'test_this_sheet',  # Main LDH cases, deaths and test data
+                   'cases_deaths_parish': 'Cases_and_Deaths_by_Race_by_Parish_and_Region',
+                   'cases_deaths_region': 'Case_Deaths_Race_Region_new',
+                   'vaccine_primary': 'Louisiana_COVID_Vaccination_Information',
+                   'vaccine_parish': 'Vaccinations_by_Race_by_Parish',
+                   'tracts': 'LA_2018_Tracts_' + tract_date().strftime('%m%d%Y')}
+
+
+def get_datasets():
+    try:
+        url = 'https://services5.arcgis.com/O5K6bb5dZVZcTo5M/ArcGIS/rest/services?f=pjson'
+        data = urlopen(url).read()
+        current_ldh_datasets = []
+        for j in json.loads(data)['services']:
+            current_ldh_datasets.append(j['name'])
+        logger.info("Retrieved listing of current LDH datasets.")
+    except Exception as e:
+        logger.error('Failed to get LDH datasets')
+        logger.exception('Function get_datasets failed with exception')
+        logger.error(str(e))
+        sys.exit(1)
+    return current_ldh_datasets
+
+
+def compare_datasets(current_ldh_datasets):
+    try:
+        added = set(current_ldh_datasets) - set(static_data["prior_datasets"])
+        deleted = set(static_data["prior_datasets"]) - set(current_ldh_datasets)
+        logger.info("Comparing datasets list against known LDH datasets.")
+        if len(added) > 0:
+            logger.warning(f'Found {len(added)} new datasets:')
+            for a in added:
+                logger.info(f'    {a}')
+        else:
+            logger.info("There are no new datasets.")
+        if len(deleted) > 1:
+            logger.warning(f"Found {len(deleted)} deleted datasets.")
+            for d in deleted:
+                logger.info(f"    {d}")
+        else:
+            logger.info("There are no deleted datasets.")
+    except Exception as e:
+        logger.error('Failed to compare datasets')
+        logger.exception('Function compare_datasets failed with exception')
+        logger.error(str(e))
+        sys.exit(1)
+
+
+def check_datasets(current_ldh_datasets):
+    try:
+        logger.info("Checking to ensure all needed datasets are available.")
+        missing = []
+        for d in needed_datasets:
+            if needed_datasets[d] in current_ldh_datasets:
+                logger.info(f'FOUND: {needed_datasets[d]}')
+            else:
+                missing.append(needed_datasets[d])
+                logger.info(f"MISSING: {needed_datasets[d]}")
+
+        if len(missing) > 0:
+            logger.info('Datasets missing:')
+            for m in missing:
+                logger.info(f"    {m}")
+            logger.error('Missing needed datasets')
+            sys.exit(1)
+    except Exception as e:
+        logger.error('Failed to check datasets')
+        logger.exception('Function check_datasets failed with exception')
+        logger.error(str(e))
+        sys.exit(1)
 
 def esri_cleaner(url):
     data = urlopen(url).read()
@@ -13,328 +132,317 @@ def esri_cleaner(url):
     return formatted_json
 
 def csv_loader(file, date):
-    df = pd.read_csv('data/'+file, dtype={'FIPS' : object})
+    df = pd.read_csv(file, dtype={'FIPS': object})
     if date in df.columns:
-        df = df.drop(columns = date)
+        df = df.drop(columns=date)
     return df
 
-def la_covid(combined_url, deaths_parish_race_url, deaths_region_race_url, cases_parish_race_url, cases_region_race_url, cases_tests_dot_url, vaccines_url, date):
-    with open("static_data.json") as infile:
-        static_data = json.load(infile)
+def cases_deaths(cases_deaths_primary):
+    try:
+        categories = {'Confirmed Cases': 'cases',
+                      'Confirmed Deaths': 'deaths',
+                      'Probable Cases': 'cases_probable',
+                      'Probable Deaths': 'deaths_probable',
+                      'Total Cases': 'cases_total',
+                      'Total Deaths': 'deaths_total'}
+        for c in categories:
+            cdf = cases_deaths_primary[cases_deaths_primary['Measure'] == c].copy()
+            cdf['Value'] = cdf['Value'].fillna(0).astype(int)
+            cdf = cdf[['Group_', 'Value']].rename(columns={'Group_': 'County', 'Value': update_date_string})
+            cfile = csv_loader(f'data/{categories[c]}.csv', update_date_string)
+            cfile.merge(cdf,
+                        on='County',
+                        how='outer').to_csv(f'data/{categories[c]}.csv', index=False)
+            logger.info(f"COMPLETE: {c}")
+    except Exception as e:
+        logger.error('Failed to download cases and death data')
+        logger.exception('Function cases_deaths failed with exception')
+        logger.error(str(e))
+        sys.exit(1)
 
-    if datetime.today().weekday() == 2:
-        print("Today is Wednesday. Please enter new location of tract data.")
-        tract = str(input("URL for tract data (get URL at https://services5.arcgis.com/O5K6bb5dZVZcTo5M/ArcGIS/rest/services): "))
-        static_data["tract"] = tract
-        with open("static_data.json", "w") as outfile:
-            json.dump(static_data, outfile)
-    # elif datetime.today().weekday() == 1 or datetime.today().weekday() == 3:
-    #     print("Please enter new vaccine information.")
-    #     vacInitiated = int(input("Vaccine series initiated: ") or static_data["vacInitiated"])
-    #     vacCompleted = int(input("Vaccine series completed: ") or static_data["vacCompleted"])
-    #     vacAdministered = int(input("Vaccine doses administered: ") or static_data["vacAdministered"])
-    #     newVacAdministered = int(input("New vaccine doses administered since last update: ") or static_data["newVacAdministered"])
-    #     vacProviders = int(input("Providers enrolled: ") or static_data["vacProviders"])
-    #     vacDistPhase = str(input("Current distribution phase: ") or static_data["vacDistPhase"])
-    #     static_data["vacInitiated"] = vacInitiated
-    #     static_data["vacCompleted"] = vacCompleted
-    #     static_data["vacAdministered"] = vacAdministered
-    #     static_data["newVacAdministered"] = newVacAdministered
-    #     static_data["vacProviders"] = vacProviders
-    #     static_data["vacDistPhase"] = vacDistPhase
-    #     with open("static_data.json", "w") as outfile:
-    #         json.dump(static_data, outfile)
+def tests(cases_deaths_primary):
+    try:
+        categories = {'Molecular Tests': 'tests_molecular',
+                      'Antigen Tests': 'tests_antigen'}
+        tdf = csv_loader('data/tests.csv', update_date_string)
+        df = pd.DataFrame()
+        for c in categories:
+            cdf = cases_deaths_primary[cases_deaths_primary['Measure'] == c].copy()
+            cdf = cdf.rename(columns={'Value': update_date_string, 'Group_': 'County'})
+            cdf['Category'] = c
+            cdf = cdf[['County', 'Category', update_date_string]]
+            cfile = csv_loader(f"data/{categories[c]}.csv", update_date_string)
+            df = df.append(cdf)
+            (cfile
+             .merge(cdf,
+                    left_on=['County', 'Category'],
+                    right_on=['County', 'Category'],
+                    how='outer')
+             .to_csv(f"data/{categories[c]}.csv", index=False))
+            logger.info(f"COMPLETE: {c}")
+        tdf = (tdf
+               .merge(df,
+                      left_on=['County', 'Category'],
+                      right_on=['County', 'Category'],
+                      how='outer'))
+        tdf.to_csv('data/tests.csv', index=False)
+        logger.info(f"COMPLETE: Total tests")
+    except Exception as e:
+        logger.error('Failed to download test data')
+        logger.exception('Function tests failed with exception')
+        logger.error(str(e))
+        sys.exit(1)
 
-    la_tract_prefix = 'https://services5.arcgis.com/O5K6bb5dZVZcTo5M/ArcGIS/rest/services/'
-    la_tract_suffix = '/FeatureServer/0/query?where=1%3D1&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=*&returnGeometry=true&returnCentroid=false&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson'
-    la_tract_url = la_tract_prefix+static_data["tract"]+la_tract_suffix
+def demos(cases_deaths_primary):
+    try:
+        categories = {'case': 'case_demo',
+                      'death': 'death_demo'}
+        for c in categories:
+            cdf = cases_deaths_primary[
+                (cases_deaths_primary['Measure'].isin(['Age', 'Gender'])) & (cases_deaths_primary['ValueType'] == c)].copy()
+            cdf = cdf.rename(columns={'Value': update_date_string, 'Group_': 'Category'})
+            cfile = csv_loader(f"data/{categories[c]}.csv", update_date_string)
+            (cfile.merge(cdf[['Category', update_date_string]],
+                         on='Category',
+                         how='outer').to_csv(f'data/{categories[c]}.csv', index=False))
+            logger.info(f"COMPLETE: {c} demographics")
+    except Exception as e:
+        logger.error('Failed to download demographic data')
+        logger.exception('Function demos failed with exception')
+        logger.error(str(e))
+        sys.exit(1)
 
-    data = pd.DataFrame(esri_cleaner(combined_url))
+def timelines(cases_deaths_primary):
+    try:
+        categories = {'COVID-positive': 'hospitalizations',
+                      'Date of Death': 'symptoms_date_of_death'}
+        for c in categories:
+            cdf = cases_deaths_primary[cases_deaths_primary['Measure'] == c].copy()
+            cdf['Date'] = pd.to_datetime(cdf['Timeframe'])
+            if c == 'COVID-positive':
+                cdf = cdf.pivot(index='ValueType', columns='Date', values='Value')
+            else:
+                cdf = cdf.pivot(index='Measure', columns='Date', values='Value')
+            cdf.columns = cdf.columns.strftime('%m/%d/%Y')
+            cdf = cdf.reset_index().rename(columns={'ValueType': 'Category', 'Measure': 'Category'})
+            cdf.to_csv(f'data/{categories[c]}.csv', index=False)
+        logger.info(f"COMPLETE: Hospitalizations, ventilators and Date of Death")
+    except Exception as e:
+        logger.error('Failed to download hospitalizations, ventilators or date of death data')
+        logger.exception('Function timelines failed with exception')
+        logger.error(str(e))
+        sys.exit(1)
 
-    dot = pd.read_excel('http://ldh.la.gov/assets/oph/Coronavirus/data/LA_COVID_TESTBYDAY_PARISH_PUBLICUSE.xlsx')
-    dot['Lab Collection Date'] = dot['Lab Collection Date'].apply(lambda x: x.strftime('%m/%d/%Y'))
+def capacity(cases_deaths_primary):
+    try:
+        capacity = cases_deaths_primary[cases_deaths_primary['Measure'].isin(['Hospital Vents', 'Beds', 'ICU Beds'])].copy()
+        capacity['LDH Region'] = capacity['Geography'].str[4:]
+        capacity = capacity.replace({'Measure':
+                                         {'Hospital Vents': 'Ventilators',
+                                          'Beds': 'Hospital Beds',
+                                          'ICU Beds': 'ICU'}})
+        capacity_total = capacity.groupby(['LDH Region', 'Measure']).agg({'Value': 'sum'}).reset_index()
+        capacity_total['Group_'] = 'Total'
+        capacity = capacity.append(capacity_total, sort=True).rename(columns={'Value': update_date_string})
+        capacity['Category'] = capacity['Measure'] + ' ' + capacity['Group_']
+        capacity_file = csv_loader('data/capacity.csv', update_date_string)
+        capacity_file.merge(capacity[['LDH Region', 'Category', update_date_string]], on=['Category', 'LDH Region'],
+                            how='outer').to_csv('data/capacity.csv', index=False)
+        logger.info('COMPLETE: Capacity')
+    except Exception as e:
+        logger.error('Failed to download capacity data')
+        logger.exception('Function capacity failed with exception')
+        logger.error(str(e))
+        sys.exit(1)
 
-    dot_tests = pd.pivot(dot,
-                   index='Parish',
-                   columns='Lab Collection Date',
-                   values='Daily Test Count')
-    dot_tests.insert(0,'Category', '')
-    dot_tests['Category'] = 'Tests'
-    dot_cases = pd.pivot(dot,
-                        index='Parish',
-                        columns='Lab Collection Date',
-                        values='Daily Case Count')
-    dot_cases['Category'] = 'Cases'
-    dot_neg_tests = pd.pivot(dot,
-                        index='Parish',
-                        columns='Lab Collection Date',
-                        values='Daily Negative Test Count')
-    dot_neg_tests['Category'] = 'Negative Tests'
-    dot_pos_tests = pd.pivot(dot,
-                            index='Parish',
-                            columns='Lab Collection Date',
-                            values='Daily Positive Test Count')
-    dot_pos_tests['Category'] = 'Positive Tests'
-    dot_tests.append(dot_cases).append(dot_neg_tests).append(dot_pos_tests).sort_values(by=['Parish', 'Category']).to_csv('data/cases_tests_dot.csv')
-    print('Cases and tests by parish and date of test exported.')
+def recovered(cases_deaths_primary):
+    try:
+        recovered_file = pd.read_csv('data/recovered.csv')
+        recovered_file[update_date_string] = \
+        cases_deaths_primary[cases_deaths_primary['Measure'] == 'Presumed Recovered']['Value'].values[0]
+        recovered_file.to_csv('data/recovered.csv', index=False)
+        logger.info("COMPLETE: Recoveries")
+    except Exception as e:
+        logger.error('Failed to download recovery data')
+        logger.exception('Function recovered failed with exception')
+        logger.error(str(e))
+        sys.exit(1)
 
-    tract_week = pd.read_excel('https://ldh.la.gov/assets/oph/Coronavirus/data/LA_COVID_TESTBYWEEK_TRACT_PUBLICUSE.xlsx')
-    tract_cases = pd.pivot(tract_week,
-                            index='Tract',
-                            columns='Date for end of week',
-                            values='Weekly Case Count')
-    tract_cases['Category'] = 'Cases'
-    tract_neg_tests = pd.pivot(tract_week,
-                                index='Tract',
-                                columns='Date for end of week',
-                                values='Weekly Negative Test Count')
-    tract_neg_tests['Category'] = 'Negative Tests'
-    tract_pos_tests = pd.pivot(tract_week,
-                            index='Tract',
-                            columns='Date for end of week',
-                            values='Weekly Positive Test Count')
-    tract_pos_tests['Category'] = 'Positive Tests'
-    tract_tests = pd.pivot(tract_week,
-                            index='Tract',
-                            columns='Date for end of week',
-                            values='Weekly Test Count')
-    tract_tests['Category'] = 'Tests'
-    tract_week.append(tract_cases).append(tract_neg_tests).append(tract_pos_tests).sort_values(by=['Tract', 'Category']).to_csv('data/cases_tests_tracts.csv')
+def date_of_test():
+    try:
+        dot = pd.read_excel('http://ldh.la.gov/assets/oph/Coronavirus/data/LA_COVID_TESTBYDAY_PARISH_PUBLICUSE.xlsx')
+        dot['Lab Collection Date'] = dot['Lab Collection Date'].apply(lambda x: x.strftime('%m/%d/%Y'))
 
-    case_demo = data[(data['Measure'].isin(['Age', 'Gender'])) & (data['ValueType'] == 'case')].copy()
-    case_demo = case_demo.rename(columns = {'Value' : date, 'Group_' : 'Category'})
-    case_demo_file = csv_loader('case_demo.csv', date)
-    case_demo_file.merge(case_demo[['Category', date]], on='Category', how='outer').to_csv('data/case_demo.csv', index=False)
-    print('Case demographics exported.')
+        categories = ['Daily Test Count',
+                      'Daily Case Count',
+                      'Daily Negative Test Count',
+                      'Daily Positive Test Count', ]
 
-    death_demo = data[(data['Measure'].isin(['Age', 'Gender'])) & (data['ValueType'] == 'death')].copy()
-    death_demo = death_demo.rename(columns = {'Value' : date, 'Group_' : 'Category'})
-    death_demo_file = csv_loader('death_demo.csv', date)
-    death_demo_file.merge(death_demo[['Category', date]], on='Category', how='outer').to_csv('data/death_demo.csv', index=False)
-    print('Death demographics exported.')
+        df = pd.DataFrame()
 
-    capacity = data[data['Measure'].isin(['Hospital Vents', 'Beds', 'ICU Beds'])].copy()
-    capacity['LDH Region'] = capacity['Geography'].str[4:]
-    capacity = capacity.replace({'Measure' :
-                                 {'Hospital Vents' : 'Ventilators',
-                                  'Beds' : 'Hospital Beds',
-                                  'ICU Beds' : 'ICU'}})
-    capacity_total = capacity.groupby(['LDH Region', 'Measure']).agg({'Value' : 'sum'}).reset_index()
-    capacity_total['Group_'] = 'Total'
-    capacity = capacity.append(capacity_total, sort=True).rename(columns = {'Value' : date})
-    capacity['Category'] = capacity['Measure']+' '+capacity['Group_']
-    capacity_file = csv_loader('capacity.csv', date)
-    capacity_file.merge(capacity[['LDH Region', 'Category', date]], on=['Category', 'LDH Region'], how='outer').to_csv('data/capacity.csv', index=False)
-    print('Capacity exported.')
+        for c in categories:
+            cdf = pd.pivot(dot,
+                           index='Parish',
+                           columns='Lab Collection Date',
+                           values=c)
+            cdf.insert(0, 'Category', '')
+            cdf['Category'] = c
+            df = df.append(cdf)
+        df.sort_values(by=['Parish', 'Category']).to_csv('data/cases_tests_dot.csv')
+        logger.info(f'COMPLETE: Date of Test')
+    except Exception as e:
+        logger.error('Failed to date of test data')
+        logger.exception('Function date_of_test failed with exception')
+        logger.error(str(e))
+        sys.exit(1)
 
-    hosp = data[data['Measure'] == 'COVID-positive'].copy()
-    hosp['Date'] = pd.to_datetime(hosp['Timeframe'])
-    hosp = hosp.pivot(index='ValueType', columns='Date', values='Value')
-    hosp.columns = hosp.columns.strftime('%m/%d/%Y')
-    hosp = hosp.reset_index().rename(columns={'ValueType' : 'Category'})
-    hosp = hosp.replace({'ValueType' : {'hospitalized' : 'Hospitalized', 'on vent' : 'Ventilators'}})
-    hosp.to_csv('data/hospitalizations.csv', index=False)
-    print('Hospitalizations exported.')
+def tracts():
+    try:
+        tract_week = pd.read_excel(
+            'https://ldh.la.gov/assets/oph/Coronavirus/data/LA_COVID_TESTBYWEEK_TRACT_PUBLICUSE.xlsx')
+        categories = ['Weekly Case Count', 'Weekly Negative Test Count', 'Weekly Positive Test Count', 'Weekly Test Count']
+        df = pd.DataFrame()
+        for c in categories:
+            cdf = pd.pivot(tract_week,
+                           index='Tract',
+                           columns='Date for end of week',
+                           values=c)
+            cdf['Category'] = c
+            df = df.append(cdf)
+        df.sort_values(by=['Tract', 'Category']).to_csv('data/cases_tests_tracts.csv')
 
-    onset = data[data['Measure'].isin(['Onset Date', 'Date of Death'])].copy()
-    onset['Date'] = pd.to_datetime(onset['Timeframe'])
-    onset = onset.pivot(index='Measure', columns='Date', values='Value')
-    onset.columns = onset.columns.strftime('%m/%d/%Y')
-    onset = onset.reset_index().rename(columns={'Measure' : 'Category'})
-    onset = onset.replace({'Category' : {'Date of Death' : 'Deaths', 'Onset Date' : 'Cases'}})
-    onset.to_csv('data/symptoms_date_of_death.csv', index=False)
-    print('Onset/Date of Death exported.')
+        tracts = pd.DataFrame(esri_cleaner(url_prefix + needed_datasets['tracts'] + url_suffix))
+        tracts = tracts.rename(columns={'TractID': 'FIPS', 'CaseCount': update_date_string})
+        tracts_file = csv_loader('data/tracts.csv', update_date_string)
+        tracts_file.merge(tracts[['FIPS', update_date_string]],
+                          on='FIPS',
+                          how='outer').to_csv('data/tracts.csv', index=False)
+        logger.info('COMPLETE: Tracts')
+    except Exception as e:
+        logger.error('Failed to download tract data')
+        logger.exception('Function tracts failed with exception')
+        logger.error(str(e))
+        sys.exit(1)
 
-    cases_race_parish = pd.DataFrame(esri_cleaner(cases_parish_race_url))
-    for c in cases_race_parish.iloc[:, 6:16].columns:
-        cases_race_parish[c] = pd.to_numeric(cases_race_parish[c], errors='coerce')
-    cases_race_parish = (pd.melt(cases_race_parish,
-                              id_vars=['PFIPS',
-                                      'Parish',
-                                      'LDHH'],
-                              value_vars=['Deaths_Black',
-                                          'Deaths_White',
-                                          'Deaths_Other',
-                                          'Deaths_Unknown',
-                                          'Cases_Black',
-                                          'Cases_White',
-                                          'Cases_Other',
-                                          'Cases_Unknown'])
-                      .sort_values(by='PFIPS'))
-    cases_race_parish['PFIPS'] = cases_race_parish.astype(str)
-    cases_race_parish = cases_race_parish.rename(columns = {'variable' : 'Race',
-                                                    'PFIPS' : 'FIPS',
-                                                    'value' : date})
-    cases_race_parish_file = csv_loader('cases_deaths_by_race_parish.csv', date)
-    cases_race_parish_file.merge(cases_race_parish[['FIPS', 'Race', date]],
-                              on=['FIPS', 'Race'],
-                              how='outer').to_csv('data/cases_deaths_by_race_parish.csv', index=False)
-    print('Cases and Deaths by race and parish exported.')
+def vaccinations():
+    try:
+        vaccines = pd.DataFrame(esri_cleaner(url_prefix + needed_datasets['vaccine_primary'] + url_suffix))
+        vaccines['Category'] = vaccines['Measure']
+        vaccines_primary = vaccines[vaccines['ValueType'] == 'count'].copy()
+        vaccines_primary['Group_'] = vaccines_primary['Group_'].replace('N/A', 'State')
+        vaccines_primary = vaccines_primary[['Group_', 'Category', 'Value']].rename(
+            columns={'Value': update_date_string, 'Group_': 'Geography'})
+        vaccines_parish = pd.DataFrame(esri_cleaner(url_prefix + needed_datasets['vaccine_parish'] + url_suffix))
+        vaccines_parish['Geography'] = vaccines_parish['Parish']
+        vaccines_parish_init = vaccines_parish[['Geography', 'SeriesInt']].copy()
+        vaccines_parish_init['Category'] = 'Parish - Series Initiated'
+        vaccines_parish_init = vaccines_parish_init.rename(columns={'SeriesInt': update_date_string})
+        vaccines_parish_comp = vaccines_parish[['Geography', 'SeriesComp']].copy()
+        vaccines_parish_comp['Category'] = 'Parish - Series Completed'
+        vaccines_parish_comp = vaccines_parish_comp.rename(columns={'SeriesComp': update_date_string})
+        vaccines_file = csv_loader('data/vaccines.csv', update_date_string)
+        (vaccines_file
+         .merge(
+            vaccines_primary
+                .append(vaccines_parish_init)
+                .append(vaccines_parish_comp),
+            on=['Geography', 'Category'],
+            how='outer').to_csv('data/vaccines.csv', index=False))
+        vaccines_state_demo = vaccines[vaccines['ValueType'] == 'percentage'].copy()
+        vaccines_state_demo['Group_'] = vaccines_state_demo['Group_'].replace(static_data['age_replace'])
+        vaccines_state_demo['Category'] = vaccines_state_demo['Measure'] + ' : ' + vaccines_state_demo['Group_']
+        vaccines_state_demo['Value'] = vaccines_state_demo['Value'] / 100
+        vaccines_state_demo = vaccines_state_demo[['Geography', 'Category', 'Value']].rename(
+            columns={'Value': update_date_string})
+        vaccines_parish_demo = pd.melt(vaccines_parish, id_vars='Parish', value_vars=static_data['parish_demos'])
+        vaccines_parish_demo = vaccines_parish_demo.rename(columns={'variable': 'Category', 'value': update_date_string, 'Parish': 'Geography'})
+        vaccines_parish_demo['Category'] = vaccines_parish_demo['Category'].replace(static_data['parish_replace'])
+        vaccines_parish_demo[update_date_string] = vaccines_parish_demo[update_date_string] / 100
+        vaccines_demo = vaccines_state_demo.append(vaccines_parish_demo)
+        vaccines_demo_file = csv_loader('data/vaccines_demo.csv', update_date_string)
+        vaccines_demo_file.merge(vaccines_demo, on=['Geography', 'Category'], how='outer').to_csv('data/vaccines_demo.csv', index=False)
+        logger.info('COMPLETE: Vaccinations')
+    except Exception as e:
+        logger.error('FAILED: Vaccinations')
+        logger.exception('Vaccinations failed with exception')
+        logger.error(str(e))
+        sys.exit(1)
 
-    cases_deaths_race_region = pd.DataFrame(esri_cleaner(cases_region_race_url))
-    cases_deaths_race_region = (pd.melt(cases_deaths_race_region, id_vars=['LDH_Region', 'Race'], value_vars=['Deaths', 'Cases'])).sort_values(by='LDH_Region')
-    cases_deaths_race_region = cases_deaths_race_region.rename(columns = {'value' : date})
-    cases_deaths_race_region_file = csv_loader('cases_deaths_by_race_region.csv', date)
-    cases_deaths_race_region_file.merge(cases_deaths_race_region[['LDH_Region', 'Race', 'variable', date]],
-                             on=['LDH_Region', 'Race', 'variable'],
-                             how='outer').to_csv('data/cases_deaths_by_race_region.csv', index=False)
-    print('Deaths by race and region exported.')
+def case_death_race():
+    try:
+        cases_race_parish = pd.DataFrame(esri_cleaner(url_prefix + needed_datasets['cases_deaths_parish'] + url_suffix))
+        for c in cases_race_parish.iloc[:, 6:16].columns:
+            cases_race_parish[c] = pd.to_numeric(cases_race_parish[c], errors='coerce')
+        cases_race_parish = (pd.melt(cases_race_parish,
+                                     id_vars=['PFIPS',
+                                              'Parish',
+                                              'LDHH'],
+                                     value_vars=['Deaths_Black',
+                                                 'Deaths_White',
+                                                 'Deaths_Other',
+                                                 'Deaths_Unknown',
+                                                 'Cases_Black',
+                                                 'Cases_White',
+                                                 'Cases_Other',
+                                                 'Cases_Unknown'])
+                             .sort_values(by='PFIPS'))
+        cases_race_parish['PFIPS'] = cases_race_parish.astype(str)
+        cases_race_parish = cases_race_parish.rename(columns={'variable': 'Race',
+                                                              'PFIPS': 'FIPS',
+                                                              'value': update_date_string})
+        cases_race_parish_file = csv_loader('data/cases_deaths_by_race_parish.csv', update_date_string)
+        cases_race_parish_file.merge(cases_race_parish[['FIPS', 'Race', update_date_string]],
+                                     on=['FIPS', 'Race'],
+                                     how='outer').to_csv('data/cases_deaths_by_race_parish.csv', index=False)
+        logger.info('COMPLETED: Cases and deaths by race and parish')
 
-    tests_molecular_file = csv_loader('tests_molecular.csv', date)
-    tests_molecular = data[data['Measure'] == 'Molecular Tests'].copy()
-    tests_molecular = tests_molecular.rename(columns = {'Value' : date, 'Group_' : 'County'})
-    tests_molecular['Category'] = 'Molecular Tests'
-    tests_molecular = tests_molecular[['County', 'Category', date]]
-    tests_molecular_file.merge(tests_molecular,
-                            left_on=['County', 'Category'],
-                            right_on=['County', 'Category'],
-                            how='outer').to_csv('data/tests_molecular.csv', index=False)
-    print('Molecular Tests exported.')
+        cases_deaths_race_region = pd.DataFrame(
+            esri_cleaner(url_prefix + needed_datasets['cases_deaths_region'] + url_suffix))
+        cases_deaths_race_region = (
+            pd.melt(cases_deaths_race_region, id_vars=['LDH_Region', 'Race'], value_vars=['Deaths', 'Cases'])).sort_values(
+            by='LDH_Region')
+        cases_deaths_race_region = cases_deaths_race_region.rename(columns={'value': update_date_string})
+        cases_deaths_race_region_file = csv_loader('data/cases_deaths_by_race_region.csv', update_date_string)
+        cases_deaths_race_region_file.merge(
+            cases_deaths_race_region[['LDH_Region', 'Race', 'variable', update_date_string]],
+            on=['LDH_Region', 'Race', 'variable'],
+            how='outer').to_csv('data/cases_deaths_by_race_region.csv', index=False)
+        logger.info('COMPLETED: Cases and deaths by race and region')
+    except Exception as e:
+        logger.error('Failed to case and death by parish and region data')
+        logger.exception('Function case_death_race failed with exception')
+        logger.error(str(e))
+        sys.exit(1)
 
-    tests_antigen_file = csv_loader('tests_antigen.csv', date)
-    tests_antigen = data[data['Measure'] == 'Antigen Tests'].copy()
-    tests_antigen = tests_antigen.rename(columns = {'Value' : date, 'Group_' : 'County'})
-    tests_antigen['Category'] = 'Antigen Tests'
-    tests_antigen = tests_antigen[['County', 'Category', date]]
-    tests_antigen_file.merge(tests_antigen,
-                            left_on=['County', 'Category'],
-                            right_on=['County', 'Category'],
-                            how='outer').to_csv('data/tests_antigen.csv', index=False)
+def data_download(update_date):
+    try:
+        vaccinations()
+        cases_deaths_primary = pd.DataFrame(esri_cleaner(url_prefix + needed_datasets['cases_deaths_primary'] + url_suffix))
+        cases_deaths(cases_deaths_primary)
+        tests(cases_deaths_primary)
+        demos(cases_deaths_primary)
+        timelines(cases_deaths_primary)
+        capacity(cases_deaths_primary)
+        recovered(cases_deaths_primary)
+        date_of_test()
+        tracts()
+        case_death_race()
+    except Exception as e:
+        logger.exception('Function data_download failed with exception')
+        logger.error(str(e))
+        sys.exit(1)
 
-    tests_file = csv_loader('tests.csv', date)
-    tests = tests_antigen[['County', 'Category', date]].append(tests_molecular[['County', 'Category', date]])
-    tests_file.merge(tests,
-                     left_on=['County', 'Category'],
-                     right_on=['County', 'Category'],
-                     how='outer').to_csv('data/tests.csv', index=False)
 
-    cases = data[data['Measure'] == 'Confirmed Cases'].copy()
-    cases['Value'] = cases['Value'].fillna(0).astype(int)
-    cases = cases[['Group_', 'Value']].rename(columns = {'Group_' : 'County', 'Value' : date})
-    cases_file = csv_loader('cases.csv', date)
-    cases_file.merge(cases,
-                     on='County',
-                     how='outer').to_csv('data/cases.csv', index=False)
-    print('Cases exported.')
+def main():
+    try:
+        current_ldh_datasets = get_datasets()
+        compare_datasets(current_ldh_datasets)
+        check_datasets(current_ldh_datasets)
+        data_download(update_date_string)
+    except Exception as e:
+        logger.exception('Function main failed with exception')
+        logger.error(str(e))
+        sys.exit(1)
 
-    deaths = data[data['Measure'] == 'Confirmed Deaths'].copy()
-    deaths.loc[:, 'Value'] = deaths['Value'].fillna(0).apply(np.int64)
-    deaths = deaths[['Group_', 'Value']].rename(columns = {'Group_' : 'County', 'Value' : date})
-
-    deaths_file = csv_loader('deaths.csv', date)
-    deaths_file.merge(deaths,
-                      on='County',
-                      how='outer').to_csv('data/deaths.csv', index=False)
-    print('Deaths exported.')
-
-    probable_cases = data[data['Measure'] == 'Probable Cases'].copy()
-    probable_cases['Value'] = probable_cases['Value'].fillna(0).astype(int)
-    probable_cases = probable_cases[['Group_', 'Value']].rename(columns = {'Group_' : 'County', 'Value' : date})
-    probable_cases_file = csv_loader('cases_probable.csv', date)
-    probable_cases_file.merge(probable_cases,
-                     on='County',
-                     how='outer').to_csv('data/cases_probable.csv', index=False)
-    print('Probable Cases exported.')
-
-    probable_deaths = data[data['Measure'] == 'Probable Deaths'].copy()
-    probable_deaths.loc[:, 'Value'] = probable_deaths['Value'].fillna(0).apply(np.int64)
-    probable_deaths = probable_deaths[['Group_', 'Value']].rename(columns = {'Group_' : 'County', 'Value' : date})
-
-    probable_deaths_file = csv_loader('deaths_probable.csv', date)
-    probable_deaths_file.merge(probable_deaths,
-                      on='County',
-                      how='outer').to_csv('data/deaths_probable.csv', index=False)
-    print('Probable Deaths exported.')
-
-    total_cases = data[data['Measure'] == 'Total Cases'].copy()
-    total_cases['Value'] = total_cases['Value'].fillna(0).astype(int)
-    total_cases = total_cases[['Group_', 'Value']].rename(columns = {'Group_' : 'County', 'Value' : date})
-    total_cases_file = csv_loader('cases_total.csv', date)
-    total_cases_file.merge(total_cases,
-                     on='County',
-                     how='outer').to_csv('data/cases_total.csv', index=False)
-    print('Total Cases exported.')
-
-    total_deaths = data[data['Measure'] == 'Total Deaths'].copy()
-    total_deaths.loc[:, 'Value'] = total_deaths['Value'].fillna(0).apply(np.int64)
-    total_deaths = total_deaths[['Group_', 'Value']].rename(columns = {'Group_' : 'County', 'Value' : date})
-
-    total_deaths_file = csv_loader('deaths_total.csv', date)
-    total_deaths_file.merge(total_deaths,
-                      on='County',
-                      how='outer').to_csv('data/deaths_total.csv', index=False)
-    print('Total Deaths exported.')
-
-    recovered_file = pd.read_csv('data/recovered.csv')
-    recovered_file[date] = data[data['Measure'] == 'Presumed Recovered']['Value'].values[0]
-    recovered_file.to_csv('data/recovered.csv', index=False)
-
-    tracts = pd.DataFrame(esri_cleaner(la_tract_url))
-    tracts = tracts.rename(columns = {'TractID' : 'FIPS', 'CaseCount' : date})
-    tracts_file = csv_loader('tracts.csv', date)
-    tracts_file.merge(tracts[['FIPS', date]],
-                      on='FIPS',
-                      how='outer').to_csv('data/tracts.csv', index=False)
-    print('Tracts exported.')
-
-    vaccines = pd.DataFrame(esri_cleaner(vaccines_url))
-    vaccines['Category'] = vaccines['Measure']+' '+vaccines['Group_']
-    vaccines['Category'] = vaccines['Category'].replace({'Total Series Initiated N/A' : 'Statewide - Series Initiated',
-                                                      'Total Series Completed N/A' : 'Statewide - Series Completed',
-                                                      'Total Doses Administered N/A' : 'Statewide - Doses Administered',
-                                                      'Doses Since Last Update N/A' : 'Statewide - New Doses Administered',
-                                                      'Providers Enrolled N/A' : 'Statewide - Vaccine Providers',
-                                                      'Age - Series Initiated Age 0-4 Years' : 'Age - Series Initiated Age 0-4 Years (Pct)',
-                                                      'Age - Series Initiated Age 5-17 Years' : 'Age - Series Initiated Age 5-17 Years (Pct)',
-                                                        'Age - Series Initiated Age 18-29 Years' : 'Age - Series Initiated Age 18-29 Years (Pct)',
-                                                        'Age - Series Initiated Age 30-39 Years' : 'Age - Series Initiated Age 30-39 Years (Pct)',
-                                                        'Age - Series Initiated Age 40-49 Years' : 'Age - Series Initiated Age 40-49 Years (Pct)',
-                                                        'Age - Series Initiated Age 50-59 Years' : 'Age - Series Initiated Age 50-59 Years (Pct)',
-                                                        'Age - Series Initiated Age 60-69 Years' : 'Age - Series Initiated Age 60-69 Years (Pct)',
-                                                        'Age - Series Initiated Age 70+ Years' : 'Age - Series Initiated Age 70+ Years (Pct)',
-                                                        'Age - Series Initiated Age Unknown' : 'Age - Series Initiated Age Unknown (Pct)',
-                                                        'Gender - Series Initiated Female' : 'Gender - Series Initiated Female (Pct)',
-                                                        'Gender - Series Initiated Male' : 'Gender - Series Initiated Male (Pct)',
-                                                        'Gender - Series Initiated Unknown' : 'Gender - Series Initiated Unknown (Pct)',
-                                                        'Race - Series Initiated Asian' : 'Race - Series Initiated Asian (Pct)',
-                                                        'Race - Series Initiated Black' : 'Race - Series Initiated Black (Pct)',
-                                                        'Race - Series Initiated Native Hawaiian' : 'Race - Series Initiated Native Hawaiian (Pct)',
-                                                        'Race - Series Initiated American Indian' : 'Race - Series Initiated American Indian (Pct)',
-                                                        'Race - Series Initiated White' : 'Race - Series Initiated White (Pct)',
-                                                        'Race - Series Initiated Other' : 'Race - Series Initiated Other (Pct)',
-                                                        'Race - Series Initiated Unknown' : 'Race - Series Initiated Unknown (Pct)'})
-    vaccines = vaccines[vaccines['Geography'] == 'State'].set_index('Category')['Value']
-    vaccines_race_parish = pd.DataFrame(esri_cleaner('https://services5.arcgis.com/O5K6bb5dZVZcTo5M/ArcGIS/rest/services/Vaccinations_by_Race_by_Parish/FeatureServer/0/query?where=1%3D1&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=*&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token='))
-
-    vaccine_parish_total = pd.melt(vaccines_race_parish, id_vars=['Parish'], value_vars=['SeriesInt', 'SeriesComp', 'Total_2018pop','PercInt_Black', 'PercInt_White', 'PercInt_Other', 'PercInt_RaceUnk', 'PercComp_Black', 'PercComp_White', 'PercComp_Other', 'PercComp_RaceUnk', 'PercPop_Black', 'PercPop_White', 'PercPop_Other'])
-    vaccine_parish_total['variable'] = vaccine_parish_total['variable'].replace({'SeriesInt' : 'Series Initiated',
-                                                                     'SeriesComp' : 'Series Complete',
-                                                                     'PercComp_Black' : 'Series Complete Black (Pct)',
-                                                                     'PercComp_White' : 'Series Complete White (Pct)',
-                                                                     'PercComp_Other' : 'Series Complete Other (Pct)',
-                                                                     'PercComp_RaceUnk' : 'Series Complete Unknown (Pct)',
-                                                                     'PercInt_Black' : 'Series Initiated Black (Pct)',
-                                                                     'PercInt_White' : 'Series Initiated White (Pct)',
-                                                                     'PercInt_Other' : 'Series Initiated Other (Pct)',
-                                                                     'PercInt_RaceUnk' : 'Series Initiated Unknown (Pct)',
-                                                                     'PercPop_Black' : 'Population Black (Pct)',
-                                                                     'PercPop_White' : 'Population White (Pct)',
-                                                                     'PercPop_Other' : 'Population Other (Pct)',
-                                                                     'Total_2018pop' : 'Total Population'})
-    vaccine_parish_total['Category'] = 'Race - '+vaccine_parish_total['Parish']+' - '+vaccine_parish_total['variable']
-    vaccine_parish_total = vaccine_parish_total.set_index('Category')['value']
-    vaccines = vaccines.append(vaccine_parish_total).rename(date)
-    vaccines_file = csv_loader('vaccines.csv', date)
-    vaccines_file.merge(vaccines,
-                        on='Category',
-                        how='outer').to_csv('data/vaccines.csv', index=False)
-
-combined_url = 'https://services5.arcgis.com/O5K6bb5dZVZcTo5M/ArcGIS/rest/services/test_this_sheet/FeatureServer/0/query?where=1%3D1&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=*&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token='
-la_deaths_parish_url = 'https://services5.arcgis.com/O5K6bb5dZVZcTo5M/ArcGIS/rest/services/Deaths_by_Race_by_Parish/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=false&f=pjson'
-la_deaths_region_url = 'https://services5.arcgis.com/O5K6bb5dZVZcTo5M/ArcGIS/rest/services/Deaths_by_Race_by_Region/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=false&f=pjson'
-la_cases_parish_url = 'https://services5.arcgis.com/O5K6bb5dZVZcTo5M/ArcGIS/rest/services/Cases_and_Deaths_by_Race_by_Parish_and_Region/FeatureServer/0/query?where=1%3D1&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=*&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token='
-la_cases_region_url = 'https://services5.arcgis.com/O5K6bb5dZVZcTo5M/ArcGIS/rest/services/Case_Deaths_Race_Region_new/FeatureServer/0/query?where=1%3D1&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=*&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token='
-la_cases_tests_dot_url = 'https://services5.arcgis.com/O5K6bb5dZVZcTo5M/ArcGIS/rest/services/Parish_Case_and_Test_Counts_by_Collect_Date/FeatureServer/0/query?where=1%3D1&objectIds=&time=&resultType=none&outFields=*&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&sqlFormat=none&f=pjson&token='
-la_vaccines_url = 'https://services5.arcgis.com/O5K6bb5dZVZcTo5M/ArcGIS/rest/services/Louisiana_COVID_Vaccination_Information/FeatureServer/0/query?where=1%3D1&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&resultType=none&distance=0.0&units=esriSRUnit_Meter&returnGeodetic=false&outFields=*&returnGeometry=true&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=false&cacheHint=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=&returnZ=false&returnM=false&returnExceededLimitFeatures=true&quantizationParameters=&sqlFormat=none&f=pjson&token='
-update_date = '{d.month}/{d.day}/{d.year}'.format(d=datetime.now())
-la_covid(combined_url, la_deaths_parish_url, la_deaths_region_url, la_cases_parish_url, la_cases_region_url, la_cases_tests_dot_url, la_vaccines_url, update_date)
+if __name__ == "__main__":
+    main()
