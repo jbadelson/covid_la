@@ -360,7 +360,7 @@ def vaccinations():
         vaccines_parish_demo[update_date_string] = vaccines_parish_demo[update_date_string] / 100
         vaccines_demo = vaccines_state_demo.append(vaccines_parish_demo)
         vaccines_demo_file = csv_loader('data/vaccines_demo.csv', update_date_string)
-        vaccines_demo_file.merge(vaccines_demo, on=['Geography', 'Category'], how='outer').to_csv('data/vaccines_demo.csv', index=False)
+        vaccines_demo_file.merge(vaccines_demo, on=['Geography', 'Category'], how='outer').to_csv('data/vaccines_demo.csv', float_format='%.10f', index=False)
         logger.info('COMPLETE: Vaccinations')
     except Exception as e:
         logger.error('FAILED: Vaccinations')
