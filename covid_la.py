@@ -1,3 +1,4 @@
+#!env/bin/python
 # TODO: Add long format?
 
 import os
@@ -393,7 +394,7 @@ def case_death_race():
         cases_race_parish_file.merge(cases_race_parish[['FIPS', 'Race', update_date_string]],
                                      on=['FIPS', 'Race'],
                                      how='outer').to_csv('data/cases_deaths_by_race_parish.csv', index=False)
-        logger.info('COMPLETED: Cases and deaths by race and parish')
+        logger.info('COMPLETE: Cases and deaths by race and parish')
 
         cases_deaths_race_region = pd.DataFrame(
             esri_cleaner(url_prefix + needed_datasets['cases_deaths_region'] + url_suffix))
@@ -406,7 +407,7 @@ def case_death_race():
             cases_deaths_race_region[['LDH_Region', 'Race', 'variable', update_date_string]],
             on=['LDH_Region', 'Race', 'variable'],
             how='outer').to_csv('data/cases_deaths_by_race_region.csv', index=False)
-        logger.info('COMPLETED: Cases and deaths by race and region')
+        logger.info('COMPLETE: Cases and deaths by race and region')
     except Exception as e:
         logger.error('Failed to case and death by parish and region data')
         logger.exception('Function case_death_race failed with exception')
