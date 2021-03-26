@@ -54,11 +54,13 @@ def tract_date():
         return update_date - timedelta(days=update_date.weekday(), weeks=1)
 
 
-needed_datasets = {'cases_deaths_primary': 'test_this_sheet',  # Main LDH cases, deaths and test data
-                   'cases_deaths_parish': 'Cases_and_Deaths_by_Race_by_Parish_and_Region',
-                   'cases_deaths_region': 'Case_Deaths_Race_Region_new',
-                   'vaccine_primary': 'Louisiana_COVID_Vaccination_Information',
-                   'vaccine_parish': 'Vaccinations_by_Race_by_Parish',
+needed_datasets = {'cases_deaths_primary' : 'test_this_sheet',  # Main LDH cases, deaths and test data
+                   'cases_deaths_parish' : 'Cases_and_Deaths_by_Race_by_Parish_and_Region',
+                   'cases_deaths_region' : 'Case_Deaths_Race_Region_new',
+                   'vaccine_primary' : 'Louisiana_COVID_Vaccination_Information',
+                   'vaccine_parish' : 'Vaccinations_by_Race_by_Parish',
+                   'vaccine_tract': 'Louisiana_Vaccinations_by_Tract',
+                   'vaccine_full_demo' : 'Louisiana_Vaccination_Full_Demographics',
                    'tracts': 'LA_2018_Tracts_' + tract_date().strftime('%m%d%Y')}
 
 
@@ -186,7 +188,7 @@ def tests(cases_deaths_primary):
                       right_on=['County', 'Category'],
                       how='outer'))
         tdf.to_csv('data/tests.csv', index=False)
-        logger.info(f"COMPLETE: Total tests")
+        logger.info("COMPLETE: Total tests")
     except Exception as e:
         logger.error('Failed to download test data')
         logger.exception('Function tests failed with exception')
@@ -226,7 +228,7 @@ def timelines(cases_deaths_primary):
             cdf.columns = cdf.columns.strftime('%m/%d/%Y')
             cdf = cdf.reset_index().rename(columns={'ValueType': 'Category', 'Measure': 'Category'})
             cdf.to_csv(f'data/{categories[c]}.csv', index=False)
-        logger.info(f"COMPLETE: Hospitalizations, ventilators and Date of Death")
+        logger.info("COMPLETE: Hospitalizations, ventilators and Date of Death")
     except Exception as e:
         logger.error('Failed to download hospitalizations, ventilators or date of death data')
         logger.exception('Function timelines failed with exception')
@@ -289,7 +291,7 @@ def date_of_test():
             cdf['Category'] = c
             df = df.append(cdf)
         df.sort_values(by=['Parish', 'Category']).to_csv('data/cases_tests_dot.csv')
-        logger.info(f'COMPLETE: Date of Test')
+        logger.info('COMPLETE: Date of Test')
     except Exception as e:
         logger.error('Failed to date of test data')
         logger.exception('Function date_of_test failed with exception')
@@ -321,6 +323,25 @@ def tracts():
     except Exception as e:
         logger.error('Failed to download tract data')
         logger.exception('Function tracts failed with exception')
+        logger.error(str(e))
+        sys.exit(1)
+
+def vaccine_tracts():
+    try:
+        vaccine_tracts = pd.DataFrame(esri_cleaner(url_prefix + needed_datasets['vaccine_tract']+url_suffix))
+        vaccine_tracts['TractID'] = vaccine_tracts['TractID'].astype(str)
+        vaccine_tracts = pd.melt(vaccine_tracts, id_vars=['TractID'], value_vars=['SeriesInt', 'SeriesComp'])
+        vaccine_tracts = vaccine_tracts.rename(columns = {'variable' : 'Category', 'value' : update_date_string})
+        vaccine_tracts_file = csv_loader('data/vaccine_tracts.csv', update_date_string)
+        (vaccine_tracts_file
+         .merge(
+             vaccine_tracts,
+                 on=['TractID', 'Category'],
+                 how='Outer').to_csv('data/vaccine_tracts.csv'))
+        logger.info('Complete: Vaccine Tracts')
+    except Exception as e:
+        logger.error('FAILED: Vaccine Tracts')
+        logger.exception('Vaccine Tracts failed with exception')
         logger.error(str(e))
         sys.exit(1)
 
@@ -359,6 +380,88 @@ def vaccinations():
         vaccines_parish_demo['Category'] = vaccines_parish_demo['Category'].replace(static_data['parish_replace'])
         vaccines_parish_demo[update_date_string] = vaccines_parish_demo[update_date_string] / 100
         vaccines_demo = vaccines_state_demo.append(vaccines_parish_demo)
+        offset=0
+        record_count = 2000
+        
+        combined = pd.DataFrame()
+        while record_count == 2000:
+            batch_records = pd.DataFrame(esri_cleaner(url_prefix + 'Louisiana_Vaccination_Full_Demographics' + url_suffix + f'&resultOffset={offset}'))
+            combined = combined.append(batch_records)
+            offset = len(batch_records)
+            record_count = len(batch_records)
+        combined['area'] = combined['area'].replace({"_Region 4" : "LDH Region 4", 
+                                                    "_Region 5" : "LDH Region 5", 
+                                                    "_Region 6" : "LDH Region 6", 
+                                                    "_Region 7" : "LDH Region 7", 
+                                                    "_Region 8" : "LDH Region 8", 
+                                                    "_Region 9" : "LDH Region 9", 
+                                                    "_Louisiana" : "Louisiana", 
+                                                    "_Region 1" : "LDH Region 1", 
+                                                    "_Region 2" : "LDH Region 2", 
+                                                    "_Region 3" : "LDH Region 3"})
+        combined_pivot = pd.pivot(combined, index='area', columns=['value_type', 'measure'], values='value')
+        combined_pivot['Complete'] = combined_pivot['Complete']+combined_pivot['Incomplete']
+        combined_pivot['Unvaccinated'] = combined_pivot['Complete']+combined_pivot['Incomplete']+combined_pivot['Unvaccinated']
+        combined_pivot= combined_pivot.reset_index()
+        combined_melt = pd.melt(combined_pivot, id_vars='area')
+        
+        # Clean up this mess
+        combined_melt.loc[(combined_melt['value_type'] == 'Complete') & (combined_melt['measure'] == 'Aged 0-4'), 'Category'] = 'Age - Series Complete : 0 to 4 Years'
+        combined_melt.loc[(combined_melt['value_type'] == 'Complete') & (combined_melt['measure'] == 'Aged 5-17'), 'Category'] = 'Age - Series Complete : 5 to 17 Years'
+        combined_melt.loc[(combined_melt['value_type'] == 'Complete') & (combined_melt['measure'] == 'Aged 18-29'), 'Category'] = 'Age - Series Complete : 18 to 29 Years'
+        combined_melt.loc[(combined_melt['value_type'] == 'Complete') & (combined_melt['measure'] == 'Aged 30-39'), 'Category'] = 'Age - Series Complete : 30 to 39 Years'
+        combined_melt.loc[(combined_melt['value_type'] == 'Complete') & (combined_melt['measure'] == 'Aged 40-49'), 'Category'] = 'Age - Series Complete : 40 to 49 Years'
+        combined_melt.loc[(combined_melt['value_type'] == 'Complete') & (combined_melt['measure'] == 'Aged 50-59'), 'Category'] = 'Age - Series Complete : 50 to 59 Years'
+        combined_melt.loc[(combined_melt['value_type'] == 'Complete') & (combined_melt['measure'] == 'Aged 60-69'), 'Category'] = 'Age - Series Complete : 60 to 69 Years'
+        combined_melt.loc[(combined_melt['value_type'] == 'Complete') & (combined_melt['measure'] == 'Aged 70 plus'), 'Category'] = 'Age - Series Complete : 70+ Years'
+        combined_melt.loc[(combined_melt['value_type'] == 'Complete') & (combined_melt['measure'] == 'Age Unknown'), 'Category'] = 'Age - Series Complete : Unknown'
+        combined_melt.loc[(combined_melt['value_type'] == 'Complete') & (combined_melt['measure'] == 'White'), 'Category'] = 'Race - Series Complete : White'
+        combined_melt.loc[(combined_melt['value_type'] == 'Complete') & (combined_melt['measure'] == 'Black'), 'Category'] = 'Race - Series Complete : Black'
+        combined_melt.loc[(combined_melt['value_type'] == 'Complete') & (combined_melt['measure'] == 'Other Race'), 'Category'] = 'Race - Series Complete : Other'
+        combined_melt.loc[(combined_melt['value_type'] == 'Complete') & (combined_melt['measure'] == 'Unknown Race'), 'Category'] = 'Race - Series Complete : Unknown Race'
+        combined_melt.loc[(combined_melt['value_type'] == 'Complete') & (combined_melt['measure'] == 'Female'), 'Category'] = 'Sex - Series Complete : Female'
+        combined_melt.loc[(combined_melt['value_type'] == 'Complete') & (combined_melt['measure'] == 'Male'), 'Category'] = 'Sex - Series Complete : Male'
+        combined_melt.loc[(combined_melt['value_type'] == 'Complete') & (combined_melt['measure'] == 'Gender Unknown'), 'Category'] = 'Race - Series Complete : Gender Unknown'
+        # LDH has a typo spelling Gender Unknown as Gender Unkown. Leave both versions in until they fix it.
+        combined_melt.loc[(combined_melt['value_type'] == 'Complete') & (combined_melt['measure'] == 'Gender Unkown'), 'Category'] = 'Race - Series Complete : Gender Unknown'
+        
+        combined_melt.loc[(combined_melt['value_type'] == 'Incomplete') & (combined_melt['measure'] == 'Aged 0-4'), 'Category'] = 'Age - Series Initiated : 0 to 4 Years'
+        combined_melt.loc[(combined_melt['value_type'] == 'Incomplete') & (combined_melt['measure'] == 'Aged 5-17'), 'Category'] = 'Age - Series Initiated : 5 to 17 Years'
+        combined_melt.loc[(combined_melt['value_type'] == 'Incomplete') & (combined_melt['measure'] == 'Aged 18-29'), 'Category'] = 'Age - Series Initiated : 18 to 29 Years'
+        combined_melt.loc[(combined_melt['value_type'] == 'Incomplete') & (combined_melt['measure'] == 'Aged 30-39'), 'Category'] = 'Age - Series Initiated : 30 to 39 Years'
+        combined_melt.loc[(combined_melt['value_type'] == 'Incomplete') & (combined_melt['measure'] == 'Aged 40-49'), 'Category'] = 'Age - Series Initiated : 40 to 49 Years'
+        combined_melt.loc[(combined_melt['value_type'] == 'Incomplete') & (combined_melt['measure'] == 'Aged 50-59'), 'Category'] = 'Age - Series Initiated : 50 to 59 Years'
+        combined_melt.loc[(combined_melt['value_type'] == 'Incomplete') & (combined_melt['measure'] == 'Aged 60-69'), 'Category'] = 'Age - Series Initiated : 60 to 69 Years'
+        combined_melt.loc[(combined_melt['value_type'] == 'Incomplete') & (combined_melt['measure'] == 'Aged 70 plus'), 'Category'] = 'Age - Series Initiated : 70+ Years'
+        combined_melt.loc[(combined_melt['value_type'] == 'Incomplete') & (combined_melt['measure'] == 'Age Unknown'), 'Category'] = 'Age - Series Initiated : Unknown'
+        combined_melt.loc[(combined_melt['value_type'] == 'Incomplete') & (combined_melt['measure'] == 'White'), 'Category'] = 'Race - Series Initiated : White'
+        combined_melt.loc[(combined_melt['value_type'] == 'Incomplete') & (combined_melt['measure'] == 'Black'), 'Category'] = 'Race - Series Initiated : Black'
+        combined_melt.loc[(combined_melt['value_type'] == 'Incomplete') & (combined_melt['measure'] == 'Other Race'), 'Category'] = 'Race - Series Initiated : Other'
+        combined_melt.loc[(combined_melt['value_type'] == 'Incomplete') & (combined_melt['measure'] == 'Unknown Race'), 'Category'] = 'Race - Series Initiated : Unknown Race'
+        combined_melt.loc[(combined_melt['value_type'] == 'Incomplete') & (combined_melt['measure'] == 'Female'), 'Category'] = 'Sex - Series Initiated : Female'
+        combined_melt.loc[(combined_melt['value_type'] == 'Incomplete') & (combined_melt['measure'] == 'Male'), 'Category'] = 'Sex - Series Initiated : Male'
+        combined_melt.loc[(combined_melt['value_type'] == 'Incomplete') & (combined_melt['measure'] == 'Gender Unknown'), 'Category'] = 'Race - Series Initiated : Gender Unknown'
+        # LDH has a typo spelling Gender Unknown as Gender Unkown. Leave both versions in until they fix it.
+        combined_melt.loc[(combined_melt['value_type'] == 'Incomplete') & (combined_melt['measure'] == 'Gender Unkown'), 'Category'] = 'Race - Series Complete : Gender Unknown'
+        
+        
+        combined_melt.loc[(combined_melt['value_type'] == 'Unvaccinated') & (combined_melt['measure'] == 'Aged 0-4'), 'Category'] = 'Age - Total Population : 0 to 4 Years'
+        combined_melt.loc[(combined_melt['value_type'] == 'Unvaccinated') & (combined_melt['measure'] == 'Aged 5-17'), 'Category'] = 'Age - Total Population : 5 to 17 Years'
+        combined_melt.loc[(combined_melt['value_type'] == 'Unvaccinated') & (combined_melt['measure'] == 'Aged 18-29'), 'Category'] = 'Age - Total Population : 18 to 29 Years'
+        combined_melt.loc[(combined_melt['value_type'] == 'Unvaccinated') & (combined_melt['measure'] == 'Aged 30-39'), 'Category'] = 'Age - Total Population : 30 to 39 Years'
+        combined_melt.loc[(combined_melt['value_type'] == 'Unvaccinated') & (combined_melt['measure'] == 'Aged 40-49'), 'Category'] = 'Age - Total Population : 40 to 49 Years'
+        combined_melt.loc[(combined_melt['value_type'] == 'Unvaccinated') & (combined_melt['measure'] == 'Aged 50-59'), 'Category'] = 'Age - Total Population : 50 to 59 Years'
+        combined_melt.loc[(combined_melt['value_type'] == 'Unvaccinated') & (combined_melt['measure'] == 'Aged 60-69'), 'Category'] = 'Age - Total Population : 60 to 69 Years'
+        combined_melt.loc[(combined_melt['value_type'] == 'Unvaccinated') & (combined_melt['measure'] == 'Aged 70 plus'), 'Category'] = 'Age - Total Population : 70+ Years'
+        combined_melt.loc[(combined_melt['value_type'] == 'Unvaccinated') & (combined_melt['measure'] == 'White'), 'Category'] = 'Race - Total Population : White'
+        combined_melt.loc[(combined_melt['value_type'] == 'Unvaccinated') & (combined_melt['measure'] == 'Black'), 'Category'] = 'Race - Total Population : Black'
+        combined_melt.loc[(combined_melt['value_type'] == 'Unvaccinated') & (combined_melt['measure'] == 'Other Race'), 'Category'] = 'Race - Total Population : Other'
+        combined_melt.loc[(combined_melt['value_type'] == 'Unvaccinated') & (combined_melt['measure'] == 'Female'), 'Category'] = 'Sex - Total Population : Female'
+        combined_melt.loc[(combined_melt['value_type'] == 'Unvaccinated') & (combined_melt['measure'] == 'Male'), 'Category'] = 'Sex - Total Population : Male'
+        
+        combined_melt = combined_melt[combined_melt['Category'].notnull()][['area', 'Category', 'value']]
+        combined_melt = combined_melt.rename(columns = {'area' : 'Geography', 'value' : update_date_string})
+        vaccines_demo = vaccines_demo.append(combined_melt)
         vaccines_demo_file = csv_loader('data/vaccines_demo.csv', update_date_string)
         vaccines_demo_file.merge(vaccines_demo, on=['Geography', 'Category'], how='outer').to_csv('data/vaccines_demo.csv', float_format='%.10f', index=False)
         logger.info('COMPLETE: Vaccinations')
