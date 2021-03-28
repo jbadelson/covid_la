@@ -14,7 +14,6 @@ import pandas as pd
 
 import logging
 
-
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 log_date_fmt = "%Y-%m-%d %H:%M:%S"
@@ -381,9 +380,15 @@ def vaccinations():
         vaccines_parish_demo['Category'] = vaccines_parish_demo['Category'].replace(static_data['parish_replace'])
         vaccines_parish_demo[update_date_string] = vaccines_parish_demo[update_date_string] / 100
         vaccines_demo = vaccines_state_demo.append(vaccines_parish_demo)
+        demo_replace = vaccines_demo[~vaccines_demo.Category.str.contains("Pct")]['Category'].to_list()
+        demo_replace_dict = {}
+        for d in demo_replace:
+                demo_replace_dict[d] = d.split(':')[0]+" (Pct) : "+d.split(':')[1]
+        vaccines_demo['Category'] = vaccines_demo['Category'].replace(demo_replace_dict)
+
         offset=0
         record_count = 2000
-
+        
         combined = pd.DataFrame()
         while record_count == 2000:
             batch_records = pd.DataFrame(esri_cleaner(url_prefix + 'Louisiana_Vaccination_Full_Demographics' + url_suffix + f'&resultOffset={offset}'))
@@ -405,7 +410,7 @@ def vaccinations():
         combined_pivot['Unvaccinated'] = combined_pivot['Complete']+combined_pivot['Incomplete']+combined_pivot['Unvaccinated']
         combined_pivot= combined_pivot.reset_index()
         combined_melt = pd.melt(combined_pivot, id_vars='area')
-
+        
         # Clean up this mess
         combined_melt.loc[(combined_melt['value_type'] == 'Complete') & (combined_melt['measure'] == 'Aged 0-4'), 'Category'] = 'Age - Series Complete : 0 to 4 Years'
         combined_melt.loc[(combined_melt['value_type'] == 'Complete') & (combined_melt['measure'] == 'Aged 5-17'), 'Category'] = 'Age - Series Complete : 5 to 17 Years'
@@ -422,10 +427,10 @@ def vaccinations():
         combined_melt.loc[(combined_melt['value_type'] == 'Complete') & (combined_melt['measure'] == 'Unknown Race'), 'Category'] = 'Race - Series Complete : Unknown Race'
         combined_melt.loc[(combined_melt['value_type'] == 'Complete') & (combined_melt['measure'] == 'Female'), 'Category'] = 'Sex - Series Complete : Female'
         combined_melt.loc[(combined_melt['value_type'] == 'Complete') & (combined_melt['measure'] == 'Male'), 'Category'] = 'Sex - Series Complete : Male'
-        combined_melt.loc[(combined_melt['value_type'] == 'Complete') & (combined_melt['measure'] == 'Gender Unknown'), 'Category'] = 'Race - Series Complete : Gender Unknown'
+        combined_melt.loc[(combined_melt['value_type'] == 'Complete') & (combined_melt['measure'] == 'Gender Unknown'), 'Category'] = 'Sex - Series Complete : Gender Unknown'
         # LDH has a typo spelling Gender Unknown as Gender Unkown. Leave both versions in until they fix it.
-        combined_melt.loc[(combined_melt['value_type'] == 'Complete') & (combined_melt['measure'] == 'Gender Unkown'), 'Category'] = 'Race - Series Complete : Gender Unknown'
-
+        combined_melt.loc[(combined_melt['value_type'] == 'Complete') & (combined_melt['measure'] == 'Gender Unkown'), 'Category'] = 'Sex - Series Complete : Gender Unknown'
+        
         combined_melt.loc[(combined_melt['value_type'] == 'Incomplete') & (combined_melt['measure'] == 'Aged 0-4'), 'Category'] = 'Age - Series Initiated : 0 to 4 Years'
         combined_melt.loc[(combined_melt['value_type'] == 'Incomplete') & (combined_melt['measure'] == 'Aged 5-17'), 'Category'] = 'Age - Series Initiated : 5 to 17 Years'
         combined_melt.loc[(combined_melt['value_type'] == 'Incomplete') & (combined_melt['measure'] == 'Aged 18-29'), 'Category'] = 'Age - Series Initiated : 18 to 29 Years'
@@ -441,10 +446,10 @@ def vaccinations():
         combined_melt.loc[(combined_melt['value_type'] == 'Incomplete') & (combined_melt['measure'] == 'Unknown Race'), 'Category'] = 'Race - Series Initiated : Unknown Race'
         combined_melt.loc[(combined_melt['value_type'] == 'Incomplete') & (combined_melt['measure'] == 'Female'), 'Category'] = 'Sex - Series Initiated : Female'
         combined_melt.loc[(combined_melt['value_type'] == 'Incomplete') & (combined_melt['measure'] == 'Male'), 'Category'] = 'Sex - Series Initiated : Male'
-        combined_melt.loc[(combined_melt['value_type'] == 'Incomplete') & (combined_melt['measure'] == 'Gender Unknown'), 'Category'] = 'Race - Series Initiated : Gender Unknown'
+        combined_melt.loc[(combined_melt['value_type'] == 'Incomplete') & (combined_melt['measure'] == 'Gender Unknown'), 'Category'] = 'Sex - Series Initiated : Gender Unknown'
         # LDH has a typo spelling Gender Unknown as Gender Unkown. Leave both versions in until they fix it.
         combined_melt.loc[(combined_melt['value_type'] == 'Incomplete') & (combined_melt['measure'] == 'Gender Unkown'), 'Category'] = 'Race - Series Complete : Gender Unknown'
-
+        
         combined_melt.loc[(combined_melt['value_type'] == 'Unvaccinated') & (combined_melt['measure'] == 'Aged 0-4'), 'Category'] = 'Age - Total Population : 0 to 4 Years'
         combined_melt.loc[(combined_melt['value_type'] == 'Unvaccinated') & (combined_melt['measure'] == 'Aged 5-17'), 'Category'] = 'Age - Total Population : 5 to 17 Years'
         combined_melt.loc[(combined_melt['value_type'] == 'Unvaccinated') & (combined_melt['measure'] == 'Aged 18-29'), 'Category'] = 'Age - Total Population : 18 to 29 Years'
@@ -458,9 +463,10 @@ def vaccinations():
         combined_melt.loc[(combined_melt['value_type'] == 'Unvaccinated') & (combined_melt['measure'] == 'Other Race'), 'Category'] = 'Race - Total Population : Other'
         combined_melt.loc[(combined_melt['value_type'] == 'Unvaccinated') & (combined_melt['measure'] == 'Female'), 'Category'] = 'Sex - Total Population : Female'
         combined_melt.loc[(combined_melt['value_type'] == 'Unvaccinated') & (combined_melt['measure'] == 'Male'), 'Category'] = 'Sex - Total Population : Male'
-
+        
         combined_melt = combined_melt[combined_melt['Category'].notnull()][['area', 'Category', 'value']]
         combined_melt = combined_melt.rename(columns = {'area' : 'Geography', 'value' : update_date_string})
+        
         vaccines_demo = vaccines_demo.append(combined_melt)
         vaccines_demo_file = csv_loader('data/vaccines_demo.csv', update_date_string)
         vaccines_demo_file.merge(vaccines_demo, on=['Geography', 'Category'], how='outer').to_csv('data/vaccines_demo.csv', float_format='%.10f', index=False)
