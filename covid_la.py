@@ -337,7 +337,7 @@ def vaccine_tracts():
          .merge(
              vaccine_tracts,
                  on=['TractID', 'Category'],
-                 how='outer').to_csv('data/vaccine_tracts.csv'))
+                 how='outer').to_csv('data/vaccine_tracts.csv', index=False))
         logger.info('COMPLETE: Vaccine Tracts')
     except Exception as e:
         logger.error('FAILED: Vaccine Tracts')
