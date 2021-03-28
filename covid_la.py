@@ -4,7 +4,7 @@
 import os
 import sys
 
-module_path = os.path.abspath(os.path.join('code'))
+module_path = os.path.abspath(os.path.dirname(__file__))
 if module_path not in sys.path:
     sys.path.append(module_path)
 from urllib.request import urlopen
@@ -33,7 +33,7 @@ stdout_handler.setFormatter(stdout_log_format)
 logger.addHandler(file_handler)
 logger.addHandler(stdout_handler)
 
-with open('static_data.json') as f:
+with open(f'{module_path}/static_data.json') as f:
     static_data = json.load(f)
 
 update_date = datetime.now()
@@ -112,12 +112,12 @@ def check_datasets(current_ldh_datasets):
                 logger.info(f'FOUND: {needed_datasets[d]}')
             else:
                 missing.append(needed_datasets[d])
-                logger.info(f"MISSING: {needed_datasets[d]}")
+                logger.error(f"MISSING: {needed_datasets[d]}")
 
         if len(missing) > 0:
-            logger.info('Datasets missing:')
+            logger.error('Datasets missing:')
             for m in missing:
-                logger.info(f"    {m}")
+                logger.error(f"    {m}")
             logger.error('Missing needed datasets')
             sys.exit(1)
     except Exception as e:
@@ -150,10 +150,10 @@ def cases_deaths(cases_deaths_primary):
             cdf = cases_deaths_primary[cases_deaths_primary['Measure'] == c].copy()
             cdf['Value'] = cdf['Value'].fillna(0).astype(int)
             cdf = cdf[['Group_', 'Value']].rename(columns={'Group_': 'County', 'Value': update_date_string})
-            cfile = csv_loader(f'data/{categories[c]}.csv', update_date_string)
+            cfile = csv_loader(f'{module_path}/data/{categories[c]}.csv', update_date_string)
             cfile.merge(cdf,
                         on='County',
-                        how='outer').to_csv(f'data/{categories[c]}.csv', index=False)
+                        how='outer').to_csv(f'{module_path}/data/{categories[c]}.csv', index=False)
             logger.info(f"COMPLETE: {c}")
     except Exception as e:
         logger.error('Failed to download cases and death data')
@@ -165,28 +165,28 @@ def tests(cases_deaths_primary):
     try:
         categories = {'Molecular Tests': 'tests_molecular',
                       'Antigen Tests': 'tests_antigen'}
-        tdf = csv_loader('data/tests.csv', update_date_string)
+        tdf = csv_loader(f'{module_path}/data/tests.csv', update_date_string)
         df = pd.DataFrame()
         for c in categories:
             cdf = cases_deaths_primary[cases_deaths_primary['Measure'] == c].copy()
             cdf = cdf.rename(columns={'Value': update_date_string, 'Group_': 'County'})
             cdf['Category'] = c
             cdf = cdf[['County', 'Category', update_date_string]]
-            cfile = csv_loader(f"data/{categories[c]}.csv", update_date_string)
+            cfile = csv_loader(f"{module_path}/data/{categories[c]}.csv", update_date_string)
             df = df.append(cdf)
             (cfile
              .merge(cdf,
                     left_on=['County', 'Category'],
                     right_on=['County', 'Category'],
                     how='outer')
-             .to_csv(f"data/{categories[c]}.csv", index=False))
+             .to_csv(f"{module_path}/data/{categories[c]}.csv", index=False))
             logger.info(f"COMPLETE: {c}")
         tdf = (tdf
                .merge(df,
                       left_on=['County', 'Category'],
                       right_on=['County', 'Category'],
                       how='outer'))
-        tdf.to_csv('data/tests.csv', index=False)
+        tdf.to_csv(f'{module_path}/data/tests.csv', index=False)
         logger.info("COMPLETE: Total tests")
     except Exception as e:
         logger.error('Failed to download test data')
@@ -202,10 +202,10 @@ def demos(cases_deaths_primary):
             cdf = cases_deaths_primary[
                 (cases_deaths_primary['Measure'].isin(['Age', 'Gender'])) & (cases_deaths_primary['ValueType'] == c)].copy()
             cdf = cdf.rename(columns={'Value': update_date_string, 'Group_': 'Category'})
-            cfile = csv_loader(f"data/{categories[c]}.csv", update_date_string)
+            cfile = csv_loader(f"{module_path}/data/{categories[c]}.csv", update_date_string)
             (cfile.merge(cdf[['Category', update_date_string]],
                          on='Category',
-                         how='outer').to_csv(f'data/{categories[c]}.csv', index=False))
+                         how='outer').to_csv(f'{module_path}/data/{categories[c]}.csv', index=False))
             logger.info(f"COMPLETE: {c} demographics")
     except Exception as e:
         logger.error('Failed to download demographic data')
@@ -226,7 +226,7 @@ def timelines(cases_deaths_primary):
                 cdf = cdf.pivot(index='Measure', columns='Date', values='Value')
             cdf.columns = cdf.columns.strftime('%m/%d/%Y')
             cdf = cdf.reset_index().rename(columns={'ValueType': 'Category', 'Measure': 'Category'})
-            cdf.to_csv(f'data/{categories[c]}.csv', index=False)
+            cdf.to_csv(f'{module_path}/data/{categories[c]}.csv', index=False)
         logger.info("COMPLETE: Hospitalizations, ventilators and Date of Death")
     except Exception as e:
         logger.error('Failed to download hospitalizations, ventilators or date of death data')
@@ -246,9 +246,9 @@ def capacity(cases_deaths_primary):
         capacity_total['Group_'] = 'Total'
         capacity = capacity.append(capacity_total, sort=True).rename(columns={'Value': update_date_string})
         capacity['Category'] = capacity['Measure'] + ' ' + capacity['Group_']
-        capacity_file = csv_loader('data/capacity.csv', update_date_string)
+        capacity_file = csv_loader(f'{module_path}/data/capacity.csv', update_date_string)
         capacity_file.merge(capacity[['LDH Region', 'Category', update_date_string]], on=['Category', 'LDH Region'],
-                            how='outer').to_csv('data/capacity.csv', index=False)
+                            how='outer').to_csv(f'{module_path}/data/capacity.csv', index=False)
         logger.info('COMPLETE: Capacity')
     except Exception as e:
         logger.error('Failed to download capacity data')
@@ -258,10 +258,10 @@ def capacity(cases_deaths_primary):
 
 def recovered(cases_deaths_primary):
     try:
-        recovered_file = pd.read_csv('data/recovered.csv')
+        recovered_file = pd.read_csv(f'{module_path}/data/recovered.csv')
         recovered_file[update_date_string] = \
         cases_deaths_primary[cases_deaths_primary['Measure'] == 'Presumed Recovered']['Value'].values[0]
-        recovered_file.to_csv('data/recovered.csv', index=False)
+        recovered_file.to_csv(f'{module_path}/data/recovered.csv', index=False)
         logger.info("COMPLETE: Recoveries")
     except Exception as e:
         logger.error('Failed to download recovery data')
@@ -289,7 +289,7 @@ def date_of_test():
             cdf.insert(0, 'Category', '')
             cdf['Category'] = c
             df = df.append(cdf)
-        df.sort_values(by=['Parish', 'Category']).to_csv('data/cases_tests_dot.csv')
+        df.sort_values(by=['Parish', 'Category']).to_csv(f'{module_path}/data/cases_tests_dot.csv')
         logger.info('COMPLETE: Date of Test')
     except Exception as e:
         logger.error('Failed to date of test data')
@@ -310,14 +310,14 @@ def tracts():
                            values=c)
             cdf['Category'] = c
             df = df.append(cdf)
-        df.sort_values(by=['Tract', 'Category']).to_csv('data/cases_tests_tracts.csv')
+        df.sort_values(by=['Tract', 'Category']).to_csv(f'{module_path}/data/cases_tests_tracts.csv')
 
         tracts = pd.DataFrame(esri_cleaner(url_prefix + needed_datasets['tracts'] + url_suffix))
         tracts = tracts.rename(columns={'TractID': 'FIPS', 'CaseCount': update_date_string})
-        tracts_file = csv_loader('data/tracts.csv', update_date_string)
+        tracts_file = csv_loader(f'{module_path}/data/tracts.csv', update_date_string)
         tracts_file.merge(tracts[['FIPS', update_date_string]],
                           on='FIPS',
-                          how='outer').to_csv('data/tracts.csv', index=False)
+                          how='outer').to_csv(f'{module_path}/data/tracts.csv', index=False)
         logger.info('COMPLETE: Tracts')
     except Exception as e:
         logger.error('Failed to download tract data')
@@ -331,13 +331,13 @@ def vaccine_tracts():
         vaccine_tracts['TractID'] = vaccine_tracts['TractID'].astype(str)
         vaccine_tracts = pd.melt(vaccine_tracts, id_vars=['TractID'], value_vars=['SeriesInt', 'SeriesComp'])
         vaccine_tracts = vaccine_tracts.rename(columns = {'variable' : 'Category', 'value' : update_date_string})
-        vaccine_tracts_file = csv_loader('data/vaccine_tracts.csv', update_date_string)
+        vaccine_tracts_file = csv_loader(f'{module_path}/data/vaccine_tracts.csv', update_date_string)
         vaccine_tracts_file['TractID'] = vaccine_tracts_file['TractID'].astype(str)
         (vaccine_tracts_file
          .merge(
              vaccine_tracts,
                  on=['TractID', 'Category'],
-                 how='outer').to_csv('data/vaccine_tracts.csv', index=False))
+                 how='outer').to_csv(f'{module_path}/data/vaccine_tracts.csv', index=False))
         logger.info('COMPLETE: Vaccine Tracts')
     except Exception as e:
         logger.error('FAILED: Vaccine Tracts')
@@ -361,14 +361,14 @@ def vaccinations():
         vaccines_parish_comp = vaccines_parish[['Geography', 'SeriesComp']].copy()
         vaccines_parish_comp['Category'] = 'Parish - Series Completed'
         vaccines_parish_comp = vaccines_parish_comp.rename(columns={'SeriesComp': update_date_string})
-        vaccines_file = csv_loader('data/vaccines.csv', update_date_string)
+        vaccines_file = csv_loader(f'{module_path}/data/vaccines.csv', update_date_string)
         (vaccines_file
          .merge(
             vaccines_primary
                 .append(vaccines_parish_init)
                 .append(vaccines_parish_comp),
             on=['Geography', 'Category'],
-            how='outer').to_csv('data/vaccines.csv', index=False))
+            how='outer').to_csv(f'{module_path}/data/vaccines.csv', index=False))
         vaccines_state_demo = vaccines[vaccines['ValueType'] == 'percentage'].copy()
         vaccines_state_demo['Group_'] = vaccines_state_demo['Group_'].replace(static_data['age_replace'])
         vaccines_state_demo['Category'] = vaccines_state_demo['Measure'] + ' : ' + vaccines_state_demo['Group_']
@@ -468,8 +468,10 @@ def vaccinations():
         combined_melt = combined_melt.rename(columns = {'area' : 'Geography', 'value' : update_date_string})
         
         vaccines_demo = vaccines_demo.append(combined_melt)
-        vaccines_demo_file = csv_loader('data/vaccines_demo.csv', update_date_string)
-        vaccines_demo_file.merge(vaccines_demo, on=['Geography', 'Category'], how='outer').to_csv('data/vaccines_demo.csv', float_format='%.10f', index=False)
+        vaccines_demo_file = csv_loader(f'{module_path}/data/vaccines_demo.csv', update_date_string)
+        vaccines_demo_file.merge(vaccines_demo, on=['Geography', 'Category'], how='outer').to_csv(f'{module_path}/data/vaccines_demo.csv', float_format='%.10f', index=False)
+        if len(vaccines_demo_file.merge(vaccines_demo, on=['Geography', 'Category'], how='outer')) > 6560:
+            logger.error('Vaccines Demo File Has Too Many Records')
         logger.info('COMPLETE: Vaccinations')
     except Exception as e:
         logger.error('FAILED: Vaccinations')
@@ -499,10 +501,10 @@ def case_death_race():
         cases_race_parish = cases_race_parish.rename(columns={'variable': 'Race',
                                                               'PFIPS': 'FIPS',
                                                               'value': update_date_string})
-        cases_race_parish_file = csv_loader('data/cases_deaths_by_race_parish.csv', update_date_string)
+        cases_race_parish_file = csv_loader(f'{module_path}/data/cases_deaths_by_race_parish.csv', update_date_string)
         cases_race_parish_file.merge(cases_race_parish[['FIPS', 'Race', update_date_string]],
                                      on=['FIPS', 'Race'],
-                                     how='outer').to_csv('data/cases_deaths_by_race_parish.csv', index=False)
+                                     how='outer').to_csv(f'{module_path}/data/cases_deaths_by_race_parish.csv', index=False)
         logger.info('COMPLETE: Cases and deaths by race and parish')
 
         cases_deaths_race_region = pd.DataFrame(
@@ -511,11 +513,11 @@ def case_death_race():
             pd.melt(cases_deaths_race_region, id_vars=['LDH_Region', 'Race'], value_vars=['Deaths', 'Cases'])).sort_values(
             by='LDH_Region')
         cases_deaths_race_region = cases_deaths_race_region.rename(columns={'value': update_date_string})
-        cases_deaths_race_region_file = csv_loader('data/cases_deaths_by_race_region.csv', update_date_string)
+        cases_deaths_race_region_file = csv_loader(f'{module_path}/data/cases_deaths_by_race_region.csv', update_date_string)
         cases_deaths_race_region_file.merge(
             cases_deaths_race_region[['LDH_Region', 'Race', 'variable', update_date_string]],
             on=['LDH_Region', 'Race', 'variable'],
-            how='outer').to_csv('data/cases_deaths_by_race_region.csv', index=False)
+            how='outer').to_csv(f'{module_path}/data/cases_deaths_by_race_region.csv', index=False)
         logger.info('COMPLETE: Cases and deaths by race and region')
     except Exception as e:
         logger.error('Failed to case and death by parish and region data')
