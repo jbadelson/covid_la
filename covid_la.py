@@ -369,6 +369,12 @@ def vaccinations():
                 .append(vaccines_parish_comp),
             on=['Geography', 'Category'],
             how='outer').to_csv(f'{module_path}/data/vaccines.csv', index=False))
+    except Exception as e:
+        logger.error('FAILED: Vaccinations')
+        logger.exception('Vaccinations failed with exception')
+        logger.error(str(e))
+        sys.exit(1)
+    try:        
         vaccines_state_demo = vaccines[vaccines['ValueType'] == 'percentage'].copy()
         vaccines_state_demo['Group_'] = vaccines_state_demo['Group_'].replace(static_data['age_replace'])
         vaccines_state_demo['Category'] = vaccines_state_demo['Measure'] + ' : ' + vaccines_state_demo['Group_']
@@ -396,18 +402,18 @@ def vaccinations():
             offset = len(batch_records)
             record_count = len(batch_records)
         combined['area'] = combined['area'].replace({"_Region 4" : "LDH Region 4", 
-                                                    "_Region 5" : "LDH Region 5", 
-                                                    "_Region 6" : "LDH Region 6", 
-                                                    "_Region 7" : "LDH Region 7", 
-                                                    "_Region 8" : "LDH Region 8", 
-                                                    "_Region 9" : "LDH Region 9", 
-                                                    "_Louisiana" : "Louisiana", 
-                                                    "_Region 1" : "LDH Region 1", 
-                                                    "_Region 2" : "LDH Region 2", 
-                                                    "_Region 3" : "LDH Region 3"})
+                                                     "_Region 5" : "LDH Region 5", 
+                                                     "_Region 6" : "LDH Region 6", 
+                                                     "_Region 7" : "LDH Region 7", 
+                                                     "_Region 8" : "LDH Region 8", 
+                                                     "_Region 9" : "LDH Region 9", 
+                                                     "_Louisiana" : "Louisiana", 
+                                                     "_Region 1" : "LDH Region 1", 
+                                                     "_Region 2" : "LDH Region 2", 
+                                                     "_Region 3" : "LDH Region 3"})
         combined_pivot = pd.pivot(combined, index='area', columns=['value_type', 'measure'], values='value')
-        combined_pivot['Complete'] = combined_pivot['Complete']+combined_pivot['Incomplete']
-        combined_pivot['Unvaccinated'] = combined_pivot['Complete']+combined_pivot['Incomplete']+combined_pivot['Unvaccinated']
+        combined_pivot['Incomplete'] = combined_pivot['Complete']+combined_pivot['Incomplete']
+        combined_pivot['Unvaccinated'] = combined_pivot['Incomplete']+combined_pivot['Unvaccinated']
         combined_pivot= combined_pivot.reset_index()
         combined_melt = pd.melt(combined_pivot, id_vars='area')
         
@@ -474,8 +480,8 @@ def vaccinations():
             logger.error('Vaccines Demo File Has Too Many Records')
         logger.info('COMPLETE: Vaccinations')
     except Exception as e:
-        logger.error('FAILED: Vaccinations')
-        logger.exception('Vaccinations failed with exception')
+        logger.error('FAILED: Vaccination demographics')
+        logger.exception('Vaccination demographics failed with exception')
         logger.error(str(e))
         sys.exit(1)
 
