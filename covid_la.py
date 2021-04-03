@@ -102,7 +102,6 @@ def compare_datasets(current_ldh_datasets):
         logger.error(str(e))
         sys.exit(1)
 
-
 def check_datasets(current_ldh_datasets):
     try:
         logger.info("Checking to ensure all needed datasets are available.")
@@ -557,6 +556,9 @@ def main():
         compare_datasets(current_ldh_datasets)
         check_datasets(current_ldh_datasets)
         data_download(update_date_string)
+        static_data["prior_datasets"] = current_ldh_datasets
+        with open(f"{module_path}/static_data.json", "w") as outfile:
+            json.dump(static_data, outfile)
     except Exception as e:
         logger.exception('Function main failed with exception')
         logger.error(str(e))
