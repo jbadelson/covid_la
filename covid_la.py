@@ -25,7 +25,7 @@ file_handler.setLevel(logging.DEBUG)
 stdout_handler.setLevel(logging.DEBUG)
 
 file_log_format = logging.Formatter('[%(asctime)s] {%(filename)s:%(lineno)d} %(levelname)s - %(message)s', log_date_fmt)
-stdout_log_format = logging.Formatter('%(message)s')
+stdout_log_format = logging.Formatter('[%(asctime)s] {%(filename)s:%(lineno)d} %(levelname)s - %(message)s', log_date_fmt)
 
 file_handler.setFormatter(file_log_format)
 stdout_handler.setFormatter(stdout_log_format)
