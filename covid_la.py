@@ -87,13 +87,13 @@ def compare_datasets(current_ldh_datasets):
         if len(added) > 0:
             logger.warning(f'Found {len(added)} new datasets:')
             for a in added:
-                logger.info(f'    {a}')
+                logger.warning(f'    {a}')
         else:
             logger.info("There are no new datasets.")
         if len(deleted) > 1:
             logger.warning(f"Found {len(deleted)} deleted datasets.")
             for d in deleted:
-                logger.info(f"    {d}")
+                logger.warning(f"    {d}")
         else:
             logger.info("There are no deleted datasets.")
     except Exception as e:
