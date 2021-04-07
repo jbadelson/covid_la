@@ -60,7 +60,7 @@ needed_datasets = {'cases_deaths_primary' : 'test_this_sheet',  # Main LDH cases
                    'vaccine_parish' : 'Vaccinations_by_Race_by_Parish',
                    'vaccine_tract': 'Louisiana_Vaccinations_by_Tract',
                    'vaccine_full_demo' : 'Louisiana_Vaccination_Full_Demographics',
-                   'tracts': 'LA_2018_Tracts_' + tract_date().strftime('%m%d%Y')}
+                   'tracts': 'Louisiana_COVID_Cases_by_Tract'}
 
 
 def get_datasets():
@@ -312,7 +312,7 @@ def tracts():
         df.sort_values(by=['Tract', 'Category']).to_csv(f'{module_path}/data/cases_tests_tracts.csv')
 
         tracts = pd.DataFrame(esri_cleaner(url_prefix + needed_datasets['tracts'] + url_suffix))
-        tracts = tracts.rename(columns={'TractID': 'FIPS', 'CaseCount': update_date_string})
+        tracts = tracts.rename(columns={'GEOID': 'FIPS', 'CaseCount': update_date_string})
         tracts_file = csv_loader(f'{module_path}/data/tracts.csv', update_date_string)
         tracts_file.merge(tracts[['FIPS', update_date_string]],
                           on='FIPS',
