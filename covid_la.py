@@ -541,8 +541,8 @@ def data_download(update_date):
         timelines(cases_deaths_primary)
         capacity(cases_deaths_primary)
         recovered(cases_deaths_primary)
-        date_of_test()
-        tracts()
+#        date_of_test()
+#        tracts()
         case_death_race()
     except Exception as e:
         logger.exception('Function data_download failed with exception')
