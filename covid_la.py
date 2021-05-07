@@ -291,7 +291,7 @@ def date_of_test():
         df.sort_values(by=['Parish', 'Category']).to_csv(f'{module_path}/data/cases_tests_dot.csv')
         logger.info('COMPLETE: Date of Test')
     except Exception as e:
-        logger.error('Failed to date of test data')
+        logger.error('Failed to download date of test data')
         logger.exception('Function date_of_test failed with exception')
         logger.error(str(e))
         sys.exit(1)
@@ -541,8 +541,8 @@ def data_download(update_date):
         timelines(cases_deaths_primary)
         capacity(cases_deaths_primary)
         recovered(cases_deaths_primary)
-#        date_of_test()
-#        tracts()
+        date_of_test()
+        tracts()
         case_death_race()
     except Exception as e:
         logger.exception('Function data_download failed with exception')
