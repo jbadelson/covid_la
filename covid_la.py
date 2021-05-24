@@ -529,12 +529,25 @@ def case_death_race():
         logger.exception('Function case_death_race failed with exception')
         logger.error(str(e))
         sys.exit(1)
+        
+def primary_download():
+    offset=0
+    record_count = 2000
+
+    combined = pd.DataFrame()
+    while record_count == 2000:
+        batch_records = pd.DataFrame(esri_cleaner(url_prefix + needed_datasets['cases_deaths_primary'] + url_suffix + f'&resultOffset={offset}'))
+        combined = combined.append(batch_records)
+        offset = len(batch_records)
+        record_count = len(batch_records)
+    return combined
 
 def data_download(update_date):
     try:
         vaccinations()
         vaccine_tracts()
-        cases_deaths_primary = pd.DataFrame(esri_cleaner(url_prefix + needed_datasets['cases_deaths_primary'] + url_suffix))
+        cases_deaths_primary = primary_download()
+        print(cases_deaths_primary)
         cases_deaths(cases_deaths_primary)
         tests(cases_deaths_primary)
         demos(cases_deaths_primary)
