@@ -1,10 +1,7 @@
-#!env/bin/python
-# TODO: Add long format?
-
 import os
 import sys
 
-module_path = os.path.abspath(os.path.dirname(__file__))
+module_path = os.path.abspath(os.path.dirname("c:/Users/jeff/Documents/Work/Projects/covid_la/"))
 if module_path not in sys.path:
     sys.path.append(module_path)
 from urllib.request import urlopen
@@ -130,6 +127,18 @@ def esri_cleaner(url):
     raw_json = json.loads(data)
     formatted_json = [feature['attributes'] for feature in raw_json['features']]
     return formatted_json
+
+def download(dataset):
+    offset=0
+    record_count = 2000
+
+    combined = pd.DataFrame()
+    while record_count == 2000:
+        batch_records = pd.DataFrame(esri_cleaner(url_prefix + dataset + url_suffix + f'&resultOffset={offset}'))
+        combined = combined.append(batch_records)
+        offset = len(batch_records)
+        record_count = len(batch_records)
+    return combined
 
 def csv_loader(file, date):
     df = pd.read_csv(file, dtype={'FIPS': object})
@@ -311,7 +320,7 @@ def tracts():
             df = df.append(cdf)
         df.sort_values(by=['Tract', 'Category']).to_csv(f'{module_path}/data/cases_tests_tracts.csv')
 
-        tracts = pd.DataFrame(esri_cleaner(url_prefix + needed_datasets['tracts'] + url_suffix))
+        tracts = download(needed_datasets['tracts'])
         tracts = tracts.rename(columns={'GEOID': 'FIPS', 'CaseCount': update_date_string})
         tracts_file = csv_loader(f'{module_path}/data/tracts.csv', update_date_string)
         tracts_file.merge(tracts[['FIPS', update_date_string]],
@@ -326,7 +335,7 @@ def tracts():
 
 def vaccine_tracts():
     try:
-        vaccine_tracts = pd.DataFrame(esri_cleaner(url_prefix + needed_datasets['vaccine_tract']+url_suffix))
+        vaccine_tracts = download(needed_datasets['vaccine_tract'])
         vaccine_tracts['TractID'] = vaccine_tracts['TractID'].astype(str)
         vaccine_tracts = pd.melt(vaccine_tracts, id_vars=['TractID'], value_vars=['SeriesInt', 'SeriesComp'])
         vaccine_tracts = vaccine_tracts.rename(columns = {'variable' : 'Category', 'value' : update_date_string})
@@ -346,13 +355,13 @@ def vaccine_tracts():
 
 def vaccinations():
     try:
-        vaccines = pd.DataFrame(esri_cleaner(url_prefix + needed_datasets['vaccine_primary'] + url_suffix))
+        vaccines = download(needed_datasets['vaccine_primary'])
         vaccines['Category'] = vaccines['Measure']
         vaccines_primary = vaccines[vaccines['ValueType'] == 'count'].copy()
         vaccines_primary['Group_'] = vaccines_primary['Group_'].replace('N/A', 'State')
         vaccines_primary = vaccines_primary[['Group_', 'Category', 'Value']].rename(
             columns={'Value': update_date_string, 'Group_': 'Geography'})
-        vaccines_parish = pd.DataFrame(esri_cleaner(url_prefix + needed_datasets['vaccine_parish'] + url_suffix))
+        vaccines_parish = download(needed_datasets['vaccine_parish'])
         vaccines_parish['Geography'] = vaccines_parish['Parish']
         vaccines_parish_init = vaccines_parish[['Geography', 'SeriesInt']].copy()
         vaccines_parish_init['Category'] = 'Parish - Series Initiated'
@@ -486,7 +495,7 @@ def vaccinations():
 
 def case_death_race():
     try:
-        cases_race_parish = pd.DataFrame(esri_cleaner(url_prefix + needed_datasets['cases_deaths_parish'] + url_suffix))
+        cases_race_parish = download(needed_datasets['cases_deaths_parish'])
         for c in cases_race_parish.iloc[:, 6:16].columns:
             cases_race_parish[c] = pd.to_numeric(cases_race_parish[c], errors='coerce')
         cases_race_parish = (pd.melt(cases_race_parish,
@@ -512,8 +521,7 @@ def case_death_race():
                                      how='outer').to_csv(f'{module_path}/data/cases_deaths_by_race_parish.csv', index=False)
         logger.info('COMPLETE: Cases and deaths by race and parish')
 
-        cases_deaths_race_region = pd.DataFrame(
-            esri_cleaner(url_prefix + needed_datasets['cases_deaths_region'] + url_suffix))
+        cases_deaths_race_region = download(needed_datasets['cases_deaths_region'])
         cases_deaths_race_region = (
             pd.melt(cases_deaths_race_region, id_vars=['LDH_Region', 'Race'], value_vars=['Deaths', 'Cases'])).sort_values(
             by='LDH_Region')
@@ -529,25 +537,12 @@ def case_death_race():
         logger.exception('Function case_death_race failed with exception')
         logger.error(str(e))
         sys.exit(1)
-        
-def primary_download():
-    offset=0
-    record_count = 2000
-
-    combined = pd.DataFrame()
-    while record_count == 2000:
-        batch_records = pd.DataFrame(esri_cleaner(url_prefix + needed_datasets['cases_deaths_primary'] + url_suffix + f'&resultOffset={offset}'))
-        combined = combined.append(batch_records)
-        offset = len(batch_records)
-        record_count = len(batch_records)
-    return combined
 
 def data_download(update_date):
     try:
         vaccinations()
         vaccine_tracts()
-        cases_deaths_primary = primary_download()
-        print(cases_deaths_primary)
+        cases_deaths_primary = download(needed_datasets['cases_deaths_primary'])
         cases_deaths(cases_deaths_primary)
         tests(cases_deaths_primary)
         demos(cases_deaths_primary)
@@ -575,6 +570,7 @@ def main():
     except Exception as e:
         logger.exception('Function main failed with exception')
         logger.error(str(e))
+
         sys.exit(1)
 
 if __name__ == "__main__":
