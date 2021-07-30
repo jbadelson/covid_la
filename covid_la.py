@@ -548,7 +548,7 @@ def data_download(update_date):
         demos(cases_deaths_primary)
         timelines(cases_deaths_primary)
         capacity(cases_deaths_primary)
-        recovered(cases_deaths_primary)
+#        recovered(cases_deaths_primary)
         date_of_test()
         tracts()
         case_death_race()
