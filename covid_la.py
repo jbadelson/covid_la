@@ -247,36 +247,35 @@ def timelines(cases_deaths_primary):
 def tableau_hosp():
     try:
         url = 'https://analytics.la.gov/t/LDH/views/covid19_hosp_vent_reg/Hosp_vent_c'
-	ts = TS()
-	ts.loads(url)
-	workbook = ts.getWorkbook()
-
-	sheets = workbook.getSheets()
-	ws = ts.getWorksheet('Hospitalization and Ventilator Usage')
-	filters = ws.getFilters()
-	print(filters)
-	wb = ws.setFilter('Region', '2 - Baton Rouge')
-	regionWs = wb.getWorksheet('Hospitalization and Ventilator Usage')
-	hosp = pd.DataFrame()
-	for t in filters[0]['values']:
-	    wb = ws.setFilter('Region', t)
-	    regionWs = wb.getWorksheet('Hospitalization and Ventilator Usage')
-	    df = pd.DataFrame(regionWs.data)
-	    df = df.rename(columns = {'SUM(laggedCOVID Positive inHosp)-alias' : 'hospitalized - '+t, 'SUM(laggedCOVID Positive onVent)-alias' : 'on_vent - '+t, 'DAY(DateTime)-value' : 'date'})
-	    df['date'] = pd.to_datetime(df['date'])
-	    df = df.set_index('date')
-	    hosp = pd.concat([hosp, df[['hospitalized - '+t, 'on_vent - '+t]]], axis = 1)
-	hosp = hosp.transpose().reset_index()
-	h = hosp['index'].str.split(' - ', expand=True).rename(columns={0 : 'Category', 1 : 'Geography'})
-	hosp = pd.concat([h[['Geography', 'Category']], hosp], axis=1)
-	hosp['Geography'] = 'Region '+hosp['Geography']
-	hosp = hosp.drop('index', axis=1)
-	hosp.to_csv(f'{module_path}/data/region_hosp.csv', index=False)
+        ts = TS(logLevel='ERROR')
+        ts.loads(url)
+        workbook = ts.getWorkbook()
+        sheets = workbook.getSheets()
+        ws = ts.getWorksheet('Hospitalization and Ventilator Usage')
+        filters = ws.getFilters()
+#        wb = ws.setFilter('Region', '2 - Baton Rouge')
+#        regionWs = wb.getWorksheet('Hospitalization and Ventilator Usage')
+        hosp = pd.DataFrame()
+        for t in filters[0]['values']:
+            wb = ws.setFilter('Region', t)
+            regionWs = wb.getWorksheet('Hospitalization and Ventilator Usage')
+            df = pd.DataFrame(regionWs.data)
+            df = df.rename(columns = {'SUM(laggedCOVID Positive inHosp)-alias' : 'hospitalized - '+t, 'SUM(laggedCOVID Positive onVent)-alias' : 'on_vent - '+t, 'DAY(DateTime)-value' : 'date'})
+            df['date'] = pd.to_datetime(df['date']).dt.strftime('%m/%d/%Y')
+            df = df.set_index('date')
+            hosp = pd.concat([hosp, df[['hospitalized - '+t, 'on_vent - '+t]]], axis = 1)
+        hosp = hosp.transpose().reset_index()
+        h = hosp['index'].str.split(' - ', expand=True).rename(columns={0 : 'Category', 1 : 'Geography'})
+        hosp = pd.concat([h[['Geography', 'Category']], hosp], axis=1)
+        hosp['Geography'] = 'Region '+hosp['Geography']
+        hosp = hosp.drop('index', axis=1)
+        hosp.to_csv(f'{module_path}/data/region_hosp.csv', index=False)
+        logger.info('COMPLETE: Regional hospitalization data from Tableau')
     except Exception as e:
-	logger.error('Failed to download regional hospitalization data')
-	logger.exception('Function tableau_hosp failed with exception')
-	logger.error(str(e))
-	sys.exit(1)
+        logger.error('Failed to download regional hospitalization data')
+        logger.exception('Function tableau_hosp failed with exception')
+        logger.error(str(e))
+        sys.exit(1)
 
 
 def capacity(cases_deaths_primary):
@@ -585,7 +584,7 @@ def data_download(update_date):
         demos(cases_deaths_primary)
         timelines(cases_deaths_primary)
         capacity(cases_deaths_primary)
-	tableau_hosp()
+        tableau_hosp()
 #        recovered(cases_deaths_primary)
         date_of_test()
         tracts()
