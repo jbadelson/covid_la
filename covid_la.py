@@ -53,8 +53,8 @@ def tract_date():
 
 
 needed_datasets = {'cases_deaths_primary' : 'test_this_sheet',  # Main LDH cases, deaths and test data
-#                   'cases_deaths_parish' : 'Cases%20and%20Deaths%20by%20Race%20by%20Parish',
-                   'cases_deaths_region' : 'Cases%20and%20Deaths%20by%20Race%20by%20Parish%20and%20Region%20_%20updated',
+                   'cases_deaths_parish' : 'Cases_and_Deaths_by_Race_by_Parish',
+                   'cases_deaths_region' : 'Cases_and_Deaths_by_Race_by_Region_for_checking2',
                    'vaccine_primary' : 'Louisiana_COVID_Vaccination_Information___for_checking',
                    'vaccine_parish' : 'Vaccinations_by_Race_by_Parish',
                    'vaccine_tract': 'Louisiana_Vaccinations_by_Tract',
