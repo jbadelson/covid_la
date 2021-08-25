@@ -53,8 +53,8 @@ def tract_date():
 
 
 needed_datasets = {'cases_deaths_primary' : 'test_this_sheet',  # Main LDH cases, deaths and test data
-                   'cases_deaths_parish' : 'Cases%20and%20Deaths%20by%20Race%20by%20Parish',
-                   'cases_deaths_region' : 'Cases_and_Deaths_by_Race_by_Region_for_checking2',
+#                   'cases_deaths_parish' : 'Cases%20and%20Deaths%20by%20Race%20by%20Parish',
+                   'cases_deaths_region' : 'Cases%20and%20Deaths%20by%20Race%20by%20Parish%20and%20Region%20_%20updated',
                    'vaccine_primary' : 'Louisiana_COVID_Vaccination_Information___for_checking',
                    'vaccine_parish' : 'Vaccinations_by_Race_by_Parish',
                    'vaccine_tract': 'Louisiana_Vaccinations_by_Tract',
@@ -68,8 +68,8 @@ def get_datasets():
         data = urlopen(url).read()
         current_ldh_datasets = []
         for j in json.loads(data)['services']:
-            if j['name'] == 'Cases and Deaths by Race by Parish':
-                current_ldh_datasets.append('Cases%20and%20Deaths%20by%20Race%20by%20Parish')
+            if j['name'] == 'Cases and Deaths by Race by Parish and Region _ updated':
+                current_ldh_datasets.append('Cases%20and%20Deaths%20by%20Race%20by%20Parish%20and%20Region%20_%20updated')
             else:
                 current_ldh_datasets.append(j['name'])
         logger.info("Retrieved listing of current LDH datasets.")
@@ -591,7 +591,7 @@ def data_download(update_date):
 #        recovered(cases_deaths_primary)
         date_of_test()
         tracts()
-        case_death_race()
+#        case_death_race()
     except Exception as e:
         logger.exception('Function data_download failed with exception')
         logger.error(str(e))
