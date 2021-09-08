@@ -54,7 +54,7 @@ def tract_date():
 
 needed_datasets = {'cases_deaths_primary' : 'test_this_sheet',  # Main LDH cases, deaths and test data
                    'cases_deaths_parish' : 'Cases_and_Deaths_by_Race_by_Parish',
-                   'cases_deaths_region' : 'Cases_and_Deaths_by_Race_by_Region_for_checking2',
+                   'cases_deaths_region' : 'Cases_and_Deaths_by_Region_by_Race',
                    'vaccine_primary' : 'Louisiana_COVID_Vaccination_Information___for_checking',
                    'vaccine_parish' : 'Vaccinations_by_Race_by_Parish',
                    'vaccine_tract': 'Louisiana_Vaccinations_by_Tract',
@@ -232,7 +232,11 @@ def timelines(cases_deaths_primary):
                       'Date of Death': 'symptoms_date_of_death'}
         for c in categories:
             cdf = cases_deaths_primary[cases_deaths_primary['Measure'] == c].copy()
-            cdf['Date'] = pd.to_datetime(cdf['Timeframe'])
+            print(cdf.loc[cdf["Timeframe"] != 'current'])
+            cdf.loc[cdf["Timeframe"] != 'current', 'Date'] = cdf['Timeframe']
+            cdf.loc[cdf["Timeframe"] == 'current', 'Date'] = datetime.now()
+            cdf['Date'] = pd.to_datetime(cdf['Date'])
+#            cdf['Date'] = pd.to_datetime(cdf['Timeframe'])
             if c == 'COVID-positive':
                 cdf = cdf.pivot(index='ValueType', columns='Date', values='Value')
             else:
