@@ -232,7 +232,7 @@ def timelines(cases_deaths_primary):
                       'Date of Death': 'symptoms_date_of_death'}
         for c in categories:
             cdf = cases_deaths_primary[cases_deaths_primary['Measure'] == c].copy()
-            print(cdf.loc[cdf["Timeframe"] != 'current'])
+            cdf = cdf[cdf['Timeframe'] != 'current']
             cdf.loc[cdf["Timeframe"] != 'current', 'Date'] = cdf['Timeframe']
             cdf.loc[cdf["Timeframe"] == 'current', 'Date'] = datetime.now()
             cdf['Date'] = pd.to_datetime(cdf['Date'])
