@@ -52,13 +52,13 @@ def tract_date():
         return update_date - timedelta(days=update_date.weekday(), weeks=1)
 
 
-needed_datasets = {'cases_deaths_primary' : 'test_this_sheet',  # Main LDH cases, deaths and test data
+needed_datasets = {'cases_deaths_primary' : 'Louisiana_COVID_Reporting',  # Main LDH cases, deaths and test data
                    'cases_deaths_parish' : 'Cases_and_Deaths_by_Race_by_Parish',
                    'cases_deaths_region' : 'Cases_and_Deaths_by_Region_by_Race',
-                   'vaccine_primary' : 'Louisiana_COVID_Vaccination_Information___for_checking',
+                   'vaccine_primary' : 'Louisiana_COVID_Vaccination_Info',
                    'vaccine_parish' : 'Vaccinations_by_Race_by_Parish',
-                   'vaccine_tract': 'Louisiana_Vaccinations_by_Tract',
-                   'vaccine_full_demo' : 'Louisiana_Vaccination_Full_Demographics',
+                   'vaccine_tract': 'Louisiana_COVID_Vaccination_by_Tract',
+                   'vaccine_full_demo' : 'Louisiana_COVID_Vaccination_Demographics',
                    'tracts': 'Louisiana_COVID_Cases_by_Tract'}
 
 
@@ -589,7 +589,7 @@ def data_download(update_date):
         cases_deaths(cases_deaths_primary)
         tests(cases_deaths_primary)
         demos(cases_deaths_primary)
-        timelines(cases_deaths_primary)
+#        timelines(cases_deaths_primary)
         capacity(cases_deaths_primary)
         tableau_hosp()
 #        recovered(cases_deaths_primary)
