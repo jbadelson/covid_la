@@ -56,7 +56,7 @@ needed_datasets = {'cases_deaths_primary' : 'Louisiana_COVID_Reporting',  # Main
                    'cases_deaths_parish' : 'Cases_and_Deaths_by_Race_by_Parish',
                    'cases_deaths_region' : 'Cases_and_Deaths_by_Region_by_Race',
                    'vaccine_primary' : 'Louisiana_COVID_Vaccination_Info',
-                   'vaccine_parish' : 'Vaccinations_by_Race_by_Parish',
+                   'vaccine_parish' : 'Louisiana_COVID_Vaccination_by_Parish',
                    'vaccine_tract': 'Louisiana_COVID_Vaccination_by_Tract',
                    'vaccine_full_demo' : 'Louisiana_COVID_Vaccination_Demographics',
                    'tracts': 'Louisiana_COVID_Cases_by_Tract'}
@@ -449,7 +449,7 @@ def vaccinations():
 
         combined = pd.DataFrame()
         while record_count == 2000:
-            batch_records = pd.DataFrame(esri_cleaner(url_prefix + 'Louisiana_Vaccination_Full_Demographics' + url_suffix + f'&resultOffset={offset}'))
+            batch_records = pd.DataFrame(esri_cleaner(url_prefix + 'Louisiana_Vaccination_Demographics' + url_suffix + f'&resultOffset={offset}'))
             combined = combined.append(batch_records)
             offset = len(batch_records)
             record_count = len(batch_records)
