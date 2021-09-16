@@ -277,6 +277,7 @@ def tableau_hosp():
         hosp['Geography'] = 'Region '+hosp['Geography']
         hosp = hosp.drop('index', axis=1)
         hosp.to_csv(f'{module_path}/data/region_hosp.csv', index=False)
+        pd.concat([hosp[hosp['Category']=='hospitalized'].iloc[:,2:].sum().rename('hospitalized'),hosp[hosp['Category']=='on_vent'].iloc[:,2:].sum().rename('on_vent')], axis=1).transpose().reset_index().rename(columns={'index' : 'Category'}).to_csv(f'{module_path}/data/hospitalizations.csv', index=False)
         logger.info('COMPLETE: Regional hospitalization data from Tableau')
     except Exception as e:
         logger.error('Failed to download regional hospitalization data')
