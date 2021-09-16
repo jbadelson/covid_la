@@ -449,7 +449,7 @@ def vaccinations():
 
         combined = pd.DataFrame()
         while record_count == 2000:
-            batch_records = pd.DataFrame(esri_cleaner(url_prefix + 'Louisiana_Vaccination_Demographics' + url_suffix + f'&resultOffset={offset}'))
+            batch_records = pd.DataFrame(esri_cleaner(url_prefix + 'Louisiana_COVID_Vaccination_Demographics' + url_suffix + f'&resultOffset={offset}'))
             combined = combined.append(batch_records)
             offset = len(batch_records)
             record_count = len(batch_records)
