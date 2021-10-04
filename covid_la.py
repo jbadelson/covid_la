@@ -141,7 +141,7 @@ def download(dataset):
     while record_count == 2000:
         batch_records = pd.DataFrame(esri_cleaner(url_prefix + dataset + url_suffix + f'&resultOffset={offset}'))
         combined = combined.append(batch_records)
-        offset = len(batch_records)
+        offset = len(combined)
         record_count = len(batch_records)
     return combined
 
