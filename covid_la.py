@@ -35,8 +35,8 @@ logger.addHandler(stdout_handler)
 with open(f'{module_path}/static_data.json') as f:
     static_data = json.load(f)
 
-#update_date = pd.to_datetime('2021-11-06')
-update_date = datetime.now()
+update_date = pd.to_datetime('2021-11-15')
+#update_date = datetime.now()
 if os.name == 'nt':
     update_date_string = update_date.strftime('%#m/%#d/%#Y')
 else:
