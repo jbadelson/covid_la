@@ -35,6 +35,7 @@ logger.addHandler(stdout_handler)
 with open(f'{module_path}/static_data.json') as f:
     static_data = json.load(f)
 
+#update_date = pd.to_datetime('2021-12-05')
 update_date = datetime.now()
 if os.name == 'nt':
     update_date_string = update_date.strftime('%#m/%#d/%#Y')
@@ -264,7 +265,7 @@ def tableau_hosp():
 #        regionWs = wb.getWorksheet('Hospitalization and Ventilator Usage')
         hosp = pd.DataFrame()
         for t in filters[0]['values']:
-            wb = ws.setFilter('Region', t)
+            wb = ws.setFilter('Region', t, dashboardFilter=True)
             regionWs = wb.getWorksheet('Hospitalization and Ventilator Usage')
             df = pd.DataFrame(regionWs.data)
             df = df.rename(columns = {'SUM(laggedCOVID Positive inHosp)-alias' : 'hospitalized - '+t, 'SUM(laggedCOVID Positive onVent)-alias' : 'on_vent - '+t, 'DAY(DateTime)-value' : 'date'})
@@ -449,7 +450,7 @@ def vaccinations():
 
         combined = pd.DataFrame()
         while record_count == 2000:
-            batch_records = pd.DataFrame(esri_cleaner(url_prefix + 'Louisiana_Vaccination_Demographics' + url_suffix + f'&resultOffset={offset}'))
+            batch_records = pd.DataFrame(esri_cleaner(url_prefix + 'Louisiana_COVID_Vaccination_Demographics' + url_suffix + f'&resultOffset={offset}'))
             combined = combined.append(batch_records)
             offset = len(batch_records)
             record_count = len(batch_records)
