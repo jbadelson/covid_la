@@ -285,7 +285,24 @@ def tableau_hosp():
         logger.exception('Function tableau_hosp failed with exception')
         logger.error(str(e))
         sys.exit(1)
-
+    try:
+        url = 'https://analytics.la.gov/t/LDH/views/COVID19_deathsxtime/OverTime'
+        ts = TS(logLevel='ERROR')
+        ts.loads(url)
+        workbook = ts.getWorkbook()
+        sheets = workbook.getSheets()
+        ws = ts.getWorksheet('Deaths by date of death')
+        ws.data[['DAY(Timeframe)-value','SUM(Deaths)-value']].dtypes
+        deaths_dot = pd.DataFrame(ws.data)
+        deaths_dot = deaths_dot.rename(columns = {'DAY(Timeframe)-value' : 'date', 'SUM(Deaths)-value' : 'Date of Death'})
+        deaths_dot['date'] = pd.to_datetime(deaths_dot['date']).dt.strftime('%m/%d/%Y')
+        deaths_dot = deaths_dot.set_index('date')
+        deaths_dot[['Date of Death']].transpose().reset_index().rename(columns={'index' : 'Category'}).to_csv(f'{module_path}/data/symptoms_date_of_death.csv', index=False)
+    except Exception as e:
+        logger.error('Failed to download date of death data')
+        logger.exception('Function tableau_hosp failed with exception')
+        logger.error(str(e))
+        sys.exit(1)
 
 def capacity(cases_deaths_primary):
     try:
