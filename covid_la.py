@@ -303,6 +303,26 @@ def tableau_hosp():
         logger.exception('Function tableau_hosp failed with exception')
         logger.error(str(e))
         sys.exit(1)
+    try:
+        url = 'https://analytics.la.gov/t/LDH/views/extracovidinfo/Dashboard1'
+        ts = TS()
+        ts.loads(url)
+        ws = ts.getWorksheet('New Reinfections')
+        new_reinfections = ws.data['AGG(SUM(INT([Value])))-alias'][0]
+        ws = ts.getWorksheet('Total Reinfections')
+        total_reinfections = ws.data['AGG(SUM(INT([Value])))-alias'][0]
+        reinfect = pd.DataFrame({'Category' : ['New Reinfections', 'Total Reinfections'], update_date_string : [new_reinfections, total_reinfections]})
+        reinfect_file = csv_loader(f'{module_path}/data/reinfect.csv', update_date_string)
+        reinfect_file = reinfect_file.merge(reinfect, on='Category', how='outer')
+        reinfect_file.to_csv(f'{module_path}/data/reinfect.csv', index=False)
+    except Exception as e:
+        logger.error('Failed to download reinfection info')
+        logger.exception('Function tableau_hosp failed with exception')
+        logger.error(str(e))
+        #sys.exit(1)
+    
+
+
 
 def capacity(cases_deaths_primary):
     try:
