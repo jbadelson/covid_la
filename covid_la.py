@@ -261,8 +261,6 @@ def tableau_hosp():
         sheets = workbook.getSheets()
         ws = ts.getWorksheet('Hospitalization and Ventilator Usage')
         filters = ws.getFilters()
-#        wb = ws.setFilter('Region', '2 - Baton Rouge')
-#        regionWs = wb.getWorksheet('Hospitalization and Ventilator Usage')
         hosp = pd.DataFrame()
         for t in filters[0]['values']:
             wb = ws.setFilter('Region', t, dashboardFilter=True)
@@ -341,10 +339,6 @@ def tableau_hosp():
         logger.exception('Function tableau_hosp failed with exception')
         logger.error(str(e))
         #sys.exit(1)
-
-    
-
-
 
 def capacity(cases_deaths_primary):
     try:
