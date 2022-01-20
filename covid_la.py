@@ -318,26 +318,26 @@ def tableau_hosp():
         logger.exception('Function tableau_hosp failed with exception')
         logger.error(str(e))
         #sys.exit(1)
-    try:
-        variants_file = pd.read_csv(f'{module_path}/data/variants.csv')
-        url = 'https://analytics.la.gov/t/LDH/views/extracovidinfo/Dashboard1'
-        ts = TS()
-        ts.loads(url)
-        workbook = ts.getWorkbook()
-        sheets = workbook.getSheets()
-        ws = ts.getWorksheet('Variants')
-        variants = ws.data
-        variants_dict = {}
-        variants_date = variants['Timeframe-alias'][0]
-        for i,r in variants.iterrows():
-            variants_dict[r['Group-alias']] = r['AGG(SUM(INT([Value])))-alias']/100
-        for k in variants_dict:
-            variants_file.loc[variants_date, k] = variants_dict[k]
-        variants_file.to_csv(f'{module_path}/data/variants.csv')
-    except Exception as e:
-        logger.error('Failed to download variant info')
-        logger.exception('Function tableau_hosp failed with exception')
-        logger.error(str(e))
+    # try:
+    #     variants_file = pd.read_csv(f'{module_path}/data/variants.csv')
+    #     url = 'https://analytics.la.gov/t/LDH/views/extracovidinfo/Dashboard1'
+    #     ts = TS()
+    #     ts.loads(url)
+    #     workbook = ts.getWorkbook()
+    #     sheets = workbook.getSheets()
+    #     ws = ts.getWorksheet('Variants')
+    #     variants = ws.data
+    #     variants_dict = {}
+    #     variants_date = variants['Timeframe-alias'][0]
+    #     for i,r in variants.iterrows():
+    #         variants_dict[r['Group-alias']] = r['AGG(SUM(INT([Value])))-alias']/100
+    #     for k in variants_dict:
+    #         variants_file.loc[variants_date, k] = variants_dict[k]
+    #     variants_file.to_csv(f'{module_path}/data/variants.csv')
+    # except Exception as e:
+    #     logger.error('Failed to download variant info')
+    #     logger.exception('Function tableau_hosp failed with exception')
+    #     logger.error(str(e))
         #sys.exit(1)
 
 def capacity(cases_deaths_primary):
