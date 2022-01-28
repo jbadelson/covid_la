@@ -1,0 +1,26 @@
+,OBJECTID,SiteCode,SiteName,PhysicalStAddr,PhysicalCityAddr,Physical5ZipAddr,StateAddr,ParishCd,SchoolCloseDt,Total_Students_Public_ed_ECE,Lead_Action_Level_Exceedance,Copper_Action_Level_Exceedance,ALE_Follow_Up_Action,ALE_Follow_Up_Action_Status,PWSID,PWSName
+0,1,009018,Creswell Elementary School,2901 Creswell Avenue,Shreveport,71104,LA,09,"2901 Creswell Avenue, Shreveport, LA 71104",420.0,No,No,,,LA1017031,SHREVEPORT WATER SYSTEM
+1,2,010046,Prien Lake Elementary School,3741 Nelson Road,Lake Charles,70605,LA,10,"3741 Nelson Road, Lake Charles, LA 70605",764.0,No,No,,,LA1019029,CITY OF LAKE CHARLES WATER SYSTEM
+2,3,017013,Bernard Terrace Elementary School,241 Edison Street,Baton Rouge,70806,LA,17,"241 Edison Street, Baton Rouge, LA 70806",401.0,No,No,,,LA1033005,BATON ROUGE WATER COMPANY
+3,4,026038,Harahan Elementary School,6723 Jefferson Highway,Harahan,70123,LA,26,"6723 Jefferson Highway, Harahan, LA 70123",498.0,No,No,,,LA1051001,E JEFFERSON WW DISTRICT 1
+4,5,028030,Prairie Elementary School,2910 Ambassador Caffery Parkway,Lafayette,70506,LA,28,"2910 Ambassador Caffery Parkway, Lafayette, LA 70506",750.0,No,No,,,LA1055017,LAFAYETTE UTILITIES WATER SYSTEM
+5,6,029001,Bayou Blue Elementary School,1916 Bayou Blue Road,Houma,70364,LA,29,"1916 Bayou Blue Road, Houma, LA 70364",738.0,No,No,,,LA1055017,LAFAYETTE UTILITIES WATER SYSTEM
+6,7,037007,Drew Elementary School,1132 Highway 15,West Monroe,71291,LA,37,"1132 Highway 15, West Monroe, LA 71291",468.0,No,No,,,LA1073100,CHENIERE DREW NORTH WATER SYSTEM
+7,8,052012,Covington Elementary School,325 South Jackson Street,Covington,70433,LA,52,"325 South Jackson Street, Covington, LA 70433",597.0,No,No,,,LA1103011,COVINGTON WATER SUPPLY
+8,9,053016,Loranger Elementary School,54101 Martin Street,Loranger,70446,LA,53,"54101 Martin Street, Loranger, LA 70446",785.0,No,No,,,LA1105003,EASTERN HEIGHTS WATER WORKS
+9,10,065006,Barkdull Faulk Elementary School,2110 Jackson Street,Monroe,71202,LA,65,"2110 Jackson Street, Monroe, LA 71202",265.0,No,No,,,LA1073031,MONROE WATER SYSTEM
+10,11,395002,Dwight D. Eisenhower Academy of Global Studies,3700 Tall Pines Drive,New Orleans,70131,LA,36,"3700 Tall Pines Drive, New Orleans, LA 70131",686.0,No,No,,,LA1071001,NEW ORLEANS ALGIERS WATER WORKS
+11,12,033003,Tallulah Elementary School,1100 Johnson Street,Tallulah,71282,LA,33,"1100 Johnson Street, Tallulah, LA 71282",421.0,No,No,,,LA1065003,TALLULAH WATER SYSTEM
+12,13,053026,Roseland Montessori,12516 Time Avenue,Roseland,70456,LA,53,"12516 Time Avenue, Roseland, LA 70456",469.0,No,No,,,LA1105022,ROSELAND WATER SYSTEM
+13,15,369001,ReNEW Cultural Arts Academy at Live Oak Elementary,3128 Constance Street,New Orleans,70115,LA,36,"3128 Constance Street, New Orleans, LA 70115",637.0,No,No,,,LA1071009,NEW ORLEANS  CARROLLTON WW
+14,16,050016,St. Martinville Primary School,716 N. Main Street,St. Martinville,70582,LA,50,"716 N. Main Street, St. Martinville, LA 70582",600.0,No,No,,,LA1099007,CITY OF ST MARTINVILLE WATER SYSTEM
+15,17,003008,Gonzales Primary School,521 North Burnside Avenue,Gonzales,70737,LA,03,"521 North Burnside Avenue, Gonzales, LA 70737",478.0,No,No,,,LA1005030,CITY OF GONZALES WATER SYSTEM
+16,19,064006,Winnfield Primary School,401 South St. John Street,Winnfield,71483,LA,64,"401 South St. John Street, Winnfield, LA 71483",,No,No,,,LA1127012,CITY OF WINNFIELD WATER SYSTEM
+17,23,023030,Delcambre Elementary School,706 Martin Luther King Drive,Delcambre,70528,LA,23,"706 Martin Luther King Drive, Delcambre, LA 70528",488.0,,,,,LA1113004,TOWN OF DELCAMBRE WATER SYSTEM
+18,24,047003,Cypress Grove Montessori,2461 N. King Avenue,Lutcher,70071,LA,47,"2461 N. King Avenue, Lutcher, LA 70071",145.0,,,,,LA1093003,LUTCHER WATERWORKS
+19,25,048024,John L. Ory Communications Magnet Elementary,182 West Fifth Street,LaPlace,70068,LA,48,"182 West Fifth Street, LaPlace, LA 70068",,,,,,LA1095007,ST JOHN WATER DISTRICT  3
+20,26,032011,Frost School,19672 LA Highway 42,Livingston,70754,LA,32,"19672 LA Highway 42, Livingston, LA 70754",,,,,,LA1063003,COLYELL COMMUNITY WATER
+21,27,039013,Rougon Elementary School,13258 LA Highway 416,Rougon,70773,LA,39,"13258 LA Highway 416, Rougon, LA 70773",612.0,,,,,LA1077041,FALSE RIVER WATER COMPANY
+22,28,019009,Slaughter Elementary School,3170 Church Street,Slaughter,70777,LA,19,"3170 Church Street, Slaughter, LA 70777",526.0,,,,,LA1037008,TOWN OF SLAUGHTER WATER SYSTEM
+23,29,030008,Olla-Standard Elementary School,4170 School Drive,Olla,71465,LA,30,"4170 School Drive, Olla, LA 71465",380.0,,,,,LA1059004,TOWN OF OLLA WATER SYSTEM
+24,30,042010,Rayville Elementary School,124 Learning Place Street,Rayville,71269,LA,42,"124 Learning Place Street, Rayville, LA 71269",370.0,,,,,LA1083006,RAYVILLE WATER SYSTEM

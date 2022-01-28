@@ -1,0 +1,10 @@
+,FID,LDHH,Layout,Rotation,ORIG_FID
+0,1,1,Landscape,90,0
+1,2,2,Portrait,0,1
+2,3,3,Landscape,90,2
+3,4,4,Portrait,0,3
+4,5,5,Portrait,0,4
+5,6,6,Landscape,90,5
+6,7,7,Portrait,0,6
+7,8,8,Landscape,90,7
+8,9,9,Landscape,90,8

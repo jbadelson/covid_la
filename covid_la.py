@@ -339,6 +339,34 @@ def tableau_hosp():
         logger.exception('Function tableau_hosp failed with exception')
         logger.error(str(e))
         #sys.exit(1)
+    try:
+        url = 'https://analytics.la.gov/t/LDH/views/casesxcollection_reinf/FirstandReinfections?%3Aembed=y&%3AisGuestRedirectFromVizportal=y'
+        ts = TS()
+        ts.loads(url)
+        sheets = workbook.getSheets()
+        ws = ts.getWorksheet('First and Reinfections by Collection Date')
+        filters = ws.getFilters()
+        # wb = ws.setFilter('region', '2 - Baton Rouge')
+        # regionWs = wb.getWorksheet('First and Reinfections by Collection Date')
+        reinfections = pd.DataFrame()
+        for t in filters[0]['values']:
+            wb = ws.setFilter('region', t)
+            regionWs = wb.getWorksheet('First and Reinfections by Collection Date')
+            df = pd.DataFrame(regionWs.data)
+            df = df.rename(columns={'SUM(Number of Rows (Aggregated))-value' : 'infections', 'collectdate-value' : 'date', 'casetype (group)-alias' : 'type'})
+            # df['date'] = pd.to_datetime(df['date']).dt.strftime('%m/%d/%Y')
+            df = pd.pivot(df, index='date', columns='type', values = 'infections').rename(columns={'First Infections' : 'First Infections - '+t, 'Reinfections' : 'Reinfections - '+t})
+            reinfections = pd.concat([reinfections, df[['First Infections - '+t, 'Reinfections - '+t]]], axis=1)
+        reinfections = reinfections.transpose().reset_index()
+        r = reinfections['type'].str.split(' - ',expand=True).rename(columns={0:'Category', 1:'Geography'})
+        reinfections = pd.concat([r[['Geography', 'Category']], reinfections], axis=1)
+        reinfections['Geography'] = 'Region '+reinfections['Geography']
+        reinfections = reinfections.drop('type',axis=1).fillna(0)
+        reinfections.to_csv(f'{module_path}/data/reinfections.csv')
+    except Exception as e:
+        logger.error('Failed to download variant info')
+        logger.exception('Function tableau_hosp failed with exception')
+        logger.error(str(e))
 
 def capacity(cases_deaths_primary):
     try:

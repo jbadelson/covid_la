@@ -1,0 +1,108 @@
+,FID,SITE,STREET,CITY,STATE,ZIP,PHONE,HOURS,PARISH,REGION,TYPE,LATITUDE,LONGITUDE,GEORESULT
+0,1,Nicholls State University - Student Union Building,104 Ellendale Drive,Thibodaux,LA,70301, ,M-F 9am-5pm,Lafourche,Region 3,National Guard,29.7916286555205,-90.8027313566304, 
+1,2,Grambling State University,1234 Grambling Road,Grambling,LA,71245, ,M-F 9am-4pm,Lincoln,Region 8,National Guard,32.5226836057059,-92.7166787065401, 
+2,3,Mahalia Jackson Theater,1419 Basin Street,New Orleans,LA,70116, ,M-F 8am-4pm & Sat 8am-2pm,Orleans,Region 1,National Guard,29.9618521563387,-90.0693670166078, 
+3,4,Louisiana Tech University - Thomas Assembly Center,1650 West Alabama Avenue,Ruston,LA,71270, ,M-F 9am-4pm,Lincoln,Region 8,National Guard,32.5320657432142,-92.6586324458255, 
+4,5,Alario Center,2000 Segnette Blvd,Westwego,LA,77094, ,M-F 8am-4pm & Sat 8am-2pm,Jefferson,Region 1,National Guard,29.9053827796418,-90.1625598830452, 
+5,6,Lafayette Parish Health Unit,220 W Willow Street,Lafayette,LA,70503, ,M-F 8am-3pm,Lafayette,Region 4,National Guard,30.244104,-92.010263,S5HP-TSCZA
+6,7,LSU Campus - Student Union Building,254 South Stadium Dr.,Baton Rouge,LA,70805, ,M-F 9am-4pm,East Baton Rouge,Region 2,National Guard,30.4126256754637,-91.1771348059757, 
+7,8,Southeastern Louisiana University,500 W University Avenue,Hammond,LA,70402, ,M-F 9am-4pm,Tangipahoa,Region 9,National Guard,30.5192689365371,-90.4713670991641, 
+8,9,Rapides Parish Coliseum,5600 Coliseum Boulevard,Alexandria,LA,71303, ,M-F 8am-1pm,Rapides,Region 6,National Guard,31.2966802735137,-92.5036028462474, 
+9,10,University of Louisiana,620 McKinley street,Lafayette,LA,70503, ,M-F 8am-3pm,Lafayette,Region 4,National Guard,30.2132911103031,-92.0170627616095, 
+10,11,UNO Lakefront Arena,6801 Franklin Ave,New Orleans,LA,70112, ,M-F 8am-4pm & Sat 8am-2pm,Orleans,Region 1,National Guard,30.0300856250343,-90.0505457616126, 
+11,12,Southern University - FG Clark Activity Center,801 Harding Blvd,Baton Rouge,LA,70807, ,M-F 9am-4pm,East Baton Rouge,Region 2,National Guard,30.5219193556856,-91.1855716885889, 
+12,13,Univeristy of Louisiana - Moonroe,840 Cole Avenue,Monroe,LA,71201, ,M-F 9am-4pm,Ouachita,Region 8,National Guard,32.5297488676162,-92.0793476977673, 
+13,14,Lake Charles Civic Center,900 N Lakeshore Drive,Lake Charles,LA,70601, ,M-F 8am-3pm,Calcasieu,Region 5,National Guard,30.2285996753166,-93.221410605315, 
+14,15,Lamar Dixon Expo Center,9039 S St Landry Avenue,Gonzales,LA,70737, ,M-F 9am-4pm,Ascension,Region 2,National Guard,30.1970914117583,-90.9578550968446, 
+15,16,Cortana Mall,9401 Cortana Place,Baton Rouge,LA,70815, ,M-F 9am-4pm,East Baton Rouge,Region 2,National Guard,30.458199,-91.093218, 
+16,17,Union,1002 Marion Hwy,Farmersville,LA,71241,(318) 368-3156,"8:00am-4:30pm M,W,Th",Union,Region 8,Parish Health Unit,32.787661,-92.390415,S5HPNTSCZA
+17,18,Evangeline,1010 West LaSalle Street,Ville Platte,LA,70586,(337) 363-1135,8:00am-4:30pm M-F,Evangeline,Region 4,Parish Health Unit,30.694136,-92.283808,S5HPNTSCZA
+18,19,Acadia,1029 Capitol Ave,Crowley,LA,70526,(337) 788-7507,8:00am-4:30pm M-F,Acadia,Region 4,Parish Health Unit,30.2081224537252,-92.398981746266, 
+19,20,Caddo,1035 Creswell Ave,Shreveport,LA,71101,(318) 676-5222,8:00am-4:30pm M-F,Caddo,Region 7,Parish Health Unit,32.502151,-93.741575,S5HPNTSCZA
+20,21,Webster- Springhill,110 June Anthony Dr.,Springhill,LA,71075,(318) 539-4314,8:00am-4:30pm M-F,Webster,Region 7,Parish Health Unit,32.999,-93.463,S3HPN-SCZA
+21,22,Jefferson - Metairie,111 North Causeway Blvd,Metairie,LA,70001,(504) 838-5100,8:00am-4:30pm M-F,Jefferson,Region 1,Parish Health Unit,29.975035,-90.155203,S5HPNTSCZA
+22,23,DeSoto,113 Jefferson Street,Mansfield,LA,71052,(318) 872-0472,8:00am-4:30pm M-F,DeSoto,Region 7,Parish Health Unit,32.03727,-93.709095,S5HPNTSCZA
+23,24,Washington- Franklinton,120 11th Avenue,Franklinton,LA,70438,(985) 839-5646,8:00am-4:30pm M-F,Washington,Region 9,Parish Health Unit,30.855603,-90.158598,S5HPN-SCZA
+24,25,St. Mary,1200 David Drive,Morgan City,LA,70380,(985) 380-2441,8:00am-4:30pm  M-F,St. Mary,Region 3,Parish Health Unit,29.707624,-91.197951,S5HPNTSCZA
+25,26,Webster- Minden,1200 Homer Rd.,Minden,LA,71055,(318) 371-3030,8:00am-4:30pm M-F,Webster,Region 7,Parish Health Unit,32.624731,-93.253218,S5HPNTSCZA
+26,27,East Feliciana,120802 Marston St.,Clinton,LA,70722,(225) 638-5881,8:00am-4:30pm M-F,East Feliciana,Region 2,Parish Health Unit,30.86213,-91.021171,S5HPNTSCZA
+27,28,Madison,123 Bailey Rd,Tallulah,LA,71282,(318) 574-3311,"8:00am-4:30pm M,W,Th",Madison,Region 8,Parish Health Unit,32.406508,-91.172619,S5HPN-SCZA
+28,29,Sabine,1230 West Louisiana Ave.,Many,LA,71449,(318) 256-4105,8:00am-4:30pm M-F,Sabine,Region 7,Parish Health Unit,31.566934,-93.477141,S5HPNTSCZA
+29,30,Bienville,"1285 Pine St., Ste 102",Arcadia,LA,71001,(318) 263-2125,8:00am-4:30pm M-F,Bienville,Region 7,Parish Health Unit,32.551333,-92.91612,S5HPNTSCZA
+30,31,LaFourche-Cut Off,133 W. 112th St,Cut Off,LA,70345,(985) 632-5567,8:00am-4:30pm  M-F,Lafourche,Region 3,Parish Health Unit,29.478313,-90.321727,S5HPNTSCZA
+31,32,Allen-Oakdale,145 Hospital Drive,Oakdale,LA,71463,(318) 335-1147, ,Allen,Region 5,Parish Health Unit,30.815054,-92.644615,S5HPNTSCZA
+32,33,Tangipahoa-Hammond,15481 W. Club Deluxe Rd.,Hammond,LA,70403,(985) 543-4165,8:00am-4:30pm M-F,Tangipahoa,Region 9,Parish Health Unit,30.475611,-90.467288,S5HPNTSCZA
+33,34,Assumption,158 Highway 1008,Napoleonville,LA,70390,(985) 369-6031,8:00am-4:30pm T/TH only,Assumption,Region 3,Parish Health Unit,29.940198,-91.02907,S5HPNTSCZA
+34,35,Ouachita,1650 DeSiard,Monroe,LA,71201,(318) 361-7370,8:00am-4:30pm M-F,Ouachita,Region 8,Parish Health Unit,32.510301,-92.103806,S5HPNTSCZA
+35,36,LaSalle,1673 N. 2nd Street,Jena,LA,71343,(318) 992-4842,8:00am-4:30pm M-F,LaSalle,Region 6,Parish Health Unit,31.685354,-92.131801,S5HP-TSCZA
+36,37,Orleans PHU - Wetmore Clinic,1676 Gravier St.,New Orleans,LA,70112,(504) 826-2063,8:00am-4:30pm M-F,Orleans,Region 1,Parish Health Unit,29.9552968575309,-90.0797852439693, 
+37,38,Jefferson - Marrero,1855 Ames Blvd,Marrero,LA,70072,(504) 349-8802,8:00am-4:30pm Thu only,Jefferson,Region 1,Parish Health Unit,29.881,-90.114082,S5HPNTSCZA
+38,39,Catahoula,200 Third Street,Jonesville,LA,71343,(318) 339-8352,8:00am-4:30pm M-F,Catahoula,Region 6,Parish Health Unit,31.625724,-91.814465,S5HP-TSCZA
+39,40,Red River,2015 Red Oak Rd.,Coushatta,LA,71019,(318) 932-4087,8:00am-4:30pm M-F,Red,Region 7,Parish Health Unit,32.013342,-93.340444,S5HPNTSCZA
+40,41,Livingston,20399 Government Blvd,Livingston,LA,70754,(225) 686-7017,8:00am-4:30pm M-F,Livingston,Region 9,Parish Health Unit,30.4829,-90.749,S5----SEET
+41,42,Richland,21 Lynn Gayle Robertson Rd.,Rayville,LA,71269,(318) 728-4441,"8:00am-4:30pm M,Tu,Th",Richland,Region 8,Parish Health Unit,32.4604,-91.7476,S5----SEET
+42,43,Bienville-Ringgold,2145 Mill Street,Ringgold,LA,71068,(318) 849-2209,8:00am-4:30pm M-F,Bienville,Region 7,Parish Health Unit,32.328193887773,-93.2871613345204, 
+43,44,Beauregard,216 Evangeline St,DeRidder,LA,70634,(337) 463-4486, ,Beauregard,Region 5,Parish Health Unit,30.849567,-93.27369,S5HPNTSCZA
+44,45,Lafayette,"220 Willow Street, Bldg A",Lafayette,LA,70501,(337) 262-5616,8:00am-4:30pm M-F,Lafayette,Region 4,Parish Health Unit,30.244104,-92.010263,S5HP-TSCZA
+45,46,Jackson,228 Bond St,Jonesboro,LA,71251,(318) 259-6601,"8:00am-4:30pm M, W, Thu",Jackson,Region 8,Parish Health Unit,32.239611,-92.690019,S5HPNTSCZA
+46,47,Vermilion,2501 Charity St,Abbeville,LA,70510,(337) 893-1443,8:00am-4:30pm M-F,Vermilion,Region 4,Parish Health Unit,29.972432,-92.10967,S5HPNTSCZA
+47,48,LaFourche-Thibodaux,2535 Veterans Blvd,Thibodaux,LA,70301,(985) 447-0921,8:00am-4:30pm  M-F,Lafourche,Region 3,Parish Health Unit,29.770496,-90.846346,S5HPNTSCZA
+48,49,Point Coupee,282 B Hospital Rd,New Roads,LA,70760,(225) 638-7320,8:00am-4:30pm M-F,Point Coupee,Region 2,Parish Health Unit,30.683609,-91.463173,S5HPNTSCZA
+49,50,St. James,29170 Health Unit St,Vacherie,LA,70090,(225) 265-2181,8:00am-4:30pm  M-F,St. James,Region 3,Parish Health Unit,29.965362,-90.713944,S5HPNTSCZA
+50,51,Winn,"301 Main St, Ste 101",Winnfield,LA,71483,(318) 628-2148,8:00am-4:30pm M-F,Winn,Region 6,Parish Health Unit,31.926662,-92.640765,S5HPNTSCZA
+51,52,Bossier,3022 Old Minden Rd,Bossier City,LA,71112,(318) 741-7314,8:00am-4:30pm M-F,Bossier,Region 7,Parish Health Unit,32.522126,-93.693144,S5HPNTSCZA
+52,53,St.Martin,303 W. Port St,St.Martinville,LA,70582,(337) 394-3097,8:00am-4:30pm M-F,St.Martin,Region 4,Parish Health Unit,30.123084,-91.832068,S5HPNTSCZA
+53,54,St.Landry,308 W Bloch St,Opelousas,LA,70570,(337) 948-0220,8:00am-4:30pm M-F,St.Landry,Region 4,Parish Health Unit,30.538251,-92.085221,S5HPNTSC-A
+54,55,Calcasieu-Lake Charles,3236 Kirkman St,Lake Charles,LA,70601,(337) 478-6020,8:00am-4:30pm M-F,Calcasieu,Region 5,Parish Health Unit,30.199149,-93.209854,S5HPNTSCZA
+55,56,Grant,340-A  Webb Smith Drive,Colfax,LA,71417,(318) 627-3133,8:00am-4:30pm M-F,Grant,Region 6,Parish Health Unit,31.524298,-92.689957,S5HPNTSCZA
+56,57,East Baton Rouge,353 N. 12th Street,Baton Rouge,LA,70802,(225) 242-4862,8:00am-4:30pm M-F,East Baton Rouge,Region 2,Parish Health Unit,30.450187,-91.1774,S5HPNTSCZA
+57,58,West Carroll,402 Beale St,Oak Grove,LA,71263,(318) 428-9361,"8:00am-4:30pm M,W,F",West Carroll,Region 8,Parish Health Unit,32.8589,-91.386,S5----SEET
+58,59,Jefferson Davis,403 Baker St,Jennings,LA,70546,(337) 824-2193, ,Jefferson Davis,Region 5,Parish Health Unit,30.21526,-92.662464,S5HPNTSCZA
+59,60,East Carroll,403 Second St,Lake Provodince,LA,71254,(318) 559-2012,"8:00am-4:30pm Tu,Thu, F",East Carroll,Region 8,Parish Health Unit,32.802902,-91.173145,S5HPNTSCZA
+60,61,Lincoln,405 E. Georgia Ave.,Ruston,LA,71270,(318) 251-4120,"8:00am-4:30pm M,Tu, F",Lincoln,Region 8,Parish Health Unit,32.531328,-92.634773,S5HPNTSCZA
+61,62,Vernon,406 Fertitta Blvd,Leesville,LA,71446,(337) 238-6410,8:00am-4:30pm M-F,Vernon,Region 6,Parish Health Unit,31.137404,-93.265774,S5HPNTSCZA
+62,63,Avoyelles-Bunkie,406 Walnut Street,Bunkie,LA,71322,(318) 346-2586,8:00-4:30pm Tues Only,Avoyelles,Region 6,Parish Health Unit,30.951523,-92.183207,S5HPNTSCZA
+63,64,St. John,473 Central Ave.,Reserve,LA,70084,(985) 536-2172,8:00am-4:30pm  M-F,St. John,Region 3,Parish Health Unit,30.066504,-90.552086,S5HPNTSCZA
+64,65,Caldwell,501 Collins Rd,"Columbia,",LA,71418,(318) 649-2393,"8:00am-4:30pm Tu,W, F",Caldwell,Region 8,Parish Health Unit,32.076034,-92.095533,S5-PNTSCZA
+65,66,Rapides,5604-A  Coliseum Blvd,Alexandria,LA,71303,(318) 487-5282,8:00am-4:30pm M-F,Rapides,Region 6,Parish Health Unit,31.29558,-92.505097,S5HPNTSCZA
+66,67,Terrebonne,600 Polk St.,Houma,LA,70360,(985) 857-3601,8:00am-4:30pm  M-F,Terrebonne,Region 3,Parish Health Unit,29.593747,-90.733961,S5HPNTSCZA
+67,68,Claiborne,624 W. Main Street,Homer,LA,71040,(318) 927-6127,8:00am-4:30pm M-F,Claiborne,Region 7,Parish Health Unit,32.793361,-93.055487,S5HPNTSCZA
+68,69,Natchitoches,625 Bienville St.,Natchitoches,LA,71457,(318) 357-3132,8:00am-4:30pm M-F,Natchitoches,Region 7,Parish Health Unit,31.751519,-93.076946,S5HPNTSCZA
+69,70,Washington-Bogalusa,626 Carolina Ave.,Bogalusa,LA,70427,(985) 732-6615,8:00am-4:30pm M-F,Washington,Region 9,Parish Health Unit,30.78957,-89.854225,S5HPNTSCZA
+70,71,Morehouse,650 School Rd,Bastrop,LA,71220,(318) 283-0806,"8:00am-4:30pm M,Tu,W,Th",Morehouse,Region 8,Parish Health Unit,32.772092,-91.912758,S5HPN-SCZA
+71,72,Avoyelles-Marksville,657 Government Street,Marksville,LA,71351,(318) 253-4528,8:00am-4:30pm,Avoyelles,Region 6,Parish Health Unit,31.1161966666918,-92.0670053750864, 
+72,73,Franklin,6614 Main St,Winnsboro,LA,71295,(318) 435-2143,"8:00am-4:30pm M,Tu,Thu",Franklin,Region 8,Parish Health Unit,32.164362,-91.708028,S5HPNTSCZA
+73,74,Iberia,715B Weldon Street,New Iberia,LA,70560,(337) 373-0021,8:00am-4:30pm M-F,Iberia,Region 4,Parish Health Unit,29.990029,-91.811605,S5HPN-SC-A
+74,75,Concordia,905 Mickey Giley Ave,Ferriday,LA,71334,(318) 757-8632,8:00am-4:30pm M-F,Concordia,Region 6,Parish Health Unit,31.629023,-91.560865,S5HPN-SCZA
+75,76,Walgreens,1000 S ACADIA RD,THIBODAUX,LA,70301, , ,LAFOURCHE,Region 3,Walgreens,29.7810633988805,-90.808562175109, 
+76,77,Walgreens,101 FLORIDA AVE SE,DENHAM SPRINGS,LA,70726, , ,LIVINGSTON,Region 9,Walgreens,30.4825810817292,-90.9558034039332, 
+77,78,Walgreens,108 W CALIFORNIA AVE,RUSTON,LA,71270, , ,LINCOLN,Region 8,Walgreens,32.5241983734008,-92.6392244192409, 
+78,79,Walgreens,1125 MARCHAND DR,DONALDSONVILLE,LA,70346, , ,ASCENSION,Region 2,Walgreens,30.095294264378,-90.9835118714011, 
+79,80,Walgreens,1214 GRAND CAILLOU ROAD,HOUMA,LA,70363, , ,TERREBONNE,Region 3,Walgreens,29.577264682059,-90.6896796867533, 
+80,81,Walgreens,13500 HIGHWAY 90,BOUTTE,LA,70039, , ,SAINT CHARLES,Region 3,Walgreens,29.9017354876523,-90.3879335039429, 
+81,82,Walgreens,1401 REES ST,BREAUX BRIDGE,LA,70517, , ,SAINT MARTIN,Region 4,Walgreens,30.2845939817998,-91.9065428462647, 
+82,83,Walgreens,1815 W AIRLINE HWY,LA PLACE,LA,70068, , ,ST JOHN THE BAPTIST,Region 3,Walgreens,30.0726758279826,-90.5014222039401, 
+83,84,Walgreens,1826 N BROAD ST,NEW ORLEANS,LA,70119, , ,ORLEANS,Region 1,Walgreens,29.9824068026397,-90.0717977155825, 
+84,85,Walgreens,2000 GERTSNER MEMORIAL DR,LAKE CHARLES,LA,70601, , ,CALCASIEU,Region 5,Walgreens,30.2124743529179,-93.1806758002351, 
+85,86,Walgreens,2107 AIRLINE DR,BOSSIER CITY,LA,71111, , ,BOSSIER,Region 7,Walgreens,32.5330379886332,-93.706459844374, 
+86,87,Walgreens,217 SUPERIOR AVE,BOGALUSA,LA,70427, , ,WASHINGTON,Region 9,Walgreens,30.7911834981066,-89.8631908039279, 
+87,88,Walgreens,220 N ALEXANDER AVE,PORT ALLEN,LA,70767, , ,WEST BATON ROUGE,Region 2,Walgreens,30.4537840817395,-91.2097770481132, 
+88,89,Walgreens,236 S MAIN ST,MARKSVILLE,LA,71351, , ,AVOYELLES,Region 6,Walgreens,31.1251739815063,-92.0701904885786, 
+89,90,Walgreens,24555 HIGHWAY 1,PLAQUEMINE,LA,70764, , ,IBERVILLE,Region 2,Walgreens,30.2820879599456,-91.2270265209382, 
+90,91,Walgreens,2570 BARATARIA BLVD,MARRERO,LA,70072, , ,JEFFERSON,Region 1,Walgreens,29.8558743507668,-90.1051730346309, 
+91,92,Walgreens,280 SAN ANTONIO AVE,MANY,LA,71449, , ,SABINE,Region 7,Walgreens,31.5665860053088,-93.4894354578836, 
+92,93,Walgreens,2801 LOUISVILLE AVE,MONROE,LA,71201, , ,OUACHITA,Region 8,Walgreens,32.5253003349912,-92.0942336462254, 
+93,94,Walgreens,300 KEYSER AVE,NATCHITOCHES,LA,71457, , ,NATCHITOCHES,Region 7,Walgreens,31.7542144355504,-93.0817669020598, 
+94,95,Walgreens,300 W OAK ST,AMITE,LA,70422, , ,TANGIPAHOA,Region 9,Walgreens,30.7274595494102,-90.5126198462572, 
+95,96,Walgreens,3100 HIGHWAY 28 E,PINEVILLE,LA,71360, , ,RAPIDES,Region 6,Walgreens,31.3323204699144,-92.3984653610576, 
+96,97,Walgreens,410 CRESWELL LN,OPELOUSAS,LA,70570, , ,SAINT LANDRY,Region 4,Walgreens,30.5197243393139,-92.081291776948, 
+97,98,Walgreens,4200 CHEF MENTEUR HWY,NEW ORLEANS,LA,70126, , ,ORLEANS,Region 1,Walgreens,30.0036125907957,-90.0392937579104, 
+98,99,Walgreens,4327 JEFFERSON HWY,JEFFERSON,LA,70121, , ,JEFFERSON,Region 1,Walgreens,29.9604818819172,-90.1714986444188, 
+99,100,Walgreens,5416 CAMERON ST,SCOTT,LA,70583, , ,LAFAYETTE,Region 4,Walgreens,30.2334272818184,-92.0867200290706, 
+100,101,Walgreens,5450 PLANK RD,BATON ROUGE,LA,70805, , ,EAST BATON ROUGE,Region 2,Walgreens,30.4990409592066,-91.1525803904406, 
+101,102,Walgreens,625 HOMER RD,MINDEN,LA,71055, , ,WEBSTER,Region 7,Walgreens,32.6220861262489,-93.2691539750596, 
+102,103,Walgreens,7401 READ BLVD,NEW ORLEANS,LA,70127, , ,ORLEANS,Region 1,Walgreens,30.0439694199158,-89.9798309462687, 
+103,104,Walgreens,806 ODD FELLOWS RD,CROWLEY,LA,70526, , ,ACADIA,Region 4,Walgreens,30.2301734818194,-92.3620701751015, 
+104,105,Walgreens,815 BRASHEAR AVE,MORGAN CITY,LA,70380, , ,SAINT MARY,Region 3,Walgreens,29.7019826204562,-91.2030462020949, 
+105,106,Walgreens,818 WESTBANK EXPY,WESTWEGO,LA,70094, , ,JEFFERSON,Region 1,Walgreens,29.8974801968251,-90.144576586748, 
+106,107,Walgreens,916 N PINE ST,DERIDDER,LA,70634, , ,BEAUREGARD,Region 5,Walgreens,30.8608195914004,-93.2872732750908, 

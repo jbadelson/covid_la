@@ -1,0 +1,64 @@
+,Lat,Long,LDH_Region,Race,Deaths,Cases,FID
+0,29.94,-90.078,Region 1,American Indian/Alaskan Native,2,429,1
+1,30.424,-91.188,Region 2,American Indian/Alaskan Native,2,198,2
+2,29.616,-90.658,Region 3,American Indian/Alaskan Native,10,986,3
+3,30.206,-92.012,Region 4,American Indian/Alaskan Native,2,215,4
+4,30.216,-93.22,Region 5,American Indian/Alaskan Native,1,146,5
+5,31.292,-92.429,Region 6,American Indian/Alaskan Native,3,156,6
+6,32.497,-93.752,Region 7,American Indian/Alaskan Native,4,332,7
+7,32.524,-92.115,Region 8,American Indian/Alaskan Native,0,79,8
+8,30.517,-90.41,Region 9,American Indian/Alaskan Native,1,215,9
+9,29.94,-90.078,Region 1,Asian,38,3027,10
+10,30.424,-91.188,Region 2,Asian,22,1568,11
+11,29.616,-90.658,Region 3,Asian,7,720,12
+12,30.206,-92.012,Region 4,Asian,6,2531,13
+13,30.216,-93.22,Region 5,Asian,4,1037,14
+14,31.292,-92.429,Region 6,Asian,3,1148,15
+15,32.497,-93.752,Region 7,Asian,7,1696,16
+16,32.524,-92.115,Region 8,Asian,4,1279,17
+17,30.517,-90.41,Region 9,Asian,6,1199,18
+18,29.94,-90.078,Region 1,Black,1026,42221,19
+19,30.424,-91.188,Region 2,Black,793,39362,20
+20,29.616,-90.658,Region 3,Black,358,16088,21
+21,30.206,-92.012,Region 4,Black,423,25176,22
+22,30.216,-93.22,Region 5,Black,183,9107,23
+23,31.292,-92.429,Region 6,Black,265,11161,24
+24,32.497,-93.752,Region 7,Black,782,30767,25
+25,32.524,-92.115,Region 8,Black,442,19984,26
+26,30.517,-90.41,Region 9,Black,285,17190,27
+27,29.94,-90.078,Region 1,Native Hawaiian/Other Pacific Islander,5,313,28
+28,30.424,-91.188,Region 2,Native Hawaiian/Other Pacific Islander,2,66,29
+29,29.616,-90.658,Region 3,Native Hawaiian/Other Pacific Islander,2,67,30
+30,30.206,-92.012,Region 4,Native Hawaiian/Other Pacific Islander,2,119,31
+31,30.216,-93.22,Region 5,Native Hawaiian/Other Pacific Islander,1,42,32
+32,31.292,-92.429,Region 6,Native Hawaiian/Other Pacific Islander,0,48,33
+33,32.497,-93.752,Region 7,Native Hawaiian/Other Pacific Islander,4,61,34
+34,32.524,-92.115,Region 8,Native Hawaiian/Other Pacific Islander,2,48,35
+35,30.517,-90.41,Region 9,Native Hawaiian/Other Pacific Islander,1,73,36
+36,29.94,-90.078,Region 1,Other,13,10654,37
+37,30.424,-91.188,Region 2,Other,5,5442,38
+38,29.616,-90.658,Region 3,Other,2,3276,39
+39,30.206,-92.012,Region 4,Other,6,6248,40
+40,30.216,-93.22,Region 5,Other,3,3002,41
+41,31.292,-92.429,Region 6,Other,3,3026,42
+42,32.497,-93.752,Region 7,Other,6,5071,43
+43,32.524,-92.115,Region 8,Other,1,6925,44
+44,30.517,-90.41,Region 9,Other,2,4475,45
+45,29.94,-90.078,Region 1,Unknown,2,6640,46
+46,30.424,-91.188,Region 2,Unknown,0,5023,47
+47,29.616,-90.658,Region 3,Unknown,1,2544,48
+48,30.206,-92.012,Region 4,Unknown,0,6625,49
+49,30.216,-93.22,Region 5,Unknown,0,3233,50
+50,31.292,-92.429,Region 6,Unknown,0,3020,51
+51,32.497,-93.752,Region 7,Unknown,0,3276,52
+52,32.524,-92.115,Region 8,Unknown,0,3806,53
+53,30.517,-90.41,Region 9,Unknown,0,4588,54
+54,29.94,-90.078,Region 1,White,916,52751,55
+55,30.424,-91.188,Region 2,White,812,43118,56
+56,29.616,-90.658,Region 3,White,682,36680,57
+57,30.206,-92.012,Region 4,White,998,46219,58
+58,30.216,-93.22,Region 5,White,611,26127,59
+59,31.292,-92.429,Region 6,White,638,21798,60
+60,32.497,-93.752,Region 7,White,923,34705,61
+61,32.524,-92.115,Region 8,White,727,22546,62
+62,30.517,-90.41,Region 9,White,1178,60652,63

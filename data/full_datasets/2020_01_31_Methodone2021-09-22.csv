@@ -1,0 +1,11 @@
+,FID,AGENCY,STREET_ADD,CITY,STATE,ZIP_CODE,PHONE_NUMB,REGION,LONGITUDE,LATITUDE,GEORESULT
+0,1,Region 1 - Behavioral Health Group (BHG),"2235 Poydras St, Suite B",New Orleans,Louisiana,70119,504-524-7205,New Orleans,-90.088119,29.956289,S5HPNTSCZA
+1,2,Region 2 - Baton Rouge Treatment Center,11445 Reiger Rd,Baton Rouge,Louisiana,70809,225-932-9867,Baton Rouge,-91.052829,30.374388,S5HPNTSCZA
+2,3,"Region 3 - Choices of Louisiana, Inc.",128 Woodlawn Avenue,LaPlace,Louisiana,70068,985-651-3777,Houma,-90.450243,30.086391,S5HP--S-ZA
+3,4,"Region 4 - BAART Program, Breaux Bridge",648 Latiolais Drive,Breaux Bridge,Louisiana,70517,337-332-4878,Lafayatte,-91.904222,30.2956,S5HPNTSCZA
+4,5,Region 5 - Behavioral Health Group (BHG),"2829 4th Avenue, Suite 200",Lake Charles,Louisiana,70601,337-433-8281,Lake Charles,-93.193478,30.204113,S5HPNTSCZA
+5,6,"Region 6 - Choices of Louisiana, Alexandria",2116 North Bolton Avenue,Alexandria,Louisiana,71303,318-445-1250,Alexandria,-92.475416,31.321884,S5HPNTSCZA
+6,7,"Region 7 - Center for Behavioral Health, LA","1303 Line Avenue, Suite 600",Shreveport,Louisiana,71101,318-425-3400,Shreveport,-93.746,32.499929,S5HPNTSCZA
+7,8,"Region 8 - Center for Behavioral Health, LA",1910 Ruffin Drive,Monroe,Louisiana,71203,318-340-9596,Monroe,-92.08334,32.487176,S5HPNTSC-A
+8,9,"Region 9 - Choices of Louisiana, North Shore",615 Pride Drive,Hammond,Louisiana,70401,985-419-1666,Northshore,-90.423696,30.51789,S5HPNTSCZA
+9,10,Region 10 - Behavioral Health Group (BHG),"1141 Whitney Avenue, Bldg 4",Gretna,Louisiana,70056,504-347-1120,New Orleans,-90.043066,29.906661,S5HPNTSCZA

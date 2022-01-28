@@ -1,0 +1,464 @@
+,FeatureID,Latitude,Longitude,Geography,Measure,Group_,Group_Num,ValueType,Timeframe,Value,Population,FID
+0,126,0.0,0.0,Region 3,Gender - Series Initiated,Male,2,percentage,current,46.5238,,1
+1,127,0.0,0.0,Region 3,Gender - Series Initiated,Unknown,3,percentage,current,0.182036,,2
+2,129,0.0,0.0,Region 3,Race - Series Initiated,Asian,1,percentage,current,1.950919,,3
+3,130,0.0,0.0,Region 3,Race - Series Initiated,Black,2,percentage,current,27.03477,,4
+4,131,0.0,0.0,Region 3,Race - Series Initiated,Native Hawaiian,3,percentage,current,0.142232,,5
+5,132,0.0,0.0,Region 3,Race - Series Initiated,American Indian,4,percentage,current,0.980767,,6
+6,133,0.0,0.0,Region 3,Race - Series Initiated,White,5,percentage,current,62.43525,,7
+7,134,0.0,0.0,Region 3,Race - Series Initiated,Other,6,percentage,current,6.343672,,8
+8,135,0.0,0.0,Region 3,Race - Series Initiated,Unknown,7,percentage,current,1.112385,,9
+9,137,0.0,0.0,Region 4,Age - Series Initiated,Age 0-4 Years,1,percentage,current,0.0,,10
+10,138,0.0,0.0,Region 4,Age - Series Initiated,Age 5-17 Years,2,percentage,current,5.513052,,11
+11,139,0.0,0.0,Region 4,Age - Series Initiated,Age 18-29 Years,3,percentage,current,12.50198,,12
+12,140,0.0,0.0,Region 4,Age - Series Initiated,Age 30-39 Years,4,percentage,current,12.9563,,13
+13,141,0.0,0.0,Region 4,Age - Series Initiated,Age 40-49 Years,5,percentage,current,13.59552,,14
+14,142,0.0,0.0,Region 4,Age - Series Initiated,Age 50-59 Years,6,percentage,current,17.31603,,15
+15,143,0.0,0.0,Region 4,Age - Series Initiated,Age 60-69 Years,7,percentage,current,19.52044,,16
+16,144,0.0,0.0,Region 4,Age - Series Initiated,Age 70+ Years,8,percentage,current,18.57933,,17
+17,145,0.0,0.0,Region 4,Age - Series Initiated,Age Unknown,9,percentage,current,0.017346,,18
+18,147,0.0,0.0,Region 4,Gender - Series Initiated,Female,1,percentage,current,54.11744,,19
+19,1,0.0,0.0,State,Total Series Initiated,N/A,1,count,current,2324829.0,,20
+20,148,0.0,0.0,Region 4,Gender - Series Initiated,Male,2,percentage,current,45.56738,,21
+21,149,0.0,0.0,Region 4,Gender - Series Initiated,Unknown,3,percentage,current,0.315179,,22
+22,151,0.0,0.0,Region 4,Race - Series Initiated,Asian,1,percentage,current,2.382297,,23
+23,152,0.0,0.0,Region 4,Race - Series Initiated,Black,2,percentage,current,27.74241,,24
+24,2,0.0,0.0,State,Total Series Completed,N/A,2,count,current,1993856.0,,25
+25,3,0.0,0.0,State,Total Doses Administered,N/A,3,count,current,4168382.0,,26
+26,153,0.0,0.0,Region 4,Race - Series Initiated,Native Hawaiian,3,percentage,current,0.239521,,27
+27,379,0.0,0.0,Region 6,Age - Series Complete,Age 0-4 Years,1,percentage,current,0.0,,28
+28,154,0.0,0.0,Region 4,Race - Series Initiated,American Indian,4,percentage,current,0.270523,,29
+29,4,0.0,0.0,State,Doses Since Last Update,N/A,4,count,current,52303.0,,30
+30,380,0.0,0.0,Region 6,Age - Series Complete,Age 5-17 Years,2,percentage,current,3.93389,,31
+31,155,0.0,0.0,Region 4,Race - Series Initiated,White,5,percentage,current,59.3179,,32
+32,156,0.0,0.0,Region 4,Race - Series Initiated,Other,6,percentage,current,8.331949,,33
+33,381,0.0,0.0,Region 6,Age - Series Complete,Age 18-29 Years,3,percentage,current,10.28474,,34
+34,5,0.0,0.0,State,Providers Enrolled,N/A,5,count,current,2505.0,,35
+35,7,29.65625,-89.5118,Region,Region - Series Initiated,LDH Region 1,1,count,current,553681.0,894015.0,36
+36,157,0.0,0.0,Region 4,Race - Series Initiated,Unknown,7,percentage,current,1.715401,,37
+37,382,0.0,0.0,Region 6,Age - Series Complete,Age 30-39 Years,4,percentage,current,11.10346,,38
+38,383,0.0,0.0,Region 6,Age - Series Complete,Age 40-49 Years,5,percentage,current,12.70839,,39
+39,252,0.0,0.0,Region 9,Age - Series Initiated,Age 50-59 Years,6,percentage,current,17.12545,,40
+40,8,30.5681,-91.2789,Region,Region - Series Initiated,LDH Region 2,2,count,current,358289.0,681120.0,41
+41,159,0.0,0.0,Region 5,Age - Series Initiated,Age 0-4 Years,1,percentage,current,0.0,,42
+42,9,29.58601,-90.8056,Region,Region - Series Initiated,LDH Region 3,3,count,current,188424.0,402776.0,43
+43,253,0.0,0.0,Region 9,Age - Series Initiated,Age 60-69 Years,7,percentage,current,19.57424,,44
+44,384,0.0,0.0,Region 6,Age - Series Complete,Age 50-59 Years,6,percentage,current,17.33666,,45
+45,254,0.0,0.0,Region 9,Age - Series Initiated,Age 70+ Years,8,percentage,current,19.53442,,46
+46,160,0.0,0.0,Region 5,Age - Series Initiated,Age 5-17 Years,2,percentage,current,4.592711,,47
+47,385,0.0,0.0,Region 6,Age - Series Complete,Age 60-69 Years,7,percentage,current,21.33942,,48
+48,10,30.14959,-92.0805,Region,Region - Series Initiated,LDH Region 4,4,count,current,270957.0,606054.0,49
+49,255,0.0,0.0,Region 9,Age - Series Initiated,Age Unknown,9,percentage,current,0.012785,,50
+50,161,0.0,0.0,Region 5,Age - Series Initiated,Age 18-29 Years,3,percentage,current,11.43891,,51
+51,386,0.0,0.0,Region 6,Age - Series Complete,Age 70+ Years,8,percentage,current,23.2858,,52
+52,11,30.24969,-93.1643,Region,Region - Series Initiated,LDH Region 5,5,count,current,111960.0,300947.0,53
+53,257,0.0,0.0,Region 9,Gender - Series Initiated,Female,1,percentage,current,53.92997,,54
+54,162,0.0,0.0,Region 5,Age - Series Initiated,Age 30-39 Years,4,percentage,current,12.06681,,55
+55,387,0.0,0.0,Region 6,Age - Series Complete,Age Unknown,9,percentage,current,0.007652,,56
+56,12,31.41951,-92.4103,Region,Region - Series Initiated,LDH Region 6,6,count,current,124306.0,305140.0,57
+57,258,0.0,0.0,Region 9,Gender - Series Initiated,Male,2,percentage,current,45.87461,,58
+58,163,0.0,0.0,Region 5,Age - Series Initiated,Age 40-49 Years,5,percentage,current,13.17881,,59
+59,389,0.0,0.0,Region 6,Gender - Series Complete,Female,1,percentage,current,53.02095,,60
+60,13,32.23863,-93.405,Region,Region - Series Initiated,LDH Region 7,7,count,current,224557.0,542829.0,61
+61,259,0.0,0.0,Region 9,Gender - Series Initiated,Unknown,3,percentage,current,0.195421,,62
+62,164,0.0,0.0,Region 5,Age - Series Initiated,Age 50-59 Years,6,percentage,current,17.11504,,63
+63,390,0.0,0.0,Region 6,Gender - Series Complete,Male,2,percentage,current,46.431,,64
+64,14,32.47145,-91.8881,Region,Region - Series Initiated,LDH Region 8,8,count,current,144344.0,353159.0,65
+65,261,0.0,0.0,Region 9,Race - Series Initiated,Asian,1,percentage,current,1.343473,,66
+66,165,0.0,0.0,Region 5,Age - Series Initiated,Age 60-69 Years,7,percentage,current,20.99232,,67
+67,391,0.0,0.0,Region 6,Gender - Series Complete,Unknown,3,percentage,current,0.548047,,68
+68,15,30.5914,-90.3,Region,Region - Series Initiated,LDH Region 9,9,count,current,273768.0,577576.0,69
+69,262,0.0,0.0,Region 9,Race - Series Initiated,Black,2,percentage,current,17.05934,,70
+70,166,0.0,0.0,Region 5,Age - Series Initiated,Age 70+ Years,8,percentage,current,20.602,,71
+71,393,0.0,0.0,Region 6,Race - Series Complete,Asian,1,percentage,current,1.644142,,72
+72,17,0.0,0.0,State,Age - Series Initiated,Age 0-4 Years,1,percentage,current,0.0,309339.0,73
+73,263,0.0,0.0,Region 9,Race - Series Initiated,Native Hawaiian,3,percentage,current,0.111408,,74
+74,264,0.0,0.0,Region 9,Race - Series Initiated,American Indian,4,percentage,current,0.253865,,75
+75,265,0.0,0.0,Region 9,Race - Series Initiated,White,5,percentage,current,74.17741,,76
+76,266,0.0,0.0,Region 9,Race - Series Initiated,Other,6,percentage,current,5.833041,,77
+77,267,0.0,0.0,Region 9,Race - Series Initiated,Unknown,7,percentage,current,1.221472,,78
+78,269,0.0,0.0,Region 1,Age - Series Complete,Age 0-4 Years,1,percentage,current,0.0,,79
+79,270,0.0,0.0,Region 1,Age - Series Complete,Age 5-17 Years,2,percentage,current,5.008059,,80
+80,271,0.0,0.0,Region 1,Age - Series Complete,Age 18-29 Years,3,percentage,current,13.77506,,81
+81,272,0.0,0.0,Region 1,Age - Series Complete,Age 30-39 Years,4,percentage,current,15.59791,,82
+82,273,0.0,0.0,Region 1,Age - Series Complete,Age 40-49 Years,5,percentage,current,14.19842,,83
+83,274,0.0,0.0,Region 1,Age - Series Complete,Age 50-59 Years,6,percentage,current,16.58733,,84
+84,275,0.0,0.0,Region 1,Age - Series Complete,Age 60-69 Years,7,percentage,current,18.08493,,85
+85,276,0.0,0.0,Region 1,Age - Series Complete,Age 70+ Years,8,percentage,current,16.72547,,86
+86,277,0.0,0.0,Region 1,Age - Series Complete,Age Unknown,9,percentage,current,0.022817,,87
+87,279,0.0,0.0,Region 1,Gender - Series Complete,Female,1,percentage,current,53.84451,,88
+88,280,0.0,0.0,Region 1,Gender - Series Complete,Male,2,percentage,current,45.92152,,89
+89,281,0.0,0.0,Region 1,Gender - Series Complete,Unknown,3,percentage,current,0.233975,,90
+90,283,0.0,0.0,Region 1,Race - Series Complete,Asian,1,percentage,current,4.794204,,91
+91,284,0.0,0.0,Region 1,Race - Series Complete,Black,2,percentage,current,33.19228,,92
+92,285,0.0,0.0,Region 1,Race - Series Complete,Native Hawaiian,3,percentage,current,0.404685,,93
+93,286,0.0,0.0,Region 1,Race - Series Complete,American Indian,4,percentage,current,0.371705,,94
+94,287,0.0,0.0,Region 1,Race - Series Complete,White,5,percentage,current,51.87564,,95
+95,288,0.0,0.0,Region 1,Race - Series Complete,Other,6,percentage,current,7.515199,,96
+96,289,0.0,0.0,Region 1,Race - Series Complete,Unknown,7,percentage,current,1.846286,,97
+97,291,0.0,0.0,Region 2,Age - Series Complete,Age 0-4 Years,1,percentage,current,0.0,,98
+98,292,0.0,0.0,Region 2,Age - Series Complete,Age 5-17 Years,2,percentage,current,5.227606,,99
+99,293,0.0,0.0,Region 2,Age - Series Complete,Age 18-29 Years,3,percentage,current,12.63623,,100
+100,294,0.0,0.0,Region 2,Age - Series Complete,Age 30-39 Years,4,percentage,current,13.12517,,101
+101,295,0.0,0.0,Region 2,Age - Series Complete,Age 40-49 Years,5,percentage,current,14.35232,,102
+102,296,0.0,0.0,Region 2,Age - Series Complete,Age 50-59 Years,6,percentage,current,17.35218,,103
+103,297,0.0,0.0,Region 2,Age - Series Complete,Age 60-69 Years,7,percentage,current,19.07434,,104
+104,298,0.0,0.0,Region 2,Age - Series Complete,Age 70+ Years,8,percentage,current,18.21838,,105
+105,299,0.0,0.0,Region 2,Age - Series Complete,Age Unknown,9,percentage,current,0.013759,,106
+106,301,0.0,0.0,Region 2,Gender - Series Complete,Female,1,percentage,current,54.21677,,107
+107,302,0.0,0.0,Region 2,Gender - Series Complete,Male,2,percentage,current,45.5858,,108
+108,303,0.0,0.0,Region 2,Gender - Series Complete,Unknown,3,percentage,current,0.197431,,109
+109,305,0.0,0.0,Region 2,Race - Series Complete,Asian,1,percentage,current,3.34033,,110
+110,306,0.0,0.0,Region 2,Race - Series Complete,Black,2,percentage,current,36.96218,,111
+111,307,0.0,0.0,Region 2,Race - Series Complete,Native Hawaiian,3,percentage,current,0.130554,,112
+112,308,0.0,0.0,Region 2,Race - Series Complete,American Indian,4,percentage,current,0.242869,,113
+113,309,0.0,0.0,Region 2,Race - Series Complete,White,5,percentage,current,52.30838,,114
+114,310,0.0,0.0,Region 2,Race - Series Complete,Other,6,percentage,current,5.789501,,115
+115,311,0.0,0.0,Region 2,Race - Series Complete,Unknown,7,percentage,current,1.226185,,116
+116,313,0.0,0.0,Region 3,Age - Series Complete,Age 0-4 Years,1,percentage,current,0.0,,117
+117,314,0.0,0.0,Region 3,Age - Series Complete,Age 5-17 Years,2,percentage,current,4.244657,,118
+118,315,0.0,0.0,Region 3,Age - Series Complete,Age 18-29 Years,3,percentage,current,10.1596,,119
+119,316,0.0,0.0,Region 3,Age - Series Complete,Age 30-39 Years,4,percentage,current,10.95162,,120
+120,317,0.0,0.0,Region 3,Age - Series Complete,Age 40-49 Years,5,percentage,current,13.13439,,121
+121,318,0.0,0.0,Region 3,Age - Series Complete,Age 50-59 Years,6,percentage,current,18.96748,,122
+122,319,0.0,0.0,Region 3,Age - Series Complete,Age 60-69 Years,7,percentage,current,21.75213,,123
+123,320,0.0,0.0,Region 3,Age - Series Complete,Age 70+ Years,8,percentage,current,20.78446,,124
+124,321,0.0,0.0,Region 3,Age - Series Complete,Age Unknown,9,percentage,current,0.005666,,125
+125,323,0.0,0.0,Region 3,Gender - Series Complete,Female,1,percentage,current,53.80237,,126
+126,324,0.0,0.0,Region 3,Gender - Series Complete,Male,2,percentage,current,46.0182,,127
+127,325,0.0,0.0,Region 3,Gender - Series Complete,Unknown,3,percentage,current,0.179431,,128
+128,327,0.0,0.0,Region 3,Race - Series Complete,Asian,1,percentage,current,2.075739,,129
+129,328,0.0,0.0,Region 3,Race - Series Complete,Black,2,percentage,current,26.94557,,130
+130,329,0.0,0.0,Region 3,Race - Series Complete,Native Hawaiian,3,percentage,current,0.131583,,131
+131,330,0.0,0.0,Region 3,Race - Series Complete,American Indian,4,percentage,current,0.880159,,132
+132,331,0.0,0.0,Region 3,Race - Series Complete,White,5,percentage,current,62.93008,,133
+133,332,0.0,0.0,Region 3,Race - Series Complete,Other,6,percentage,current,5.916832,,134
+134,333,0.0,0.0,Region 3,Race - Series Complete,Unknown,7,percentage,current,1.12003,,135
+135,335,0.0,0.0,Region 4,Age - Series Complete,Age 0-4 Years,1,percentage,current,0.0,,136
+136,336,0.0,0.0,Region 4,Age - Series Complete,Age 5-17 Years,2,percentage,current,4.884686,,137
+137,337,0.0,0.0,Region 4,Age - Series Complete,Age 18-29 Years,3,percentage,current,11.10847,,138
+138,338,0.0,0.0,Region 4,Age - Series Complete,Age 30-39 Years,4,percentage,current,12.12956,,139
+139,339,0.0,0.0,Region 4,Age - Series Complete,Age 40-49 Years,5,percentage,current,13.16594,,140
+140,340,0.0,0.0,Region 4,Age - Series Complete,Age 50-59 Years,6,percentage,current,17.57044,,141
+141,341,0.0,0.0,Region 4,Age - Series Complete,Age 60-69 Years,7,percentage,current,20.84303,,142
+142,342,0.0,0.0,Region 4,Age - Series Complete,Age 70+ Years,8,percentage,current,20.28981,,143
+143,343,0.0,0.0,Region 4,Age - Series Complete,Age Unknown,9,percentage,current,0.008067,,144
+144,345,0.0,0.0,Region 4,Gender - Series Complete,Female,1,percentage,current,54.51998,,145
+145,346,0.0,0.0,Region 4,Gender - Series Complete,Male,2,percentage,current,45.16499,,146
+146,347,0.0,0.0,Region 4,Gender - Series Complete,Unknown,3,percentage,current,0.315031,,147
+147,349,0.0,0.0,Region 4,Race - Series Complete,Asian,1,percentage,current,2.479493,,148
+148,350,0.0,0.0,Region 4,Race - Series Complete,Black,2,percentage,current,27.4035,,149
+149,351,0.0,0.0,Region 4,Race - Series Complete,Native Hawaiian,3,percentage,current,0.253469,,150
+150,352,0.0,0.0,Region 4,Race - Series Complete,American Indian,4,percentage,current,0.250072,,151
+151,353,0.0,0.0,Region 4,Race - Series Complete,White,5,percentage,current,59.64243,,152
+152,354,0.0,0.0,Region 4,Race - Series Complete,Other,6,percentage,current,8.231578,,153
+153,355,0.0,0.0,Region 4,Race - Series Complete,Unknown,7,percentage,current,1.739466,,154
+154,357,0.0,0.0,Region 5,Age - Series Complete,Age 0-4 Years,1,percentage,current,0.0,,155
+155,358,0.0,0.0,Region 5,Age - Series Complete,Age 5-17 Years,2,percentage,current,3.884177,,156
+156,359,0.0,0.0,Region 5,Age - Series Complete,Age 18-29 Years,3,percentage,current,10.0391,,157
+157,360,0.0,0.0,Region 5,Age - Series Complete,Age 30-39 Years,4,percentage,current,11.10529,,158
+158,361,0.0,0.0,Region 5,Age - Series Complete,Age 40-49 Years,5,percentage,current,12.62856,,159
+159,362,0.0,0.0,Region 5,Age - Series Complete,Age 50-59 Years,6,percentage,current,17.30215,,160
+160,363,0.0,0.0,Region 5,Age - Series Complete,Age 60-69 Years,7,percentage,current,22.41186,,161
+161,364,0.0,0.0,Region 5,Age - Series Complete,Age 70+ Years,8,percentage,current,22.62153,,162
+162,365,0.0,0.0,Region 5,Age - Series Complete,Age Unknown,9,percentage,current,0.007339,,163
+163,367,0.0,0.0,Region 5,Gender - Series Complete,Female,1,percentage,current,53.60898,,164
+164,368,0.0,0.0,Region 5,Gender - Series Complete,Male,2,percentage,current,45.98845,,165
+165,369,0.0,0.0,Region 5,Gender - Series Complete,Unknown,3,percentage,current,0.402571,,166
+166,371,0.0,0.0,Region 5,Race - Series Complete,Asian,1,percentage,current,2.698481,,167
+167,372,0.0,0.0,Region 5,Race - Series Complete,Black,2,percentage,current,21.95897,,168
+168,373,0.0,0.0,Region 5,Race - Series Complete,Native Hawaiian,3,percentage,current,0.116368,,169
+169,374,0.0,0.0,Region 5,Race - Series Complete,American Indian,4,percentage,current,0.395232,,170
+170,375,0.0,0.0,Region 5,Race - Series Complete,White,5,percentage,current,62.78319,,171
+171,376,0.0,0.0,Region 5,Race - Series Complete,Other,6,percentage,current,9.648066,,172
+172,377,0.0,0.0,Region 5,Race - Series Complete,Unknown,7,percentage,current,2.399698,,173
+173,18,0.0,0.0,State,Age - Series Initiated,Age 5-17 Years,2,percentage,current,5.553558,799135.0,174
+174,167,0.0,0.0,Region 5,Age - Series Initiated,Age Unknown,9,percentage,current,0.013398,,175
+175,19,0.0,0.0,State,Age - Series Initiated,Age 18-29 Years,3,percentage,current,13.00544,790297.0,176
+176,20,0.0,0.0,State,Age - Series Initiated,Age 30-39 Years,4,percentage,current,13.45054,629839.0,177
+177,21,0.0,0.0,State,Age - Series Initiated,Age 40-49 Years,5,percentage,current,13.95666,554773.0,178
+178,169,0.0,0.0,Region 5,Gender - Series Initiated,Female,1,percentage,current,53.37174,,179
+179,394,0.0,0.0,Region 6,Race - Series Complete,Black,2,percentage,current,26.05664,,180
+180,170,0.0,0.0,Region 5,Gender - Series Initiated,Male,2,percentage,current,46.2174,,181
+181,395,0.0,0.0,Region 6,Race - Series Complete,Native Hawaiian,3,percentage,current,0.114774,,182
+182,22,0.0,0.0,State,Age - Series Initiated,Age 50-59 Years,6,percentage,current,16.90584,616019.0,183
+183,171,0.0,0.0,Region 5,Gender - Series Initiated,Unknown,3,percentage,current,0.410861,,184
+184,23,0.0,0.0,State,Age - Series Initiated,Age 60-69 Years,7,percentage,current,18.85457,521970.0,185
+185,396,0.0,0.0,Region 6,Race - Series Complete,American Indian,4,percentage,current,0.392146,,186
+186,173,0.0,0.0,Region 5,Race - Series Initiated,Asian,1,percentage,current,2.577706,,187
+187,24,0.0,0.0,State,Age - Series Initiated,Age 70+ Years,8,percentage,current,18.25245,442244.0,188
+188,397,0.0,0.0,Region 6,Race - Series Complete,White,5,percentage,current,59.32398,,189
+189,174,0.0,0.0,Region 5,Race - Series Initiated,Black,2,percentage,current,22.0686,,190
+190,25,0.0,0.0,State,Age - Series Initiated,Age Unknown,9,percentage,current,0.020948,,191
+191,398,0.0,0.0,Region 6,Race - Series Complete,Other,6,percentage,current,9.285243,,192
+192,175,0.0,0.0,Region 5,Race - Series Initiated,Native Hawaiian,3,percentage,current,0.125045,,193
+193,27,0.0,0.0,State,Gender - Series Initiated,Female,1,percentage,current,54.01064,2279968.0,194
+194,399,0.0,0.0,Region 6,Race - Series Complete,Unknown,7,percentage,current,3.183075,,195
+195,176,0.0,0.0,Region 5,Race - Series Initiated,American Indian,4,percentage,current,0.415327,,196
+196,28,0.0,0.0,State,Gender - Series Initiated,Male,2,percentage,current,45.69338,2383648.0,197
+197,29,0.0,0.0,State,Gender - Series Initiated,Unknown,3,percentage,current,0.295979,,198
+198,401,0.0,0.0,Region 7,Age - Series Complete,Age 0-4 Years,1,percentage,current,0.0,,199
+199,31,0.0,0.0,State,Race - Series Initiated,Asian,1,percentage,current,2.707966,79872.0,200
+200,177,0.0,0.0,Region 5,Race - Series Initiated,White,5,percentage,current,62.85459,,201
+201,402,0.0,0.0,Region 7,Age - Series Complete,Age 5-17 Years,2,percentage,current,3.93012,,202
+202,32,0.0,0.0,State,Race - Series Initiated,Black,2,percentage,current,30.41331,1502916.0,203
+203,178,0.0,0.0,Region 5,Race - Series Initiated,Other,6,percentage,current,9.68203,,204
+204,403,0.0,0.0,Region 7,Age - Series Complete,Age 18-29 Years,3,percentage,current,9.355592,,205
+205,33,0.0,0.0,State,Race - Series Initiated,Native Hawaiian,3,percentage,current,0.200248,1468.0,206
+206,179,0.0,0.0,Region 5,Race - Series Initiated,Unknown,7,percentage,current,2.276706,,207
+207,404,0.0,0.0,Region 7,Age - Series Complete,Age 30-39 Years,4,percentage,current,10.64566,,208
+208,34,0.0,0.0,State,Race - Series Initiated,American Indian,4,percentage,current,0.385851,26272.0,209
+209,181,0.0,0.0,Region 6,Age - Series Initiated,Age 0-4 Years,1,percentage,current,0.0,,210
+210,405,0.0,0.0,Region 7,Age - Series Complete,Age 40-49 Years,5,percentage,current,13.04656,,211
+211,35,0.0,0.0,State,Race - Series Initiated,White,5,percentage,current,57.4971,2901106.0,212
+212,182,0.0,0.0,Region 6,Age - Series Initiated,Age 5-17 Years,2,percentage,current,4.862999,,213
+213,406,0.0,0.0,Region 7,Age - Series Complete,Age 50-59 Years,6,percentage,current,17.31743,,214
+214,36,0.0,0.0,State,Race - Series Initiated,Other,6,percentage,current,7.208713,151982.0,215
+215,183,0.0,0.0,Region 6,Age - Series Initiated,Age 18-29 Years,3,percentage,current,11.91978,,216
+216,407,0.0,0.0,Region 7,Age - Series Complete,Age 60-69 Years,7,percentage,current,21.92958,,217
+217,37,0.0,0.0,State,Race - Series Initiated,Unknown,7,percentage,current,1.586807,,218
+218,184,0.0,0.0,Region 6,Age - Series Initiated,Age 30-39 Years,4,percentage,current,12.00505,,219
+219,408,0.0,0.0,Region 7,Age - Series Complete,Age 70+ Years,8,percentage,current,23.76412,,220
+220,39,29.65625,-89.5118,Region,Region - Series Complete,LDH Region 1,1,count,current,482103.0,894015.0,221
+221,185,0.0,0.0,Region 6,Age - Series Initiated,Age 40-49 Years,5,percentage,current,13.17072,,222
+222,409,0.0,0.0,Region 7,Age - Series Complete,Age Unknown,9,percentage,current,0.010942,,223
+223,40,30.5681,-91.2789,Region,Region - Series Complete,LDH Region 2,2,count,current,312514.0,681120.0,224
+224,186,0.0,0.0,Region 6,Age - Series Initiated,Age 50-59 Years,6,percentage,current,17.00079,,225
+225,411,0.0,0.0,Region 7,Gender - Series Complete,Female,1,percentage,current,57.25897,,226
+226,41,29.58601,-90.8056,Region,Region - Series Complete,LDH Region 3,3,count,current,158835.0,402776.0,227
+227,187,0.0,0.0,Region 6,Age - Series Initiated,Age 60-69 Years,7,percentage,current,20.00386,,228
+228,412,0.0,0.0,Region 7,Gender - Series Complete,Male,2,percentage,current,42.47426,,229
+229,42,30.14959,-92.0805,Region,Region - Series Complete,LDH Region 4,4,count,current,235532.0,606054.0,230
+230,188,0.0,0.0,Region 6,Age - Series Initiated,Age 70+ Years,8,percentage,current,21.02393,,231
+231,413,0.0,0.0,Region 7,Gender - Series Complete,Unknown,3,percentage,current,0.266767,,232
+232,415,0.0,0.0,Region 7,Race - Series Complete,Asian,1,percentage,current,1.859552,,233
+233,416,0.0,0.0,Region 7,Race - Series Complete,Black,2,percentage,current,35.37993,,234
+234,417,0.0,0.0,Region 7,Race - Series Complete,Native Hawaiian,3,percentage,current,0.117752,,235
+235,418,0.0,0.0,Region 7,Race - Series Complete,American Indian,4,percentage,current,0.465279,,236
+236,419,0.0,0.0,Region 7,Race - Series Complete,White,5,percentage,current,56.51807,,237
+237,420,0.0,0.0,Region 7,Race - Series Complete,Other,6,percentage,current,4.619962,,238
+238,421,0.0,0.0,Region 7,Race - Series Complete,Unknown,7,percentage,current,1.039452,,239
+239,423,0.0,0.0,Region 8,Age - Series Complete,Age 0-4 Years,1,percentage,current,0.0,,240
+240,424,0.0,0.0,Region 8,Age - Series Complete,Age 5-17 Years,2,percentage,current,3.742692,,241
+241,425,0.0,0.0,Region 8,Age - Series Complete,Age 18-29 Years,3,percentage,current,10.49248,,242
+242,426,0.0,0.0,Region 8,Age - Series Complete,Age 30-39 Years,4,percentage,current,10.33354,,243
+243,427,0.0,0.0,Region 8,Age - Series Complete,Age 40-49 Years,5,percentage,current,13.10741,,244
+244,428,0.0,0.0,Region 8,Age - Series Complete,Age 50-59 Years,6,percentage,current,17.1552,,245
+245,429,0.0,0.0,Region 8,Age - Series Complete,Age 60-69 Years,7,percentage,current,21.71496,,246
+246,430,0.0,0.0,Region 8,Age - Series Complete,Age 70+ Years,8,percentage,current,23.44654,,247
+247,431,0.0,0.0,Region 8,Age - Series Complete,Age Unknown,9,percentage,current,0.007188,,248
+248,433,0.0,0.0,Region 8,Gender - Series Complete,Female,1,percentage,current,55.93591,,249
+249,434,0.0,0.0,Region 8,Gender - Series Complete,Male,2,percentage,current,43.73343,,250
+250,435,0.0,0.0,Region 8,Gender - Series Complete,Unknown,3,percentage,current,0.33066,,251
+251,437,0.0,0.0,Region 8,Race - Series Complete,Asian,1,percentage,current,1.394524,,252
+252,438,0.0,0.0,Region 8,Race - Series Complete,Black,2,percentage,current,33.18265,,253
+253,439,0.0,0.0,Region 8,Race - Series Complete,Native Hawaiian,3,percentage,current,0.07348,,254
+254,440,0.0,0.0,Region 8,Race - Series Complete,American Indian,4,percentage,current,0.170921,,255
+255,441,0.0,0.0,Region 8,Race - Series Complete,White,5,percentage,current,56.54692,,256
+256,442,0.0,0.0,Region 8,Race - Series Complete,Other,6,percentage,current,7.565254,,257
+257,443,0.0,0.0,Region 8,Race - Series Complete,Unknown,7,percentage,current,1.06626,,258
+258,445,0.0,0.0,Region 9,Age - Series Complete,Age 0-4 Years,1,percentage,current,0.0,,259
+259,446,0.0,0.0,Region 9,Age - Series Complete,Age 5-17 Years,2,percentage,current,4.629551,,260
+260,447,0.0,0.0,Region 9,Age - Series Complete,Age 18-29 Years,3,percentage,current,10.30725,,261
+261,448,0.0,0.0,Region 9,Age - Series Complete,Age 30-39 Years,4,percentage,current,11.1582,,262
+262,449,0.0,0.0,Region 9,Age - Series Complete,Age 40-49 Years,5,percentage,current,13.57349,,263
+263,450,0.0,0.0,Region 9,Age - Series Complete,Age 50-59 Years,6,percentage,current,17.47602,,264
+264,451,0.0,0.0,Region 9,Age - Series Complete,Age 60-69 Years,7,percentage,current,21.06935,,265
+265,452,0.0,0.0,Region 9,Age - Series Complete,Age 70+ Years,8,percentage,current,21.77678,,266
+266,453,0.0,0.0,Region 9,Age - Series Complete,Age Unknown,9,percentage,current,0.00937,,267
+267,455,0.0,0.0,Region 9,Gender - Series Complete,Female,1,percentage,current,54.28159,,268
+268,456,0.0,0.0,Region 9,Gender - Series Complete,Male,2,percentage,current,45.54507,,269
+269,457,0.0,0.0,Region 9,Gender - Series Complete,Unknown,3,percentage,current,0.173342,,270
+270,459,0.0,0.0,Region 9,Race - Series Complete,Asian,1,percentage,current,1.425493,,271
+271,460,0.0,0.0,Region 9,Race - Series Complete,Black,2,percentage,current,16.50923,,272
+272,461,0.0,0.0,Region 9,Race - Series Complete,Native Hawaiian,3,percentage,current,0.107327,,273
+273,462,0.0,0.0,Region 9,Race - Series Complete,American Indian,4,percentage,current,0.232968,,274
+274,463,0.0,0.0,Region 9,Race - Series Complete,White,5,percentage,current,74.96507,,275
+275,464,0.0,0.0,Region 9,Race - Series Complete,Other,6,percentage,current,5.563979,,276
+276,465,0.0,0.0,Region 9,Race - Series Complete,Unknown,7,percentage,current,1.195932,,277
+277,467,0.0,0.0,State,Ethnicity - Series Initiated,Hispanic,1,percentage,current,5.416731,,278
+278,468,0.0,0.0,State,Ethnicity - Series Initiated,Non-Hispanic,2,percentage,current,68.78632,,279
+279,469,0.0,0.0,State,Ethnicity - Series Initiated,Unknown,3,percentage,current,25.79695,,280
+280,471,0.0,0.0,State,Ethnicity - Series Complete,Hispanic,1,percentage,current,5.070912,,281
+281,472,0.0,0.0,State,Ethnicity - Series Complete,Non-Hispanic,2,percentage,current,68.93011,,282
+282,473,0.0,0.0,State,Ethnicity - Series Complete,Unknown,3,percentage,current,25.99897,,283
+283,475,0.0,0.0,Region 1,Ethnicity - Series Initiated,Hispanic,1,percentage,current,8.855822,,284
+284,476,0.0,0.0,Region 1,Ethnicity - Series Initiated,Non-Hispanic,2,percentage,current,57.57756,,285
+285,477,0.0,0.0,Region 1,Ethnicity - Series Initiated,Unknown,3,percentage,current,33.56662,,286
+286,479,0.0,0.0,Region 1,Ethnicity - Series Complete,Hispanic,1,percentage,current,8.071096,,287
+287,480,0.0,0.0,Region 1,Ethnicity - Series Complete,Non-Hispanic,2,percentage,current,57.41533,,288
+288,481,0.0,0.0,Region 1,Ethnicity - Series Complete,Unknown,3,percentage,current,34.51358,,289
+289,483,0.0,0.0,Region 2,Ethnicity - Series Initiated,Hispanic,1,percentage,current,4.28146,,290
+290,484,0.0,0.0,Region 2,Ethnicity - Series Initiated,Non-Hispanic,2,percentage,current,70.63013,,291
+291,485,0.0,0.0,Region 2,Ethnicity - Series Initiated,Unknown,3,percentage,current,25.08841,,292
+292,487,0.0,0.0,Region 2,Ethnicity - Series Complete,Hispanic,1,percentage,current,3.895505,,293
+293,488,0.0,0.0,Region 2,Ethnicity - Series Complete,Non-Hispanic,2,percentage,current,70.86626,,294
+294,489,0.0,0.0,Region 2,Ethnicity - Series Complete,Unknown,3,percentage,current,25.23823,,295
+295,491,0.0,0.0,Region 3,Ethnicity - Series Initiated,Hispanic,1,percentage,current,5.24084,,296
+296,492,0.0,0.0,Region 3,Ethnicity - Series Initiated,Non-Hispanic,2,percentage,current,71.79818,,297
+297,493,0.0,0.0,Region 3,Ethnicity - Series Initiated,Unknown,3,percentage,current,22.96098,,298
+298,495,0.0,0.0,Region 3,Ethnicity - Series Complete,Hispanic,1,percentage,current,4.837095,,299
+299,496,0.0,0.0,Region 3,Ethnicity - Series Complete,Non-Hispanic,2,percentage,current,72.48906,,300
+300,497,0.0,0.0,Region 3,Ethnicity - Series Complete,Unknown,3,percentage,current,22.67384,,301
+301,499,0.0,0.0,Region 4,Ethnicity - Series Initiated,Hispanic,1,percentage,current,4.568622,,302
+302,500,0.0,0.0,Region 4,Ethnicity - Series Initiated,Non-Hispanic,2,percentage,current,75.74301,,303
+303,501,0.0,0.0,Region 4,Ethnicity - Series Initiated,Unknown,3,percentage,current,19.68836,,304
+304,503,0.0,0.0,Region 4,Ethnicity - Series Complete,Hispanic,1,percentage,current,4.474127,,305
+305,504,0.0,0.0,Region 4,Ethnicity - Series Complete,Non-Hispanic,2,percentage,current,76.24908,,306
+306,505,0.0,0.0,Region 4,Ethnicity - Series Complete,Unknown,3,percentage,current,19.27679,,307
+307,507,0.0,0.0,Region 5,Ethnicity - Series Initiated,Hispanic,1,percentage,current,4.327438,,308
+308,508,0.0,0.0,Region 5,Ethnicity - Series Initiated,Non-Hispanic,2,percentage,current,66.73544,,309
+309,509,0.0,0.0,Region 5,Ethnicity - Series Initiated,Unknown,3,percentage,current,28.93712,,310
+310,189,0.0,0.0,Region 6,Age - Series Initiated,Age Unknown,9,percentage,current,0.012871,,311
+311,191,0.0,0.0,Region 6,Gender - Series Initiated,Female,1,percentage,current,52.8462,,312
+312,192,0.0,0.0,Region 6,Gender - Series Initiated,Male,2,percentage,current,46.55447,,313
+313,193,0.0,0.0,Region 6,Gender - Series Initiated,Unknown,3,percentage,current,0.599327,,314
+314,195,0.0,0.0,Region 6,Race - Series Initiated,Asian,1,percentage,current,1.553425,,315
+315,196,0.0,0.0,Region 6,Race - Series Initiated,Black,2,percentage,current,26.34064,,316
+316,197,0.0,0.0,Region 6,Race - Series Initiated,Native Hawaiian,3,percentage,current,0.112625,,317
+317,198,0.0,0.0,Region 6,Race - Series Initiated,American Indian,4,percentage,current,0.385339,,318
+318,199,0.0,0.0,Region 6,Race - Series Initiated,White,5,percentage,current,59.28113,,319
+319,200,0.0,0.0,Region 6,Race - Series Initiated,Other,6,percentage,current,9.262626,,320
+320,201,0.0,0.0,Region 6,Race - Series Initiated,Unknown,7,percentage,current,3.064213,,321
+321,203,0.0,0.0,Region 7,Age - Series Initiated,Age 0-4 Years,1,percentage,current,0.0,,322
+322,204,0.0,0.0,Region 7,Age - Series Initiated,Age 5-17 Years,2,percentage,current,5.110952,,323
+323,205,0.0,0.0,Region 7,Age - Series Initiated,Age 18-29 Years,3,percentage,current,10.79013,,324
+324,206,0.0,0.0,Region 7,Age - Series Initiated,Age 30-39 Years,4,percentage,current,11.54762,,325
+325,207,0.0,0.0,Region 7,Age - Series Initiated,Age 40-49 Years,5,percentage,current,13.47943,,326
+326,208,0.0,0.0,Region 7,Age - Series Initiated,Age 50-59 Years,6,percentage,current,16.96852,,327
+327,209,0.0,0.0,Region 7,Age - Series Initiated,Age 60-69 Years,7,percentage,current,20.42243,,328
+328,43,30.24969,-93.1643,Region,Region - Series Complete,LDH Region 5,5,count,current,95387.0,300947.0,329
+329,210,0.0,0.0,Region 7,Age - Series Initiated,Age 70+ Years,8,percentage,current,21.66265,,330
+330,211,0.0,0.0,Region 7,Age - Series Initiated,Age Unknown,9,percentage,current,0.018258,,331
+331,213,0.0,0.0,Region 7,Gender - Series Initiated,Female,1,percentage,current,56.80429,,332
+332,44,31.41951,-92.4103,Region,Region - Series Complete,LDH Region 6,6,count,current,104553.0,305140.0,333
+333,214,0.0,0.0,Region 7,Gender - Series Initiated,Male,2,percentage,current,42.89869,,334
+334,45,32.23863,-93.405,Region,Region - Series Complete,LDH Region 7,7,count,current,191928.0,542829.0,335
+335,215,0.0,0.0,Region 7,Gender - Series Initiated,Unknown,3,percentage,current,0.297029,,336
+336,46,32.47145,-91.8881,Region,Region - Series Complete,LDH Region 8,8,count,current,125204.0,353159.0,337
+337,217,0.0,0.0,Region 7,Race - Series Initiated,Asian,1,percentage,current,1.760355,,338
+338,218,0.0,0.0,Region 7,Race - Series Initiated,Black,2,percentage,current,35.91961,,339
+339,219,0.0,0.0,Region 7,Race - Series Initiated,Native Hawaiian,3,percentage,current,0.120682,,340
+340,220,0.0,0.0,Region 7,Race - Series Initiated,American Indian,4,percentage,current,0.484955,,341
+341,221,0.0,0.0,Region 7,Race - Series Initiated,White,5,percentage,current,55.74887,,342
+342,222,0.0,0.0,Region 7,Race - Series Initiated,Other,6,percentage,current,4.863353,,343
+343,223,0.0,0.0,Region 7,Race - Series Initiated,Unknown,7,percentage,current,1.10217,,344
+344,225,0.0,0.0,Region 8,Age - Series Initiated,Age 0-4 Years,1,percentage,current,0.0,,345
+345,226,0.0,0.0,Region 8,Age - Series Initiated,Age 5-17 Years,2,percentage,current,4.752536,,346
+346,227,0.0,0.0,Region 8,Age - Series Initiated,Age 18-29 Years,3,percentage,current,11.83562,,347
+347,228,0.0,0.0,Region 8,Age - Series Initiated,Age 30-39 Years,4,percentage,current,11.14698,,348
+348,229,0.0,0.0,Region 8,Age - Series Initiated,Age 40-49 Years,5,percentage,current,13.47129,,349
+349,230,0.0,0.0,Region 8,Age - Series Initiated,Age 50-59 Years,6,percentage,current,16.85765,,350
+350,231,0.0,0.0,Region 8,Age - Series Initiated,Age 60-69 Years,7,percentage,current,20.39572,,351
+351,232,0.0,0.0,Region 8,Age - Series Initiated,Age 70+ Years,8,percentage,current,21.52843,,352
+352,233,0.0,0.0,Region 8,Age - Series Initiated,Age Unknown,9,percentage,current,0.011777,,353
+353,235,0.0,0.0,Region 8,Gender - Series Initiated,Female,1,percentage,current,55.51807,,354
+354,236,0.0,0.0,Region 8,Gender - Series Initiated,Male,2,percentage,current,44.16117,,355
+355,237,0.0,0.0,Region 8,Gender - Series Initiated,Unknown,3,percentage,current,0.320762,,356
+356,239,0.0,0.0,Region 8,Race - Series Initiated,Asian,1,percentage,current,1.34609,,357
+357,240,0.0,0.0,Region 8,Race - Series Initiated,Black,2,percentage,current,33.89265,,358
+358,241,0.0,0.0,Region 8,Race - Series Initiated,Native Hawaiian,3,percentage,current,0.074128,,359
+359,242,0.0,0.0,Region 8,Race - Series Initiated,American Indian,4,percentage,current,0.180818,,360
+360,243,0.0,0.0,Region 8,Race - Series Initiated,White,5,percentage,current,55.8804,,361
+361,244,0.0,0.0,Region 8,Race - Series Initiated,Other,6,percentage,current,7.542399,,362
+362,245,0.0,0.0,Region 8,Race - Series Initiated,Unknown,7,percentage,current,1.083523,,363
+363,247,0.0,0.0,Region 9,Age - Series Initiated,Age 0-4 Years,1,percentage,current,0.0,,364
+364,248,0.0,0.0,Region 9,Age - Series Initiated,Age 5-17 Years,2,percentage,current,5.471056,,365
+365,249,0.0,0.0,Region 9,Age - Series Initiated,Age 18-29 Years,3,percentage,current,11.93565,,366
+366,250,0.0,0.0,Region 9,Age - Series Initiated,Age 30-39 Years,4,percentage,current,12.22605,,367
+367,251,0.0,0.0,Region 9,Age - Series Initiated,Age 40-49 Years,5,percentage,current,14.12035,,368
+368,47,30.5914,-90.3,Region,Region - Series Complete,LDH Region 9,9,count,current,234796.0,577576.0,369
+369,49,0.0,0.0,State,Age - Series Complete,Age 0-4 Years,1,percentage,current,0.0,309339.0,370
+370,50,0.0,0.0,State,Age - Series Complete,Age 5-17 Years,2,percentage,current,4.61481,799135.0,371
+371,51,0.0,0.0,State,Age - Series Complete,Age 18-29 Years,3,percentage,current,11.54241,790297.0,372
+372,52,0.0,0.0,State,Age - Series Complete,Age 30-39 Years,4,percentage,current,12.57651,629839.0,373
+373,53,0.0,0.0,State,Age - Series Complete,Age 40-49 Years,5,percentage,current,13.59486,554773.0,374
+374,54,0.0,0.0,State,Age - Series Complete,Age 50-59 Years,6,percentage,current,17.3178,616019.0,375
+375,55,0.0,0.0,State,Age - Series Complete,Age 60-69 Years,7,percentage,current,20.23577,521970.0,376
+376,56,0.0,0.0,State,Age - Series Complete,Age 70+ Years,8,percentage,current,20.10363,442244.0,377
+377,57,0.0,0.0,State,Age - Series Complete,Age Unknown,9,percentage,current,0.014208,,378
+378,59,0.0,0.0,State,Gender - Series Complete,Female,1,percentage,current,54.43978,2279968.0,379
+379,60,0.0,0.0,State,Gender - Series Complete,Male,2,percentage,current,45.29016,2383648.0,380
+380,61,0.0,0.0,State,Gender - Series Complete,Unknown,3,percentage,current,0.270057,,381
+381,63,0.0,0.0,State,Race - Series Complete,Asian,1,percentage,current,2.868137,79872.0,382
+382,64,0.0,0.0,State,Race - Series Complete,Black,2,percentage,current,29.83027,1502916.0,383
+383,65,0.0,0.0,State,Race - Series Complete,Native Hawaiian,3,percentage,current,0.204319,1468.0,384
+384,66,0.0,0.0,State,Race - Series Complete,American Indian,4,percentage,current,0.359476,26272.0,385
+385,67,0.0,0.0,State,Race - Series Complete,White,5,percentage,current,58.27304,2901106.0,386
+386,68,0.0,0.0,State,Race - Series Complete,Other,6,percentage,current,6.885743,151982.0,387
+387,69,0.0,0.0,State,Race - Series Complete,Unknown,7,percentage,current,1.579007,,388
+388,71,0.0,0.0,Region 1,Age - Series Initiated,Age 0-4 Years,1,percentage,current,0.0,,389
+389,72,0.0,0.0,Region 1,Age - Series Initiated,Age 5-17 Years,2,percentage,current,6.17323,,390
+390,73,0.0,0.0,Region 1,Age - Series Initiated,Age 18-29 Years,3,percentage,current,15.12875,,391
+391,74,0.0,0.0,Region 1,Age - Series Initiated,Age 30-39 Years,4,percentage,current,16.32474,,392
+392,75,0.0,0.0,Region 1,Age - Series Initiated,Age 40-49 Years,5,percentage,current,14.35267,,393
+393,76,0.0,0.0,Region 1,Age - Series Initiated,Age 50-59 Years,6,percentage,current,16.00759,,394
+394,77,0.0,0.0,Region 1,Age - Series Initiated,Age 60-69 Years,7,percentage,current,16.78548,,395
+395,78,0.0,0.0,Region 1,Age - Series Initiated,Age 70+ Years,8,percentage,current,15.1972,,396
+396,79,0.0,0.0,Region 1,Age - Series Initiated,Age Unknown,9,percentage,current,0.030342,,397
+397,81,0.0,0.0,Region 1,Gender - Series Initiated,Female,1,percentage,current,53.34245,,398
+398,82,0.0,0.0,Region 1,Gender - Series Initiated,Male,2,percentage,current,46.41211,,399
+399,83,0.0,0.0,Region 1,Gender - Series Initiated,Unknown,3,percentage,current,0.245448,,400
+400,85,0.0,0.0,Region 1,Race - Series Initiated,Asian,1,percentage,current,4.518667,,401
+401,86,0.0,0.0,Region 1,Race - Series Initiated,Black,2,percentage,current,34.31163,,402
+402,87,0.0,0.0,Region 1,Race - Series Initiated,Native Hawaiian,3,percentage,current,0.387949,,403
+403,88,0.0,0.0,Region 1,Race - Series Initiated,American Indian,4,percentage,current,0.396438,,404
+404,89,0.0,0.0,Region 1,Race - Series Initiated,White,5,percentage,current,50.42199,,405
+405,90,0.0,0.0,Region 1,Race - Series Initiated,Other,6,percentage,current,8.142594,,406
+406,91,0.0,0.0,Region 1,Race - Series Initiated,Unknown,7,percentage,current,1.820724,,407
+407,93,0.0,0.0,Region 2,Age - Series Initiated,Age 0-4 Years,1,percentage,current,0.0,,408
+408,94,0.0,0.0,Region 2,Age - Series Initiated,Age 5-17 Years,2,percentage,current,5.956644,,409
+409,95,0.0,0.0,Region 2,Age - Series Initiated,Age 18-29 Years,3,percentage,current,14.15561,,410
+410,96,0.0,0.0,Region 2,Age - Series Initiated,Age 30-39 Years,4,percentage,current,13.98508,,411
+411,97,0.0,0.0,Region 2,Age - Series Initiated,Age 40-49 Years,5,percentage,current,14.6005,,412
+412,98,0.0,0.0,Region 2,Age - Series Initiated,Age 50-59 Years,6,percentage,current,16.8632,,413
+413,99,0.0,0.0,Region 2,Age - Series Initiated,Age 60-69 Years,7,percentage,current,17.82165,,414
+414,100,0.0,0.0,Region 2,Age - Series Initiated,Age 70+ Years,8,percentage,current,16.59554,,415
+415,101,0.0,0.0,Region 2,Age - Series Initiated,Age Unknown,9,percentage,current,0.02177,,416
+416,103,0.0,0.0,Region 2,Gender - Series Initiated,Female,1,percentage,current,53.77502,,417
+417,104,0.0,0.0,Region 2,Gender - Series Initiated,Male,2,percentage,current,46.00504,,418
+418,105,0.0,0.0,Region 2,Gender - Series Initiated,Unknown,3,percentage,current,0.219934,,419
+419,107,0.0,0.0,Region 2,Race - Series Initiated,Asian,1,percentage,current,3.170067,,420
+420,108,0.0,0.0,Region 2,Race - Series Initiated,Black,2,percentage,current,37.71564,,421
+421,109,0.0,0.0,Region 2,Race - Series Initiated,Native Hawaiian,3,percentage,current,0.133691,,422
+422,110,0.0,0.0,Region 2,Race - Series Initiated,American Indian,4,percentage,current,0.256497,,423
+423,111,0.0,0.0,Region 2,Race - Series Initiated,White,5,percentage,current,51.27983,,424
+424,112,0.0,0.0,Region 2,Race - Series Initiated,Other,6,percentage,current,6.1696,,425
+425,113,0.0,0.0,Region 2,Race - Series Initiated,Unknown,7,percentage,current,1.274669,,426
+426,115,0.0,0.0,Region 3,Age - Series Initiated,Age 0-4 Years,1,percentage,current,0.0,,427
+427,116,0.0,0.0,Region 3,Age - Series Initiated,Age 5-17 Years,2,percentage,current,5.365028,,428
+428,117,0.0,0.0,Region 3,Age - Series Initiated,Age 18-29 Years,3,percentage,current,11.87747,,429
+429,118,0.0,0.0,Region 3,Age - Series Initiated,Age 30-39 Years,4,percentage,current,12.16406,,430
+430,119,0.0,0.0,Region 3,Age - Series Initiated,Age 40-49 Years,5,percentage,current,13.74506,,431
+431,120,0.0,0.0,Region 3,Age - Series Initiated,Age 50-59 Years,6,percentage,current,18.49446,,432
+432,121,0.0,0.0,Region 3,Age - Series Initiated,Age 60-69 Years,7,percentage,current,19.92581,,433
+433,122,0.0,0.0,Region 3,Age - Series Initiated,Age 70+ Years,8,percentage,current,18.41804,,434
+434,123,0.0,0.0,Region 3,Age - Series Initiated,Age Unknown,9,percentage,current,0.010084,,435
+435,125,0.0,0.0,Region 3,Gender - Series Initiated,Female,1,percentage,current,53.29417,,436
+436,511,0.0,0.0,Region 5,Ethnicity - Series Complete,Hispanic,1,percentage,current,4.06764,,437
+437,512,0.0,0.0,Region 5,Ethnicity - Series Complete,Non-Hispanic,2,percentage,current,66.38326,,438
+438,513,0.0,0.0,Region 5,Ethnicity - Series Complete,Unknown,3,percentage,current,29.5491,,439
+439,515,0.0,0.0,Region 6,Ethnicity - Series Initiated,Hispanic,1,percentage,current,5.070552,,440
+440,516,0.0,0.0,Region 6,Ethnicity - Series Initiated,Non-Hispanic,2,percentage,current,72.15501,,441
+441,517,0.0,0.0,Region 6,Ethnicity - Series Initiated,Unknown,3,percentage,current,22.77444,,442
+442,519,0.0,0.0,Region 6,Ethnicity - Series Complete,Hispanic,1,percentage,current,5.087372,,443
+443,520,0.0,0.0,Region 6,Ethnicity - Series Complete,Non-Hispanic,2,percentage,current,72.20644,,444
+444,521,0.0,0.0,Region 6,Ethnicity - Series Complete,Unknown,3,percentage,current,22.70619,,445
+445,523,0.0,0.0,Region 7,Ethnicity - Series Initiated,Hispanic,1,percentage,current,3.293596,,446
+446,524,0.0,0.0,Region 7,Ethnicity - Series Initiated,Non-Hispanic,2,percentage,current,77.15502,,447
+447,525,0.0,0.0,Region 7,Ethnicity - Series Initiated,Unknown,3,percentage,current,19.55138,,448
+448,527,0.0,0.0,Region 7,Ethnicity - Series Complete,Hispanic,1,percentage,current,3.191301,,449
+449,528,0.0,0.0,Region 7,Ethnicity - Series Complete,Non-Hispanic,2,percentage,current,77.69997,,450
+450,529,0.0,0.0,Region 7,Ethnicity - Series Complete,Unknown,3,percentage,current,19.10873,,451
+451,531,0.0,0.0,Region 8,Ethnicity - Series Initiated,Hispanic,1,percentage,current,3.697417,,452
+452,532,0.0,0.0,Region 8,Ethnicity - Series Initiated,Non-Hispanic,2,percentage,current,75.04226,,453
+453,533,0.0,0.0,Region 8,Ethnicity - Series Initiated,Unknown,3,percentage,current,21.26032,,454
+454,535,0.0,0.0,Region 8,Ethnicity - Series Complete,Hispanic,1,percentage,current,3.73151,,455
+455,536,0.0,0.0,Region 8,Ethnicity - Series Complete,Non-Hispanic,2,percentage,current,74.8786,,456
+456,537,0.0,0.0,Region 8,Ethnicity - Series Complete,Unknown,3,percentage,current,21.38989,,457
+457,539,0.0,0.0,Region 9,Ethnicity - Series Initiated,Hispanic,1,percentage,current,4.031881,,458
+458,540,0.0,0.0,Region 9,Ethnicity - Series Initiated,Non-Hispanic,2,percentage,current,69.52456,,459
+459,541,0.0,0.0,Region 9,Ethnicity - Series Initiated,Unknown,3,percentage,current,26.44356,,460
+460,543,0.0,0.0,Region 9,Ethnicity - Series Complete,Hispanic,1,percentage,current,3.797339,,461
+461,544,0.0,0.0,Region 9,Ethnicity - Series Complete,Non-Hispanic,2,percentage,current,69.64514,,462
+462,545,0.0,0.0,Region 9,Ethnicity - Series Complete,Unknown,3,percentage,current,26.55752,,463

@@ -1,0 +1,1001 @@
+,OBJECTID,FIPS,NAME,ALT_NAME,LDHH,CATEGORY,FIXED,TRANS,TOTAL,GROUP_
+0,1,22017,Caddo Parish,Caddo,7,2001,13,5,18,6-25
+1,2,22015,Bossier Parish,Bossier,7,2001,0,0,0,0
+2,3,22119,Webster Parish,Webster,7,2001,1,0,1,1-5
+3,4,22027,Claiborne Parish,Claiborne,7,2001,0,0,0,0
+4,5,22111,Union Parish,Union,8,2001,3,0,3,1-5
+5,6,22067,Morehouse Parish,Morehouse,8,2001,0,0,0,0
+6,7,22123,West Carroll Parish,West Carroll,8,2001,0,0,0,0
+7,8,22035,East Carroll Parish,East Carroll,8,2001,0,0,0,0
+8,9,22061,Lincoln Parish,Lincoln,8,2001,3,1,4,1-5
+9,10,22073,Ouachita Parish,Ouachita,8,2001,43,4,47,26-50
+10,11,22083,Richland Parish,Richland,8,2001,0,0,0,0
+11,12,22013,Bienville Parish,Bienville,7,2001,0,0,0,0
+12,13,22065,Madison Parish,Madison,8,2001,1,0,1,1-5
+13,14,22049,Jackson Parish,Jackson,8,2001,0,0,0,0
+14,15,22041,Franklin Parish,Franklin,8,2001,0,0,0,0
+15,16,22031,De Soto Parish,De Soto,7,2001,0,0,0,0
+16,17,22021,Caldwell Parish,Caldwell,8,2001,0,0,0,0
+17,18,22107,Tensas Parish,Tensas,8,2001,0,0,0,0
+18,19,22081,Red River Parish,Red River,7,2001,0,0,0,0
+19,20,22127,Winn Parish,Winn,6,2001,0,0,0,0
+20,21,22069,Natchitoches Parish,Natchitoches,7,2001,0,1,1,1-5
+21,22,22025,Catahoula Parish,Catahoula,6,2001,0,1,1,1-5
+22,23,22059,La Salle Parish,La Salle,6,2001,1,0,1,1-5
+23,24,22085,Sabine Parish,Sabine,7,2001,0,0,0,0
+24,25,22043,Grant Parish,Grant,6,2001,4,1,5,1-5
+25,26,22029,Concordia Parish,Concordia,6,2001,0,0,0,0
+26,27,22079,Rapides Parish,Rapides,6,2001,3,3,6,6-25
+27,28,22115,Vernon Parish,Vernon,6,2001,1,2,3,1-5
+28,29,22009,Avoyelles Parish,Avoyelles,6,2001,0,0,0,0
+29,30,22125,West Feliciana Parish,West Feliciana,2,2001,0,0,0,0
+30,31,22077,Pointe Coupee Parish,Pointe Coupee,2,2001,2,4,6,6-25
+31,32,22117,Washington Parish,Washington,9,2001,3,0,3,1-5
+32,33,22039,Evangeline Parish,Evangeline,4,2001,0,0,0,0
+33,34,22105,Tangipahoa Parish,Tangipahoa,9,2001,0,6,6,6-25
+34,35,22091,St. Helena Parish,St. Helena,9,2001,0,0,0,0
+35,36,22037,East Feliciana Parish,East Feliciana,2,2001,0,2,2,1-5
+36,37,22003,Allen Parish,Allen,5,2001,2,0,2,1-5
+37,38,22011,Beauregard Parish,Beauregard,5,2001,1,1,2,1-5
+38,39,22097,St. Landry Parish,St. Landry,4,2001,5,1,6,6-25
+39,40,22033,East Baton Rouge Parish,EBR,2,2001,77,9,86,76-100
+40,41,22103,St. Tammany Parish,St. Tammany,9,2001,1,2,3,1-5
+41,42,22121,West Baton Rouge Parish,WBR,2,2001,11,1,12,6-25
+42,43,22063,Livingston Parish,Livingston,9,2001,1,1,2,1-5
+43,44,22099,St. Martin Parish,St. Martin,4,2001,0,1,1,1-5
+44,45,22047,Iberville Parish,Iberville,2,2001,62,7,69,51-75
+45,46,22019,Calcasieu Parish,Calcasieu,5,2001,86,7,93,76-100
+46,47,22053,Jefferson Davis Parish,Jefferson Davis,5,2001,1,3,4,1-5
+47,48,22001,Acadia Parish,Acadia,4,2001,1,4,5,1-5
+48,49,22055,Lafayette Parish,Lafayette,4,2001,1,4,5,1-5
+49,50,22005,Ascension Parish,Ascension,2,2001,128,9,137,126-150
+50,51,22095,St. John the Baptist Parish,St. John,3,2001,7,2,9,6-25
+51,52,22089,St. Charles Parish,St. Charles,3,2001,93,5,98,76-100
+52,53,22071,Orleans Parish,Orleans,1,2001,13,21,34,26-50
+53,54,22087,St. Bernard Parish,St. Bernard,1,2001,30,0,30,26-50
+54,55,22093,St. James Parish,St. James,3,2001,38,3,41,26-50
+55,56,22113,Vermilion Parish,Vermilion,4,2001,1,0,1,1-5
+56,57,22045,Iberia Parish,Iberia,4,2001,4,0,4,1-5
+57,58,22007,Assumption Parish,Assumption,3,2001,0,0,0,0
+58,59,22023,Cameron Parish,Cameron,5,2001,3,1,4,1-5
+59,60,22101,St. Mary Parish,St. Mary,3,2001,0,1,1,1-5
+60,61,22057,Lafourche Parish,Lafourche,3,2001,4,1,5,1-5
+61,62,22075,Plaquemines Parish,Plaquemines,1,2001,14,3,17,6-25
+62,63,22109,Terrebonne Parish,Terrebonne,3,2001,0,1,1,1-5
+63,64,22051,Jefferson Parish,Jefferson,1,2001,22,12,34,26-50
+64,65,22017,Caddo Parish,Caddo,7,2002,8,14,22,6-25
+65,66,22015,Bossier Parish,Bossier,7,2002,0,1,1,1-5
+66,67,22119,Webster Parish,Webster,7,2002,2,1,3,1-5
+67,68,22027,Claiborne Parish,Claiborne,7,2002,0,0,0,0
+68,69,22111,Union Parish,Union,8,2002,1,2,3,1-5
+69,70,22067,Morehouse Parish,Morehouse,8,2002,0,0,0,0
+70,71,22123,West Carroll Parish,West Carroll,8,2002,0,0,0,0
+71,72,22035,East Carroll Parish,East Carroll,8,2002,0,1,1,1-5
+72,73,22061,Lincoln Parish,Lincoln,8,2002,0,0,0,0
+73,74,22073,Ouachita Parish,Ouachita,8,2002,35,1,36,26-50
+74,75,22083,Richland Parish,Richland,8,2002,0,2,2,1-5
+75,76,22013,Bienville Parish,Bienville,7,2002,0,1,1,1-5
+76,77,22065,Madison Parish,Madison,8,2002,0,0,0,0
+77,78,22049,Jackson Parish,Jackson,8,2002,0,0,0,0
+78,79,22041,Franklin Parish,Franklin,8,2002,0,0,0,0
+79,80,22031,De Soto Parish,De Soto,7,2002,1,0,1,1-5
+80,81,22021,Caldwell Parish,Caldwell,8,2002,0,0,0,0
+81,82,22107,Tensas Parish,Tensas,8,2002,0,0,0,0
+82,83,22081,Red River Parish,Red River,7,2002,0,0,0,0
+83,84,22127,Winn Parish,Winn,6,2002,0,0,0,0
+84,85,22069,Natchitoches Parish,Natchitoches,7,2002,0,0,0,0
+85,86,22025,Catahoula Parish,Catahoula,6,2002,0,1,1,1-5
+86,87,22059,La Salle Parish,La Salle,6,2002,0,0,0,0
+87,88,22085,Sabine Parish,Sabine,7,2002,0,0,0,0
+88,89,22043,Grant Parish,Grant,6,2002,0,0,0,0
+89,90,22029,Concordia Parish,Concordia,6,2002,0,0,0,0
+90,91,22079,Rapides Parish,Rapides,6,2002,0,2,2,1-5
+91,92,22115,Vernon Parish,Vernon,6,2002,1,0,1,1-5
+92,93,22009,Avoyelles Parish,Avoyelles,6,2002,0,1,1,1-5
+93,94,22125,West Feliciana Parish,West Feliciana,2,2002,0,0,0,0
+94,95,22077,Pointe Coupee Parish,Pointe Coupee,2,2002,0,0,0,0
+95,96,22117,Washington Parish,Washington,9,2002,1,0,1,1-5
+96,97,22039,Evangeline Parish,Evangeline,4,2002,0,0,0,0
+97,98,22105,Tangipahoa Parish,Tangipahoa,9,2002,2,4,6,6-25
+98,99,22091,St. Helena Parish,St. Helena,9,2002,0,0,0,0
+99,100,22037,East Feliciana Parish,East Feliciana,2,2002,0,0,0,0
+100,101,22003,Allen Parish,Allen,5,2002,0,0,0,0
+101,102,22011,Beauregard Parish,Beauregard,5,2002,0,2,2,1-5
+102,103,22097,St. Landry Parish,St. Landry,4,2002,5,0,5,1-5
+103,104,22033,East Baton Rouge Parish,EBR,2,2002,62,9,71,51-75
+104,105,22103,St. Tammany Parish,St. Tammany,9,2002,1,1,2,1-5
+105,106,22121,West Baton Rouge Parish,WBR,2,2002,7,3,10,6-25
+106,107,22063,Livingston Parish,Livingston,9,2002,0,1,1,1-5
+107,108,22099,St. Martin Parish,St. Martin,4,2002,0,0,0,0
+108,109,22047,Iberville Parish,Iberville,2,2002,47,6,53,51-75
+109,110,22019,Calcasieu Parish,Calcasieu,5,2002,140,9,149,126-150
+110,111,22053,Jefferson Davis Parish,Jefferson Davis,5,2002,1,0,1,1-5
+111,112,22001,Acadia Parish,Acadia,4,2002,0,0,0,0
+112,113,22055,Lafayette Parish,Lafayette,4,2002,1,4,5,1-5
+113,114,22005,Ascension Parish,Ascension,2,2002,85,9,94,76-100
+114,115,22095,St. John the Baptist Parish,St. John,3,2002,7,3,10,6-25
+115,116,22089,St. Charles Parish,St. Charles,3,2002,85,2,87,76-100
+116,117,22071,Orleans Parish,Orleans,1,2002,3,12,15,6-25
+117,118,22087,St. Bernard Parish,St. Bernard,1,2002,44,3,47,26-50
+118,119,22093,St. James Parish,St. James,3,2002,45,6,51,51-75
+119,120,22113,Vermilion Parish,Vermilion,4,2002,5,0,5,1-5
+120,121,22045,Iberia Parish,Iberia,4,2002,0,2,2,1-5
+121,122,22007,Assumption Parish,Assumption,3,2002,0,0,0,0
+122,123,22023,Cameron Parish,Cameron,5,2002,2,1,3,1-5
+123,124,22101,St. Mary Parish,St. Mary,3,2002,5,2,7,6-25
+124,125,22057,Lafourche Parish,Lafourche,3,2002,3,3,6,6-25
+125,126,22075,Plaquemines Parish,Plaquemines,1,2002,16,1,17,6-25
+126,127,22109,Terrebonne Parish,Terrebonne,3,2002,2,1,3,1-5
+127,128,22051,Jefferson Parish,Jefferson,1,2002,11,10,21,6-25
+128,129,22017,Caddo Parish,Caddo,7,2003,4,19,23,6-25
+129,130,22015,Bossier Parish,Bossier,7,2003,0,3,3,1-5
+130,131,22119,Webster Parish,Webster,7,2003,4,2,6,6-25
+131,132,22027,Claiborne Parish,Claiborne,7,2003,0,0,0,0
+132,133,22111,Union Parish,Union,8,2003,1,0,1,1-5
+133,134,22067,Morehouse Parish,Morehouse,8,2003,0,1,1,1-5
+134,135,22123,West Carroll Parish,West Carroll,8,2003,0,0,0,0
+135,136,22035,East Carroll Parish,East Carroll,8,2003,0,0,0,0
+136,137,22061,Lincoln Parish,Lincoln,8,2003,0,1,1,1-5
+137,138,22073,Ouachita Parish,Ouachita,8,2003,33,4,37,26-50
+138,139,22083,Richland Parish,Richland,8,2003,0,0,0,0
+139,140,22013,Bienville Parish,Bienville,7,2003,0,0,0,0
+140,141,22065,Madison Parish,Madison,8,2003,0,1,1,1-5
+141,142,22049,Jackson Parish,Jackson,8,2003,0,0,0,0
+142,143,22041,Franklin Parish,Franklin,8,2003,0,0,0,0
+143,144,22031,De Soto Parish,De Soto,7,2003,0,1,1,1-5
+144,145,22021,Caldwell Parish,Caldwell,8,2003,0,0,0,0
+145,146,22107,Tensas Parish,Tensas,8,2003,0,0,0,0
+146,147,22081,Red River Parish,Red River,7,2003,0,0,0,0
+147,148,22127,Winn Parish,Winn,6,2003,1,0,1,1-5
+148,149,22069,Natchitoches Parish,Natchitoches,7,2003,0,0,0,0
+149,150,22025,Catahoula Parish,Catahoula,6,2003,0,0,0,0
+150,151,22059,La Salle Parish,La Salle,6,2003,0,0,0,0
+151,152,22085,Sabine Parish,Sabine,7,2003,0,0,0,0
+152,153,22043,Grant Parish,Grant,6,2003,1,0,1,1-5
+153,154,22029,Concordia Parish,Concordia,6,2003,0,0,0,0
+154,155,22079,Rapides Parish,Rapides,6,2003,0,4,4,1-5
+155,156,22115,Vernon Parish,Vernon,6,2003,0,0,0,0
+156,157,22009,Avoyelles Parish,Avoyelles,6,2003,0,0,0,0
+157,158,22125,West Feliciana Parish,West Feliciana,2,2003,0,0,0,0
+158,159,22077,Pointe Coupee Parish,Pointe Coupee,2,2003,0,0,0,0
+159,160,22117,Washington Parish,Washington,9,2003,0,0,0,0
+160,161,22039,Evangeline Parish,Evangeline,4,2003,0,0,0,0
+161,162,22105,Tangipahoa Parish,Tangipahoa,9,2003,0,2,2,1-5
+162,163,22091,St. Helena Parish,St. Helena,9,2003,0,0,0,0
+163,164,22037,East Feliciana Parish,East Feliciana,2,2003,0,0,0,0
+164,165,22003,Allen Parish,Allen,5,2003,0,0,0,0
+165,166,22011,Beauregard Parish,Beauregard,5,2003,0,0,0,0
+166,167,22097,St. Landry Parish,St. Landry,4,2003,5,0,5,1-5
+167,168,22033,East Baton Rouge Parish,EBR,2,2003,63,3,66,51-75
+168,169,22103,St. Tammany Parish,St. Tammany,9,2003,4,0,4,1-5
+169,170,22121,West Baton Rouge Parish,WBR,2,2003,7,0,7,6-25
+170,171,22063,Livingston Parish,Livingston,9,2003,1,0,1,1-5
+171,172,22099,St. Martin Parish,St. Martin,4,2003,0,1,1,1-5
+172,173,22047,Iberville Parish,Iberville,2,2003,52,3,55,51-75
+173,174,22019,Calcasieu Parish,Calcasieu,5,2003,102,3,105,101-125
+174,175,22053,Jefferson Davis Parish,Jefferson Davis,5,2003,0,0,0,0
+175,176,22001,Acadia Parish,Acadia,4,2003,1,2,3,1-5
+176,177,22055,Lafayette Parish,Lafayette,4,2003,1,5,6,6-25
+177,178,22005,Ascension Parish,Ascension,2,2003,48,7,55,51-75
+178,179,22095,St. John the Baptist Parish,St. John,3,2003,4,1,5,1-5
+179,180,22089,St. Charles Parish,St. Charles,3,2003,58,4,62,51-75
+180,181,22071,Orleans Parish,Orleans,1,2003,2,5,7,6-25
+181,182,22087,St. Bernard Parish,St. Bernard,1,2003,79,1,80,76-100
+182,183,22093,St. James Parish,St. James,3,2003,23,4,27,26-50
+183,184,22113,Vermilion Parish,Vermilion,4,2003,3,0,3,1-5
+184,185,22045,Iberia Parish,Iberia,4,2003,1,0,1,1-5
+185,186,22007,Assumption Parish,Assumption,3,2003,1,0,1,1-5
+186,187,22023,Cameron Parish,Cameron,5,2003,0,0,0,0
+187,188,22101,St. Mary Parish,St. Mary,3,2003,3,0,3,1-5
+188,189,22057,Lafourche Parish,Lafourche,3,2003,1,1,2,1-5
+189,190,22075,Plaquemines Parish,Plaquemines,1,2003,17,5,22,6-25
+190,191,22109,Terrebonne Parish,Terrebonne,3,2003,0,1,1,1-5
+191,192,22051,Jefferson Parish,Jefferson,1,2003,62,3,65,51-75
+192,193,22017,Caddo Parish,Caddo,7,2004,8,12,20,6-25
+193,194,22015,Bossier Parish,Bossier,7,2004,2,4,6,6-25
+194,195,22119,Webster Parish,Webster,7,2004,2,0,2,1-5
+195,196,22027,Claiborne Parish,Claiborne,7,2004,0,0,0,0
+196,197,22111,Union Parish,Union,8,2004,0,0,0,0
+197,198,22067,Morehouse Parish,Morehouse,8,2004,0,0,0,0
+198,199,22123,West Carroll Parish,West Carroll,8,2004,0,0,0,0
+199,200,22035,East Carroll Parish,East Carroll,8,2004,0,0,0,0
+200,201,22061,Lincoln Parish,Lincoln,8,2004,0,0,0,0
+201,202,22073,Ouachita Parish,Ouachita,8,2004,35,1,36,26-50
+202,203,22083,Richland Parish,Richland,8,2004,0,2,2,1-5
+203,204,22013,Bienville Parish,Bienville,7,2004,0,1,1,1-5
+204,205,22065,Madison Parish,Madison,8,2004,0,1,1,1-5
+205,206,22049,Jackson Parish,Jackson,8,2004,0,0,0,0
+206,207,22041,Franklin Parish,Franklin,8,2004,0,0,0,0
+207,208,22031,De Soto Parish,De Soto,7,2004,2,0,2,1-5
+208,209,22021,Caldwell Parish,Caldwell,8,2004,0,0,0,0
+209,210,22107,Tensas Parish,Tensas,8,2004,0,0,0,0
+210,211,22081,Red River Parish,Red River,7,2004,0,0,0,0
+211,212,22127,Winn Parish,Winn,6,2004,1,1,2,1-5
+212,213,22069,Natchitoches Parish,Natchitoches,7,2004,1,0,1,1-5
+213,214,22025,Catahoula Parish,Catahoula,6,2004,1,0,1,1-5
+214,215,22059,La Salle Parish,La Salle,6,2004,0,0,0,0
+215,216,22085,Sabine Parish,Sabine,7,2004,0,1,1,1-5
+216,217,22043,Grant Parish,Grant,6,2004,0,0,0,0
+217,218,22029,Concordia Parish,Concordia,6,2004,0,2,2,1-5
+218,219,22079,Rapides Parish,Rapides,6,2004,2,3,5,1-5
+219,220,22115,Vernon Parish,Vernon,6,2004,1,0,1,1-5
+220,221,22009,Avoyelles Parish,Avoyelles,6,2004,0,0,0,0
+221,222,22125,West Feliciana Parish,West Feliciana,2,2004,0,0,0,0
+222,223,22077,Pointe Coupee Parish,Pointe Coupee,2,2004,0,3,3,1-5
+223,224,22117,Washington Parish,Washington,9,2004,0,0,0,0
+224,225,22039,Evangeline Parish,Evangeline,4,2004,0,0,0,0
+225,226,22105,Tangipahoa Parish,Tangipahoa,9,2004,0,1,1,1-5
+226,227,22091,St. Helena Parish,St. Helena,9,2004,0,0,0,0
+227,228,22037,East Feliciana Parish,East Feliciana,2,2004,1,0,1,1-5
+228,229,22003,Allen Parish,Allen,5,2004,1,0,1,1-5
+229,230,22011,Beauregard Parish,Beauregard,5,2004,0,0,0,0
+230,231,22097,St. Landry Parish,St. Landry,4,2004,3,1,4,1-5
+231,232,22033,East Baton Rouge Parish,EBR,2,2004,60,9,69,51-75
+232,233,22103,St. Tammany Parish,St. Tammany,9,2004,2,0,2,1-5
+233,234,22121,West Baton Rouge Parish,WBR,2,2004,9,3,12,6-25
+234,235,22063,Livingston Parish,Livingston,9,2004,1,1,2,1-5
+235,236,22099,St. Martin Parish,St. Martin,4,2004,0,1,1,1-5
+236,237,22047,Iberville Parish,Iberville,2,2004,42,1,43,26-50
+237,238,22019,Calcasieu Parish,Calcasieu,5,2004,66,2,68,51-75
+238,239,22053,Jefferson Davis Parish,Jefferson Davis,5,2004,0,1,1,1-5
+239,240,22001,Acadia Parish,Acadia,4,2004,0,0,0,0
+240,241,22055,Lafayette Parish,Lafayette,4,2004,6,1,7,6-25
+241,242,22005,Ascension Parish,Ascension,2,2004,31,7,38,26-50
+242,243,22095,St. John the Baptist Parish,St. John,3,2004,9,1,10,6-25
+243,244,22089,St. Charles Parish,St. Charles,3,2004,68,3,71,51-75
+244,245,22071,Orleans Parish,Orleans,1,2004,4,9,13,6-25
+245,246,22087,St. Bernard Parish,St. Bernard,1,2004,60,0,60,51-75
+246,247,22093,St. James Parish,St. James,3,2004,12,2,14,6-25
+247,248,22113,Vermilion Parish,Vermilion,4,2004,0,0,0,0
+248,249,22045,Iberia Parish,Iberia,4,2004,0,1,1,1-5
+249,250,22007,Assumption Parish,Assumption,3,2004,0,0,0,0
+250,251,22023,Cameron Parish,Cameron,5,2004,1,0,1,1-5
+251,252,22101,St. Mary Parish,St. Mary,3,2004,1,0,1,1-5
+252,253,22057,Lafourche Parish,Lafourche,3,2004,2,0,2,1-5
+253,254,22075,Plaquemines Parish,Plaquemines,1,2004,14,5,19,6-25
+254,255,22109,Terrebonne Parish,Terrebonne,3,2004,1,1,2,1-5
+255,256,22051,Jefferson Parish,Jefferson,1,2004,25,9,34,26-50
+256,257,22017,Caddo Parish,Caddo,7,2005,13,22,35,26-50
+257,258,22015,Bossier Parish,Bossier,7,2005,4,3,7,6-25
+258,259,22119,Webster Parish,Webster,7,2005,1,0,1,1-5
+259,260,22027,Claiborne Parish,Claiborne,7,2005,0,0,0,0
+260,261,22111,Union Parish,Union,8,2005,0,0,0,0
+261,262,22067,Morehouse Parish,Morehouse,8,2005,1,2,3,1-5
+262,263,22123,West Carroll Parish,West Carroll,8,2005,1,0,1,1-5
+263,264,22035,East Carroll Parish,East Carroll,8,2005,0,0,0,0
+264,265,22061,Lincoln Parish,Lincoln,8,2005,2,0,2,1-5
+265,266,22073,Ouachita Parish,Ouachita,8,2005,35,5,40,26-50
+266,267,22083,Richland Parish,Richland,8,2005,1,1,2,1-5
+267,268,22013,Bienville Parish,Bienville,7,2005,0,0,0,0
+268,269,22065,Madison Parish,Madison,8,2005,1,1,2,1-5
+269,270,22049,Jackson Parish,Jackson,8,2005,1,0,1,1-5
+270,271,22041,Franklin Parish,Franklin,8,2005,1,0,1,1-5
+271,272,22031,De Soto Parish,De Soto,7,2005,2,2,4,1-5
+272,273,22021,Caldwell Parish,Caldwell,8,2005,0,0,0,0
+273,274,22107,Tensas Parish,Tensas,8,2005,0,0,0,0
+274,275,22081,Red River Parish,Red River,7,2005,0,0,0,0
+275,276,22127,Winn Parish,Winn,6,2005,0,0,0,0
+276,277,22069,Natchitoches Parish,Natchitoches,7,2005,1,0,1,1-5
+277,278,22025,Catahoula Parish,Catahoula,6,2005,0,0,0,0
+278,279,22059,La Salle Parish,La Salle,6,2005,0,0,0,0
+279,280,22085,Sabine Parish,Sabine,7,2005,2,0,2,1-5
+280,281,22043,Grant Parish,Grant,6,2005,1,0,1,1-5
+281,282,22029,Concordia Parish,Concordia,6,2005,0,0,0,0
+282,283,22079,Rapides Parish,Rapides,6,2005,3,1,4,1-5
+283,284,22115,Vernon Parish,Vernon,6,2005,0,0,0,0
+284,285,22009,Avoyelles Parish,Avoyelles,6,2005,0,0,0,0
+285,286,22125,West Feliciana Parish,West Feliciana,2,2005,2,0,2,1-5
+286,287,22077,Pointe Coupee Parish,Pointe Coupee,2,2005,0,5,5,1-5
+287,288,22117,Washington Parish,Washington,9,2005,1,0,1,1-5
+288,289,22039,Evangeline Parish,Evangeline,4,2005,0,0,0,0
+289,290,22105,Tangipahoa Parish,Tangipahoa,9,2005,2,2,4,1-5
+290,291,22091,St. Helena Parish,St. Helena,9,2005,0,0,0,0
+291,292,22037,East Feliciana Parish,East Feliciana,2,2005,0,0,0,0
+292,293,22003,Allen Parish,Allen,5,2005,1,0,1,1-5
+293,294,22011,Beauregard Parish,Beauregard,5,2005,1,0,1,1-5
+294,295,22097,St. Landry Parish,St. Landry,4,2005,3,1,4,1-5
+295,296,22033,East Baton Rouge Parish,EBR,2,2005,0,0,0,0
+296,297,22103,St. Tammany Parish,St. Tammany,9,2005,4,2,6,6-25
+297,298,22121,West Baton Rouge Parish,WBR,2,2005,13,7,20,6-25
+298,299,22063,Livingston Parish,Livingston,9,2005,3,3,6,6-25
+299,300,22099,St. Martin Parish,St. Martin,4,2005,0,2,2,1-5
+300,301,22047,Iberville Parish,Iberville,2,2005,60,4,64,51-75
+301,302,22019,Calcasieu Parish,Calcasieu,5,2005,111,10,121,101-125
+302,303,22053,Jefferson Davis Parish,Jefferson Davis,5,2005,0,1,1,1-5
+303,304,22001,Acadia Parish,Acadia,4,2005,1,0,1,1-5
+304,305,22055,Lafayette Parish,Lafayette,4,2005,4,6,10,6-25
+305,306,22005,Ascension Parish,Ascension,2,2005,58,12,70,51-75
+306,307,22095,St. John the Baptist Parish,St. John,3,2005,12,1,13,6-25
+307,308,22089,St. Charles Parish,St. Charles,3,2005,65,7,72,51-75
+308,309,22071,Orleans Parish,Orleans,1,2005,16,11,27,26-50
+309,310,22087,St. Bernard Parish,St. Bernard,1,2005,87,1,88,76-100
+310,311,22093,St. James Parish,St. James,3,2005,23,5,28,26-50
+311,312,22113,Vermilion Parish,Vermilion,4,2005,1,0,1,1-5
+312,313,22045,Iberia Parish,Iberia,4,2005,2,1,3,1-5
+313,314,22007,Assumption Parish,Assumption,3,2005,0,0,0,0
+314,315,22023,Cameron Parish,Cameron,5,2005,4,0,4,1-5
+315,316,22101,St. Mary Parish,St. Mary,3,2005,1,0,1,1-5
+316,317,22057,Lafourche Parish,Lafourche,3,2005,1,1,2,1-5
+317,318,22075,Plaquemines Parish,Plaquemines,1,2005,14,3,17,6-25
+318,319,22109,Terrebonne Parish,Terrebonne,3,2005,3,5,8,6-25
+319,320,22051,Jefferson Parish,Jefferson,1,2005,32,18,50,26-50
+320,321,22017,Caddo Parish,Caddo,7,2006,15,8,23,6-25
+321,322,22015,Bossier Parish,Bossier,7,2006,5,7,12,6-25
+322,323,22119,Webster Parish,Webster,7,2006,4,3,7,6-25
+323,324,22027,Claiborne Parish,Claiborne,7,2006,0,0,0,0
+324,325,22111,Union Parish,Union,8,2006,0,0,0,0
+325,326,22067,Morehouse Parish,Morehouse,8,2006,0,1,1,1-5
+326,327,22123,West Carroll Parish,West Carroll,8,2006,0,0,0,0
+327,328,22035,East Carroll Parish,East Carroll,8,2006,0,0,0,0
+328,329,22061,Lincoln Parish,Lincoln,8,2006,0,1,1,1-5
+329,330,22073,Ouachita Parish,Ouachita,8,2006,29,3,32,26-50
+330,331,22083,Richland Parish,Richland,8,2006,1,1,2,1-5
+331,332,22013,Bienville Parish,Bienville,7,2006,1,0,1,1-5
+332,333,22065,Madison Parish,Madison,8,2006,1,3,4,1-5
+333,334,22049,Jackson Parish,Jackson,8,2006,0,0,0,0
+334,335,22041,Franklin Parish,Franklin,8,2006,0,1,1,1-5
+335,336,22031,De Soto Parish,De Soto,7,2006,1,1,2,1-5
+336,337,22021,Caldwell Parish,Caldwell,8,2006,0,1,1,1-5
+337,338,22107,Tensas Parish,Tensas,8,2006,0,1,1,1-5
+338,339,22081,Red River Parish,Red River,7,2006,0,0,0,0
+339,340,22127,Winn Parish,Winn,6,2006,0,0,0,0
+340,341,22069,Natchitoches Parish,Natchitoches,7,2006,2,1,3,1-5
+341,342,22025,Catahoula Parish,Catahoula,6,2006,0,0,0,0
+342,343,22059,La Salle Parish,La Salle,6,2006,0,0,0,0
+343,344,22085,Sabine Parish,Sabine,7,2006,0,0,0,0
+344,345,22043,Grant Parish,Grant,6,2006,1,0,1,1-5
+345,346,22029,Concordia Parish,Concordia,6,2006,0,0,0,0
+346,347,22079,Rapides Parish,Rapides,6,2006,6,1,7,6-25
+347,348,22115,Vernon Parish,Vernon,6,2006,0,0,0,0
+348,349,22009,Avoyelles Parish,Avoyelles,6,2006,0,0,0,0
+349,350,22125,West Feliciana Parish,West Feliciana,2,2006,0,0,0,0
+350,351,22077,Pointe Coupee Parish,Pointe Coupee,2,2006,0,5,5,1-5
+351,352,22117,Washington Parish,Washington,9,2006,2,0,2,1-5
+352,353,22039,Evangeline Parish,Evangeline,4,2006,0,0,0,0
+353,354,22105,Tangipahoa Parish,Tangipahoa,9,2006,3,1,4,1-5
+354,355,22091,St. Helena Parish,St. Helena,9,2006,0,0,0,0
+355,356,22037,East Feliciana Parish,East Feliciana,2,2006,0,0,0,0
+356,357,22003,Allen Parish,Allen,5,2006,0,0,0,0
+357,358,22011,Beauregard Parish,Beauregard,5,2006,0,0,0,0
+358,359,22097,St. Landry Parish,St. Landry,4,2006,0,1,1,1-5
+359,360,22033,East Baton Rouge Parish,EBR,2,2006,108,7,115,101-125
+360,361,22103,St. Tammany Parish,St. Tammany,9,2006,0,2,2,1-5
+361,362,22121,West Baton Rouge Parish,WBR,2,2006,1,3,4,1-5
+362,363,22063,Livingston Parish,Livingston,9,2006,0,1,1,1-5
+363,364,22099,St. Martin Parish,St. Martin,4,2006,0,1,1,1-5
+364,365,22047,Iberville Parish,Iberville,2,2006,34,10,44,26-50
+365,366,22019,Calcasieu Parish,Calcasieu,5,2006,63,13,76,76-100
+366,367,22053,Jefferson Davis Parish,Jefferson Davis,5,2006,1,1,2,1-5
+367,368,22001,Acadia Parish,Acadia,4,2006,1,1,2,1-5
+368,369,22055,Lafayette Parish,Lafayette,4,2006,1,6,7,6-25
+369,370,22005,Ascension Parish,Ascension,2,2006,75,29,104,101-125
+370,371,22095,St. John the Baptist Parish,St. John,3,2006,14,0,14,6-25
+371,372,22089,St. Charles Parish,St. Charles,3,2006,43,7,50,26-50
+372,373,22071,Orleans Parish,Orleans,1,2006,2,4,6,6-25
+373,374,22087,St. Bernard Parish,St. Bernard,1,2006,40,1,41,26-50
+374,375,22093,St. James Parish,St. James,3,2006,15,4,19,6-25
+375,376,22113,Vermilion Parish,Vermilion,4,2006,0,0,0,0
+376,377,22045,Iberia Parish,Iberia,4,2006,0,2,2,1-5
+377,378,22007,Assumption Parish,Assumption,3,2006,0,0,0,0
+378,379,22023,Cameron Parish,Cameron,5,2006,4,0,4,1-5
+379,380,22101,St. Mary Parish,St. Mary,3,2006,0,2,2,1-5
+380,381,22057,Lafourche Parish,Lafourche,3,2006,3,3,6,6-25
+381,382,22075,Plaquemines Parish,Plaquemines,1,2006,19,0,19,6-25
+382,383,22109,Terrebonne Parish,Terrebonne,3,2006,2,3,5,1-5
+383,384,22051,Jefferson Parish,Jefferson,1,2006,18,5,23,6-25
+384,385,22017,Caddo Parish,Caddo,7,2007,7,18,25,6-25
+385,386,22015,Bossier Parish,Bossier,7,2007,3,10,13,6-25
+386,387,22119,Webster Parish,Webster,7,2007,0,1,1,1-5
+387,388,22027,Claiborne Parish,Claiborne,7,2007,0,1,1,1-5
+388,389,22111,Union Parish,Union,8,2007,0,0,0,0
+389,390,22067,Morehouse Parish,Morehouse,8,2007,0,0,0,0
+390,391,22123,West Carroll Parish,West Carroll,8,2007,0,0,0,0
+391,392,22035,East Carroll Parish,East Carroll,8,2007,0,1,1,1-5
+392,393,22061,Lincoln Parish,Lincoln,8,2007,0,1,1,1-5
+393,394,22073,Ouachita Parish,Ouachita,8,2007,8,4,12,6-25
+394,395,22083,Richland Parish,Richland,8,2007,0,0,0,0
+395,396,22013,Bienville Parish,Bienville,7,2007,0,0,0,0
+396,397,22065,Madison Parish,Madison,8,2007,0,1,1,1-5
+397,398,22049,Jackson Parish,Jackson,8,2007,0,0,0,0
+398,399,22041,Franklin Parish,Franklin,8,2007,0,0,0,0
+399,400,22031,De Soto Parish,De Soto,7,2007,1,0,1,1-5
+400,401,22021,Caldwell Parish,Caldwell,8,2007,2,0,2,1-5
+401,402,22107,Tensas Parish,Tensas,8,2007,0,0,0,0
+402,403,22081,Red River Parish,Red River,7,2007,0,0,0,0
+403,404,22127,Winn Parish,Winn,6,2007,0,0,0,0
+404,405,22069,Natchitoches Parish,Natchitoches,7,2007,0,1,1,1-5
+405,406,22025,Catahoula Parish,Catahoula,6,2007,0,0,0,0
+406,407,22059,La Salle Parish,La Salle,6,2007,0,1,1,1-5
+407,408,22085,Sabine Parish,Sabine,7,2007,0,0,0,0
+408,409,22043,Grant Parish,Grant,6,2007,0,1,1,1-5
+409,410,22029,Concordia Parish,Concordia,6,2007,0,0,0,0
+410,411,22079,Rapides Parish,Rapides,6,2007,0,7,7,6-25
+411,412,22115,Vernon Parish,Vernon,6,2007,0,2,2,1-5
+412,413,22009,Avoyelles Parish,Avoyelles,6,2007,0,0,0,0
+413,414,22125,West Feliciana Parish,West Feliciana,2,2007,0,0,0,0
+414,415,22077,Pointe Coupee Parish,Pointe Coupee,2,2007,1,11,12,6-25
+415,416,22117,Washington Parish,Washington,9,2007,1,1,2,1-5
+416,417,22039,Evangeline Parish,Evangeline,4,2007,0,0,0,0
+417,418,22105,Tangipahoa Parish,Tangipahoa,9,2007,1,1,2,1-5
+418,419,22091,St. Helena Parish,St. Helena,9,2007,0,0,0,0
+419,420,22037,East Feliciana Parish,East Feliciana,2,2007,1,1,2,1-5
+420,421,22003,Allen Parish,Allen,5,2007,1,1,2,1-5
+421,422,22011,Beauregard Parish,Beauregard,5,2007,0,1,1,1-5
+422,423,22097,St. Landry Parish,St. Landry,4,2007,1,0,1,1-5
+423,424,22033,East Baton Rouge Parish,EBR,2,2007,107,16,123,101-125
+424,425,22103,St. Tammany Parish,St. Tammany,9,2007,3,1,4,1-5
+425,426,22121,West Baton Rouge Parish,WBR,2,2007,5,2,7,6-25
+426,427,22063,Livingston Parish,Livingston,9,2007,1,2,3,1-5
+427,428,22099,St. Martin Parish,St. Martin,4,2007,1,1,2,1-5
+428,429,22047,Iberville Parish,Iberville,2,2007,56,7,63,51-75
+429,430,22019,Calcasieu Parish,Calcasieu,5,2007,110,2,112,101-125
+430,431,22053,Jefferson Davis Parish,Jefferson Davis,5,2007,0,0,0,0
+431,432,22001,Acadia Parish,Acadia,4,2007,1,0,1,1-5
+432,433,22055,Lafayette Parish,Lafayette,4,2007,2,4,6,6-25
+433,434,22005,Ascension Parish,Ascension,2,2007,69,20,89,76-100
+434,435,22095,St. John the Baptist Parish,St. John,3,2007,17,1,18,6-25
+435,436,22089,St. Charles Parish,St. Charles,3,2007,74,8,82,76-100
+436,437,22071,Orleans Parish,Orleans,1,2007,7,10,17,6-25
+437,438,22087,St. Bernard Parish,St. Bernard,1,2007,71,1,72,51-75
+438,439,22093,St. James Parish,St. James,3,2007,32,1,33,26-50
+439,440,22113,Vermilion Parish,Vermilion,4,2007,1,0,1,1-5
+440,441,22045,Iberia Parish,Iberia,4,2007,0,0,0,0
+441,442,22007,Assumption Parish,Assumption,3,2007,0,0,0,0
+442,443,22023,Cameron Parish,Cameron,5,2007,2,0,2,1-5
+443,444,22101,St. Mary Parish,St. Mary,3,2007,1,1,2,1-5
+444,445,22057,Lafourche Parish,Lafourche,3,2007,2,4,6,6-25
+445,446,22075,Plaquemines Parish,Plaquemines,1,2007,26,5,31,26-50
+446,447,22109,Terrebonne Parish,Terrebonne,3,2007,4,7,11,6-25
+447,448,22051,Jefferson Parish,Jefferson,1,2007,27,14,41,26-50
+448,449,22017,Caddo Parish,Caddo,7,2008,17,21,38,26-50
+449,450,22015,Bossier Parish,Bossier,7,2008,4,4,8,6-25
+450,451,22119,Webster Parish,Webster,7,2008,3,0,3,1-5
+451,452,22027,Claiborne Parish,Claiborne,7,2008,0,1,1,1-5
+452,453,22111,Union Parish,Union,8,2008,0,0,0,0
+453,454,22067,Morehouse Parish,Morehouse,8,2008,0,1,1,1-5
+454,455,22123,West Carroll Parish,West Carroll,8,2008,0,0,0,0
+455,456,22035,East Carroll Parish,East Carroll,8,2008,0,0,0,0
+456,457,22061,Lincoln Parish,Lincoln,8,2008,0,0,0,0
+457,458,22073,Ouachita Parish,Ouachita,8,2008,12,3,15,6-25
+458,459,22083,Richland Parish,Richland,8,2008,0,1,1,1-5
+459,460,22013,Bienville Parish,Bienville,7,2008,2,0,2,1-5
+460,461,22065,Madison Parish,Madison,8,2008,0,0,0,0
+461,462,22049,Jackson Parish,Jackson,8,2008,0,0,0,0
+462,463,22041,Franklin Parish,Franklin,8,2008,1,1,2,1-5
+463,464,22031,De Soto Parish,De Soto,7,2008,3,1,4,1-5
+464,465,22021,Caldwell Parish,Caldwell,8,2008,2,0,2,1-5
+465,466,22107,Tensas Parish,Tensas,8,2008,0,0,0,0
+466,467,22081,Red River Parish,Red River,7,2008,0,0,0,0
+467,468,22127,Winn Parish,Winn,6,2008,0,0,0,0
+468,469,22069,Natchitoches Parish,Natchitoches,7,2008,3,3,6,6-25
+469,470,22025,Catahoula Parish,Catahoula,6,2008,0,0,0,0
+470,471,22059,La Salle Parish,La Salle,6,2008,0,0,0,0
+471,472,22085,Sabine Parish,Sabine,7,2008,0,0,0,0
+472,473,22043,Grant Parish,Grant,6,2008,0,0,0,0
+473,474,22029,Concordia Parish,Concordia,6,2008,0,0,0,0
+474,475,22079,Rapides Parish,Rapides,6,2008,7,5,12,6-25
+475,476,22115,Vernon Parish,Vernon,6,2008,0,0,0,0
+476,477,22009,Avoyelles Parish,Avoyelles,6,2008,0,0,0,0
+477,478,22125,West Feliciana Parish,West Feliciana,2,2008,0,0,0,0
+478,479,22077,Pointe Coupee Parish,Pointe Coupee,2,2008,2,14,16,6-25
+479,480,22117,Washington Parish,Washington,9,2008,1,1,2,1-5
+480,481,22039,Evangeline Parish,Evangeline,4,2008,0,0,0,0
+481,482,22105,Tangipahoa Parish,Tangipahoa,9,2008,1,3,4,1-5
+482,483,22091,St. Helena Parish,St. Helena,9,2008,0,0,0,0
+483,484,22037,East Feliciana Parish,East Feliciana,2,2008,0,0,0,0
+484,485,22003,Allen Parish,Allen,5,2008,1,0,1,1-5
+485,486,22011,Beauregard Parish,Beauregard,5,2008,0,0,0,0
+486,487,22097,St. Landry Parish,St. Landry,4,2008,1,1,2,1-5
+487,488,22033,East Baton Rouge Parish,EBR,2,2008,198,22,220,151+
+488,489,22103,St. Tammany Parish,St. Tammany,9,2008,2,3,5,1-5
+489,490,22121,West Baton Rouge Parish,WBR,2,2008,8,2,10,6-25
+490,491,22063,Livingston Parish,Livingston,9,2008,2,0,2,1-5
+491,492,22099,St. Martin Parish,St. Martin,4,2008,0,2,2,1-5
+492,493,22047,Iberville Parish,Iberville,2,2008,0,0,0,0
+493,494,22019,Calcasieu Parish,Calcasieu,5,2008,105,9,114,101-125
+494,495,22053,Jefferson Davis Parish,Jefferson Davis,5,2008,0,1,1,1-5
+495,496,22001,Acadia Parish,Acadia,4,2008,2,1,3,1-5
+496,497,22055,Lafayette Parish,Lafayette,4,2008,4,6,10,6-25
+497,498,22005,Ascension Parish,Ascension,2,2008,93,19,112,101-125
+498,499,22095,St. John the Baptist Parish,St. John,3,2008,19,4,23,6-25
+499,500,22089,St. Charles Parish,St. Charles,3,2008,104,9,113,101-125
+500,501,22071,Orleans Parish,Orleans,1,2008,8,5,13,6-25
+501,502,22087,St. Bernard Parish,St. Bernard,1,2008,61,3,64,51-75
+502,503,22093,St. James Parish,St. James,3,2008,36,3,39,26-50
+503,504,22113,Vermilion Parish,Vermilion,4,2008,2,1,3,1-5
+504,505,22045,Iberia Parish,Iberia,4,2008,0,0,0,0
+505,506,22007,Assumption Parish,Assumption,3,2008,2,0,2,1-5
+506,507,22023,Cameron Parish,Cameron,5,2008,5,0,5,1-5
+507,508,22101,St. Mary Parish,St. Mary,3,2008,0,1,1,1-5
+508,509,22057,Lafourche Parish,Lafourche,3,2008,6,2,8,6-25
+509,510,22075,Plaquemines Parish,Plaquemines,1,2008,31,2,33,26-50
+510,511,22109,Terrebonne Parish,Terrebonne,3,2008,3,1,4,1-5
+511,512,22051,Jefferson Parish,Jefferson,1,2008,17,12,29,26-50
+512,513,22017,Caddo Parish,Caddo,7,2009,18,17,35,26-50
+513,514,22015,Bossier Parish,Bossier,7,2009,3,4,7,6-25
+514,515,22119,Webster Parish,Webster,7,2009,3,2,5,1-5
+515,516,22027,Claiborne Parish,Claiborne,7,2009,0,2,2,1-5
+516,517,22111,Union Parish,Union,8,2009,1,0,1,1-5
+517,518,22067,Morehouse Parish,Morehouse,8,2009,1,0,1,1-5
+518,519,22123,West Carroll Parish,West Carroll,8,2009,0,0,0,0
+519,520,22035,East Carroll Parish,East Carroll,8,2009,0,0,0,0
+520,521,22061,Lincoln Parish,Lincoln,8,2009,1,1,2,1-5
+521,522,22073,Ouachita Parish,Ouachita,8,2009,9,0,9,6-25
+522,523,22083,Richland Parish,Richland,8,2009,0,0,0,0
+523,524,22013,Bienville Parish,Bienville,7,2009,0,0,0,0
+524,525,22065,Madison Parish,Madison,8,2009,0,1,1,1-5
+525,526,22049,Jackson Parish,Jackson,8,2009,1,1,2,1-5
+526,527,22041,Franklin Parish,Franklin,8,2009,0,0,0,0
+527,528,22031,De Soto Parish,De Soto,7,2009,1,3,4,1-5
+528,529,22021,Caldwell Parish,Caldwell,8,2009,0,0,0,0
+529,530,22107,Tensas Parish,Tensas,8,2009,0,0,0,0
+530,531,22081,Red River Parish,Red River,7,2009,0,0,0,0
+531,532,22127,Winn Parish,Winn,6,2009,0,0,0,0
+532,533,22069,Natchitoches Parish,Natchitoches,7,2009,1,1,2,1-5
+533,534,22025,Catahoula Parish,Catahoula,6,2009,0,0,0,0
+534,535,22059,La Salle Parish,La Salle,6,2009,1,0,1,1-5
+535,536,22085,Sabine Parish,Sabine,7,2009,1,0,1,1-5
+536,537,22043,Grant Parish,Grant,6,2009,3,0,3,1-5
+537,538,22029,Concordia Parish,Concordia,6,2009,0,0,0,0
+538,539,22079,Rapides Parish,Rapides,6,2009,1,1,2,1-5
+539,540,22115,Vernon Parish,Vernon,6,2009,0,0,0,0
+540,541,22009,Avoyelles Parish,Avoyelles,6,2009,2,0,2,1-5
+541,542,22125,West Feliciana Parish,West Feliciana,2,2009,0,0,0,0
+542,543,22077,Pointe Coupee Parish,Pointe Coupee,2,2009,0,3,3,1-5
+543,544,22117,Washington Parish,Washington,9,2009,1,0,1,1-5
+544,545,22039,Evangeline Parish,Evangeline,4,2009,0,0,0,0
+545,546,22105,Tangipahoa Parish,Tangipahoa,9,2009,0,2,2,1-5
+546,547,22091,St. Helena Parish,St. Helena,9,2009,0,0,0,0
+547,548,22037,East Feliciana Parish,East Feliciana,2,2009,0,0,0,0
+548,549,22003,Allen Parish,Allen,5,2009,0,0,0,0
+549,550,22011,Beauregard Parish,Beauregard,5,2009,0,1,1,1-5
+550,551,22097,St. Landry Parish,St. Landry,4,2009,6,1,7,6-25
+551,552,22033,East Baton Rouge Parish,EBR,2,2009,139,11,150,126-150
+552,553,22103,St. Tammany Parish,St. Tammany,9,2009,0,0,0,0
+553,554,22121,West Baton Rouge Parish,WBR,2,2009,31,5,36,26-50
+554,555,22063,Livingston Parish,Livingston,9,2009,3,0,3,1-5
+555,556,22099,St. Martin Parish,St. Martin,4,2009,0,1,1,1-5
+556,557,22047,Iberville Parish,Iberville,2,2009,69,5,74,51-75
+557,558,22019,Calcasieu Parish,Calcasieu,5,2009,115,7,122,101-125
+558,559,22053,Jefferson Davis Parish,Jefferson Davis,5,2009,0,1,1,1-5
+559,560,22001,Acadia Parish,Acadia,4,2009,0,1,1,1-5
+560,561,22055,Lafayette Parish,Lafayette,4,2009,5,10,15,6-25
+561,562,22005,Ascension Parish,Ascension,2,2009,80,11,91,76-100
+562,563,22095,St. John the Baptist Parish,St. John,3,2009,12,2,14,6-25
+563,564,22089,St. Charles Parish,St. Charles,3,2009,74,4,78,76-100
+564,565,22071,Orleans Parish,Orleans,1,2009,7,2,9,6-25
+565,566,22087,St. Bernard Parish,St. Bernard,1,2009,39,1,40,26-50
+566,567,22093,St. James Parish,St. James,3,2009,24,2,26,26-50
+567,568,22113,Vermilion Parish,Vermilion,4,2009,1,2,3,1-5
+568,569,22045,Iberia Parish,Iberia,4,2009,1,2,3,1-5
+569,570,22007,Assumption Parish,Assumption,3,2009,0,1,1,1-5
+570,571,22023,Cameron Parish,Cameron,5,2009,0,0,0,0
+571,572,22101,St. Mary Parish,St. Mary,3,2009,0,1,1,1-5
+572,573,22057,Lafourche Parish,Lafourche,3,2009,2,1,3,1-5
+573,574,22075,Plaquemines Parish,Plaquemines,1,2009,16,0,16,6-25
+574,575,22109,Terrebonne Parish,Terrebonne,3,2009,3,2,5,1-5
+575,576,22051,Jefferson Parish,Jefferson,1,2009,18,14,32,26-50
+576,577,22017,Caddo Parish,Caddo,7,2010,16,26,42,26-50
+577,578,22015,Bossier Parish,Bossier,7,2010,0,3,3,1-5
+578,579,22119,Webster Parish,Webster,7,2010,4,0,4,1-5
+579,580,22027,Claiborne Parish,Claiborne,7,2010,1,0,1,1-5
+580,581,22111,Union Parish,Union,8,2010,0,0,0,0
+581,582,22067,Morehouse Parish,Morehouse,8,2010,1,1,2,1-5
+582,583,22123,West Carroll Parish,West Carroll,8,2010,2,0,2,1-5
+583,584,22035,East Carroll Parish,East Carroll,8,2010,1,0,1,1-5
+584,585,22061,Lincoln Parish,Lincoln,8,2010,0,1,1,1-5
+585,586,22073,Ouachita Parish,Ouachita,8,2010,13,4,17,6-25
+586,587,22083,Richland Parish,Richland,8,2010,2,1,3,1-5
+587,588,22013,Bienville Parish,Bienville,7,2010,1,0,1,1-5
+588,589,22065,Madison Parish,Madison,8,2010,2,2,4,1-5
+589,590,22049,Jackson Parish,Jackson,8,2010,1,2,3,1-5
+590,591,22041,Franklin Parish,Franklin,8,2010,0,0,0,0
+591,592,22031,De Soto Parish,De Soto,7,2010,4,2,6,6-25
+592,593,22021,Caldwell Parish,Caldwell,8,2010,1,0,1,1-5
+593,594,22107,Tensas Parish,Tensas,8,2010,0,0,0,0
+594,595,22081,Red River Parish,Red River,7,2010,1,0,1,1-5
+595,596,22127,Winn Parish,Winn,6,2010,0,0,0,0
+596,597,22069,Natchitoches Parish,Natchitoches,7,2010,3,2,5,1-5
+597,598,22025,Catahoula Parish,Catahoula,6,2010,1,0,1,1-5
+598,599,22059,La Salle Parish,La Salle,6,2010,0,0,0,0
+599,600,22085,Sabine Parish,Sabine,7,2010,1,0,1,1-5
+600,601,22043,Grant Parish,Grant,6,2010,0,0,0,0
+601,602,22029,Concordia Parish,Concordia,6,2010,0,1,1,1-5
+602,603,22079,Rapides Parish,Rapides,6,2010,3,8,11,6-25
+603,604,22115,Vernon Parish,Vernon,6,2010,0,1,1,1-5
+604,605,22009,Avoyelles Parish,Avoyelles,6,2010,1,0,1,1-5
+605,606,22125,West Feliciana Parish,West Feliciana,2,2010,2,1,3,1-5
+606,607,22077,Pointe Coupee Parish,Pointe Coupee,2,2010,4,7,11,6-25
+607,608,22117,Washington Parish,Washington,9,2010,1,0,1,1-5
+608,609,22039,Evangeline Parish,Evangeline,4,2010,0,0,0,0
+609,610,22105,Tangipahoa Parish,Tangipahoa,9,2010,9,0,9,6-25
+610,611,22091,St. Helena Parish,St. Helena,9,2010,0,0,0,0
+611,612,22037,East Feliciana Parish,East Feliciana,2,2010,0,0,0,0
+612,613,22003,Allen Parish,Allen,5,2010,1,1,2,1-5
+613,614,22011,Beauregard Parish,Beauregard,5,2010,3,0,3,1-5
+614,615,22097,St. Landry Parish,St. Landry,4,2010,1,0,1,1-5
+615,616,22033,East Baton Rouge Parish,EBR,2,2010,135,24,159,151+
+616,617,22103,St. Tammany Parish,St. Tammany,9,2010,2,0,2,1-5
+617,618,22121,West Baton Rouge Parish,WBR,2,2010,5,7,12,6-25
+618,619,22063,Livingston Parish,Livingston,9,2010,6,0,6,6-25
+619,620,22099,St. Martin Parish,St. Martin,4,2010,1,3,4,1-5
+620,621,22047,Iberville Parish,Iberville,2,2010,55,10,65,51-75
+621,622,22019,Calcasieu Parish,Calcasieu,5,2010,63,16,79,51-75
+622,623,22053,Jefferson Davis Parish,Jefferson Davis,5,2010,1,2,3,1-5
+623,624,22001,Acadia Parish,Acadia,4,2010,0,5,5,1-5
+624,625,22055,Lafayette Parish,Lafayette,4,2010,14,13,27,26-50
+625,626,22005,Ascension Parish,Ascension,2,2010,65,17,82,76-100
+626,627,22095,St. John the Baptist Parish,St. John,3,2010,13,4,17,6-25
+627,628,22089,St. Charles Parish,St. Charles,3,2010,23,5,28,26-50
+628,629,22071,Orleans Parish,Orleans,1,2010,14,9,23,6-25
+629,630,22087,St. Bernard Parish,St. Bernard,1,2010,9,4,13,6-25
+630,631,22093,St. James Parish,St. James,3,2010,17,5,22,6-25
+631,632,22113,Vermilion Parish,Vermilion,4,2010,3,2,5,1-5
+632,633,22045,Iberia Parish,Iberia,4,2010,1,1,2,1-5
+633,634,22007,Assumption Parish,Assumption,3,2010,1,0,1,1-5
+634,635,22023,Cameron Parish,Cameron,5,2010,0,2,2,1-5
+635,636,22101,St. Mary Parish,St. Mary,3,2010,1,1,2,1-5
+636,637,22057,Lafourche Parish,Lafourche,3,2010,1,1,2,1-5
+637,638,22075,Plaquemines Parish,Plaquemines,1,2010,7,2,9,6-25
+638,639,22109,Terrebonne Parish,Terrebonne,3,2010,3,2,5,1-5
+639,640,22051,Jefferson Parish,Jefferson,1,2010,10,11,21,6-25
+640,641,22017,Caddo Parish,Caddo,7,2011,20,56,76,76-100
+641,642,22015,Bossier Parish,Bossier,7,2011,7,7,14,6-25
+642,643,22119,Webster Parish,Webster,7,2011,0,3,3,1-5
+643,644,22027,Claiborne Parish,Claiborne,7,2011,1,0,1,1-5
+644,645,22111,Union Parish,Union,8,2011,1,0,1,1-5
+645,646,22067,Morehouse Parish,Morehouse,8,2011,3,0,3,1-5
+646,647,22123,West Carroll Parish,West Carroll,8,2011,0,0,0,0
+647,648,22035,East Carroll Parish,East Carroll,8,2011,0,0,0,0
+648,649,22061,Lincoln Parish,Lincoln,8,2011,0,1,1,1-5
+649,650,22073,Ouachita Parish,Ouachita,8,2011,10,9,19,6-25
+650,651,22083,Richland Parish,Richland,8,2011,1,1,2,1-5
+651,652,22013,Bienville Parish,Bienville,7,2011,1,0,1,1-5
+652,653,22065,Madison Parish,Madison,8,2011,0,1,1,1-5
+653,654,22049,Jackson Parish,Jackson,8,2011,1,1,2,1-5
+654,655,22041,Franklin Parish,Franklin,8,2011,1,1,2,1-5
+655,656,22031,De Soto Parish,De Soto,7,2011,7,4,11,6-25
+656,657,22021,Caldwell Parish,Caldwell,8,2011,0,1,1,1-5
+657,658,22107,Tensas Parish,Tensas,8,2011,0,0,0,0
+658,659,22081,Red River Parish,Red River,7,2011,3,2,5,1-5
+659,660,22127,Winn Parish,Winn,6,2011,0,0,0,0
+660,661,22069,Natchitoches Parish,Natchitoches,7,2011,5,1,6,6-25
+661,662,22025,Catahoula Parish,Catahoula,6,2011,0,0,0,0
+662,663,22059,La Salle Parish,La Salle,6,2011,0,0,0,0
+663,664,22085,Sabine Parish,Sabine,7,2011,0,0,0,0
+664,665,22043,Grant Parish,Grant,6,2011,0,0,0,0
+665,666,22029,Concordia Parish,Concordia,6,2011,0,0,0,0
+666,667,22079,Rapides Parish,Rapides,6,2011,8,12,20,6-25
+667,668,22115,Vernon Parish,Vernon,6,2011,0,0,0,0
+668,669,22009,Avoyelles Parish,Avoyelles,6,2011,0,0,0,0
+669,670,22125,West Feliciana Parish,West Feliciana,2,2011,0,0,0,0
+670,671,22077,Pointe Coupee Parish,Pointe Coupee,2,2011,3,6,9,6-25
+671,672,22117,Washington Parish,Washington,9,2011,1,0,1,1-5
+672,673,22039,Evangeline Parish,Evangeline,4,2011,6,1,7,6-25
+673,674,22105,Tangipahoa Parish,Tangipahoa,9,2011,1,3,4,1-5
+674,675,22091,St. Helena Parish,St. Helena,9,2011,2,0,2,1-5
+675,676,22037,East Feliciana Parish,East Feliciana,2,2011,0,0,0,0
+676,677,22003,Allen Parish,Allen,5,2011,2,2,4,1-5
+677,678,22011,Beauregard Parish,Beauregard,5,2011,7,2,9,6-25
+678,679,22097,St. Landry Parish,St. Landry,4,2011,1,1,2,1-5
+679,680,22033,East Baton Rouge Parish,EBR,2,2011,106,20,126,126-150
+680,681,22103,St. Tammany Parish,St. Tammany,9,2011,2,1,3,1-5
+681,682,22121,West Baton Rouge Parish,WBR,2,2011,10,4,14,6-25
+682,683,22063,Livingston Parish,Livingston,9,2011,5,1,6,6-25
+683,684,22099,St. Martin Parish,St. Martin,4,2011,1,2,3,1-5
+684,685,22047,Iberville Parish,Iberville,2,2011,52,11,63,51-75
+685,686,22019,Calcasieu Parish,Calcasieu,5,2011,62,19,81,76-100
+686,687,22053,Jefferson Davis Parish,Jefferson Davis,5,2011,0,3,3,1-5
+687,688,22001,Acadia Parish,Acadia,4,2011,4,3,7,6-25
+688,689,22055,Lafayette Parish,Lafayette,4,2011,15,9,24,6-25
+689,690,22005,Ascension Parish,Ascension,2,2011,64,13,77,76-100
+690,691,22095,St. John the Baptist Parish,St. John,3,2011,8,6,14,6-25
+691,692,22089,St. Charles Parish,St. Charles,3,2011,25,11,36,26-50
+692,693,22071,Orleans Parish,Orleans,1,2011,8,20,28,26-50
+693,694,22087,St. Bernard Parish,St. Bernard,1,2011,14,7,21,6-25
+694,695,22093,St. James Parish,St. James,3,2011,13,3,16,6-25
+695,696,22113,Vermilion Parish,Vermilion,4,2011,3,1,4,1-5
+696,697,22045,Iberia Parish,Iberia,4,2011,4,2,6,6-25
+697,698,22007,Assumption Parish,Assumption,3,2011,2,0,2,1-5
+698,699,22023,Cameron Parish,Cameron,5,2011,3,0,3,1-5
+699,700,22101,St. Mary Parish,St. Mary,3,2011,2,1,3,1-5
+700,701,22057,Lafourche Parish,Lafourche,3,2011,5,1,6,6-25
+701,702,22075,Plaquemines Parish,Plaquemines,1,2011,6,3,9,6-25
+702,703,22109,Terrebonne Parish,Terrebonne,3,2011,4,0,4,1-5
+703,704,22051,Jefferson Parish,Jefferson,1,2011,18,11,29,26-50
+704,705,22017,Caddo Parish,Caddo,7,2012,9,42,51,51-75
+705,706,22015,Bossier Parish,Bossier,7,2012,2,14,16,6-25
+706,707,22119,Webster Parish,Webster,7,2012,0,3,3,1-5
+707,708,22027,Claiborne Parish,Claiborne,7,2012,0,1,1,1-5
+708,709,22111,Union Parish,Union,8,2012,1,0,1,1-5
+709,710,22067,Morehouse Parish,Morehouse,8,2012,2,1,3,1-5
+710,711,22123,West Carroll Parish,West Carroll,8,2012,1,0,1,1-5
+711,712,22035,East Carroll Parish,East Carroll,8,2012,0,0,0,0
+712,713,22061,Lincoln Parish,Lincoln,8,2012,0,2,2,1-5
+713,714,22073,Ouachita Parish,Ouachita,8,2012,7,5,12,6-25
+714,715,22083,Richland Parish,Richland,8,2012,1,2,3,1-5
+715,716,22013,Bienville Parish,Bienville,7,2012,0,0,0,0
+716,717,22065,Madison Parish,Madison,8,2012,0,0,0,0
+717,718,22049,Jackson Parish,Jackson,8,2012,0,0,0,0
+718,719,22041,Franklin Parish,Franklin,8,2012,0,0,0,0
+719,720,22031,De Soto Parish,De Soto,7,2012,5,4,9,6-25
+720,721,22021,Caldwell Parish,Caldwell,8,2012,0,0,0,0
+721,722,22107,Tensas Parish,Tensas,8,2012,0,0,0,0
+722,723,22081,Red River Parish,Red River,7,2012,2,0,2,1-5
+723,724,22127,Winn Parish,Winn,6,2012,2,0,2,1-5
+724,725,22069,Natchitoches Parish,Natchitoches,7,2012,2,0,2,1-5
+725,726,22025,Catahoula Parish,Catahoula,6,2012,0,0,0,0
+726,727,22059,La Salle Parish,La Salle,6,2012,0,1,1,1-5
+727,728,22085,Sabine Parish,Sabine,7,2012,1,1,2,1-5
+728,729,22043,Grant Parish,Grant,6,2012,0,0,0,0
+729,730,22029,Concordia Parish,Concordia,6,2012,0,0,0,0
+730,731,22079,Rapides Parish,Rapides,6,2012,10,4,14,6-25
+731,732,22115,Vernon Parish,Vernon,6,2012,1,2,3,1-5
+732,733,22009,Avoyelles Parish,Avoyelles,6,2012,1,0,1,1-5
+733,734,22125,West Feliciana Parish,West Feliciana,2,2012,0,0,0,0
+734,735,22077,Pointe Coupee Parish,Pointe Coupee,2,2012,0,2,2,1-5
+735,736,22117,Washington Parish,Washington,9,2012,0,0,0,0
+736,737,22039,Evangeline Parish,Evangeline,4,2012,2,0,2,1-5
+737,738,22105,Tangipahoa Parish,Tangipahoa,9,2012,5,1,6,6-25
+738,739,22091,St. Helena Parish,St. Helena,9,2012,0,0,0,0
+739,740,22037,East Feliciana Parish,East Feliciana,2,2012,2,0,2,1-5
+740,741,22003,Allen Parish,Allen,5,2012,0,1,1,1-5
+741,742,22011,Beauregard Parish,Beauregard,5,2012,2,0,2,1-5
+742,743,22097,St. Landry Parish,St. Landry,4,2012,2,1,3,1-5
+743,744,22033,East Baton Rouge Parish,EBR,2,2012,96,22,118,101-125
+744,745,22103,St. Tammany Parish,St. Tammany,9,2012,7,2,9,6-25
+745,746,22121,West Baton Rouge Parish,WBR,2,2012,10,8,18,6-25
+746,747,22063,Livingston Parish,Livingston,9,2012,3,1,4,1-5
+747,748,22099,St. Martin Parish,St. Martin,4,2012,4,1,5,1-5
+748,749,22047,Iberville Parish,Iberville,2,2012,28,9,37,26-50
+749,750,22019,Calcasieu Parish,Calcasieu,5,2012,52,13,65,51-75
+750,751,22053,Jefferson Davis Parish,Jefferson Davis,5,2012,2,0,2,1-5
+751,752,22001,Acadia Parish,Acadia,4,2012,9,2,11,6-25
+752,753,22055,Lafayette Parish,Lafayette,4,2012,6,11,17,6-25
+753,754,22005,Ascension Parish,Ascension,2,2012,46,12,58,51-75
+754,755,22095,St. John the Baptist Parish,St. John,3,2012,12,2,14,6-25
+755,756,22089,St. Charles Parish,St. Charles,3,2012,23,6,29,26-50
+756,757,22071,Orleans Parish,Orleans,1,2012,12,22,34,26-50
+757,758,22087,St. Bernard Parish,St. Bernard,1,2012,13,0,13,6-25
+758,759,22093,St. James Parish,St. James,3,2012,19,2,21,6-25
+759,760,22113,Vermilion Parish,Vermilion,4,2012,6,1,7,6-25
+760,761,22045,Iberia Parish,Iberia,4,2012,3,0,3,1-5
+761,762,22007,Assumption Parish,Assumption,3,2012,1,0,1,1-5
+762,763,22023,Cameron Parish,Cameron,5,2012,1,0,1,1-5
+763,764,22101,St. Mary Parish,St. Mary,3,2012,0,2,2,1-5
+764,765,22057,Lafourche Parish,Lafourche,3,2012,5,8,13,6-25
+765,766,22075,Plaquemines Parish,Plaquemines,1,2012,10,1,11,6-25
+766,767,22109,Terrebonne Parish,Terrebonne,3,2012,3,1,4,1-5
+767,768,22051,Jefferson Parish,Jefferson,1,2012,26,7,33,26-50
+768,769,22017,Caddo Parish,Caddo,7,2013,15,18,33,26-50
+769,770,22015,Bossier Parish,Bossier,7,2013,4,6,10,6-25
+770,771,22119,Webster Parish,Webster,7,2013,0,1,1,1-5
+771,772,22027,Claiborne Parish,Claiborne,7,2013,0,1,1,1-5
+772,773,22111,Union Parish,Union,8,2013,0,0,0,0
+773,774,22067,Morehouse Parish,Morehouse,8,2013,1,0,1,1-5
+774,775,22123,West Carroll Parish,West Carroll,8,2013,1,0,1,1-5
+775,776,22035,East Carroll Parish,East Carroll,8,2013,0,1,1,1-5
+776,777,22061,Lincoln Parish,Lincoln,8,2013,0,1,1,1-5
+777,778,22073,Ouachita Parish,Ouachita,8,2013,4,1,5,1-5
+778,779,22083,Richland Parish,Richland,8,2013,0,0,0,0
+779,780,22013,Bienville Parish,Bienville,7,2013,0,0,0,0
+780,781,22065,Madison Parish,Madison,8,2013,0,0,0,0
+781,782,22049,Jackson Parish,Jackson,8,2013,1,0,1,1-5
+782,783,22041,Franklin Parish,Franklin,8,2013,0,0,0,0
+783,784,22031,De Soto Parish,De Soto,7,2013,3,2,5,1-5
+784,785,22021,Caldwell Parish,Caldwell,8,2013,0,0,0,0
+785,786,22107,Tensas Parish,Tensas,8,2013,0,0,0,0
+786,787,22081,Red River Parish,Red River,7,2013,1,0,1,1-5
+787,788,22127,Winn Parish,Winn,6,2013,0,0,0,0
+788,789,22069,Natchitoches Parish,Natchitoches,7,2013,2,1,3,1-5
+789,790,22025,Catahoula Parish,Catahoula,6,2013,0,0,0,0
+790,791,22059,La Salle Parish,La Salle,6,2013,0,0,0,0
+791,792,22085,Sabine Parish,Sabine,7,2013,0,2,2,1-5
+792,793,22043,Grant Parish,Grant,6,2013,0,0,0,0
+793,794,22029,Concordia Parish,Concordia,6,2013,0,0,0,0
+794,795,22079,Rapides Parish,Rapides,6,2013,4,3,7,6-25
+795,796,22115,Vernon Parish,Vernon,6,2013,0,0,0,0
+796,797,22009,Avoyelles Parish,Avoyelles,6,2013,2,1,3,1-5
+797,798,22125,West Feliciana Parish,West Feliciana,2,2013,1,0,1,1-5
+798,799,22077,Pointe Coupee Parish,Pointe Coupee,2,2013,0,3,3,1-5
+799,800,22117,Washington Parish,Washington,9,2013,1,0,1,1-5
+800,801,22039,Evangeline Parish,Evangeline,4,2013,0,2,2,1-5
+801,802,22105,Tangipahoa Parish,Tangipahoa,9,2013,6,2,8,6-25
+802,803,22091,St. Helena Parish,St. Helena,9,2013,0,0,0,0
+803,804,22037,East Feliciana Parish,East Feliciana,2,2013,1,0,1,1-5
+804,805,22003,Allen Parish,Allen,5,2013,1,0,1,1-5
+805,806,22011,Beauregard Parish,Beauregard,5,2013,0,0,0,0
+806,807,22097,St. Landry Parish,St. Landry,4,2013,1,2,3,1-5
+807,808,22033,East Baton Rouge Parish,EBR,2,2013,68,10,78,76-100
+808,809,22103,St. Tammany Parish,St. Tammany,9,2013,1,2,3,1-5
+809,810,22121,West Baton Rouge Parish,WBR,2,2013,8,1,9,6-25
+810,811,22063,Livingston Parish,Livingston,9,2013,0,0,0,0
+811,812,22099,St. Martin Parish,St. Martin,4,2013,1,1,2,1-5
+812,813,22047,Iberville Parish,Iberville,2,2013,33,4,37,26-50
+813,814,22019,Calcasieu Parish,Calcasieu,5,2013,52,13,65,51-75
+814,815,22053,Jefferson Davis Parish,Jefferson Davis,5,2013,0,1,1,1-5
+815,816,22001,Acadia Parish,Acadia,4,2013,0,2,2,1-5
+816,817,22055,Lafayette Parish,Lafayette,4,2013,7,5,12,6-25
+817,818,22005,Ascension Parish,Ascension,2,2013,59,11,70,51-75
+818,819,22095,St. John the Baptist Parish,St. John,3,2013,14,4,18,6-25
+819,820,22089,St. Charles Parish,St. Charles,3,2013,21,5,26,26-50
+820,821,22071,Orleans Parish,Orleans,1,2013,8,10,18,6-25
+821,822,22087,St. Bernard Parish,St. Bernard,1,2013,11,2,13,6-25
+822,823,22093,St. James Parish,St. James,3,2013,12,0,12,6-25
+823,824,22113,Vermilion Parish,Vermilion,4,2013,0,0,0,0
+824,825,22045,Iberia Parish,Iberia,4,2013,2,2,4,1-5
+825,826,22007,Assumption Parish,Assumption,3,2013,0,0,0,0
+826,827,22023,Cameron Parish,Cameron,5,2013,0,0,0,0
+827,828,22101,St. Mary Parish,St. Mary,3,2013,2,1,3,1-5
+828,829,22057,Lafourche Parish,Lafourche,3,2013,5,1,6,6-25
+829,830,22075,Plaquemines Parish,Plaquemines,1,2013,2,3,5,1-5
+830,831,22109,Terrebonne Parish,Terrebonne,3,2013,2,1,3,1-5
+831,832,22051,Jefferson Parish,Jefferson,1,2013,9,9,18,6-25
+832,833,22017,Caddo Parish,Caddo,7,HSEES,103,136,239, 
+833,834,22015,Bossier Parish,Bossier,7,HSEES,21,36,57, 
+834,835,22119,Webster Parish,Webster,7,HSEES,20,9,29, 
+835,836,22027,Claiborne Parish,Claiborne,7,HSEES,0,4,4, 
+836,837,22111,Union Parish,Union,8,HSEES,6,2,8, 
+837,838,22067,Morehouse Parish,Morehouse,8,HSEES,2,5,7, 
+838,839,22123,West Carroll Parish,West Carroll,8,HSEES,1,0,1, 
+839,840,22035,East Carroll Parish,East Carroll,8,HSEES,0,2,2, 
+840,841,22061,Lincoln Parish,Lincoln,8,HSEES,6,5,11, 
+841,842,22073,Ouachita Parish,Ouachita,8,HSEES,239,25,264, 
+842,843,22083,Richland Parish,Richland,8,HSEES,2,7,9, 
+843,844,22013,Bienville Parish,Bienville,7,HSEES,3,2,5, 
+844,845,22065,Madison Parish,Madison,8,HSEES,3,8,11, 
+845,846,22049,Jackson Parish,Jackson,8,HSEES,2,1,3, 
+846,847,22041,Franklin Parish,Franklin,8,HSEES,2,2,4, 
+847,848,22031,De Soto Parish,De Soto,7,HSEES,11,8,19, 
+848,849,22021,Caldwell Parish,Caldwell,8,HSEES,4,1,5, 
+849,850,22107,Tensas Parish,Tensas,8,HSEES,0,1,1, 
+850,851,22081,Red River Parish,Red River,7,HSEES,0,0,0,0
+851,852,22127,Winn Parish,Winn,6,HSEES,2,1,3, 
+852,853,22069,Natchitoches Parish,Natchitoches,7,HSEES,8,7,15, 
+853,854,22025,Catahoula Parish,Catahoula,6,HSEES,1,2,3, 
+854,855,22059,La Salle Parish,La Salle,6,HSEES,2,1,3, 
+855,856,22085,Sabine Parish,Sabine,7,HSEES,3,1,4, 
+856,857,22043,Grant Parish,Grant,6,HSEES,10,2,12, 
+857,858,22029,Concordia Parish,Concordia,6,HSEES,0,2,2, 
+858,859,22079,Rapides Parish,Rapides,6,HSEES,22,27,49, 
+859,860,22115,Vernon Parish,Vernon,6,HSEES,3,4,7, 
+860,861,22009,Avoyelles Parish,Avoyelles,6,HSEES,2,1,3, 
+861,862,22125,West Feliciana Parish,West Feliciana,2,HSEES,2,0,2, 
+862,863,22077,Pointe Coupee Parish,Pointe Coupee,2,HSEES,5,45,50, 
+863,864,22117,Washington Parish,Washington,9,HSEES,10,2,12, 
+864,865,22039,Evangeline Parish,Evangeline,4,HSEES,0,0,0,0
+865,866,22105,Tangipahoa Parish,Tangipahoa,9,HSEES,9,22,31, 
+866,867,22091,St. Helena Parish,St. Helena,9,HSEES,0,0,0,0
+867,868,22037,East Feliciana Parish,East Feliciana,2,HSEES,2,3,5, 
+868,869,22003,Allen Parish,Allen,5,HSEES,6,1,7, 
+869,870,22011,Beauregard Parish,Beauregard,5,HSEES,2,5,7, 
+870,871,22097,St. Landry Parish,St. Landry,4,HSEES,29,6,35, 
+871,872,22033,East Baton Rouge Parish,EBR,2,HSEES,814,86,900, 
+872,873,22103,St. Tammany Parish,St. Tammany,9,HSEES,17,11,28, 
+873,874,22121,West Baton Rouge Parish,WBR,2,HSEES,92,26,118, 
+874,875,22063,Livingston Parish,Livingston,9,HSEES,12,9,21, 
+875,876,22099,St. Martin Parish,St. Martin,4,HSEES,1,10,11, 
+876,877,22047,Iberville Parish,Iberville,2,HSEES,422,43,465, 
+877,878,22019,Calcasieu Parish,Calcasieu,5,HSEES,898,62,960, 
+878,879,22053,Jefferson Davis Parish,Jefferson Davis,5,HSEES,3,8,11, 
+879,880,22001,Acadia Parish,Acadia,4,HSEES,7,9,16, 
+880,881,22055,Lafayette Parish,Lafayette,4,HSEES,25,46,71, 
+881,882,22005,Ascension Parish,Ascension,2,HSEES,667,123,790, 
+882,883,22095,St. John the Baptist Parish,St. John,3,HSEES,101,15,116, 
+883,884,22089,St. Charles Parish,St. Charles,3,HSEES,664,49,713, 
+884,885,22071,Orleans Parish,Orleans,1,HSEES,62,79,141, 
+885,886,22087,St. Bernard Parish,St. Bernard,1,HSEES,511,11,522, 
+886,887,22093,St. James Parish,St. James,3,HSEES,248,30,278, 
+887,888,22113,Vermilion Parish,Vermilion,4,HSEES,14,3,17, 
+888,889,22045,Iberia Parish,Iberia,4,HSEES,8,8,16, 
+889,890,22007,Assumption Parish,Assumption,3,HSEES,3,1,4, 
+890,891,22023,Cameron Parish,Cameron,5,HSEES,21,2,23, 
+891,892,22101,St. Mary Parish,St. Mary,3,HSEES,11,8,19, 
+892,893,22057,Lafourche Parish,Lafourche,3,HSEES,24,16,40, 
+893,894,22075,Plaquemines Parish,Plaquemines,1,HSEES,167,24,191, 
+894,895,22109,Terrebonne Parish,Terrebonne,3,HSEES,18,22,40, 
+895,896,22051,Jefferson Parish,Jefferson,1,HSEES,232,97,329, 
+896,897,22017,Caddo Parish,Caddo,7,NTSIP,60,142,202, 
+897,898,22015,Bossier Parish,Bossier,7,NTSIP,13,30,43, 
+898,899,22119,Webster Parish,Webster,7,NTSIP,4,7,11, 
+899,900,22027,Claiborne Parish,Claiborne,7,NTSIP,2,2,4, 
+900,901,22111,Union Parish,Union,8,NTSIP,2,0,2, 
+901,902,22067,Morehouse Parish,Morehouse,8,NTSIP,7,2,9, 
+902,903,22123,West Carroll Parish,West Carroll,8,NTSIP,4,0,4, 
+903,904,22035,East Carroll Parish,East Carroll,8,NTSIP,1,1,2, 
+904,905,22061,Lincoln Parish,Lincoln,8,NTSIP,0,5,5, 
+905,906,22073,Ouachita Parish,Ouachita,8,NTSIP,34,19,53, 
+906,907,22083,Richland Parish,Richland,8,NTSIP,4,4,8, 
+907,908,22013,Bienville Parish,Bienville,7,NTSIP,2,0,2, 
+908,909,22065,Madison Parish,Madison,8,NTSIP,2,3,5, 
+909,910,22049,Jackson Parish,Jackson,8,NTSIP,3,3,6, 
+910,911,22041,Franklin Parish,Franklin,8,NTSIP,1,1,2, 
+911,912,22031,De Soto Parish,De Soto,7,NTSIP,19,12,31, 
+912,913,22021,Caldwell Parish,Caldwell,8,NTSIP,1,1,2, 
+913,914,22107,Tensas Parish,Tensas,8,NTSIP,0,0,0,0
+914,915,22081,Red River Parish,Red River,7,NTSIP,7,2,9, 
+915,916,22127,Winn Parish,Winn,6,NTSIP,2,0,2, 
+916,917,22069,Natchitoches Parish,Natchitoches,7,NTSIP,12,4,16, 
+917,918,22025,Catahoula Parish,Catahoula,6,NTSIP,1,0,1, 
+918,919,22059,La Salle Parish,La Salle,6,NTSIP,0,1,1, 
+919,920,22085,Sabine Parish,Sabine,7,NTSIP,2,3,5, 
+920,921,22043,Grant Parish,Grant,6,NTSIP,0,0,0,0
+921,922,22029,Concordia Parish,Concordia,6,NTSIP,0,1,1, 
+922,923,22079,Rapides Parish,Rapides,6,NTSIP,25,27,52, 
+923,924,22115,Vernon Parish,Vernon,6,NTSIP,1,3,4, 
+924,925,22009,Avoyelles Parish,Avoyelles,6,NTSIP,4,1,5, 
+925,926,22125,West Feliciana Parish,West Feliciana,2,NTSIP,3,1,4, 
+926,927,22077,Pointe Coupee Parish,Pointe Coupee,2,NTSIP,7,18,25, 
+927,928,22117,Washington Parish,Washington,9,NTSIP,3,0,3, 
+928,929,22039,Evangeline Parish,Evangeline,4,NTSIP,8,3,11, 
+929,930,22105,Tangipahoa Parish,Tangipahoa,9,NTSIP,21,6,27, 
+930,931,22091,St. Helena Parish,St. Helena,9,NTSIP,2,0,2, 
+931,932,22037,East Feliciana Parish,East Feliciana,2,NTSIP,3,0,3, 
+932,933,22003,Allen Parish,Allen,5,NTSIP,4,4,8, 
+933,934,22011,Beauregard Parish,Beauregard,5,NTSIP,12,2,14, 
+934,935,22097,St. Landry Parish,St. Landry,4,NTSIP,5,4,9, 
+935,936,22033,East Baton Rouge Parish,EBR,2,NTSIP,405,76,481, 
+936,937,22103,St. Tammany Parish,St. Tammany,9,NTSIP,12,5,17, 
+937,938,22121,West Baton Rouge Parish,WBR,2,NTSIP,33,20,53, 
+938,939,22063,Livingston Parish,Livingston,9,NTSIP,14,2,16, 
+939,940,22099,St. Martin Parish,St. Martin,4,NTSIP,7,7,14, 
+940,941,22047,Iberville Parish,Iberville,2,NTSIP,168,34,202, 
+941,942,22019,Calcasieu Parish,Calcasieu,5,NTSIP,229,61,290, 
+942,943,22053,Jefferson Davis Parish,Jefferson Davis,5,NTSIP,3,6,9, 
+943,944,22001,Acadia Parish,Acadia,4,NTSIP,13,12,25, 
+944,945,22055,Lafayette Parish,Lafayette,4,NTSIP,42,38,80, 
+945,946,22005,Ascension Parish,Ascension,2,NTSIP,234,53,287, 
+946,947,22095,St. John the Baptist Parish,St. John,3,NTSIP,47,16,63, 
+947,948,22089,St. Charles Parish,St. Charles,3,NTSIP,92,27,119, 
+948,949,22071,Orleans Parish,Orleans,1,NTSIP,42,61,103, 
+949,950,22087,St. Bernard Parish,St. Bernard,1,NTSIP,47,13,60, 
+950,951,22093,St. James Parish,St. James,3,NTSIP,61,10,71, 
+951,952,22113,Vermilion Parish,Vermilion,4,NTSIP,12,4,16, 
+952,953,22045,Iberia Parish,Iberia,4,NTSIP,10,5,15, 
+953,954,22007,Assumption Parish,Assumption,3,NTSIP,4,0,4, 
+954,955,22023,Cameron Parish,Cameron,5,NTSIP,4,2,6, 
+955,956,22101,St. Mary Parish,St. Mary,3,NTSIP,5,5,10, 
+956,957,22057,Lafourche Parish,Lafourche,3,NTSIP,16,11,27, 
+957,958,22075,Plaquemines Parish,Plaquemines,1,NTSIP,25,9,34, 
+958,959,22109,Terrebonne Parish,Terrebonne,3,NTSIP,12,4,16, 
+959,960,22051,Jefferson Parish,Jefferson,1,NTSIP,63,38,101, 
+960,961,22017,Caddo Parish,Caddo,7,ALL,163,278,441, 
+961,962,22015,Bossier Parish,Bossier,7,ALL,34,66,100, 
+962,963,22119,Webster Parish,Webster,7,ALL,24,16,40, 
+963,964,22027,Claiborne Parish,Claiborne,7,ALL,2,6,8, 
+964,965,22111,Union Parish,Union,8,ALL,8,2,10, 
+965,966,22067,Morehouse Parish,Morehouse,8,ALL,9,7,16, 
+966,967,22123,West Carroll Parish,West Carroll,8,ALL,5,0,5, 
+967,968,22035,East Carroll Parish,East Carroll,8,ALL,1,3,4, 
+968,969,22061,Lincoln Parish,Lincoln,8,ALL,6,10,16, 
+969,970,22073,Ouachita Parish,Ouachita,8,ALL,273,44,317, 
+970,971,22083,Richland Parish,Richland,8,ALL,6,11,17, 
+971,972,22013,Bienville Parish,Bienville,7,ALL,5,2,7, 
+972,973,22065,Madison Parish,Madison,8,ALL,5,11,16, 
+973,974,22049,Jackson Parish,Jackson,8,ALL,5,4,9, 
+974,975,22041,Franklin Parish,Franklin,8,ALL,3,3,6, 
+975,976,22031,De Soto Parish,De Soto,7,ALL,30,20,50, 
+976,977,22021,Caldwell Parish,Caldwell,8,ALL,5,2,7, 
+977,978,22107,Tensas Parish,Tensas,8,ALL,0,1,1, 
+978,979,22081,Red River Parish,Red River,7,ALL,7,2,9, 
+979,980,22127,Winn Parish,Winn,6,ALL,4,1,5, 
+980,981,22069,Natchitoches Parish,Natchitoches,7,ALL,20,11,31, 
+981,982,22025,Catahoula Parish,Catahoula,6,ALL,2,2,4, 
+982,983,22059,La Salle Parish,La Salle,6,ALL,2,2,4, 
+983,984,22085,Sabine Parish,Sabine,7,ALL,5,4,9, 
+984,985,22043,Grant Parish,Grant,6,ALL,10,2,12, 
+985,986,22029,Concordia Parish,Concordia,6,ALL,0,3,3, 
+986,987,22079,Rapides Parish,Rapides,6,ALL,47,54,101, 
+987,988,22115,Vernon Parish,Vernon,6,ALL,4,7,11, 
+988,989,22009,Avoyelles Parish,Avoyelles,6,ALL,6,2,8, 
+989,990,22125,West Feliciana Parish,West Feliciana,2,ALL,5,1,6, 
+990,991,22077,Pointe Coupee Parish,Pointe Coupee,2,ALL,12,63,75, 
+991,992,22117,Washington Parish,Washington,9,ALL,13,2,15, 
+992,993,22039,Evangeline Parish,Evangeline,4,ALL,8,3,11, 
+993,994,22105,Tangipahoa Parish,Tangipahoa,9,ALL,30,28,58, 
+994,995,22091,St. Helena Parish,St. Helena,9,ALL,2,0,2, 
+995,996,22037,East Feliciana Parish,East Feliciana,2,ALL,5,3,8, 
+996,997,22003,Allen Parish,Allen,5,ALL,10,5,15, 
+997,998,22011,Beauregard Parish,Beauregard,5,ALL,14,7,21, 
+998,999,22097,St. Landry Parish,St. Landry,4,ALL,34,10,44, 
+999,1000,22033,East Baton Rouge Parish,EBR,2,ALL,1219,162,1381, 

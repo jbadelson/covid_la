@@ -1,0 +1,229 @@
+,FID,AGENCY,PROVIDER_N,STREET_ADD,CITY,STATE,ZIP_CODE,PHONE_NUMB,PRIVATE_IN,MEDICAID,UNINSURED,REGION,PARISH_ABV,PFIPS,LDHH,PAR_,HAS_FIBROS,LONGITUDE,LATITUDE,GEORESULT
+0,1,Acadiana CARES,"Landry, Jason, M.D.",809 Martin Luther King Jr. Dr.,Lafayette,LA,70501,337-233-2437,Yes,Yes,Yes,Lafayette,Lafayette,22055,4,Lafayette,No,-92.023167,30.249425,S5HPNTSCZA
+1,2,"Acadiana Gastroenterology Associates, LLC","Harrington, Christopher, M.D.",439 Heymann Blvd.,Lafayette,LA,70503,337-269-0963,Yes,No,Yes,Lafayette,Lafayette,22055,4,Lafayette,No,-92.016224,30.202782,S5HPNTSCZA
+2,3,"Acadiana Gastroenterology Associates, LLC","Laperouse, Patrick, M.D.",439 Heymann Blvd.,Lafayette,LA,70503,337-269-0963,Yes,No,Yes,Lafayette,Lafayette,22055,4,Lafayette,No,-92.016224,30.202782,S5HPNTSCZA
+3,4,"Acadiana ID Associates, LLC","Okechukwu, Vitalis, M.D.","1700 Kaliste Saloom Rd., Bldg 6, Ste. 600",Lafayette,LA,70508,337-534-4210,Yes,No,Yes,Lafayette,Lafayette,22055,4,Lafayette,No,-92.031938,30.170769,S5HPNTSCZA
+4,5,Acadiana Surgery Center,"Nguyen, Son V., M.D.",2309 E Main St. Suite 101,New Iberia,LA,70560,337-364-3301,Yes,Yes,Yes,Houma,Iberia,22045,4,Iberia,Yes,-91.787307,29.989767,S5HPNTSCZA
+5,6,Access Health of Louisiana,"Dery, MarkAlain, D.O.","234 Loyola Ave, Suite 300B",New Orleans,LA,70112,504-226-2976,Yes,Yes,Yes,New Orleans,Orleans,22071,1,Orleans,No,-90.075022,29.95364,S5HPNTSCZA
+6,7,AIDS HealthCare Foundation,"Azmeh, Waref, M. D.",4890 Bluebonnet Blvd,Baton Rouge,LA,70809,225-769-3933,Yes,Yes,Yes,Baton Rouge,EBR,22033,2,East Baton Rouge,No,-91.082398,30.403146,S5HPNTSCZA
+7,8,Alexandria Gastroenterology Associates,"Hollier, Joseph D. MD",1587 N Bolton Ave,Alexandria,LA,71303,318-473-8188,Yes,No,No,Alexandria,Rapides,22079,6,Rapides,No,-92.471005,31.317858,S5HPNTSCZA
+8,9,Alexandria Gastroenterology Associates,"Sills, Kimberly J FNP",1587 N Bolton Ave,Alexandria,LA,71303,318-473-8188,Yes,No,No,Alexandria,Rapides,22079,6,Rapides,No,-92.471005,31.317858,S5HPNTSCZA
+9,10,Baptist Community Health Services,"Tardy, Nancy",4960 Saint Claude Ave,New Orleans,LA,70117,504-533-4999,Yes,Yes,Yes,New Orleans,Orleans,22071,1,Orleans,No,-90.022964,29.962689,S5HPNTSCZA
+10,11,Baton Rouge General Medical Center,"Maltbie, Edward, M.D.",9103 Jefferson Highway,Baton Rouge,LA,70809,225-927-1190,Yes,No,Yes,Baton Rouge,EBR,22033,2,East Baton Rouge,Yes,-91.08584,30.415111,S5HPNTSCZA
+11,12,Baton Rouge General Medical Center,"Njoku, Patrick, M.D.",3401 North Blvd Suite 335,Baton Rouge,LA,70809,225-381-2782,Yes,Yes,Yes,Baton Rouge,EBR,22033,2,East Baton Rouge,Yes,-91.154242,30.448287,S5HPNTSC-A
+12,13,Baton Rouge General Medical Center,"Williams, Ellis, M.D.",3401 North Blvd Suite 335,Baton Rouge,LA,70809,225-381-2782,Yes,Yes,Yes,Baton Rouge,EBR,22033,2,East Baton Rouge,Yes,-91.154242,30.448287,S5HPNTSC-A
+13,14,Baton Rouge Multi Specialty Care Center,"Anyanwoke, Gertrude-Chimeka MD","2647 S. St. Elizabeth Blvd., Plaza 1 Suite 221",Gonzales,LA,70737,225-289-6803,Yes,Yes,No,Baton Rouge,Ascension,22005,2,Ascension,No,-90.933094,30.209807,S5HP-TSCZA
+14,15,Belle Chasse Community Health Center,"Johnson, Patrick, M.D.",8200 Highway 23,Belle Chasse,LA,70037,504-398-1100,Yes,Yes,Yes,New Orleans,Plaquemines,22075,1,Plaquemines,No,-89.987312,29.857687,S5HPNTSCZA
+15,16,Belle Chasse Community Health Center,"Dani Prest, FNP",8200 Highway 23,Belle Chasse,LA,70037,504-398-1100,Yes,Yes,Yes,New Orleans,Plaquemines,22075,1,Plaquemines,No,-89.987312,29.857687,S5HPNTSCZA
+16,17,Bitar Specialty Clinic,"Bitar, Kamil, MD",2375 Gause Blvd E,Slidell,LA,70461,985-643-0075,Yes,Yes,Yes,Northshore,St. Tammany,22103,9,St. Tammany,No,-89.72561,30.289748,S5HPNTSCZA
+17,18,Care South Medical Center,"Hymbaugh, Michael, M.D.",3140 Florida Blvd.,Baton Rouge,LA,70806,225-650-2000,Yes,Yes,Yes,Baton Rouge,EBR,22033,2,East Baton Rouge,No,-91.156446,30.450223,S5HPNTSCZA
+18,19,Chadha Medical Clinic,J.S. Chadha MD,140 West Fourth Street,DeQuincy,LA,70633,337-786-5007,Yes,Yes,Yes,Lake Charles, ,0,0, ,No,-93.438501,30.451852,S5HP-TSCZA
+19,20,Christus St. Frances Cabrini Hospital,"Gosserand, John, M.D.",3311 Prescott Rd Suite 411,Alexandria,LA,71301,318-448-5310,Yes,No,No,Alexandria,Rapides,22079,6,Rapides,Yes,-92.463058,31.284198,S5HPNTSCZA
+20,21,Christus St. Frances Cabrini Hospital,"Morrison, Maury, M.D.",1337 Centre Ct.,Alexandria,LA,71301,318-445-9331,Yes,No,No,Alexandria,Rapides,22079,6,Rapides,Yes,-92.477389,31.280146,S5HPNTSCZA
+21,22,Colonnade Endoscopy Center,"Rougeau,Robin, M.D.",555 South Ryan Street #217,Lake Charles,LA,70629,337-439-0762,Yes,No,No,Lake Charles,Calcasieu,22019,5,Calcasieu,No,-93.228531,30.215177,S5H---SC-A
+22,23,Common Ground Health Clinic,"Kautzman, Michele, M.D.",1400 Teche St.,New Orleans,LA,70114,504-361-9800,Yes,Yes,Yes,New Orleans,Orleans,22071,1,Orleans,No,-90.051837,29.941167,S5HPNTSCZA
+23,24,Cornerstone Hospital West Monroe,"Crider, Steven, M.D.",405 Stella St Suite A,West Monroe,LA,71291,318-807-8410,Yes,Yes,Yes,Monroe,Ouachita,22073,8,Ouachita,No,-92.131125,32.502818,S5HPNTSCZA
+24,25,CrescentCare,"Murphy, Mary, M.D.",1631 Elysian Fields,New Orleans,LA,70117,504-821-2601,Yes,Yes,Yes,New Orleans,Orleans,22071,1,Orleans,No,-90.057002,29.973976,S5HPN-SCZA
+25,26,CrescentCare,"Halperin, Jason, M.D.",1631 Elysian Fields,New Orleans,LA,70117,504-821-2601,Yes,Yes,Yes,New Orleans,Orleans,22071,1,Orleans,No,-90.057002,29.973976,S5HPN-SCZA
+26,27,CrescentCare,"Jose, Jo-Ann, M.D.",1631 Elysian Fields,New Orleans,LA,70117,504-821-2601,Yes,Yes,Yes,New Orleans,Orleans,22071,1,Orleans,No,-90.057002,29.973976,S5HPN-SCZA
+27,28,CrescentCare,"Harris, Nadine, M.D.",4640 S. Carrollton Ave Suite 120,New Orleans,LA,70117,504-821-2601,Yes,Yes,Yes,New Orleans,Orleans,22071,1,Orleans,No,-90.10187,29.973145,S5HPNTSC-A
+28,29,CrescentCare,"Walker, Darris",4640 S. Carrollton Ave Suite 120,New Orleans,LA,70119,504-821-2601,Yes,Yes,Yes,New Orleans,Orleans,22071,1,Orleans,No,-90.10187,29.973145,S5HPNTSCZA
+29,30,CrescentCare,"Seybolt, Lorna, M.D.",3308 Tulane Ave,New Orleans,LA,70119,504-821-2601,Yes,Yes,Yes,New Orleans,Orleans,22071,1,Orleans,No,-90.097145,29.964667,S5HPNTSCZA
+30,31,Daughters of Charity,"Greene, Stacy, MD",3201 S Carrollton Ave,New Orleans,LA,70119,504-207-3060,Yes,Yes,Yes,New Orleans,Orleans,22071,1,Orleans,Yes,-90.114142,29.961656,S5HPNTSC-A
+31,32,Daughters of Charity,"Taylor, William, M.D.",3201 S Carrollton Ave,New Orleans,LA,70119,504-207-3060,Yes,Yes,Yes,New Orleans,Orleans,22071,1,Orleans,Yes,-90.114142,29.961656,S5HPNTSC-A
+32,33,Daughters of Charity,"Mornay, Yolanda",5630 Read Blvd,New Orleans,LA,70127,504-941-6041,Yes,Yes,Yes,New Orleans,Orleans,22071,1,Orleans,Yes,-89.971708,30.030809,S5HPNTSCZA
+33,34,Daughters of Charity,"Theriault, Tanya",111 N Causeway Blvd,New Orleans,LA,70001,504-482-0084,Yes,Yes,Yes,New Orleans,Jefferson,22051,1,Jefferson,Yes,-90.155203,29.975035,S5HPNTS-ZA
+34,35,Digestive Health Center,"Monier, Charles, M.D.",602 N Acadia Rd Suite 404,Thibodaux,LA,70302,985-446-1958,Yes,Yes,Yes,Houma,LaFourche,22057,3,Lafourche,No,-90.806413,29.78026,S5HPNTSC-A
+35,36,Digestive Health Center of Louisiana,"Rao, Mahes, M.D.",9103 Jefferson Highway,Baton Rouge,LA,70809,225-927-1190,Yes,No,No,Baton Rouge,EBR,22033,2,East Baton Rouge,Yes,-91.08584,30.415111,S5HPNTSCZA
+36,37,Digestive Health Center of Louisiana,"Anderson, III, Williams A., M.D.",9103 Jefferson Highway,Baton Rouge,LA,70809,225-927-1190,Yes,No,No,Baton Rouge,EBR,22033,2,East Baton Rouge,Yes,-91.08584,30.415111,S5HPNTSCZA
+37,38,Digestive Health Center of Louisiana,"Berggreen, Charles Cole, M.D.",9103 Jefferson Highway,Baton Rouge,LA,70809,225-927-1190,Yes,No,No,Baton Rouge,EBR,22033,2,East Baton Rouge,Yes,-91.08584,30.415111,S5HPNTSCZA
+38,39,Digestive Health Center of Louisiana,"Nelson, Andrew  C., M.D.",9103 Jefferson Highway,Baton Rouge,LA,70809,225-927-1190,Yes,No,No,Baton Rouge,EBR,22033,2,East Baton Rouge,Yes,-91.08584,30.415111,S5HPNTSCZA
+39,40,Digestive Health Center of Louisiana,"Mullins, Walter Kirk, M.D.",9103 Jefferson Highway,Baton Rouge,LA,70809,225-927-1190,Yes,No,No,Baton Rouge,EBR,22033,2,East Baton Rouge,Yes,-91.08584,30.415111,S5HPNTSCZA
+40,41,Digestive Health Center of Louisiana,"Alapati, Prasad, M.D.",9103 Jefferson Highway,Baton Rouge,LA,70809,225-927-1190,Yes,No,No,Baton Rouge,EBR,22033,2,East Baton Rouge,Yes,-91.08584,30.415111,S5HPNTSCZA
+41,42,Digestive Health Center of Louisiana,"Leo, Ronald, M.D.",9103 Jefferson Highway,Baton Rouge,LA,70809,225-927-1190,Yes,No,No,Baton Rouge,EBR,22033,2,East Baton Rouge,Yes,-91.08584,30.415111,S5HPNTSCZA
+42,43,Digestive Health Center of Louisiana,"Walsh, Douglas, M.D.",9103 Jefferson Highway,Baton Rouge,LA,70809,225-927-1190,Yes,No,No,Baton Rouge,EBR,22033,2,East Baton Rouge,Yes,-91.08584,30.415111,S5HPNTSCZA
+43,44,Digestive Health Center of Louisiana,"Be, Robert, M.D.",9103 Jefferson Highway,Baton Rouge,LA,70809,225-927-1190,Yes,No,No,Baton Rouge,EBR,22033,2,East Baton Rouge,Yes,-91.08584,30.415111,S5HPNTSCZA
+44,45,Digestive Health Center of Louisiana,"Oubre, Benton, M.D.",9103 Jefferson Highway,Baton Rouge,LA,70809,225-927-1190,Yes,No,No,Baton Rouge,EBR,22033,2,East Baton Rouge,Yes,-91.08584,30.415111,S5HPNTSCZA
+45,46,Digestive Health Center of Louisiana,"Lobrano, Amy, M.D.",9103 Jefferson Highway,Baton Rouge,LA,70809,225-927-1190,Yes,No,No,Baton Rouge,EBR,22033,2,East Baton Rouge,Yes,-91.08584,30.415111,S5HPNTSCZA
+46,47,Digestive Health Center of Louisiana,"Reddy, Neelina, M.D.",9103 Jefferson Highway,Baton Rouge,LA,70809,225-927-1190,Yes,No,No,Baton Rouge,EBR,22033,2,East Baton Rouge,Yes,-91.08584,30.415111,S5HPNTSCZA
+47,48,Digestive Health Center of Louisiana,"McDonald, John Walker, M.D.",9103 Jefferson Highway,Baton Rouge,LA,70809,225-927-1190,Yes,No,No,Baton Rouge,EBR,22033,2,East Baton Rouge,Yes,-91.08584,30.415111,S5HPNTSCZA
+48,49,Digestive Health Center of Louisiana,"Chauvin, Ryan N., M.D.",9103 Jefferson Highway,Baton Rouge,LA,70809,225-927-1190,Yes,No,No,Baton Rouge,EBR,22033,2,East Baton Rouge,Yes,-91.08584,30.415111,S5HPNTSCZA
+49,50,Digestive Health Center of Louisiana,"Chapman, J. Casey, M.D.",9103 Jefferson Highway,Baton Rouge,LA,70809,225-927-1190,Yes,No,No,Baton Rouge,EBR,22033,2,East Baton Rouge,Yes,-91.08584,30.415111,S5HPNTSCZA
+50,51,Digestive Health Center of Louisiana,"Maltbie, E. Alan, M.D.",9103 Jefferson Highway,Baton Rouge,LA,70809,225-927-1190,Yes,No,No,Baton Rouge,EBR,22033,2,East Baton Rouge,Yes,-91.08584,30.415111,S5HPNTSCZA
+51,52,Digestive Health Center of Louisiana,"Lemendola, Oleana, M.D.",9103 Jefferson Highway,Baton Rouge,LA,70809,225-927-1190,Yes,No,No,Baton Rouge,EBR,22033,2,East Baton Rouge,Yes,-91.08584,30.415111,S5HPNTSCZA
+52,53,Digestive Health Center of Louisiana,"Nutter, Melanie, RN, MSN, C-ANP",9103 Jefferson Highway,Baton Rouge,LA,70809,225-927-1190,Yes,No,No,Baton Rouge,EBR,22033,2,East Baton Rouge,Yes,-91.08584,30.415111,S5HPNTSCZA
+53,54,Digestive Health Center of Louisiana,"George, Catherine, RN, MSN, FNP-C",9103 Jefferson Highway,Baton Rouge,LA,70809,225-927-1190,Yes,No,No,Baton Rouge,EBR,22033,2,East Baton Rouge,Yes,-91.08584,30.415111,S5HPNTSCZA
+54,55,Digestive Health Center of Louisiana,"Huddleston, Kelly L., MS, PA-C",9103 Jefferson Highway,Baton Rouge,LA,70809,225-927-1190,Yes,No,No,Baton Rouge,EBR,22033,2,East Baton Rouge,Yes,-91.08584,30.415111,S5HPNTSCZA
+55,56,Digestive Health Center of Louisiana,"Hall, Brittany, MMS, PA-C",9103 Jefferson Highway,Baton Rouge,LA,70809,225-927-1190,Yes,No,No,Baton Rouge,EBR,22033,2,East Baton Rouge,Yes,-91.08584,30.415111,S5HPNTSCZA
+56,57,Digestive Health Center of Louisiana,"Baker, Regan, PA-C",9103 Jefferson Highway,Baton Rouge,LA,70809,225-927-1190,Yes,No,No,Baton Rouge,EBR,22033,2,East Baton Rouge,Yes,-91.08584,30.415111,S5HPNTSCZA
+57,58,Digestive Health Center of Louisiana,"Rao, Mahes, M.D.",9103 Jefferson Highway,Baton Rouge,LA,70809,225-927-1190,Yes,No,No,Baton Rouge,EBR,22033,2,East Baton Rouge,Yes,-91.08584,30.415111,S5HPNTSCZA
+58,59,Digestive Health Center of Louisiana,"Christensen, Christopher, M.D.",9103 Jefferson Highway,Baton Rouge,LA,70809,225-927-1190,Yes,No,No,Baton Rouge,EBR,22033,2,East Baton Rouge,Yes,-91.08584,30.415111,S5HPNTSCZA
+59,60,East Jefferson General Hospital,"Barrilleaux, Christopher, M.D.",3800 Houma Blvd #220,Metairie,LA,70009,504-456-7484,Yes,Yes,Yes,New Orleans,Jefferson,22051,1,Jefferson,No,-90.180722,30.010234,S5HPNTSC-A
+60,61,Excelth Family Health Center,"Gray-Winfrey, Wylea",4422 General Meyer Avenue Suite 103,New Orleans,LA,70172,504-526-1179,Yes,Yes,Yes,New Orleans,Orleans,22071,1,Orleans,No,-90.008676,29.934485,S5HPNTSC-A
+61,62,Florida Parishes Human Services Authority,Schoener LaPrairie MD,835 Pride Dr. Suite B,Hammond,LA,70401,985-543-4333,Yes,Yes,Yes,North Shore, ,0,0, ,No,-90.423716,30.520795,S5HPNTSCZA
+62,63,Florida Parishes Human Services Authority,Rosemary Stagg FNP,835 Pride Dr. Suite B,Hammond,LA,70401,985-543-4333,Yes,Yes,Yes,North Shore, ,0,0, ,No,-90.423716,30.520795,S5HPNTSCZA
+63,64,Florida Parishes Human Services Authority,Steven Cessna PMHNP,1951 Florida ave SW Suite D+E,Denham Springs,LA,70726,225-665-0473,Yes,Yes,Yes,North Shore, ,0,0, ,No,-90.969244,30.46644,S5HPNTSCZA
+64,65,Florida Parishes Human Services Authority,Cathy Davis FNP,835 Pride Dr. Suite B,Hammond,LA,70401,985-543-4333,Yes,Yes,Yes,North Shore, ,0,0, ,No,-90.423716,30.520795,S5HPNTSCZA
+65,66,Gastroenterologist Group AMC,"Albright, Anthony, M.D.",58515 Pearl Acres Road,Slidell,LA,70461,985-641-8982,Yes,No,No,Northshore,St. Tammany,22103,9,St. Tammany,Yes,-89.736317,30.284328,S5HPNTSCZA
+66,67,Gastroenterologist Group AMC,"Dauterive III, Edward, M.D.",58515 Pearl Acres Road,Slidell,LA,70461,985-641-8982,Yes,No,No,Northshore,St. Tammany,22103,9,St. Tammany,Yes,-89.736317,30.284328,S5HPNTSCZA
+67,68,Gastroenterologist Group AMC,"Dugan, Veronica, M.D.",58515 Pearl Acres Road,Slidell,LA,70461,985-641-8982,Yes,No,No,Northshore,St. Tammany,22103,9,St. Tammany,Yes,-89.736317,30.284328,S5HPNTSCZA
+68,69,Gastroenterologist Group AMC,"Nicaud, Mark, M.D.",58515 Pearl Acres Road,Slidell,LA,70461,985-641-8982,Yes,No,No,Northshore,St. Tammany,22103,9,St. Tammany,Yes,-89.736317,30.284328,S5HPNTSCZA
+69,70,Gastroenterologist Group AMC,"Trainor, Timothy, M.D.",58515 Pearl Acres Road,Slidell,LA,70461,985-641-8982,Yes,No,No,Northshore,St. Tammany,22103,9,St. Tammany,Yes,-89.736317,30.284328,S5HPNTSCZA
+70,71,Gastroenterology Clinic,"Hinkle, Henry, M.D.",611 Grammont St.,Monroe,LA,71201,318-325-2634,Yes,No,Yes,Monroe,Ouachita,22073,8,Ouachita,No,-92.112457,32.502356,S5HPNTSCZA
+71,72,Gastroenterology Clinic West Monroe,"Coon, Clayton, M.D.",102 Thomas Rd. Suite 114,West Monroe,LA,71291,318-812-3303,Yes,Yes,Yes,Monroe,Ouachita,22073,8,Ouachita,No,-92.157561,32.514057,S5HPNTSCZA
+72,73,Gastroenterology Clinic West Monroe,"Richert, Arthur M.D",102 Thomas Rd. Suite 114,West Monroe,LA,71291,318-812-3303,Yes,Yes,Yes,Monroe,Ouachita,22073,8,Ouachita,No,-92.157561,32.514057,S5HPNTSCZA
+73,74,Gastroenterology Clinic West Monroe,"Levatino, Brian, M.D",102 Thomas Rd. Suite 114,West Monroe,LA,71291,318-812-3303,Yes,Yes,Yes,Monroe,Ouachita,22073,8,Ouachita,No,-92.157561,32.514057,S5HPNTSCZA
+74,75,Gastroenterology Clinic West Monroe,"Raymond, Katheryn, NP",102 Thomas Rd. Suite 114,West Monroe,LA,71291,318-812-3303,Yes,Yes,Yes,Monroe,Ouachita,22073,8,Ouachita,No,-92.157561,32.514057,S5HPNTSCZA
+75,76,Gastroenterology Clinic West Monroe,"Martin, Morgan, NP",102 Thomas Rd. Suite 114,West Monroe,LA,71291,318-812-3303,Yes,Yes,Yes,Monroe,Ouachita,22073,8,Ouachita,No,-92.157561,32.514057,S5HPNTSCZA
+76,77,"Gastrointestinal Specialists, A.M.C.","Aguilar, Humberto, M.D.",3217 Mabel St.,Shreveport,LA,71107,318-631-9121,Yes,Yes,Yes,Shreveport,Caddo,22017,7,Caddo,Yes,-93.775853,32.48461,S5HPNTSC-A
+77,78,"Gastrointestinal Specialists, A.M.C.","Provenza, John, MD",8383 Millicent Way Suite B,Shreveport,LA,71107,318-631-9121,Yes,Yes,Yes,Shreveport,Caddo,22017,7,Caddo,Yes,-93.715056,32.425685,S5HPNTSC-A
+78,79,Glenwood Hospital,"McHugh, Johnnie, MD",503 McMillian Rd,West Monroe,LA,71291,318-388-8878,Yes,Yes,Yes,Monroe,Ouachita,22073,8,Ouachita,No,-92.156757,32.513406,S5HP-TSCZA
+79,80,Go Care,"Marquardt, Aaron, M.D.",1801 N 7th St,West Monroe,LA,71291,318-325-1092,Yes,Yes,Yes,Monroe,Ouachita,22073,8,Ouachita,No,-92.145949,32.511317,S5HPNTSCZA
+80,81,Go Care,"Hamilton, Laurie, NP",1801 N 7th St,West Monroe,LA,71291,318-325-1092,Yes,Yes,Yes,Monroe,Ouachita,22073,8,Ouachita,No,-92.145949,32.511317,S5HPNTSCZA
+81,82,Healthcare for the Homeless,"Vidya Mandhare, FNP",2222 Simon Bolivar Ave,New Orleans,LA,70113,504-658-2785,Yes,Yes,Yes,New Orleans, ,0,0, ,No,-90.085003,29.93889,S5HPNTSCZA
+82,83,Healthcare for the Homeless,"Neil Nixdorff, MD",2222 Simon Bolivar Ave,New Orleans,LA,70113,504-658-2785,Yes,Yes,Yes,New Orleans, ,0,0, ,No,-90.085003,29.93889,S5HPNTSCZA
+83,84,Healthcare for the Homeless,"Krista Woods, DNP FNP-C",2222 Simon Bolivar Ave,New Orleans,LA,70113,504-658-2785,Yes,Yes,Yes,New Orleans, ,0,0, ,No,-90.085003,29.93889,S5HPNTSCZA
+84,85,Iberia Gastroenterology Associates,Shobha Joshi MD,"2309 East Main Street, Suite 101",New Iberia,LA,70560,337-364-3301,Yes,Yes,Yes,Lafayette, ,0,0, ,Unknown,-91.787307,29.989767,S5HPNTSCZA
+85,86,Lafayette General Medical Center- Southwest,"Akoghlanian, Garabet, M.D.",4212 W. Congress St. Ste. 2350,Lafayette,LA,70506,337-703-3390,Yes,Yes,Yes,Lafayette,Lafayette,22055,4,Lafayette,No,-92.076643,30.195995,S5HPNTSCZA
+86,87,Lake Charles Memorial Health System,"Vaisler, Ryan MD",1525 Oak Park Blvd,Lake Charles,LA,70601,337-494-6767,Yes,Yes,Yes,Lake Charles, ,0,0, ,No,-93.19921,30.203429,S5HPNTSCZA
+87,88,Lake Charles Memorial Health System,"Vitrine, C MD",1525 Oak Park Blvd,Lake Charles,LA,70601,337-494-6767,Yes,Yes,Yes,Lake Charles, ,0,0, ,No,-93.19921,30.203429,S5HPNTSCZA
+88,89,Lake Charles Memorial Health System,"Zovata, DO D.O.",1525 Oak Park Blvd,Lake Charles,LA,70601,337-494-6767,Yes,Yes,Yes,Lake Charles, ,0,0, ,No,-93.19921,30.203429,S5HPNTSCZA
+89,90,Lake Charles Memorial Health System,"Ahmed, Sabah MD",1525 Oak Park Blvd,Lake Charles,LA,70601,337-494-6767,Yes,Yes,Yes,Lake Charles, ,0,0, ,No,-93.19921,30.203429,S5HPNTSCZA
+90,91,Lake Charles Memorial Health System,"Ziradlear, Rhushi MD",1525 Oak Park Blvd,Lake Charles,LA,70601,337-494-6767,Yes,Yes,Yes,Lake Charles, ,0,0, ,No,-93.19921,30.203429,S5HPNTSCZA
+91,92,Lake Charles Memorial Health System,"Bawn, Michael MD",1525 Oak Park Blvd,Lake Charles,LA,70601,337-494-6767,Yes,Yes,Yes,Lake Charles, ,0,0, ,No,-93.19921,30.203429,S5HPNTSCZA
+92,93,Lake Charles Memorial Health System,"Barras, Glenn MD",1525 Oak Park Blvd,Lake Charles,LA,70601,337-494-6767,Yes,Yes,Yes,Lake Charles, ,0,0, ,No,-93.19921,30.203429,S5HPNTSCZA
+93,94,Lake Charles Memorial Health System,"Robichaux, Cardine MD",1525 Oak Park Blvd,Lake Charles,LA,70601,337-494-6767,Yes,Yes,Yes,Lake Charles, ,0,0, ,No,-93.19921,30.203429,S5HPNTSCZA
+94,95,Lake Charles Memorial Health System,"Takach, Timothy DO",1525 Oak Park Blvd,Lake Charles,LA,70601,337-494-6767,Yes,Yes,Yes,Lake Charles, ,0,0, ,No,-93.19921,30.203429,S5HPNTSCZA
+95,96,Lake Charles Memorial Health System - Moss Memorial Health Clinics,"Choucino, Carlos, M.D.",1000 Walters St.,Lake Charles,LA,70629,337-475-8100,Yes,Yes,Yes,Lake Charles, ,0,0, ,No,-93.207771,30.183497,S5HPNTSC-A
+96,97,Lake Charles Memorial Health System - Moss Memorial Health Clinics,"Kayla Nordstrom, NP",1000 Walters St.,Lake Charles,LA,70629,337-475-8100,Yes,Yes,Yes,Lake Charles, ,0,0, ,Unknown,-93.207771,30.183497,S5HPNTSC-A
+97,98,Lake Charles Memorial Health System - Moss Memorial Health Clinics,"Damika Harmon, NP",1000 Walters St.,Lake Charles,LA,70629,337-475-8100,Yes,Yes,Yes,Lake Charles, ,0,0, ,Unknown,-93.207771,30.183497,S5HPNTSC-A
+98,99,Lake Charles Memorial Health System - Moss Memorial Health Clinics,"Bonnie Frudge, NP",1000 Walters St.,Lake Charles,LA,70629,337-475-8100,Yes,Yes,Yes,Lake Charles, ,0,0, ,Unknown,-93.207771,30.183497,S5HPNTSC-A
+99,100,Lallie Kemp Regional Medical Center,"Campbell, Walter, M.D.",52579 US-51,Independence,LA,70443,985-878-1459,Yes,Yes,Yes,Northshore,Tangipahoa,22105,9,Tangipahoa,No,-90.497037,30.622112,S5HP-T-CZA
+100,101,Lane Regional Medical Center,"Krunal, Patel, M. D.","6550 Main Street, Suite 3500",Zachary,LA,70791,225-658-6780,Yes,Yes,Yes,Baton Rouge,EBR,22033,2,East Baton Rouge,No,-91.134103,30.649471,S5HPNTSCZA
+101,102,LSU Health Baton Rouge Medicine and Medicine Specialty Center,"Fusilier, Gregory, M. D.",5131 O'Donovan Drive,Baton Rouge,LA,70808,225-358-4853,Yes,Yes,Yes,Baton Rouge,EBR,22033,2,East Baton Rouge,No,-91.112733,30.403779,S5HPNTSCZA
+102,103,LSU Health Shreveport,"Jordan, Paul, M.D.",1501 Kings Highway,Shreveport,LA,71107,318-675-5982,Yes,Yes,Yes,Shreveport,Caddo,22017,7,Caddo,Yes,-93.760762,32.481733,S5HPNTSC-A
+103,104,LSU Health Shreveport,"King, John, MD",1501 Kings Highway,Shreveport,LA,71107,318-675-5982,Yes,Yes,Yes,Shreveport,Caddo,22017,7,Caddo,Yes,-93.760762,32.481733,S5HPNTSC-A
+104,105,Metro Health,"Collins, Kristen, MSN",950 E Washington St,Baton Rouge,LA,70802,225-338-9333,Yes,Yes,Yes,Baton Rouge,EBR,22033,2,East Baton Rouge,No,-91.176135,30.431086,S5HPNTSCZA
+105,106,Metropolitan Gastroenterology Associates,"Awtrey, Richard, M.D.","2820 Napoleon Avenue, Suite 720/Suite 700",New Orleans,LA,70115,504-267-1135,Yes,No,No,New Orleans,Orleans,22071,1,Orleans,Yes,-90.103455,29.938359,S5HPNTSCZA
+106,107,Metropolitan Gastroenterology Associates,"Guider, Benjamin A, Jr., M.D.","2820 Napoleon Avenue, Suite 720/Suite 700",New Orleans,LA,70115,504-267-1135,Yes,No,No,New Orleans,Orleans,22071,1,Orleans,Yes,-90.103455,29.938359,S5HPNTSCZA
+107,108,Metropolitan Gastroenterology Associates,"Khan, Abdul M., M.D.","2820 Napoleon Avenue, Suite 720/Suite 700",New Orleans,LA,70115,504-267-1135,Yes,No,No,New Orleans,Orleans,22071,1,Orleans,Yes,-90.103455,29.938359,S5HPNTSCZA
+108,109,Metropolitan Gastroenterology Associates,"Lemann, Rebekah H., M.D.","2820 Napoleon Avenue, Suite 720/Suite 700",New Orleans,LA,70115,504-267-1135,Yes,No,No,New Orleans,Orleans,22071,1,Orleans,Yes,-90.103455,29.938359,S5HPNTSCZA
+109,110,Metropolitan Gastroenterology Associates,"Lilly, James, M.D.","2820 Napoleon Avenue, Suite 720/Suite 700",New Orleans,LA,70115,504-267-1135,Yes,No,No,New Orleans,Orleans,22071,1,Orleans,Yes,-90.103455,29.938359,S5HPNTSCZA
+110,111,Metropolitan Gastroenterology Associates,"Mayer, Herbert K., M.D.","2820 Napoleon Avenue, Suite 720/Suite 700",New Orleans,LA,70115,504-267-1135,Yes,No,No,New Orleans,Orleans,22071,1,Orleans,Yes,-90.103455,29.938359,S5HPNTSCZA
+111,112,Metropolitan Gastroenterology Associates,"Brenner, Howard I., M.D.","4228 Houma Boulevard, Suite 520",Metairie,LA,70006,504-323-0407,Yes,No,No,New Orleans,Jefferson,22051,1,Jefferson,Yes,-90.18148,30.013734,S5HPNTSCZA
+112,113,Metropolitan Gastroenterology Associates,"Catinis, George E, M.D.","4228 Houma Boulevard, Suite 520",Metairie,LA,70006,504-323-0407,Yes,No,No,New Orleans,Jefferson,22051,1,Jefferson,Yes,-90.18148,30.013734,S5HPNTSCZA
+113,114,Metropolitan Gastroenterology Associates,"Marino, Mark J., M.D.","4228 Houma Boulevard, Suite 520",Metairie,LA,70006,504-323-0407,Yes,No,No,New Orleans,Jefferson,22051,1,Jefferson,Yes,-90.18148,30.013734,S5HPNTSCZA
+114,115,Metropolitan Gastroenterology Associates,"Meyers, William M., M.D.","4228 Houma Boulevard, Suite 520",Metairie,LA,70006,504-323-0407,Yes,No,No,New Orleans,Jefferson,22051,1,Jefferson,Yes,-90.18148,30.013734,S5HPNTSCZA
+115,116,Metropolitan Gastroenterology Associates,"Puente, Richard G., M.D.","4228 Houma Boulevard, Suite 520",Metairie,LA,70006,504-323-0407,Yes,No,No,New Orleans,Jefferson,22051,1,Jefferson,Yes,-90.18148,30.013734,S5HPNTSCZA
+116,117,Metropolitan Gastroenterology Associates,"Hymel, Brett, M.D.","1111 Medical Center Boulevard, Suite S-450",Marrero,LA,70072,504-265-9582,Yes,No,No,New Orleans,Jefferson,22051,1,Jefferson,Yes,-90.095835,29.891562,S5HPNTSCZA
+117,118,Morehouse General Hospital,"Bhandari, Bal, M.D.",616 S Washington St,Bastrop,LA,71220,318-283-2177,Yes,Yes,Yes,Monroe,Morehouse,22067,8,Morehouse,Yes,-91.914462,32.772955,S5HPNTSCZA
+118,119,New Orleans Family Justice Center,"Mahoney, Andy, RN",701 Loyola Ave # 201,New Orleans,LA,70113,504-592-4005,Yes,Yes,Yes,New Orleans,Orleans,22071,1,Orleans,No,-90.07681,29.947722,S5HPNTSCZA
+119,120,NOELA Community Health Center,"Gehring, Vanessa, NP",13085 Chef Menteur Hwy,New Orleans,LA,70129,504-309-8390,Yes,Yes,Yes,New Orleans,Orleans,22071,1,Orleans,No,-89.932044,30.029707,S5HPNTSCZA
+120,121,NOELA Community Health Center,"Winfrey, Keith, M.D.",13085 Chef Menteur Hwy,New Orleans,LA,70129,504-309-8390,Yes,Yes,Yes,New Orleans,Orleans,22071,1,Orleans,No,-89.932044,30.029707,S5HPNTSCZA
+121,122,NOELA Community Health Center,"Lam, Mai, M.D.",13085 Chef Menteur Hwy,New Orleans,LA,70129,504-309-8390,Yes,Yes,Yes,New Orleans,Orleans,22071,1,Orleans,No,-89.932044,30.029707,S5HPNTSCZA
+122,123,Northlake Gastroenterologist Associates,"Mula M., Gregory, M.D.","16061 Doctors Blvd., Suite B",Hammond,LA,70403,985-893-9592,Yes,Yes,No,Northshore,Tangipahoa,22105,9,Tangipahoa,Yes,-90.45526,30.466809,S5HPNTSCZA
+123,124,Northlake Gastroenterologist Associates,"Booth J., Dennis JR., M.D.",7015 Highway 190 East Service Road Suite 102,Covington,LA,70434,985-893-9592,Yes,Yes,No,Northshore,St. Tammany,22103,9,St. Tammany,Yes,-90.08503,30.405865,S5HPNTSC-A
+124,125,Northlake Gastroenterologist Associates,"Gensler L., Lawrence, M.D.",7015 Highway 190 East Service Road Suite 102,Covington,LA,70434,985-893-9592,Yes,Yes,No,Northshore,St. Tammany,22103,9,St. Tammany,Yes,-90.08503,30.405865,S5HPNTSC-A
+125,126,Northlake Gastroenterologist Associates,"Reina, Jason B., M.D.",7015 Highway 190 East Service Road Suite 102,Covington,LA,70434,985-893-9592,Yes,Yes,No,Northshore,St. Tammany,22103,9,St. Tammany,Yes,-90.08503,30.405865,S5HPNTSC-A
+126,127,Northlake Nephrology Institute,"Keshelava, George T., M.D.","1970 North Highway 190, Suite 100",Covington,LA,70434,985-867-8585,Yes,Yes,No,Northshore,St. Tammany,22103,9,St. Tammany,No,-90.082637,30.461699,S5HPNTSC-A
+127,128,Ochsner Health Center - Covington,Jennifer Scheuermann PA-C,1000 Ochsner Blvd,Covington,LA,70433,985-875-2828,Yes,No,No,Northshore, ,0,0, ,Unknown,-90.138096,30.449986,S5HPNTSCZA
+128,129,Ochsner Health Center - Luling,"Natalie Bzowej, MD","1057 PAUL MAILLARD RD, STE 2220",Luling,LA,70070,985-785-6242,Yes,Yes,Yes,Houma, ,0,0, ,Unknown,-90.371675,29.924511,S5HPNTSCZA
+129,130,Ochsner Health Center - Slidell,Jennifer Scheuermann PA-C,"1850 Gause Blvd, Suite 202",Slidell,LA,70461,985-639-3777,Yes,No,No,Northshore, ,0,0, ,Unknown,-89.742112,30.285147,S5HPNT-CZA
+130,131,Ochsner Health Center - Slidell,"Shoba Joshi, MD","1850 Gause Blvd, Suite 202",Slidell,LA,70461,985-639-3777,Yes,No,No,Northshore, ,0,0, ,Unknown,-89.742112,30.285147,S5HPNT-CZA
+131,132,Ochsner LSU Monroe,"Jones, Tammy, MD",4864 Jackson St,Monroe,LA,71202,318-330-7000,Yes,Yes,Yes,Monroe,Ouachita,22073,8,Ouachita,Yes,-92.105646,32.451602,S5HPNTSCZA
+132,133,Ochsner Medical Center,"Tyson, Gia, M. D.",10310 The Grove Blvd,Baton Rouge,LA,70893,225-761-5200,Yes,No,No,Baton Rouge,EBR,22033,2,East Baton Rouge,Yes,-91.079003,30.386169,S5HPNTSC-A
+133,134,Ochsner Medical Center,"Tyson, Gia, MD",1514 Jefferson Hwy NOLA,New Orleans,LA,70121,504-842-4000,Yes,Yes,No,New Orleans,Jefferson,22051,1,Jefferson,Yes,-90.145134,29.962704,S5HP--SCZA
+134,135,Ochsner Medical Center,"Girgrah, Nigel",1514 Jefferson Hwy NOLA,New Orleans,LA,70121,504-842-4000,Yes,Healthy Blue Only, ,New Orleans,Jefferson,22051,1,Jefferson,Yes,-90.145134,29.962704,S5HP--SCZA
+135,136,Ochsner Medical Center,"Leong, Jon, MD",1514 Jefferson Hwy NOLA,New Orleans,LA,70121,504-842-4000,Yes,Healthy Blue Only, ,New Orleans,Jefferson,22051,1,Jefferson,Yes,-90.145134,29.962704,S5HP--SCZA
+136,137,Ochsner Medical Center,"Ehrensing, Eric, M.D.",4315 Houma Blvd,Metairie,LA,70009,504-455-4622,Yes, , ,New Orleans,Jefferson,22051,1,Jefferson,Yes,-90.181334,30.014575,S5HPNTSC-A
+137,138,Ochsner Medical Center,"Raines, Daniel",200 W Esplanade Ave,Kenner,LA,70097,504-464-8500,Yes, , ,New Orleans,Jefferson,22051,1,Jefferson,Yes,-90.271075,30.02314,S5HPNTSC-A
+138,139,Ochsner Medical Center,Jennifer Scheuermann PA-C,1514 Jefferson Hwy NOLA,New Orleans,LA,70121,504-842-4000,Yes,Yes,No,New Orleans, ,0,0, ,Yes,-90.145134,29.962704,S5HP--SCZA
+139,140,Ochsner Medical Center,Jamie Juckett PA-C,1514 Jefferson Hwy NOLA,New Orleans,LA,70121,504-842-4000,Yes,Yes,No,New Orleans, ,0,0, ,Yes,-90.145134,29.962704,S5HP--SCZA
+140,141,Ochsner Medical Center,"George Therapondos, MD",1514 Jefferson Hwy NOLA,New Orleans,LA,70121,504-842-4000,Yes,Yes,No,New Orleans, ,0,0, ,Yes,-90.145134,29.962704,S5HP--SCZA
+141,142,Ochsner Medical Center,"Cristal Brown, MD",1514 Jefferson Hwy NOLA,New Orleans,LA,70121,504-842-4000,Yes,Yes,No,New Orleans, ,0,0, ,Yes,-90.145134,29.962704,S5HP--SCZA
+142,143,Ochsner Medical Center,"Nyan Latt, MD",1514 Jefferson Hwy NOLA,New Orleans,LA,70121,504-842-4000,Yes,Yes,No,New Orleans, ,0,0, ,Yes,-90.145134,29.962704,S5HP--SCZA
+143,144,Ochsner Medical Center,"Shoba Joshi, MD",1514 Jefferson Hwy NOLA,New Orleans,LA,70121,504-842-4000,Yes,Yes,No,New Orleans, ,0,0, ,Yes,-90.145134,29.962704,S5HP--SCZA
+144,145,Ochsner Medical Center,"Natalie Bzowej, MD",1514 Jefferson Hwy NOLA,New Orleans,LA,70121,504-842-4000,Yes,Yes,No,New Orleans, ,0,0, ,Yes,-90.145134,29.962704,S5HP--SCZA
+145,146,Ochsner/LSU,"Coghlan, Raymond, M.D.",1501 Kings Highway,Shreveport,LA,71107,318-675-5000,Yes,Yes,Yes,Shreveport,Caddo,22017,7,Caddo,No,-93.760762,32.481733,S5HPNTSC-A
+146,147,Odyssey House Clinic,Jennifer Velander MD,1125 North Tonti Street,New Orleans,LA,70125,504-821-9211,Yes,Yes,Yes,New Orleans, ,0,0, ,No,-90.076402,29.971892,S5HPNTSC-A
+147,148,Odyssey House New Orleans,"Kaiser, Dawn NP",1125 N. Tonti St,New Orleans,LA,70119,504-383-8559,Yes,Yes,Yes,New Orleans, ,0,0, ,No,-90.076402,29.971892,S5HPNTSCZA
+148,149,Odyssey House New Orleans,"Brimmer, Brittany NP",1125 N. Tonti St,New Orleans,LA,70119,504-383-8559,Yes,Yes,Yes,New Orleans, ,0,0, ,No,-90.076402,29.971892,S5HPNTSCZA
+149,150,Odyssey House New Orleans,"McKenna, Candice NP",1125 N. Tonti St,New Orleans,LA,70119,504-383-8559,Yes,Yes,Yes,New Orleans, ,0,0, ,No,-90.076402,29.971892,S5HPNTSCZA
+150,151,Open Health Care Clinic,"Jasper, Byron, M.D.",3801 North Blvd,Baton Rouge,LA,70806,225-655-6422,Yes,Yes,Yes,Baton Rouge,EBR,22033,2,East Baton Rouge,No,-91.150982,30.448393,S5HPNTSCZA
+151,152,Open Health Care Clinic,"Nickens, Joni, M.D.",3801 North Blvd,Baton Rouge,LA,70806,225-655-6422,Yes,Yes,Yes,Baton Rouge,EBR,22033,2,East Baton Rouge,No,-91.150982,30.448393,S5HPNTSCZA
+152,153,Our Lady of the Angels Hospital - OLOA Clinic,"Hussain, Hamid","433 Plaza Street, Suite 3-A",Bogalusa,LA,70427,985-730-7020,Yes,Yes,Yes,Northshore,Washington,22117,9,Washington,No,-89.868491,30.778344,S5HPNTSCZA
+153,154,Outpatient Medical Center INC @Leesville,"Sunil, Meena",908 S 10th St.,Leesville,LA,71446,337-238-1274,Yes,Yes,Yes,Alexandria,Vernon,22115,6,Vernon,No,-93.269556,31.134894,S5HPNTSCZA
+154,155,Priority Health Care,"Prempeh, Osei, M.D.",4700 Wichers Dr.,Marrero,LA,70072,504-309-3262,Yes,Yes,Yes,New Orleans,Jefferson,22051,1,Jefferson,No,-90.09689,29.889278,S5HPNTSCZA
+155,156,Rapides Primary Health Care Center (Referral to Leesville),"Williams, Jerry, M.D.",1217 Willow Glen River Rd,Alexandria,LA,71302,318-487-4400,Yes,Yes,Yes,Alexandria,Rapides,22079,6,Rapides,No,-92.426568,31.286254,S5HPNTSCZA
+156,157,RKM Primary Care Loranger,"Stagg, Rosemary",54002 Highway 1062,Loranger,LA,70446,985-606-9000,Yes,Yes,Yes,Northshore,Tangipahoa,22105,9,Tangipahoa,No,-90.39834,30.635839,S5HPNTSCZA
+157,158,RKM Primary Care-Clinton,Darie Gillian-DNP/FNP,11990 Jackson Street,Clinton,LA,70722,225-683-5292,Yes,Yes,Yes,North Baton Rouge, ,0,0, ,No,-91.021616,30.8656,S5HPNTSCZA
+158,159,RKM Primary Care-Clinton,Kimberly Robinson-NP,11990 Jackson Street,Clinton,LA,70722,225-683-5292,Yes,Yes,Yes,North Baton Rouge, ,0,0, ,No,-91.021616,30.8656,S5HPNTSCZA
+159,160,RKM Primary Care-Clinton,Shelly Williams-DNP/FNP-BC,11990 Jackson Street,Clinton,LA,70722,225-683-5292,Yes,Yes,Yes,North Baton Rouge, ,0,0, ,No,-91.021616,30.8656,S5HPNTSCZA
+160,161,Ruston Gastroenterology Consultant,"Lacayo, Leonel, M.D.",411 W Vaughn Ave #205,Ruston,LA,71270,318-254-1274,Yes,Yes,Yes,Monroe,Lincoln,22061,8,Lincoln,No,-92.64372,32.515344,S5HPNTSCZA
+161,162,Sicily Island Medical Center (Referral to LSU in Monroe),"Wade, Lalisa, FNP",307 Chisum St,Sicily Island,LA,71368,318-389-5727,Yes,Yes,Yes,Alexandria,Catahoula,22025,6,Catahoula,No,-91.657971,31.847048,S5HPNTSCZA
+162,163,South Louisiana Medical Associates,"Matherne, David, D.O.",291 Liberty Street,Houma,LA,70360,985-873-2200,Yes,Yes,Yes,Houma,Terrebonne,22109,3,Terrebonne,No,-90.71303,29.596679,S5HPNTSCZA
+163,164,South Shreveport Family Medicine,"Zando, Iram, M.D.",1400 E Bert Kouns Industrial Loop Suite 104,Shreveport,LA,71107,318-797-0009,Yes,Yes,Yes,Shreveport,Caddo,22017,7,Caddo,No,-93.720182,32.423607,S5HPNTSC-A
+164,165,Southeast Community Health Systems,"Bihm V, Tammy",721 Avenue G,Kentwood,LA,70444,225-306-2100,Yes,Yes,Yes,Northshore,Tangipahoa,22105,9,Tangipahoa,No,-90.517279,30.936817,S5HPNTSCZA
+165,166,Southeast Community Health Systems,"Simoneaux, Kimberly",721 Avenue G,Kentwood,LA,70444,225-306-2100,Yes,Yes,Yes,Northshore,Tangipahoa,22105,9,Tangipahoa,No,-90.517279,30.936817,S5HPNTSCZA
+166,167,Southeast Community Health Systems,"Nanjappa, Nagaraj. M.D.",30575 Old Baton Rouge Hwy,Hammond,LA,70345,225-306-2050,Yes,Yes,Yes,Northshore,Livingston,22063,9,Livingston,No,-90.57401,30.482163,S5HPNTSC-A
+167,168,Southeast Community Health Systems - Zachary,"Bihm V, Tammy, M.D.",6351 Main Street,Zachary,LA,70791,225-306-2000,Yes,Yes,No,Baton Rouge,EBR,22033,2,East Baton Rouge,No,-91.136082,30.650052,S5HPNTSCZA
+168,169,St. Thomas Community Health Center,Tavell Kindall,1396 Magazine Street,New Orleans,LA,70130,504-529-5558,Yes,Yes,Yes,New Orleans, ,0,0, ,Yes,-90.07187,29.936146,S5HPNTSCZA
+169,170,St. Thomas Community Health Center,"Frantiani, Scott",1936 Magazine St.,New Orleans,LA,7010,504-529-5558,Yes,Yes,Yes,New Orleans,Orleans,22071,1,Orleans,Yes,-90.074205,29.931252,S5HPNTSC-A
+170,171,START Corp,"Gerard, Tina, LPN",701 Loyola Ave,New Orleans,LA,70113,504-558-9595,Yes,Yes,Yes,New Orleans,Orleans,22071,1,Orleans,No,-90.07681,29.947722,S5HPNTSCZA
+171,172,START Corp,"Soto, Eliana, MD",701 Loyola Ave,New Orleans,LA,70113,504-558-9595,Yes,Yes,Yes,New Orleans,Orleans,22071,1,Orleans,No,-90.07681,29.947722,S5HPNTSCZA
+172,173,START Corp,"Adams, Tiny, NP",235 Civic Center Blvd,Houma,LA,70360,985-333-2020,Yes,Yes,Yes,Houma,Terrebonne,22109,3,Terrebonne,No,-90.72841,29.580664,S5HPNTSCZA
+173,174,START Corp,"Fortier, Kris, NP",235 Civic Center Blvd,Houma,LA,70360,985-333-2020,Yes,Yes,Yes,Houma,Terrebonne,22109,3,Terrebonne,No,-90.72841,29.580664,S5HPNTSCZA
+174,175,SWLA Center For Health Services,"Fletcher, Dennis, M.D.",2000 Opelousas St.,Lake Charles,LA,70601,337-439-9983,Yes,Yes,Yes,Lake Charles,Calcasieu,22019,5,Calcasieu,Yes,-93.192974,30.242178,S5HPNTSCZA
+175,176,SWLA Center For Health Services,"Mclurkin, Danielle, M.D.",2000 Opelousas St.,Lake Charles,LA,70601,337-439-9983,Yes,Yes,Yes,Lake Charles,Calcasieu,22019,5,Calcasieu,Yes,-93.192974,30.242178,S5HPNTSCZA
+176,177,Teche Action Clinic,"Marts, Ronald, M.D.",1115 Weber St,Franklin,LA,70538,337-828-2550,Yes,Yes,Yes,Houma,St. Mary,22101,3,St. Mary,No,-91.505292,29.798413,S5HPNTSCZA
+177,178,Teche Action Clinic,"Marts, Ronald, M.D.",121 W 134th Place,Galliano,LA,70345,985-325-3607,Yes,Yes,Yes,Houma,LaFourche,22057,3,Lafourche,No,-90.308368,29.457462,S5HPNTS-ZA
+178,179,Teche Action Clinic,"Marts, Ronald, M.D.",1014 W Tunnel Blvd,Houma,LA,70360,985-851-1717,Yes,Yes,Yes,Houma,Terrebonne,22109,3,Terrebonne,No,-90.733088,29.591648,S5HPNTSCZA
+179,180,Terrebone General Medical Center,"Pellegrin, David, M.D.",8120 Main Street Suite 200,Houma,LA,70360,985-851-5206,Yes,Yes,Yes,Houma,Terrebonne,22109,3,Terrebonne,No,-90.715689,29.598494,S5HPNTSCZA
+180,181,The Baton Rouge Clinic AMC,"Arbour, Gerald, M.D.",7373 Perkins Rd.,Baton Rouge,LA,70893,225-769-4044,Yes,Yes,No,Baton Rouge,EBR,22033,2,East Baton Rouge,No,-91.112092,30.396646,S5HPNTSC-A
+181,182,The Gastro Clinic,"Abshire, Stephen, M.D.",1211 Coolidge Blvd. Suite 400,Lafayette,LA,70503,337-235-9779,Yes,Yes,No,Lafayette,Lafayette,22055,4,Lafayette,Yes,-92.018128,30.202677,S5HPNTSCZA
+182,183,The Gastro Clinic,"Arterburn, James, M.D.",1211 Coolidge Blvd. Suite 400,Lafayette,LA,70503,337-235-9779,Yes,Yes,No,Lafayette,Lafayette,22055,4,Lafayette,Yes,-92.018128,30.202677,S5HPNTSCZA
+183,184,The Gastro Clinic,"Karr, Jacob, M.D.",1211 Coolidge Blvd. Suite 400,Lafayette,LA,70503,337-235-9779,Yes,Yes,No,Lafayette,Lafayette,22055,4,Lafayette,Yes,-92.018128,30.202677,S5HPNTSCZA
+184,185,The Gastro Clinic,"Noel, Jacque F., M.D.",1211 Coolidge Blvd. Suite 400,Lafayette,LA,70503,337-235-9779,Yes,Yes,No,Lafayette,Lafayette,22055,4,Lafayette,Yes,-92.018128,30.202677,S5HPNTSCZA
+185,186,The Gastro Clinic,"Trawick, Eric, M.D.",1211 Coolidge Blvd. Suite 400,Lafayette,LA,70503,337-235-9779,Yes,Yes,No,Lafayette,Lafayette,22055,4,Lafayette,Yes,-92.018128,30.202677,S5HPNTSCZA
+186,187,Thibodaux Regional Medical Center,"Rao, Pasam, M.D.",1500 Canal Blvd.,Thibodaux,LA,70302,985-447-7004,Yes,Yes,Yes,Houma,LaFourche,22057,3,Lafourche,No,-90.820828,29.782944,S5HPNTSC-A
+187,188,Tillman Medical Group,"Tillman, Clifford, M.D.",107 Front St. Suite 2126,Vidalia,LA,71373,318-336-2216,Yes,Yes,No,Alexandria,Concordia,22029,6,Concordia,No,-91.418712,31.566733,S5HPNTSCZA
+188,189,Touro Infirmary,"Akula, Shiva, M.D.",3600 Prytania St. Suite #65,New Orleans,LA,70112,504-899-2376,Yes,Yes,Yes,New Orleans,Orleans,22071,1,Orleans,No,-90.09323,29.926027,S5HPNTSC-A
+189,190,Tulane CD 4 Clinic,"Cormier, Allison, M.D.",1208 Wisteria St,Alexandria,LA,71301,318-448-4801,Yes,Yes,Yes,Alexandria,Rapides,22079,6,Rapides,No,-92.450226,31.303755,S5HPNTSCZA
+190,191,Tulane CD 4 Clinic,"Porter, Norma, D. NP",1208 Wisteria St,Alexandria,LA,71301,318-448-4801,Yes,Yes,Yes,Alexandria,Rapides,22079,6,Rapides,No,-92.450226,31.303755,S5HPNTSCZA
+191,192,Tulane Medical Center Psychiatry,Jennifer Creedon MD,3439 Prytania St #501,New Orleans,LA,70115,504-535-7212,Yes,Yes,Yes,New Orleans, ,0,0, ,No,-90.091813,29.92658,S5HPNTSCZA
+192,193,UMC New Orleans/ Crescent Care,Lee Michals MD,2003 Tulane Ave,New Orleans,LA,70118,504-715-7288,Yes,Yes,Yes,New Orleans, ,0,0, ,No,-90.082733,29.958344,S5HPNTSC-A
+193,194,UMC New Orleans/ LCMC Health,Maeghan A Davis- MD,2000 Canal Street,New Orleans,LA,70112,504-702-3000,Yes,Yes,Yes,New Orleans, ,0,0, ,No,-90.080656,29.960849,S5HPNTSCZA
+194,195,University Hospital & Clinics- Specialty Care Clinic,"Boudreaux, Emilie, NP",2390 W. Congress St.,Lafayette,LA,70506,337-261-6480,Yes,Yes,Yes,Lafayette,Lafayette,22055,4,Lafayette,No,-92.046079,30.215588,S5HPNTSCZA
+195,196,University Hospital & Clinics- Specialty Care Clinic,"Henson, Jacky, NP",2390 W. Congress St.,Lafayette,LA,70506,337-261-6480,Yes,Yes,Yes,Lafayette,Lafayette,22055,4,Lafayette,No,-92.046079,30.215588,S5HPNTSCZA
+196,197,University Hospital & Clinics- Specialty Care Clinic,"Rainey, Mandy, NP",2390 W. Congress St.,Lafayette,LA,70506,337-261-6480,Yes,Yes,Yes,Lafayette,Lafayette,22055,4,Lafayette,No,-92.046079,30.215588,S5HPNTSCZA
+197,198,University Hospital & Clinics- Specialty Care Clinic,"Sells, Nicholas, M.D.",2390 W. Congress St.,Lafayette,LA,70506,337-261-6480,Yes,Yes,Yes,Lafayette,Lafayette,22055,4,Lafayette,No,-92.046079,30.215588,S5HPNTSCZA
+198,199,University Medical Center - Infectious Disease Center,"Cassadra Youmans, MD",2000 Canal Street,New Orleans,LA,70112,504-702-4344,Yes,Yes,Yes,New Orleans, ,0,0, ,Unknown,-90.080656,29.960849,S5HPNTSCZA
+199,200,University Medical Center - Infectious Disease Center,"Lolita Camp, NP",2000 Canal Street,New Orleans,LA,70112,504-702-4344,Yes,Yes,Yes,New Orleans, ,0,0, ,Unknown,-90.080656,29.960849,S5HPNTSCZA
+200,201,University Medical Center - Infectious Disease Center,"Lauren Richey, MD",2000 Canal Street,New Orleans,LA,70112,504-702-4344,Yes,Yes,Yes,New Orleans, ,0,0, ,Unknown,-90.080656,29.960849,S5HPNTSCZA
+201,202,University Medical Center - Infectious Disease Center,"Yussef Bennani, MD",2000 Canal Street,New Orleans,LA,70112,504-702-4344,Yes,Yes,Yes,New Orleans, ,0,0, ,Unknown,-90.080656,29.960849,S5HPNTSCZA
+202,203,VA Pineville,"Robichaux, Elizabeth, PA",2495 Shreveport Hwy,Pineville,LA,71360,318- 473-0010,VA Only, , ,Alexandria,Rapides,22079,6,Rapides,Yes,-92.437953,31.358777,S5HPNTSCZA
+203,204,WellSmart Health of Opelousas RHC,"Felicia Joseph, FNP","1200 Hospital Drive, Suite 5",Opelousas,LA,70570,(337) 678-4285,Unknown,Unknown,Unknown,Lafayette, ,0,0, ,Unknown,-92.074988,30.543422,S5HPNTSCZA
+204,205,WellSmart Health of Opelousas RHC,"Lon Guidry, MD","1200 Hospital Drive, Suite 5",Opelousas,LA,70570,(337) 678-4286,Unknown,Unknown,Unknown,Lafayette, ,0,0, ,Unknown,-92.074988,30.543422,S5HPNTSCZA
+205,206,Willis Knighton Infectious Disease,"Negron, Gerardo, M.D.",8001 Youree Dr. Suite 750,Shreveport,LA,71107,318-212-3939,Yes,Yes,Yes,Shreveport,Caddo,22017,7,Caddo,No,-93.711617,32.43175,S5HPNTSC-A
+206,207,Willis Knighton Liver Clinic,Hrishikesh Samant MD,2751 Albert Bicknell Drive Suite 1B,Shreveport,LA,71104,318-212-4275,Yes,Yes,Yes,Shreveport, ,0,0, ,No,-93.778673,32.485818,S5HP-TSC-A
+207,208,Wisner Medical Center (Referral out),"Howard, Susan, FNP-C",126 Watson Road,Wisner,LA,71378,318-724-7008,Yes,Yes,No,Alexandria,Franklin,22041,8,Franklin,No,-91.655841,31.986312,S5HPNTSCZA
+208,209,St. Charles Community Health Center,"Kevin Joseph, MD",843 Milling Ave,Luling,LA,70070,985-785-5800,Unknown,Unknown,Unknown, , ,0,0, ,Unknown,-90.369507,29.924065,S5HPNTSCZA
+209,210,St. Bernard Community Health Center,"Diana McDermott, MD",8050 W Judge Perez Dr #1300,Chalmette,LA,70043,504-281-2800,Unknown,Unknown,Unknown, , ,0,0, ,Unknown,-89.98537,29.955748,S5HPNTSCZA
+210,211,St. Bernard Community Health Center,"Cynthia Bartholomae, FNP",8050 W Judge Perez Dr #1300,Chalmette,LA,70043,504-281-2800,Unknown,Unknown,Unknown, , ,0,0, ,Unknown,-89.98537,29.955748,S5HPNTSCZA
+211,212,Washington Community Health Center,"Vanessa Cortes de Jorge, MD",2807 S Columbia St,Bogalusa,LA,70427,985-730-7310,Unknown,Unknown,Unknown, , ,0,0, ,Unknown,-89.848763,30.739331,S5HPNTSCZA
+212,213,Access Health of Louisiana,"Rhea Kyles, FNP","234 Loyola Ave, Suite 300B",New Orleans,LA,70112,504-226-2976,Yes,Yes,Yes,New Orleans,Orleans,22071,1,Orleans,No,-90.075022,29.95364,S5HPNTSCZA
+213,214,Odyssey House New Orleans,Johnathan Smith,1125 N. Tonti St,New Orleans,LA,70119,504-383-8559,Yes,Yes,Yes,New Orleans, ,0,0, ,No,-90.076402,29.971892,S5HPNTSCZA
+214,215,Amite Rural Health Clinic,"Shea Edwards, FNP",409 NW Central Avenue,Amite,LA,70422,985-748-7141,Yes,Yes,Yes, , ,0,0, ,No,-90.509084,30.731621,S5HPNTSCZA
+215,216,The Health Hut,"Beau Burton APRN, FNP-C",310 West Mississippi Ave,Ruston,LA,71270,318-513-1212,No,Yes,Yes, , ,0,0, ,No,-92.640926,32.529761,S5HPNTSCZA
+216,217,The Health Hut,"Natalie Wise APRN, FNP-C",310 West Mississippi Ave,Ruston,LA,71270,318-513-1212,No,Yes,Yes, , ,0,0, ,No,-92.640926,32.529761,S5HPNTSCZA
+217,218,Nightingale Healthcare Resources,Wanda Smith,1511 ORANGE ST,Monroe,LA,71202,318-325-7998,Yes,Yes,Yes, , ,0,0, ,No,-92.097613,32.496705,S5HPNTSCZA
+218,219,LSU Family Medicine Alexandria,"Ryan Basquz, MD",301 Fourth St,Alexandria,LA,71301,318-441-1030,Yes,Yes,Yes, , ,0,0, , ,-92.448851,31.313786,S5HPNTSCZA
+219,220,LSU Family Medicine Alexandria,"Micah, Pippin, MD",301 Fourth St,Alexandria,LA,71301,318-441-1030,Yes,Yes,Yes, , ,0,0, , ,-92.448851,31.313786,S5HPNTSCZA
+220,221,LSU Family Medicine Alexandria,"Wesley Boyette, MD",301 Fourth St,Alexandria,LA,71301,318-441-1030,Yes,Yes,Yes, , ,0,0, , ,-92.448851,31.313786,S5HPNTSCZA
+221,222,LSU Family Medicine Alexandria,"Roxanne Boyd, MD",301 Fourth St,Alexandria,LA,71301,318-441-1030,Yes,Yes,Yes, , ,0,0, , ,-92.448851,31.313786,S5HPNTSCZA
+222,223,LSU Family Medicine Alexandria,"Brian Jobe, MD",301 Fourth St,Alexandria,LA,71301,318-441-1030,Yes,Yes,Yes, , ,0,0, , ,-92.448851,31.313786,S5HPNTSCZA
+223,224,LSU Family Medicine Alexandria,"Earl Clark, MD",301 Fourth St,Alexandria,LA,71301,318-441-1030,Yes,Yes,Yes, , ,0,0, , ,-92.448851,31.313786,S5HPNTSCZA
+224,225,Baptist Community Health Services,"Nancy Tardy, AND",1616 Caffin Ave,New Orleans,LA,70117,504-533-4999,Yes,Yes,Yes,New Orleans, ,0,0, ,No,-90.01411,29.966823,S5HPNTSCZA
+225,226,Baptist Community Health Services,"Robert Jemison, FNP",1616 Caffin Ave,New Orleans,LA,70117,504-533-4999,Yes,Yes,Yes,New Orleans, ,0,0, ,No,-90.01411,29.966823,S5HPNTSCZA
+226,227,Baptist Community Health Services,"Charlene Chan, MD",1616 Caffin Ave,New Orleans,LA,70117,504-533-4999,Yes,Yes,Yes,New Orleans, ,0,0, ,No,-90.01411,29.966823,S5HPNTSCZA
+227,228,Tulane Medical Center - Abdominal Transplant & Hepatolog,"Anastasia M. Lopiccolo, AGNP-C",1415 Tulane Ave,New Orleans,LA,70112,504-988-5344,Yes,Yes,Yes,New Orleans, ,0,0, , ,-90.076266,29.955396,S5HPNTSCZA

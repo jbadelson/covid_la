@@ -1,0 +1,687 @@
+,OBJECTID,FeatureID,Latitude,Longitude,Geography,Measure,Group_,Group_Num,ValueType,Timeframe,Value
+0,1,0,29.94,-90.078,LDH Region 1,Hospital Vents,In Use,1,hosp resource,daily,
+1,2,1,30.424,-91.188,LDH Region 2,Hospital Vents,In Use,1,hosp resource,daily,
+2,3,2,29.616,-90.658,LDH Region 3,Hospital Vents,In Use,1,hosp resource,daily,
+3,4,3,30.206,-92.012,LDH Region 4,Hospital Vents,In Use,1,hosp resource,daily,
+4,5,4,30.216,-93.22,LDH Region 5,Hospital Vents,In Use,1,hosp resource,daily,
+5,6,5,31.292,-92.429,LDH Region 6,Hospital Vents,In Use,1,hosp resource,daily,
+6,7,6,32.497,-93.752,LDH Region 7,Hospital Vents,In Use,1,hosp resource,daily,
+7,8,7,32.524,-92.115,LDH Region 8,Hospital Vents,In Use,1,hosp resource,daily,
+8,9,8,30.517,-90.41,LDH Region 9,Hospital Vents,In Use,1,hosp resource,daily,
+9,10,9,29.94,-90.078,LDH Region 1,Hospital Vents,Still Available,2,hosp resource,daily,
+10,11,10,30.424,-91.188,LDH Region 2,Hospital Vents,Still Available,2,hosp resource,daily,
+11,12,11,29.616,-90.658,LDH Region 3,Hospital Vents,Still Available,2,hosp resource,daily,
+12,13,12,30.206,-92.012,LDH Region 4,Hospital Vents,Still Available,2,hosp resource,daily,
+13,14,13,30.216,-93.22,LDH Region 5,Hospital Vents,Still Available,2,hosp resource,daily,
+14,15,14,31.292,-92.429,LDH Region 6,Hospital Vents,Still Available,2,hosp resource,daily,
+15,16,15,32.497,-93.752,LDH Region 7,Hospital Vents,Still Available,2,hosp resource,daily,
+16,17,16,32.524,-92.115,LDH Region 8,Hospital Vents,Still Available,2,hosp resource,daily,
+17,18,17,30.517,-90.41,LDH Region 9,Hospital Vents,Still Available,2,hosp resource,daily,
+18,19,18,29.94,-90.078,LDH Region 1,Beds,In Use,1,hosp resource,daily,2299.0
+19,20,19,30.424,-91.188,LDH Region 2,Beds,In Use,1,hosp resource,daily,1482.0
+20,21,20,29.616,-90.658,LDH Region 3,Beds,In Use,1,hosp resource,daily,418.0
+21,22,21,30.206,-92.012,LDH Region 4,Beds,In Use,1,hosp resource,daily,1287.0
+22,23,22,30.216,-93.22,LDH Region 5,Beds,In Use,1,hosp resource,daily,427.0
+23,24,23,31.292,-92.429,LDH Region 6,Beds,In Use,1,hosp resource,daily,755.0
+24,25,24,32.497,-93.752,LDH Region 7,Beds,In Use,1,hosp resource,daily,1716.0
+25,26,25,32.524,-92.115,LDH Region 8,Beds,In Use,1,hosp resource,daily,770.0
+26,27,26,30.517,-90.41,LDH Region 9,Beds,In Use,1,hosp resource,daily,1098.0
+27,28,27,29.94,-90.078,LDH Region 1,Beds,Still Available,2,hosp resource,daily,424.0
+28,29,28,30.424,-91.188,LDH Region 2,Beds,Still Available,2,hosp resource,daily,518.0
+29,30,29,29.616,-90.658,LDH Region 3,Beds,Still Available,2,hosp resource,daily,121.0
+30,31,30,30.206,-92.012,LDH Region 4,Beds,Still Available,2,hosp resource,daily,463.0
+31,32,31,30.216,-93.22,LDH Region 5,Beds,Still Available,2,hosp resource,daily,214.0
+32,33,32,31.292,-92.429,LDH Region 6,Beds,Still Available,2,hosp resource,daily,272.0
+33,34,33,32.497,-93.752,LDH Region 7,Beds,Still Available,2,hosp resource,daily,433.0
+34,35,34,32.524,-92.115,LDH Region 8,Beds,Still Available,2,hosp resource,daily,418.0
+35,36,35,30.517,-90.41,LDH Region 9,Beds,Still Available,2,hosp resource,daily,441.0
+36,37,36,29.94,-90.078,LDH Region 1,ICU Beds,In Use,1,hosp resource,daily,383.0
+37,38,37,30.424,-91.188,LDH Region 2,ICU Beds,In Use,1,hosp resource,daily,196.0
+38,39,38,29.616,-90.658,LDH Region 3,ICU Beds,In Use,1,hosp resource,daily,56.0
+39,40,39,30.206,-92.012,LDH Region 4,ICU Beds,In Use,1,hosp resource,daily,161.0
+40,41,40,30.216,-93.22,LDH Region 5,ICU Beds,In Use,1,hosp resource,daily,52.0
+41,42,41,31.292,-92.429,LDH Region 6,ICU Beds,In Use,1,hosp resource,daily,69.0
+42,43,42,32.497,-93.752,LDH Region 7,ICU Beds,In Use,1,hosp resource,daily,226.0
+43,44,43,32.524,-92.115,LDH Region 8,ICU Beds,In Use,1,hosp resource,daily,90.0
+44,45,44,30.517,-90.41,LDH Region 9,ICU Beds,In Use,1,hosp resource,daily,139.0
+45,46,45,29.94,-90.078,LDH Region 1,ICU Beds,Still Available,2,hosp resource,daily,51.0
+46,47,46,30.424,-91.188,LDH Region 2,ICU Beds,Still Available,2,hosp resource,daily,44.0
+47,48,47,29.616,-90.658,LDH Region 3,ICU Beds,Still Available,2,hosp resource,daily,11.0
+48,49,48,30.206,-92.012,LDH Region 4,ICU Beds,Still Available,2,hosp resource,daily,15.0
+49,50,49,30.216,-93.22,LDH Region 5,ICU Beds,Still Available,2,hosp resource,daily,27.0
+50,51,50,31.292,-92.429,LDH Region 6,ICU Beds,Still Available,2,hosp resource,daily,6.0
+51,52,51,32.497,-93.752,LDH Region 7,ICU Beds,Still Available,2,hosp resource,daily,48.0
+52,53,52,32.524,-92.115,LDH Region 8,ICU Beds,Still Available,2,hosp resource,daily,19.0
+53,54,53,30.517,-90.41,LDH Region 9,ICU Beds,Still Available,2,hosp resource,daily,26.0
+54,55,54,30.457099,-91.187399,Louisiana,COVID-positive,Louisiana,0,hospitalized,current,2173.0
+55,56,55,30.457099,-91.187399,Louisiana,COVID-positive,Louisiana,0,on vent,current,132.0
+56,57,57,30.457099,-91.187399,Louisiana,Cases,Not Fully Vaccinated,0,percentage,12/30 - 1/5,65.0
+57,58,58,30.457099,-91.187399,Louisiana,Deaths,Not Fully Vaccinated,0,percentage,12/30 - 1/5,66.0
+58,59,59,30.457099,-91.187399,Louisiana,Hospitalizations,Not Fully Vaccinated,0,percentage,current,74.0
+59,60,60,30.457099,-91.187399,Louisiana,New Tests, Louisiana,0,tests,current,71915.0
+60,61,61,30.457099,-91.187399,Louisiana,New Cases, Louisiana,0,case,current,14158.0
+61,62,62,30.457099,-91.187399,Louisiana,Total Louisiana Tests, Louisiana,0,tests,cumulative,13071694.0
+62,63,63,30.457099,-91.187399,Louisiana,Total Molecular Tests, Louisiana,0,tests,cumulative,11252294.0
+63,64,64,30.457099,-91.187399,Louisiana,Total Antigen Tests, Louisiana,0,tests,cumulative,1819400.0
+64,65,65,30.457099,-91.187399,Louisiana,Total Louisiana Cases, Louisiana,0,case,cumulative,996623.0
+65,66,66,30.457099,-91.187399,Louisiana,Total Confirmed Cases, Louisiana,0,case,cumulative,770199.0
+66,67,67,30.457099,-91.187399,Louisiana,Total Probable Cases, Louisiana,0,case,cumulative,226424.0
+67,68,68,30.457099,-91.187399,Louisiana,Age,0 to 4,1,case,cumulative,34373.0
+68,69,69,30.457099,-91.187399,Louisiana,Age,5 to 17,2,case,cumulative,136414.0
+69,70,70,30.457099,-91.187399,Louisiana,Age,18 to 29,3,case,cumulative,206187.0
+70,71,71,30.457099,-91.187399,Louisiana,Age,30 to 39,4,case,cumulative,167999.0
+71,72,72,30.457099,-91.187399,Louisiana,Age,40 to 49,5,case,cumulative,141806.0
+72,73,73,30.457099,-91.187399,Louisiana,Age,50 to 59,6,case,cumulative,128269.0
+73,74,74,30.457099,-91.187399,Louisiana,Age,60 to 69,7,case,cumulative,99136.0
+74,75,75,30.457099,-91.187399,Louisiana,Age,70+,8,case,cumulative,82035.0
+75,76,76,30.457099,-91.187399,Louisiana,Gender,Male,1,case,cumulative,44.0
+76,77,77,30.457099,-91.187399,Louisiana,Gender,Female,2,case,cumulative,55.0
+77,78,78,30.457099,-91.187399,Louisiana,Gender,Unknown/Other,3,case,cumulative,1.0
+78,79,80,30.29072,-92.412,LDH Region 4,Total Tests,Acadia,1,tests,cumulative,174628.0
+79,80,81,30.29072,-92.412,LDH Region 4,Molecular Tests,Acadia,1,tests,cumulative,157722.0
+80,81,82,30.29072,-92.412,LDH Region 4,Antigen Tests,Acadia,1,tests,cumulative,16906.0
+81,82,83,30.65313,-92.8278,LDH Region 5,Total Tests,Allen,2,tests,cumulative,67165.0
+82,83,84,30.65313,-92.8278,LDH Region 5,Molecular Tests,Allen,2,tests,cumulative,57677.0
+83,84,85,30.65313,-92.8278,LDH Region 5,Antigen Tests,Allen,2,tests,cumulative,9488.0
+84,85,86,30.20362,-90.9113,LDH Region 2,Total Tests,Ascension,3,tests,cumulative,238423.0
+85,86,87,30.20362,-90.9113,LDH Region 2,Molecular Tests,Ascension,3,tests,cumulative,185021.0
+86,87,88,30.20362,-90.9113,LDH Region 2,Antigen Tests,Ascension,3,tests,cumulative,53402.0
+87,88,89,29.90093,-91.0626,LDH Region 3,Total Tests,Assumption,4,tests,cumulative,44418.0
+88,89,90,29.90093,-91.0626,LDH Region 3,Molecular Tests,Assumption,4,tests,cumulative,31646.0
+89,90,91,29.90093,-91.0626,LDH Region 3,Antigen Tests,Assumption,4,tests,cumulative,12772.0
+90,91,92,31.07651,-92.0014,LDH Region 6,Total Tests,Avoyelles,5,tests,cumulative,143187.0
+91,92,93,31.07651,-92.0014,LDH Region 6,Molecular Tests,Avoyelles,5,tests,cumulative,123755.0
+92,93,94,31.07651,-92.0014,LDH Region 6,Antigen Tests,Avoyelles,5,tests,cumulative,19432.0
+93,94,95,30.64875,-93.3433,LDH Region 5,Total Tests,Beauregard,6,tests,cumulative,64951.0
+94,95,96,30.64875,-93.3433,LDH Region 5,Molecular Tests,Beauregard,6,tests,cumulative,48918.0
+95,96,97,30.64875,-93.3433,LDH Region 5,Antigen Tests,Beauregard,6,tests,cumulative,16033.0
+96,97,98,32.34743,-93.056,LDH Region 7,Total Tests,Bienville,7,tests,cumulative,47617.0
+97,98,99,32.34743,-93.056,LDH Region 7,Molecular Tests,Bienville,7,tests,cumulative,41583.0
+98,99,100,32.34743,-93.056,LDH Region 7,Antigen Tests,Bienville,7,tests,cumulative,6034.0
+99,100,101,32.67963,-93.6052,LDH Region 7,Total Tests,Bossier,8,tests,cumulative,312038.0
+100,101,102,32.67963,-93.6052,LDH Region 7,Molecular Tests,Bossier,8,tests,cumulative,279356.0
+101,102,103,32.67963,-93.6052,LDH Region 7,Antigen Tests,Bossier,8,tests,cumulative,32682.0
+102,103,104,32.58106,-93.8825,LDH Region 7,Total Tests,Caddo,9,tests,cumulative,717436.0
+103,104,105,32.58106,-93.8825,LDH Region 7,Molecular Tests,Caddo,9,tests,cumulative,660756.0
+104,105,106,32.58106,-93.8825,LDH Region 7,Antigen Tests,Caddo,9,tests,cumulative,56680.0
+105,106,107,30.22941,-93.358,LDH Region 5,Total Tests,Calcasieu,10,tests,cumulative,410463.0
+106,107,108,30.22941,-93.358,LDH Region 5,Molecular Tests,Calcasieu,10,tests,cumulative,291519.0
+107,108,109,30.22941,-93.358,LDH Region 5,Antigen Tests,Calcasieu,10,tests,cumulative,118944.0
+108,109,110,32.09243,-92.1166,LDH Region 8,Total Tests,Caldwell,11,tests,cumulative,27070.0
+109,110,111,32.09243,-92.1166,LDH Region 8,Molecular Tests,Caldwell,11,tests,cumulative,18864.0
+110,111,112,32.09243,-92.1166,LDH Region 8,Antigen Tests,Caldwell,11,tests,cumulative,8206.0
+111,112,113,29.91877,-93.1565,LDH Region 5,Total Tests,Cameron,12,tests,cumulative,10605.0
+112,113,114,29.91877,-93.1565,LDH Region 5,Molecular Tests,Cameron,12,tests,cumulative,6778.0
+113,114,115,29.91877,-93.1565,LDH Region 5,Antigen Tests,Cameron,12,tests,cumulative,3827.0
+114,115,116,31.63373,-91.9015,LDH Region 6,Total Tests,Catahoula,13,tests,cumulative,25482.0
+115,116,117,31.63373,-91.9015,LDH Region 6,Molecular Tests,Catahoula,13,tests,cumulative,21358.0
+116,117,118,31.63373,-91.9015,LDH Region 6,Antigen Tests,Catahoula,13,tests,cumulative,4124.0
+117,118,119,32.82294,-92.9957,LDH Region 7,Total Tests,Claiborne,14,tests,cumulative,35780.0
+118,119,120,32.82294,-92.9957,LDH Region 7,Molecular Tests,Claiborne,14,tests,cumulative,28878.0
+119,120,121,32.82294,-92.9957,LDH Region 7,Antigen Tests,Claiborne,14,tests,cumulative,6902.0
+120,121,122,31.4464,-91.64,LDH Region 6,Total Tests,Concordia,15,tests,cumulative,38615.0
+121,122,123,31.4464,-91.64,LDH Region 6,Molecular Tests,Concordia,15,tests,cumulative,31273.0
+122,123,124,31.4464,-91.64,LDH Region 6,Antigen Tests,Concordia,15,tests,cumulative,7342.0
+123,124,125,32.05723,-93.7354,LDH Region 7,Total Tests,De Soto,16,tests,cumulative,59095.0
+124,125,126,32.05723,-93.7354,LDH Region 7,Molecular Tests,De Soto,16,tests,cumulative,47238.0
+125,126,127,32.05723,-93.7354,LDH Region 7,Antigen Tests,De Soto,16,tests,cumulative,11857.0
+126,127,128,30.53845,-91.0956,LDH Region 2,Total Tests,East Baton Rouge,17,tests,cumulative,1143510.0
+127,128,129,30.53845,-91.0956,LDH Region 2,Molecular Tests,East Baton Rouge,17,tests,cumulative,948666.0
+128,129,130,30.53845,-91.0956,LDH Region 2,Antigen Tests,East Baton Rouge,17,tests,cumulative,194844.0
+129,130,131,32.73284,-91.235,LDH Region 8,Total Tests,East Carroll,18,tests,cumulative,22758.0
+130,131,132,32.73284,-91.235,LDH Region 8,Molecular Tests,East Carroll,18,tests,cumulative,19863.0
+131,132,133,32.73284,-91.235,LDH Region 8,Antigen Tests,East Carroll,18,tests,cumulative,2895.0
+132,133,134,30.84519,-91.0455,LDH Region 2,Total Tests,East Feliciana,19,tests,cumulative,115863.0
+133,134,135,30.84519,-91.0455,LDH Region 2,Molecular Tests,East Feliciana,19,tests,cumulative,100630.0
+134,135,136,30.84519,-91.0455,LDH Region 2,Antigen Tests,East Feliciana,19,tests,cumulative,15233.0
+135,136,137,30.72918,-92.4059,LDH Region 4,Total Tests,Evangeline,20,tests,cumulative,98725.0
+136,137,138,30.72918,-92.4059,LDH Region 4,Molecular Tests,Evangeline,20,tests,cumulative,85135.0
+137,138,139,30.72918,-92.4059,LDH Region 4,Antigen Tests,Evangeline,20,tests,cumulative,13590.0
+138,139,140,32.13352,-91.6737,LDH Region 8,Total Tests,Franklin,21,tests,cumulative,82847.0
+139,140,141,32.13352,-91.6737,LDH Region 8,Molecular Tests,Franklin,21,tests,cumulative,71414.0
+140,141,142,32.13352,-91.6737,LDH Region 8,Antigen Tests,Franklin,21,tests,cumulative,11433.0
+141,142,143,31.59987,-92.5595,LDH Region 6,Total Tests,Grant,22,tests,cumulative,58323.0
+142,143,144,31.59987,-92.5595,LDH Region 6,Molecular Tests,Grant,22,tests,cumulative,43804.0
+143,144,145,31.59987,-92.5595,LDH Region 6,Antigen Tests,Grant,22,tests,cumulative,14519.0
+144,145,146,29.96804,-91.7532,LDH Region 4,Total Tests,Iberia,23,tests,cumulative,169983.0
+145,146,147,29.96804,-91.7532,LDH Region 4,Molecular Tests,Iberia,23,tests,cumulative,137727.0
+146,147,148,29.96804,-91.7532,LDH Region 4,Antigen Tests,Iberia,23,tests,cumulative,32256.0
+147,148,149,30.21836,-91.3602,LDH Region 2,Total Tests,Iberville,24,tests,cumulative,80214.0
+148,149,150,30.21836,-91.3602,LDH Region 2,Molecular Tests,Iberville,24,tests,cumulative,66470.0
+149,150,151,30.21836,-91.3602,LDH Region 2,Antigen Tests,Iberville,24,tests,cumulative,13744.0
+150,151,152,32.30219,-92.5578,LDH Region 8,Total Tests,Jackson,25,tests,cumulative,51415.0
+151,152,153,32.30219,-92.5578,LDH Region 8,Molecular Tests,Jackson,25,tests,cumulative,39802.0
+152,153,154,32.30219,-92.5578,LDH Region 8,Antigen Tests,Jackson,25,tests,cumulative,11613.0
+153,154,155,29.73043,-90.1281,LDH Region 1,Total Tests,Jefferson,26,tests,cumulative,1176732.0
+154,155,156,29.73043,-90.1281,LDH Region 1,Molecular Tests,Jefferson,26,tests,cumulative,1100233.0
+155,156,157,29.73043,-90.1281,LDH Region 1,Antigen Tests,Jefferson,26,tests,cumulative,76499.0
+156,157,158,30.26795,-92.8141,LDH Region 5,Total Tests,Jefferson Davis,27,tests,cumulative,79419.0
+157,158,159,30.26795,-92.8141,LDH Region 5,Molecular Tests,Jefferson Davis,27,tests,cumulative,68183.0
+158,159,160,30.26795,-92.8141,LDH Region 5,Antigen Tests,Jefferson Davis,27,tests,cumulative,11236.0
+159,160,161,31.6771,-92.1605,LDH Region 6,Total Tests,La Salle,28,tests,cumulative,47954.0
+160,161,162,31.6771,-92.1605,LDH Region 6,Molecular Tests,La Salle,28,tests,cumulative,33977.0
+161,162,163,31.6771,-92.1605,LDH Region 6,Antigen Tests,La Salle,28,tests,cumulative,13977.0
+162,163,164,30.20687,-92.0639,LDH Region 4,Total Tests,Lafayette,29,tests,cumulative,625494.0
+163,164,165,30.20687,-92.0639,LDH Region 4,Molecular Tests,Lafayette,29,tests,cumulative,553792.0
+164,165,166,30.20687,-92.0639,LDH Region 4,Antigen Tests,Lafayette,29,tests,cumulative,71702.0
+165,166,167,29.57026,-90.4363,LDH Region 3,Total Tests,Lafourche,30,tests,cumulative,236528.0
+166,167,168,29.57026,-90.4363,LDH Region 3,Molecular Tests,Lafourche,30,tests,cumulative,174610.0
+167,168,169,29.57026,-90.4363,LDH Region 3,Antigen Tests,Lafourche,30,tests,cumulative,61918.0
+168,169,170,32.60175,-92.6648,LDH Region 8,Total Tests,Lincoln,31,tests,cumulative,129064.0
+169,170,171,32.60175,-92.6648,LDH Region 8,Molecular Tests,Lincoln,31,tests,cumulative,91780.0
+170,171,172,32.60175,-92.6648,LDH Region 8,Antigen Tests,Lincoln,31,tests,cumulative,37284.0
+171,172,173,30.45043,-90.7392,LDH Region 9,Total Tests,Livingston,32,tests,cumulative,266931.0
+172,173,174,30.45043,-90.7392,LDH Region 9,Molecular Tests,Livingston,32,tests,cumulative,200667.0
+173,174,175,30.45043,-90.7392,LDH Region 9,Antigen Tests,Livingston,32,tests,cumulative,66264.0
+174,175,176,32.36742,-91.2454,LDH Region 8,Total Tests,Madison,33,tests,cumulative,41299.0
+175,176,177,32.36742,-91.2454,LDH Region 8,Molecular Tests,Madison,33,tests,cumulative,38001.0
+176,177,178,32.36742,-91.2454,LDH Region 8,Antigen Tests,Madison,33,tests,cumulative,3298.0
+177,178,179,32.82048,-91.8018,LDH Region 8,Total Tests,Morehouse,34,tests,cumulative,90624.0
+178,179,180,32.82048,-91.8018,LDH Region 8,Molecular Tests,Morehouse,34,tests,cumulative,79579.0
+179,180,181,32.82048,-91.8018,LDH Region 8,Antigen Tests,Morehouse,34,tests,cumulative,11045.0
+180,181,182,31.72424,-93.0963,LDH Region 7,Total Tests,Natchitoches,35,tests,cumulative,110882.0
+181,182,183,31.72424,-93.0963,LDH Region 7,Molecular Tests,Natchitoches,35,tests,cumulative,82829.0
+182,183,184,31.72424,-93.0963,LDH Region 7,Antigen Tests,Natchitoches,35,tests,cumulative,28053.0
+183,184,185,30.06821,-89.8826,LDH Region 1,Total Tests,Orleans,36,tests,cumulative,1726809.0
+184,185,186,30.06821,-89.8826,LDH Region 1,Molecular Tests,Orleans,36,tests,cumulative,1657841.0
+185,186,187,30.06821,-89.8826,LDH Region 1,Antigen Tests,Orleans,36,tests,cumulative,68968.0
+186,187,188,32.47851,-92.1548,LDH Region 8,Total Tests,Ouachita,37,tests,cumulative,435395.0
+187,188,189,32.47851,-92.1548,LDH Region 8,Molecular Tests,Ouachita,37,tests,cumulative,397475.0
+188,189,190,32.47851,-92.1548,LDH Region 8,Antigen Tests,Ouachita,37,tests,cumulative,37920.0
+189,190,191,1.1,1.1,N/A,Total Tests,Out of State,38,tests,cumulative,419974.0
+190,191,192,1.1,1.1,N/A,Molecular Tests,Out of State,38,tests,cumulative,334987.0
+191,192,193,1.1,1.1,N/A,Antigen Tests,Out of State,38,tests,cumulative,84987.0
+192,193,194,1.1,1.1,N/A,Total Tests,Parish Under Investigation,39,tests,cumulative,6098.0
+193,194,195,1.1,1.1,N/A,Molecular Tests,Parish Under Investigation,39,tests,cumulative,6000.0
+194,195,196,1.1,1.1,N/A,Antigen Tests,Parish Under Investigation,39,tests,cumulative,98.0
+195,196,197,29.63552,-89.8455,LDH Region 1,Total Tests,Plaquemines,40,tests,cumulative,58536.0
+196,197,198,29.63552,-89.8455,LDH Region 1,Molecular Tests,Plaquemines,40,tests,cumulative,47424.0
+197,198,199,29.63552,-89.8455,LDH Region 1,Antigen Tests,Plaquemines,40,tests,cumulative,11112.0
+198,199,200,30.6081,-91.5663,LDH Region 2,Total Tests,Pointe Coupee,41,tests,cumulative,57625.0
+199,200,201,30.6081,-91.5663,LDH Region 2,Molecular Tests,Pointe Coupee,41,tests,cumulative,46999.0
+200,201,202,30.6081,-91.5663,LDH Region 2,Antigen Tests,Pointe Coupee,41,tests,cumulative,10626.0
+201,202,203,31.199,-92.5332,LDH Region 6,Total Tests,Rapides,42,tests,cumulative,394751.0
+202,203,204,31.199,-92.5332,LDH Region 6,Molecular Tests,Rapides,42,tests,cumulative,323421.0
+203,204,205,31.199,-92.5332,LDH Region 6,Antigen Tests,Rapides,42,tests,cumulative,71330.0
+204,205,206,32.09328,-93.3399,LDH Region 7,Total Tests,Red River,43,tests,cumulative,18232.0
+205,206,207,32.09328,-93.3399,LDH Region 7,Molecular Tests,Red River,43,tests,cumulative,15378.0
+206,207,208,32.09328,-93.3399,LDH Region 7,Antigen Tests,Red River,43,tests,cumulative,2854.0
+207,208,209,32.46229,-91.7328,LDH Region 8,Total Tests,Richland,44,tests,cumulative,67483.0
+208,209,210,32.46229,-91.7328,LDH Region 8,Molecular Tests,Richland,44,tests,cumulative,54553.0
+209,210,211,32.46229,-91.7328,LDH Region 8,Antigen Tests,Richland,44,tests,cumulative,12930.0
+210,211,212,31.57194,-93.5273,LDH Region 7,Total Tests,Sabine,45,tests,cumulative,57221.0
+211,212,213,31.57194,-93.5273,LDH Region 7,Molecular Tests,Sabine,45,tests,cumulative,45234.0
+212,213,214,31.57194,-93.5273,LDH Region 7,Antigen Tests,Sabine,45,tests,cumulative,11987.0
+213,214,215,29.85727,-89.7757,LDH Region 1,Total Tests,St. Bernard,46,tests,cumulative,109563.0
+214,215,216,29.85727,-89.7757,LDH Region 1,Molecular Tests,St. Bernard,46,tests,cumulative,95971.0
+215,216,217,29.85727,-89.7757,LDH Region 1,Antigen Tests,St. Bernard,46,tests,cumulative,13592.0
+216,217,218,29.88399,-90.3624,LDH Region 3,Total Tests,St. Charles,47,tests,cumulative,127722.0
+217,218,219,29.88399,-90.3624,LDH Region 3,Molecular Tests,St. Charles,47,tests,cumulative,111756.0
+218,219,220,29.88399,-90.3624,LDH Region 3,Antigen Tests,St. Charles,47,tests,cumulative,15966.0
+219,220,221,30.82214,-90.7103,LDH Region 9,Total Tests,St. Helena,48,tests,cumulative,28387.0
+220,221,222,30.82214,-90.7103,LDH Region 9,Molecular Tests,St. Helena,48,tests,cumulative,20077.0
+221,222,223,30.82214,-90.7103,LDH Region 9,Antigen Tests,St. Helena,48,tests,cumulative,8310.0
+222,223,224,30.02637,-90.7963,LDH Region 3,Total Tests,St. James,49,tests,cumulative,48694.0
+223,224,225,30.02637,-90.7963,LDH Region 3,Molecular Tests,St. James,49,tests,cumulative,39942.0
+224,225,226,30.02637,-90.7963,LDH Region 3,Antigen Tests,St. James,49,tests,cumulative,8752.0
+225,226,227,30.07709,-90.5468,LDH Region 3,Total Tests,St. John the Baptist,50,tests,cumulative,100243.0
+226,227,228,30.07709,-90.5468,LDH Region 3,Molecular Tests,St. John the Baptist,50,tests,cumulative,90596.0
+227,228,229,30.07709,-90.5468,LDH Region 3,Antigen Tests,St. John the Baptist,50,tests,cumulative,9647.0
+228,229,230,30.59914,-92.0058,LDH Region 4,Total Tests,St. Landry,51,tests,cumulative,253117.0
+229,230,231,30.59914,-92.0058,LDH Region 4,Molecular Tests,St. Landry,51,tests,cumulative,227576.0
+230,231,232,30.59914,-92.0058,LDH Region 4,Antigen Tests,St. Landry,51,tests,cumulative,25541.0
+231,232,233,30.22836,-91.7268,LDH Region 4,Total Tests,St. Martin,52,tests,cumulative,125415.0
+232,233,234,30.22836,-91.7268,LDH Region 4,Molecular Tests,St. Martin,52,tests,cumulative,110578.0
+233,234,235,30.22836,-91.7268,LDH Region 4,Antigen Tests,St. Martin,52,tests,cumulative,14837.0
+234,235,236,29.72383,-91.4516,LDH Region 3,Total Tests,St. Mary,53,tests,cumulative,106243.0
+235,236,237,29.72383,-91.4516,LDH Region 3,Molecular Tests,St. Mary,53,tests,cumulative,86278.0
+236,237,238,29.72383,-91.4516,LDH Region 3,Antigen Tests,St. Mary,53,tests,cumulative,19965.0
+237,238,239,30.44685,-89.9387,LDH Region 9,Total Tests,St. Tammany,54,tests,cumulative,651141.0
+238,239,240,30.44685,-89.9387,LDH Region 9,Molecular Tests,St. Tammany,54,tests,cumulative,569778.0
+239,240,241,30.44685,-89.9387,LDH Region 9,Antigen Tests,St. Tammany,54,tests,cumulative,81363.0
+240,241,242,30.64627,-90.412,LDH Region 9,Total Tests,Tangipahoa,55,tests,cumulative,303190.0
+241,242,243,30.64627,-90.412,LDH Region 9,Molecular Tests,Tangipahoa,55,tests,cumulative,231237.0
+242,243,244,30.64627,-90.412,LDH Region 9,Antigen Tests,Tangipahoa,55,tests,cumulative,71953.0
+243,244,245,32.00193,-91.34,LDH Region 8,Total Tests,Tensas,56,tests,cumulative,6802.0
+244,245,246,32.00193,-91.34,LDH Region 8,Molecular Tests,Tensas,56,tests,cumulative,5495.0
+245,246,247,32.00193,-91.34,LDH Region 8,Antigen Tests,Tensas,56,tests,cumulative,1307.0
+246,247,248,29.43787,-90.8475,LDH Region 3,Total Tests,Terrebonne,57,tests,cumulative,232980.0
+247,248,249,29.43787,-90.8475,LDH Region 3,Molecular Tests,Terrebonne,57,tests,cumulative,191863.0
+248,249,250,29.43787,-90.8475,LDH Region 3,Antigen Tests,Terrebonne,57,tests,cumulative,41117.0
+249,250,251,32.8321,-92.3749,LDH Region 8,Total Tests,Union,58,tests,cumulative,66523.0
+250,251,252,32.8321,-92.3749,LDH Region 8,Molecular Tests,Union,58,tests,cumulative,56837.0
+251,252,253,32.8321,-92.3749,LDH Region 8,Antigen Tests,Union,58,tests,cumulative,9686.0
+252,253,254,29.84602,-92.3236,LDH Region 4,Total Tests,Vermilion,59,tests,cumulative,162973.0
+253,254,255,29.84602,-92.3236,LDH Region 4,Molecular Tests,Vermilion,59,tests,cumulative,146327.0
+254,255,256,29.84602,-92.3236,LDH Region 4,Antigen Tests,Vermilion,59,tests,cumulative,16646.0
+255,256,257,31.10859,-93.1841,LDH Region 6,Total Tests,Vernon,60,tests,cumulative,72680.0
+256,257,258,31.10859,-93.1841,LDH Region 6,Molecular Tests,Vernon,60,tests,cumulative,52105.0
+257,258,259,31.10859,-93.1841,LDH Region 6,Antigen Tests,Vernon,60,tests,cumulative,20575.0
+258,259,260,30.85348,-90.0405,LDH Region 9,Total Tests,Washington,61,tests,cumulative,116904.0
+259,260,261,30.85348,-90.0405,LDH Region 9,Molecular Tests,Washington,61,tests,cumulative,95135.0
+260,261,262,30.85348,-90.0405,LDH Region 9,Antigen Tests,Washington,61,tests,cumulative,21769.0
+261,262,263,32.71399,-93.335,LDH Region 7,Total Tests,Webster,62,tests,cumulative,103527.0
+262,263,264,32.71399,-93.335,LDH Region 7,Molecular Tests,Webster,62,tests,cumulative,84073.0
+263,264,265,32.71399,-93.335,LDH Region 7,Antigen Tests,Webster,62,tests,cumulative,19454.0
+264,265,266,30.4635,-91.3128,LDH Region 2,Total Tests,West Baton Rouge,63,tests,cumulative,55380.0
+265,266,267,30.4635,-91.3128,LDH Region 2,Molecular Tests,West Baton Rouge,63,tests,cumulative,43021.0
+266,267,268,30.4635,-91.3128,LDH Region 2,Antigen Tests,West Baton Rouge,63,tests,cumulative,12359.0
+267,268,269,32.78879,-91.4567,LDH Region 8,Total Tests,West Carroll,64,tests,cumulative,34430.0
+268,269,270,32.78879,-91.4567,LDH Region 8,Molecular Tests,West Carroll,64,tests,cumulative,32211.0
+269,270,271,32.78879,-91.4567,LDH Region 8,Antigen Tests,West Carroll,64,tests,cumulative,2219.0
+270,271,272,30.87589,-91.4126,LDH Region 2,Total Tests,West Feliciana,65,tests,cumulative,28752.0
+271,272,273,30.87589,-91.4126,LDH Region 2,Molecular Tests,West Feliciana,65,tests,cumulative,26719.0
+272,273,274,30.87589,-91.4126,LDH Region 2,Antigen Tests,West Feliciana,65,tests,cumulative,2033.0
+273,274,275,31.94449,-92.6367,LDH Region 6,Total Tests,Winn,66,tests,cumulative,49366.0
+274,275,276,31.94449,-92.6367,LDH Region 6,Molecular Tests,Winn,66,tests,cumulative,35903.0
+275,276,277,31.94449,-92.6367,LDH Region 6,Antigen Tests,Winn,66,tests,cumulative,13463.0
+276,277,279,30.29072,-92.412,LDH Region 4,Total Cases,Acadia,1,case,cumulative,12748.0
+277,278,280,30.29072,-92.412,LDH Region 4,Confirmed Cases,Acadia,1,case,cumulative,9938.0
+278,279,281,30.29072,-92.412,LDH Region 4,Probable Cases,Acadia,1,case,cumulative,2810.0
+279,280,282,30.65313,-92.8278,LDH Region 5,Total Cases,Allen,2,case,cumulative,5640.0
+280,281,283,30.65313,-92.8278,LDH Region 5,Confirmed Cases,Allen,2,case,cumulative,4367.0
+281,282,284,30.65313,-92.8278,LDH Region 5,Probable Cases,Allen,2,case,cumulative,1273.0
+282,283,285,30.20362,-90.9113,LDH Region 2,Total Cases,Ascension,3,case,cumulative,28732.0
+283,284,286,30.20362,-90.9113,LDH Region 2,Confirmed Cases,Ascension,3,case,cumulative,20718.0
+284,285,287,30.20362,-90.9113,LDH Region 2,Probable Cases,Ascension,3,case,cumulative,8014.0
+285,286,288,29.90093,-91.0626,LDH Region 3,Total Cases,Assumption,4,case,cumulative,4615.0
+286,287,289,29.90093,-91.0626,LDH Region 3,Confirmed Cases,Assumption,4,case,cumulative,2818.0
+287,288,290,29.90093,-91.0626,LDH Region 3,Probable Cases,Assumption,4,case,cumulative,1797.0
+288,289,291,31.07651,-92.0014,LDH Region 6,Total Cases,Avoyelles,5,case,cumulative,9013.0
+289,290,292,31.07651,-92.0014,LDH Region 6,Confirmed Cases,Avoyelles,5,case,cumulative,6404.0
+290,291,293,31.07651,-92.0014,LDH Region 6,Probable Cases,Avoyelles,5,case,cumulative,2609.0
+291,292,294,30.64875,-93.3433,LDH Region 5,Total Cases,Beauregard,6,case,cumulative,7117.0
+292,293,295,30.64875,-93.3433,LDH Region 5,Confirmed Cases,Beauregard,6,case,cumulative,4387.0
+293,294,296,30.64875,-93.3433,LDH Region 5,Probable Cases,Beauregard,6,case,cumulative,2730.0
+294,295,297,32.34743,-93.056,LDH Region 7,Total Cases,Bienville,7,case,cumulative,3078.0
+295,296,298,32.34743,-93.056,LDH Region 7,Confirmed Cases,Bienville,7,case,cumulative,2175.0
+296,297,299,32.34743,-93.056,LDH Region 7,Probable Cases,Bienville,7,case,cumulative,903.0
+297,298,300,32.67963,-93.6052,LDH Region 7,Total Cases,Bossier,8,case,cumulative,29349.0
+298,299,301,32.67963,-93.6052,LDH Region 7,Confirmed Cases,Bossier,8,case,cumulative,24401.0
+299,300,302,32.67963,-93.6052,LDH Region 7,Probable Cases,Bossier,8,case,cumulative,4948.0
+300,301,303,32.58106,-93.8825,LDH Region 7,Total Cases,Caddo,9,case,cumulative,54330.0
+301,302,304,32.58106,-93.8825,LDH Region 7,Confirmed Cases,Caddo,9,case,cumulative,50060.0
+302,303,305,32.58106,-93.8825,LDH Region 7,Probable Cases,Caddo,9,case,cumulative,4270.0
+303,304,306,30.22941,-93.358,LDH Region 5,Total Cases,Calcasieu,10,case,cumulative,43421.0
+304,305,307,30.22941,-93.358,LDH Region 5,Confirmed Cases,Calcasieu,10,case,cumulative,27024.0
+305,306,308,30.22941,-93.358,LDH Region 5,Probable Cases,Calcasieu,10,case,cumulative,16397.0
+306,307,309,32.09243,-92.1166,LDH Region 8,Total Cases,Caldwell,11,case,cumulative,2525.0
+307,308,310,32.09243,-92.1166,LDH Region 8,Confirmed Cases,Caldwell,11,case,cumulative,1174.0
+308,309,311,32.09243,-92.1166,LDH Region 8,Probable Cases,Caldwell,11,case,cumulative,1351.0
+309,310,312,29.91877,-93.1565,LDH Region 5,Total Cases,Cameron,12,case,cumulative,1011.0
+310,311,313,29.91877,-93.1565,LDH Region 5,Confirmed Cases,Cameron,12,case,cumulative,713.0
+311,312,314,29.91877,-93.1565,LDH Region 5,Probable Cases,Cameron,12,case,cumulative,298.0
+312,313,315,31.63373,-91.9015,LDH Region 6,Total Cases,Catahoula,13,case,cumulative,2148.0
+313,314,316,31.63373,-91.9015,LDH Region 6,Confirmed Cases,Catahoula,13,case,cumulative,1375.0
+314,315,317,31.63373,-91.9015,LDH Region 6,Probable Cases,Catahoula,13,case,cumulative,773.0
+315,316,318,32.82294,-92.9957,LDH Region 7,Total Cases,Claiborne,14,case,cumulative,2558.0
+316,317,319,32.82294,-92.9957,LDH Region 7,Confirmed Cases,Claiborne,14,case,cumulative,2210.0
+317,318,320,32.82294,-92.9957,LDH Region 7,Probable Cases,Claiborne,14,case,cumulative,348.0
+318,319,321,31.4464,-91.64,LDH Region 6,Total Cases,Concordia,15,case,cumulative,3956.0
+319,320,322,31.4464,-91.64,LDH Region 6,Confirmed Cases,Concordia,15,case,cumulative,3011.0
+320,321,323,31.4464,-91.64,LDH Region 6,Probable Cases,Concordia,15,case,cumulative,945.0
+321,322,324,32.05723,-93.7354,LDH Region 7,Total Cases,De Soto,16,case,cumulative,5978.0
+322,323,325,32.05723,-93.7354,LDH Region 7,Confirmed Cases,De Soto,16,case,cumulative,4484.0
+323,324,326,32.05723,-93.7354,LDH Region 7,Probable Cases,De Soto,16,case,cumulative,1494.0
+324,325,327,30.53845,-91.0956,LDH Region 2,Total Cases,East Baton Rouge,17,case,cumulative,90180.0
+325,326,328,30.53845,-91.0956,LDH Region 2,Confirmed Cases,East Baton Rouge,17,case,cumulative,65464.0
+326,327,329,30.53845,-91.0956,LDH Region 2,Probable Cases,East Baton Rouge,17,case,cumulative,24716.0
+327,328,330,32.73284,-91.235,LDH Region 8,Total Cases,East Carroll,18,case,cumulative,1949.0
+328,329,331,32.73284,-91.235,LDH Region 8,Confirmed Cases,East Carroll,18,case,cumulative,1331.0
+329,330,332,32.73284,-91.235,LDH Region 8,Probable Cases,East Carroll,18,case,cumulative,618.0
+330,331,333,30.84519,-91.0455,LDH Region 2,Total Cases,East Feliciana,19,case,cumulative,5664.0
+331,332,334,30.84519,-91.0455,LDH Region 2,Confirmed Cases,East Feliciana,19,case,cumulative,3736.0
+332,333,335,30.84519,-91.0455,LDH Region 2,Probable Cases,East Feliciana,19,case,cumulative,1928.0
+333,334,336,30.72918,-92.4059,LDH Region 4,Total Cases,Evangeline,20,case,cumulative,6883.0
+334,335,337,30.72918,-92.4059,LDH Region 4,Confirmed Cases,Evangeline,20,case,cumulative,5287.0
+335,336,338,30.72918,-92.4059,LDH Region 4,Probable Cases,Evangeline,20,case,cumulative,1596.0
+336,337,339,32.13352,-91.6737,LDH Region 8,Total Cases,Franklin,21,case,cumulative,5522.0
+337,338,340,32.13352,-91.6737,LDH Region 8,Confirmed Cases,Franklin,21,case,cumulative,3933.0
+338,339,341,32.13352,-91.6737,LDH Region 8,Probable Cases,Franklin,21,case,cumulative,1589.0
+339,340,342,31.59987,-92.5595,LDH Region 6,Total Cases,Grant,22,case,cumulative,4482.0
+340,341,343,31.59987,-92.5595,LDH Region 6,Confirmed Cases,Grant,22,case,cumulative,2325.0
+341,342,344,31.59987,-92.5595,LDH Region 6,Probable Cases,Grant,22,case,cumulative,2157.0
+342,343,345,29.96804,-91.7532,LDH Region 4,Total Cases,Iberia,23,case,cumulative,15637.0
+343,344,346,29.96804,-91.7532,LDH Region 4,Confirmed Cases,Iberia,23,case,cumulative,13198.0
+344,345,347,29.96804,-91.7532,LDH Region 4,Probable Cases,Iberia,23,case,cumulative,2439.0
+345,346,348,30.21836,-91.3602,LDH Region 2,Total Cases,Iberville,24,case,cumulative,7457.0
+346,347,349,30.21836,-91.3602,LDH Region 2,Confirmed Cases,Iberville,24,case,cumulative,5608.0
+347,348,350,30.21836,-91.3602,LDH Region 2,Probable Cases,Iberville,24,case,cumulative,1849.0
+348,349,351,32.30219,-92.5578,LDH Region 8,Total Cases,Jackson,25,case,cumulative,3329.0
+349,350,352,32.30219,-92.5578,LDH Region 8,Confirmed Cases,Jackson,25,case,cumulative,2024.0
+350,351,353,32.30219,-92.5578,LDH Region 8,Probable Cases,Jackson,25,case,cumulative,1305.0
+351,352,354,29.73043,-90.1281,LDH Region 1,Total Cases,Jefferson,26,case,cumulative,96446.0
+352,353,355,29.73043,-90.1281,LDH Region 1,Confirmed Cases,Jefferson,26,case,cumulative,88561.0
+353,354,356,29.73043,-90.1281,LDH Region 1,Probable Cases,Jefferson,26,case,cumulative,7885.0
+354,355,357,30.26795,-92.8141,LDH Region 5,Total Cases,Jefferson Davis,27,case,cumulative,5607.0
+355,356,358,30.26795,-92.8141,LDH Region 5,Confirmed Cases,Jefferson Davis,27,case,cumulative,3977.0
+356,357,359,30.26795,-92.8141,LDH Region 5,Probable Cases,Jefferson Davis,27,case,cumulative,1630.0
+357,358,360,31.6771,-92.1605,LDH Region 6,Total Cases,La Salle,28,case,cumulative,3193.0
+358,359,361,31.6771,-92.1605,LDH Region 6,Confirmed Cases,La Salle,28,case,cumulative,1469.0
+359,360,362,31.6771,-92.1605,LDH Region 6,Probable Cases,La Salle,28,case,cumulative,1724.0
+360,361,363,30.20687,-92.0639,LDH Region 4,Total Cases,Lafayette,29,case,cumulative,49344.0
+361,362,364,30.20687,-92.0639,LDH Region 4,Confirmed Cases,Lafayette,29,case,cumulative,39964.0
+362,363,365,30.20687,-92.0639,LDH Region 4,Probable Cases,Lafayette,29,case,cumulative,9380.0
+363,364,366,29.57026,-90.4363,LDH Region 3,Total Cases,Lafourche,30,case,cumulative,22342.0
+364,365,367,29.57026,-90.4363,LDH Region 3,Confirmed Cases,Lafourche,30,case,cumulative,13572.0
+365,366,368,29.57026,-90.4363,LDH Region 3,Probable Cases,Lafourche,30,case,cumulative,8770.0
+366,367,369,32.60175,-92.6648,LDH Region 8,Total Cases,Lincoln,31,case,cumulative,9251.0
+367,368,370,32.60175,-92.6648,LDH Region 8,Confirmed Cases,Lincoln,31,case,cumulative,5387.0
+368,369,371,32.60175,-92.6648,LDH Region 8,Probable Cases,Lincoln,31,case,cumulative,3864.0
+369,370,372,30.45043,-90.7392,LDH Region 9,Total Cases,Livingston,32,case,cumulative,29998.0
+370,371,373,30.45043,-90.7392,LDH Region 9,Confirmed Cases,Livingston,32,case,cumulative,19871.0
+371,372,374,30.45043,-90.7392,LDH Region 9,Probable Cases,Livingston,32,case,cumulative,10127.0
+372,373,375,32.36742,-91.2454,LDH Region 8,Total Cases,Madison,33,case,cumulative,2729.0
+373,374,376,32.36742,-91.2454,LDH Region 8,Confirmed Cases,Madison,33,case,cumulative,2609.0
+374,375,377,32.36742,-91.2454,LDH Region 8,Probable Cases,Madison,33,case,cumulative,120.0
+375,376,378,32.82048,-91.8018,LDH Region 8,Total Cases,Morehouse,34,case,cumulative,5510.0
+376,377,379,32.82048,-91.8018,LDH Region 8,Confirmed Cases,Morehouse,34,case,cumulative,4180.0
+377,378,380,32.82048,-91.8018,LDH Region 8,Probable Cases,Morehouse,34,case,cumulative,1330.0
+378,379,381,31.72424,-93.0963,LDH Region 7,Total Cases,Natchitoches,35,case,cumulative,8325.0
+379,380,382,31.72424,-93.0963,LDH Region 7,Confirmed Cases,Natchitoches,35,case,cumulative,4737.0
+380,381,383,31.72424,-93.0963,LDH Region 7,Probable Cases,Natchitoches,35,case,cumulative,3588.0
+381,382,384,30.06821,-89.8826,LDH Region 1,Total Cases,Orleans,36,case,cumulative,73255.0
+382,383,385,30.06821,-89.8826,LDH Region 1,Confirmed Cases,Orleans,36,case,cumulative,68773.0
+383,384,386,30.06821,-89.8826,LDH Region 1,Probable Cases,Orleans,36,case,cumulative,4482.0
+384,385,387,32.47851,-92.1548,LDH Region 8,Total Cases,Ouachita,37,case,cumulative,39411.0
+385,386,388,32.47851,-92.1548,LDH Region 8,Confirmed Cases,Ouachita,37,case,cumulative,33083.0
+386,387,389,32.47851,-92.1548,LDH Region 8,Probable Cases,Ouachita,37,case,cumulative,6328.0
+387,388,390,1.1,1.1,N/A,Total Cases,Out of State,38,case,cumulative,
+388,389,391,1.1,1.1,N/A,Confirmed Cases,Out of State,38,case,cumulative,
+389,390,392,1.1,1.1,N/A,Probable Cases,Out of State,38,case,cumulative,
+390,391,393,1.1,1.1,N/A,Total Cases,Parish Under Investigation,39,case,cumulative,799.0
+391,392,394,1.1,1.1,N/A,Confirmed Cases,Parish Under Investigation,39,case,cumulative,779.0
+392,393,395,1.1,1.1,N/A,Probable Cases,Parish Under Investigation,39,case,cumulative,20.0
+393,394,396,29.63552,-89.8455,LDH Region 1,Total Cases,Plaquemines,40,case,cumulative,5360.0
+394,395,397,29.63552,-89.8455,LDH Region 1,Confirmed Cases,Plaquemines,40,case,cumulative,3799.0
+395,396,398,29.63552,-89.8455,LDH Region 1,Probable Cases,Plaquemines,40,case,cumulative,1561.0
+396,397,399,30.6081,-91.5663,LDH Region 2,Total Cases,Pointe Coupee,41,case,cumulative,4813.0
+397,398,400,30.6081,-91.5663,LDH Region 2,Confirmed Cases,Pointe Coupee,41,case,cumulative,3337.0
+398,399,401,30.6081,-91.5663,LDH Region 2,Probable Cases,Pointe Coupee,41,case,cumulative,1476.0
+399,400,402,31.199,-92.5332,LDH Region 6,Total Cases,Rapides,42,case,cumulative,26513.0
+400,401,403,31.199,-92.5332,LDH Region 6,Confirmed Cases,Rapides,42,case,cumulative,15889.0
+401,402,404,31.199,-92.5332,LDH Region 6,Probable Cases,Rapides,42,case,cumulative,10624.0
+402,403,405,32.09328,-93.3399,LDH Region 7,Total Cases,Red River,43,case,cumulative,1779.0
+403,404,406,32.09328,-93.3399,LDH Region 7,Confirmed Cases,Red River,43,case,cumulative,1248.0
+404,405,407,32.09328,-93.3399,LDH Region 7,Probable Cases,Red River,43,case,cumulative,531.0
+405,406,408,32.46229,-91.7328,LDH Region 8,Total Cases,Richland,44,case,cumulative,5080.0
+406,407,409,32.46229,-91.7328,LDH Region 8,Confirmed Cases,Richland,44,case,cumulative,3393.0
+407,408,410,32.46229,-91.7328,LDH Region 8,Probable Cases,Richland,44,case,cumulative,1687.0
+408,409,411,31.57194,-93.5273,LDH Region 7,Total Cases,Sabine,45,case,cumulative,5341.0
+409,410,412,31.57194,-93.5273,LDH Region 7,Confirmed Cases,Sabine,45,case,cumulative,3732.0
+410,411,413,31.57194,-93.5273,LDH Region 7,Probable Cases,Sabine,45,case,cumulative,1609.0
+411,412,414,29.85727,-89.7757,LDH Region 1,Total Cases,St. Bernard,46,case,cumulative,9520.0
+412,413,415,29.85727,-89.7757,LDH Region 1,Confirmed Cases,St. Bernard,46,case,cumulative,7660.0
+413,414,416,29.85727,-89.7757,LDH Region 1,Probable Cases,St. Bernard,46,case,cumulative,1860.0
+414,415,417,29.88399,-90.3624,LDH Region 3,Total Cases,St. Charles,47,case,cumulative,11761.0
+415,416,418,29.88399,-90.3624,LDH Region 3,Confirmed Cases,St. Charles,47,case,cumulative,9497.0
+416,417,419,29.88399,-90.3624,LDH Region 3,Probable Cases,St. Charles,47,case,cumulative,2264.0
+417,418,420,30.82214,-90.7103,LDH Region 9,Total Cases,St. Helena,48,case,cumulative,1524.0
+418,419,421,30.82214,-90.7103,LDH Region 9,Confirmed Cases,St. Helena,48,case,cumulative,1054.0
+419,420,422,30.82214,-90.7103,LDH Region 9,Probable Cases,St. Helena,48,case,cumulative,470.0
+420,421,423,30.02637,-90.7963,LDH Region 3,Total Cases,St. James,49,case,cumulative,4564.0
+421,422,424,30.02637,-90.7963,LDH Region 3,Confirmed Cases,St. James,49,case,cumulative,3274.0
+422,423,425,30.02637,-90.7963,LDH Region 3,Probable Cases,St. James,49,case,cumulative,1290.0
+423,424,426,30.07709,-90.5468,LDH Region 3,Total Cases,St. John the Baptist,50,case,cumulative,8801.0
+424,425,427,30.07709,-90.5468,LDH Region 3,Confirmed Cases,St. John the Baptist,50,case,cumulative,7495.0
+425,426,428,30.07709,-90.5468,LDH Region 3,Probable Cases,St. John the Baptist,50,case,cumulative,1306.0
+426,427,429,30.59914,-92.0058,LDH Region 4,Total Cases,St. Landry,51,case,cumulative,17275.0
+427,428,430,30.59914,-92.0058,LDH Region 4,Confirmed Cases,St. Landry,51,case,cumulative,13779.0
+428,429,431,30.59914,-92.0058,LDH Region 4,Probable Cases,St. Landry,51,case,cumulative,3496.0
+429,430,432,30.22836,-91.7268,LDH Region 4,Total Cases,St. Martin,52,case,cumulative,10471.0
+430,431,433,30.22836,-91.7268,LDH Region 4,Confirmed Cases,St. Martin,52,case,cumulative,8501.0
+431,432,434,30.22836,-91.7268,LDH Region 4,Probable Cases,St. Martin,52,case,cumulative,1970.0
+432,433,435,29.72383,-91.4516,LDH Region 3,Total Cases,St. Mary,53,case,cumulative,10524.0
+433,434,436,29.72383,-91.4516,LDH Region 3,Confirmed Cases,St. Mary,53,case,cumulative,7167.0
+434,435,437,29.72383,-91.4516,LDH Region 3,Probable Cases,St. Mary,53,case,cumulative,3357.0
+435,436,438,30.44685,-89.9387,LDH Region 9,Total Cases,St. Tammany,54,case,cumulative,58119.0
+436,437,439,30.44685,-89.9387,LDH Region 9,Confirmed Cases,St. Tammany,54,case,cumulative,47076.0
+437,438,440,30.44685,-89.9387,LDH Region 9,Probable Cases,St. Tammany,54,case,cumulative,11043.0
+438,439,441,30.64627,-90.412,LDH Region 9,Total Cases,Tangipahoa,55,case,cumulative,28122.0
+439,440,442,30.64627,-90.412,LDH Region 9,Confirmed Cases,Tangipahoa,55,case,cumulative,17996.0
+440,441,443,30.64627,-90.412,LDH Region 9,Probable Cases,Tangipahoa,55,case,cumulative,10126.0
+441,442,444,32.00193,-91.34,LDH Region 8,Total Cases,Tensas,56,case,cumulative,756.0
+442,443,445,32.00193,-91.34,LDH Region 8,Confirmed Cases,Tensas,56,case,cumulative,468.0
+443,444,446,32.00193,-91.34,LDH Region 8,Probable Cases,Tensas,56,case,cumulative,288.0
+444,445,447,29.43787,-90.8475,LDH Region 3,Total Cases,Terrebonne,57,case,cumulative,24742.0
+445,446,448,29.43787,-90.8475,LDH Region 3,Confirmed Cases,Terrebonne,57,case,cumulative,18000.0
+446,447,449,29.43787,-90.8475,LDH Region 3,Probable Cases,Terrebonne,57,case,cumulative,6742.0
+447,448,450,32.8321,-92.3749,LDH Region 8,Total Cases,Union,58,case,cumulative,5228.0
+448,449,451,32.8321,-92.3749,LDH Region 8,Confirmed Cases,Union,58,case,cumulative,3665.0
+449,450,452,32.8321,-92.3749,LDH Region 8,Probable Cases,Union,58,case,cumulative,1563.0
+450,451,453,29.84602,-92.3236,LDH Region 4,Total Cases,Vermilion,59,case,cumulative,12349.0
+451,452,454,29.84602,-92.3236,LDH Region 4,Confirmed Cases,Vermilion,59,case,cumulative,10300.0
+452,453,455,29.84602,-92.3236,LDH Region 4,Probable Cases,Vermilion,59,case,cumulative,2049.0
+453,454,456,31.10859,-93.1841,LDH Region 6,Total Cases,Vernon,60,case,cumulative,7600.0
+454,455,457,31.10859,-93.1841,LDH Region 6,Confirmed Cases,Vernon,60,case,cumulative,3780.0
+455,456,458,31.10859,-93.1841,LDH Region 6,Probable Cases,Vernon,60,case,cumulative,3820.0
+456,457,459,30.85348,-90.0405,LDH Region 9,Total Cases,Washington,61,case,cumulative,10046.0
+457,458,460,30.85348,-90.0405,LDH Region 9,Confirmed Cases,Washington,61,case,cumulative,7400.0
+458,459,461,30.85348,-90.0405,LDH Region 9,Probable Cases,Washington,61,case,cumulative,2646.0
+459,460,462,32.71399,-93.335,LDH Region 7,Total Cases,Webster,62,case,cumulative,8668.0
+460,461,463,32.71399,-93.335,LDH Region 7,Confirmed Cases,Webster,62,case,cumulative,6458.0
+461,462,464,32.71399,-93.335,LDH Region 7,Probable Cases,Webster,62,case,cumulative,2210.0
+462,463,465,30.4635,-91.3128,LDH Region 2,Total Cases,West Baton Rouge,63,case,cumulative,5939.0
+463,464,466,30.4635,-91.3128,LDH Region 2,Confirmed Cases,West Baton Rouge,63,case,cumulative,4181.0
+464,465,467,30.4635,-91.3128,LDH Region 2,Probable Cases,West Baton Rouge,63,case,cumulative,1758.0
+465,466,468,32.78879,-91.4567,LDH Region 8,Total Cases,West Carroll,64,case,cumulative,2509.0
+466,467,469,32.78879,-91.4567,LDH Region 8,Confirmed Cases,West Carroll,64,case,cumulative,2344.0
+467,468,470,32.78879,-91.4567,LDH Region 8,Probable Cases,West Carroll,64,case,cumulative,165.0
+468,469,471,30.87589,-91.4126,LDH Region 2,Total Cases,West Feliciana,65,case,cumulative,2370.0
+469,470,472,30.87589,-91.4126,LDH Region 2,Confirmed Cases,West Feliciana,65,case,cumulative,2082.0
+470,471,473,30.87589,-91.4126,LDH Region 2,Probable Cases,West Feliciana,65,case,cumulative,288.0
+471,472,474,31.94449,-92.6367,LDH Region 6,Total Cases,Winn,66,case,cumulative,3317.0
+472,473,475,31.94449,-92.6367,LDH Region 6,Confirmed Cases,Winn,66,case,cumulative,1497.0
+473,474,476,31.94449,-92.6367,LDH Region 6,Probable Cases,Winn,66,case,cumulative,1820.0
+474,475,478,30.457099,-91.187399,Louisiana,New Deaths,New,0,death,current,10.0
+475,476,479,30.457099,-91.187399,Louisiana,Total Louisiana Deaths, Louisiana,0,death,cumulative,15137.0
+476,477,480,30.457099,-91.187399,Louisiana,Total Confirmed Deaths, Louisiana,0,death,cumulative,13128.0
+477,478,481,30.457099,-91.187399,Louisiana,Total Probable Deaths, Louisiana,0,death,cumulative,2009.0
+478,479,482,30.457099,-91.187399,Louisiana,Age,< 18,1,death,cumulative,18.0
+479,480,483,30.457099,-91.187399,Louisiana,Age,18 to 29,2,death,cumulative,116.0
+480,481,484,30.457099,-91.187399,Louisiana,Age,30 to 39,3,death,cumulative,333.0
+481,482,485,30.457099,-91.187399,Louisiana,Age,40 to 49,4,death,cumulative,716.0
+482,483,486,30.457099,-91.187399,Louisiana,Age,50 to 59,5,death,cumulative,1730.0
+483,484,487,30.457099,-91.187399,Louisiana,Age,60 to 69,6,death,cumulative,3101.0
+484,485,488,30.457099,-91.187399,Louisiana,Age,70+,7,death,cumulative,9123.0
+485,486,489,30.457099,-91.187399,Louisiana,Gender,Male,1,death,cumulative,53.0
+486,487,490,30.457099,-91.187399,Louisiana,Gender,Female,2,death,cumulative,47.0
+487,488,491,30.457099,-91.187399,Louisiana,Gender,Unknown/Other,3,death,cumulative,0.0
+488,489,493,30.29072,-92.412,LDH Region 4,Total Deaths,Acadia,1,death,cumulative,258.0
+489,490,494,30.29072,-92.412,LDH Region 4,Confirmed Deaths,Acadia,1,death,cumulative,234.0
+490,491,495,30.29072,-92.412,LDH Region 4,Probable Deaths,Acadia,1,death,cumulative,24.0
+491,492,496,30.65313,-92.8278,LDH Region 5,Total Deaths,Allen,2,death,cumulative,119.0
+492,493,497,30.65313,-92.8278,LDH Region 5,Confirmed Deaths,Allen,2,death,cumulative,107.0
+493,494,498,30.65313,-92.8278,LDH Region 5,Probable Deaths,Allen,2,death,cumulative,12.0
+494,495,499,30.20362,-90.9113,LDH Region 2,Total Deaths,Ascension,3,death,cumulative,253.0
+495,496,500,30.20362,-90.9113,LDH Region 2,Confirmed Deaths,Ascension,3,death,cumulative,207.0
+496,497,501,30.20362,-90.9113,LDH Region 2,Probable Deaths,Ascension,3,death,cumulative,46.0
+497,498,502,29.90093,-91.0626,LDH Region 3,Total Deaths,Assumption,4,death,cumulative,57.0
+498,499,503,29.90093,-91.0626,LDH Region 3,Confirmed Deaths,Assumption,4,death,cumulative,37.0
+499,500,504,29.90093,-91.0626,LDH Region 3,Probable Deaths,Assumption,4,death,cumulative,20.0
+500,501,505,31.07651,-92.0014,LDH Region 6,Total Deaths,Avoyelles,5,death,cumulative,179.0
+501,502,506,31.07651,-92.0014,LDH Region 6,Confirmed Deaths,Avoyelles,5,death,cumulative,161.0
+502,503,507,31.07651,-92.0014,LDH Region 6,Probable Deaths,Avoyelles,5,death,cumulative,18.0
+503,504,508,30.64875,-93.3433,LDH Region 5,Total Deaths,Beauregard,6,death,cumulative,131.0
+504,505,509,30.64875,-93.3433,LDH Region 5,Confirmed Deaths,Beauregard,6,death,cumulative,113.0
+505,506,510,30.64875,-93.3433,LDH Region 5,Probable Deaths,Beauregard,6,death,cumulative,18.0
+506,507,511,32.34743,-93.056,LDH Region 7,Total Deaths,Bienville,7,death,cumulative,100.0
+507,508,512,32.34743,-93.056,LDH Region 7,Confirmed Deaths,Bienville,7,death,cumulative,87.0
+508,509,513,32.34743,-93.056,LDH Region 7,Probable Deaths,Bienville,7,death,cumulative,13.0
+509,510,514,32.67963,-93.6052,LDH Region 7,Total Deaths,Bossier,8,death,cumulative,417.0
+510,511,515,32.67963,-93.6052,LDH Region 7,Confirmed Deaths,Bossier,8,death,cumulative,352.0
+511,512,516,32.67963,-93.6052,LDH Region 7,Probable Deaths,Bossier,8,death,cumulative,65.0
+512,513,517,32.58106,-93.8825,LDH Region 7,Total Deaths,Caddo,9,death,cumulative,1000.0
+513,514,518,32.58106,-93.8825,LDH Region 7,Confirmed Deaths,Caddo,9,death,cumulative,901.0
+514,515,519,32.58106,-93.8825,LDH Region 7,Probable Deaths,Caddo,9,death,cumulative,99.0
+515,516,520,30.22941,-93.358,LDH Region 5,Total Deaths,Calcasieu,10,death,cumulative,641.0
+516,517,521,30.22941,-93.358,LDH Region 5,Confirmed Deaths,Calcasieu,10,death,cumulative,543.0
+517,518,522,30.22941,-93.358,LDH Region 5,Probable Deaths,Calcasieu,10,death,cumulative,98.0
+518,519,523,32.09243,-92.1166,LDH Region 8,Total Deaths,Caldwell,11,death,cumulative,43.0
+519,520,524,32.09243,-92.1166,LDH Region 8,Confirmed Deaths,Caldwell,11,death,cumulative,34.0
+520,521,525,32.09243,-92.1166,LDH Region 8,Probable Deaths,Caldwell,11,death,cumulative,9.0
+521,522,526,29.91877,-93.1565,LDH Region 5,Total Deaths,Cameron,12,death,cumulative,8.0
+522,523,527,29.91877,-93.1565,LDH Region 5,Confirmed Deaths,Cameron,12,death,cumulative,8.0
+523,524,528,29.91877,-93.1565,LDH Region 5,Probable Deaths,Cameron,12,death,cumulative,0.0
+524,525,529,31.63373,-91.9015,LDH Region 6,Total Deaths,Catahoula,13,death,cumulative,49.0
+525,526,530,31.63373,-91.9015,LDH Region 6,Confirmed Deaths,Catahoula,13,death,cumulative,39.0
+526,527,531,31.63373,-91.9015,LDH Region 6,Probable Deaths,Catahoula,13,death,cumulative,10.0
+527,528,532,32.82294,-92.9957,LDH Region 7,Total Deaths,Claiborne,14,death,cumulative,67.0
+528,529,533,32.82294,-92.9957,LDH Region 7,Confirmed Deaths,Claiborne,14,death,cumulative,59.0
+529,530,534,32.82294,-92.9957,LDH Region 7,Probable Deaths,Claiborne,14,death,cumulative,8.0
+530,531,535,31.4464,-91.64,LDH Region 6,Total Deaths,Concordia,15,death,cumulative,80.0
+531,532,536,31.4464,-91.64,LDH Region 6,Confirmed Deaths,Concordia,15,death,cumulative,63.0
+532,533,537,31.4464,-91.64,LDH Region 6,Probable Deaths,Concordia,15,death,cumulative,17.0
+533,534,538,32.05723,-93.7354,LDH Region 7,Total Deaths,De Soto,16,death,cumulative,119.0
+534,535,539,32.05723,-93.7354,LDH Region 7,Confirmed Deaths,De Soto,16,death,cumulative,87.0
+535,536,540,32.05723,-93.7354,LDH Region 7,Probable Deaths,De Soto,16,death,cumulative,32.0
+536,537,541,30.53845,-91.0956,LDH Region 2,Total Deaths,East Baton Rouge,17,death,cumulative,1191.0
+537,538,542,30.53845,-91.0956,LDH Region 2,Confirmed Deaths,East Baton Rouge,17,death,cumulative,1013.0
+538,539,543,30.53845,-91.0956,LDH Region 2,Probable Deaths,East Baton Rouge,17,death,cumulative,178.0
+539,540,544,32.73284,-91.235,LDH Region 8,Total Deaths,East Carroll,18,death,cumulative,33.0
+540,541,545,32.73284,-91.235,LDH Region 8,Confirmed Deaths,East Carroll,18,death,cumulative,28.0
+541,542,546,32.73284,-91.235,LDH Region 8,Probable Deaths,East Carroll,18,death,cumulative,5.0
+542,543,547,30.84519,-91.0455,LDH Region 2,Total Deaths,East Feliciana,19,death,cumulative,153.0
+543,544,548,30.84519,-91.0455,LDH Region 2,Confirmed Deaths,East Feliciana,19,death,cumulative,129.0
+544,545,549,30.84519,-91.0455,LDH Region 2,Probable Deaths,East Feliciana,19,death,cumulative,24.0
+545,546,550,30.72918,-92.4059,LDH Region 4,Total Deaths,Evangeline,20,death,cumulative,145.0
+546,547,551,30.72918,-92.4059,LDH Region 4,Confirmed Deaths,Evangeline,20,death,cumulative,109.0
+547,548,552,30.72918,-92.4059,LDH Region 4,Probable Deaths,Evangeline,20,death,cumulative,36.0
+548,549,553,32.13352,-91.6737,LDH Region 8,Total Deaths,Franklin,21,death,cumulative,144.0
+549,550,554,32.13352,-91.6737,LDH Region 8,Confirmed Deaths,Franklin,21,death,cumulative,134.0
+550,551,555,32.13352,-91.6737,LDH Region 8,Probable Deaths,Franklin,21,death,cumulative,10.0
+551,552,556,31.59987,-92.5595,LDH Region 6,Total Deaths,Grant,22,death,cumulative,80.0
+552,553,557,31.59987,-92.5595,LDH Region 6,Confirmed Deaths,Grant,22,death,cumulative,66.0
+553,554,558,31.59987,-92.5595,LDH Region 6,Probable Deaths,Grant,22,death,cumulative,14.0
+554,555,559,29.96804,-91.7532,LDH Region 4,Total Deaths,Iberia,23,death,cumulative,234.0
+555,556,560,29.96804,-91.7532,LDH Region 4,Confirmed Deaths,Iberia,23,death,cumulative,207.0
+556,557,561,29.96804,-91.7532,LDH Region 4,Probable Deaths,Iberia,23,death,cumulative,27.0
+557,558,562,30.21836,-91.3602,LDH Region 2,Total Deaths,Iberville,24,death,cumulative,129.0
+558,559,563,30.21836,-91.3602,LDH Region 2,Confirmed Deaths,Iberville,24,death,cumulative,119.0
+559,560,564,30.21836,-91.3602,LDH Region 2,Probable Deaths,Iberville,24,death,cumulative,10.0
+560,561,565,32.30219,-92.5578,LDH Region 8,Total Deaths,Jackson,25,death,cumulative,65.0
+561,562,566,32.30219,-92.5578,LDH Region 8,Confirmed Deaths,Jackson,25,death,cumulative,54.0
+562,563,567,32.30219,-92.5578,LDH Region 8,Probable Deaths,Jackson,25,death,cumulative,11.0
+563,564,568,29.73043,-90.1281,LDH Region 1,Total Deaths,Jefferson,26,death,cumulative,1204.0
+564,565,569,29.73043,-90.1281,LDH Region 1,Confirmed Deaths,Jefferson,26,death,cumulative,1129.0
+565,566,570,29.73043,-90.1281,LDH Region 1,Probable Deaths,Jefferson,26,death,cumulative,75.0
+566,567,571,30.26795,-92.8141,LDH Region 5,Total Deaths,Jefferson Davis,27,death,cumulative,133.0
+567,568,572,30.26795,-92.8141,LDH Region 5,Confirmed Deaths,Jefferson Davis,27,death,cumulative,108.0
+568,569,573,30.26795,-92.8141,LDH Region 5,Probable Deaths,Jefferson Davis,27,death,cumulative,25.0
+569,570,574,31.6771,-92.1605,LDH Region 6,Total Deaths,La Salle,28,death,cumulative,46.0
+570,571,575,31.6771,-92.1605,LDH Region 6,Confirmed Deaths,La Salle,28,death,cumulative,28.0
+571,572,576,31.6771,-92.1605,LDH Region 6,Probable Deaths,La Salle,28,death,cumulative,18.0
+572,573,577,30.20687,-92.0639,LDH Region 4,Total Deaths,Lafayette,29,death,cumulative,420.0
+573,574,578,30.20687,-92.0639,LDH Region 4,Confirmed Deaths,Lafayette,29,death,cumulative,369.0
+574,575,579,30.20687,-92.0639,LDH Region 4,Probable Deaths,Lafayette,29,death,cumulative,51.0
+575,576,580,29.57026,-90.4363,LDH Region 3,Total Deaths,Lafourche,30,death,cumulative,323.0
+576,577,581,29.57026,-90.4363,LDH Region 3,Confirmed Deaths,Lafourche,30,death,cumulative,258.0
+577,578,582,29.57026,-90.4363,LDH Region 3,Probable Deaths,Lafourche,30,death,cumulative,65.0
+578,579,583,32.60175,-92.6648,LDH Region 8,Total Deaths,Lincoln,31,death,cumulative,121.0
+579,580,584,32.60175,-92.6648,LDH Region 8,Confirmed Deaths,Lincoln,31,death,cumulative,103.0
+580,581,585,32.60175,-92.6648,LDH Region 8,Probable Deaths,Lincoln,31,death,cumulative,18.0
+581,582,586,30.45043,-90.7392,LDH Region 9,Total Deaths,Livingston,32,death,cumulative,398.0
+582,583,587,30.45043,-90.7392,LDH Region 9,Confirmed Deaths,Livingston,32,death,cumulative,313.0
+583,584,588,30.45043,-90.7392,LDH Region 9,Probable Deaths,Livingston,32,death,cumulative,85.0
+584,585,589,32.36742,-91.2454,LDH Region 8,Total Deaths,Madison,33,death,cumulative,55.0
+585,586,590,32.36742,-91.2454,LDH Region 8,Confirmed Deaths,Madison,33,death,cumulative,49.0
+586,587,591,32.36742,-91.2454,LDH Region 8,Probable Deaths,Madison,33,death,cumulative,6.0
+587,588,592,32.82048,-91.8018,LDH Region 8,Total Deaths,Morehouse,34,death,cumulative,120.0
+588,589,593,32.82048,-91.8018,LDH Region 8,Confirmed Deaths,Morehouse,34,death,cumulative,105.0
+589,590,594,32.82048,-91.8018,LDH Region 8,Probable Deaths,Morehouse,34,death,cumulative,15.0
+590,591,595,31.72424,-93.0963,LDH Region 7,Total Deaths,Natchitoches,35,death,cumulative,142.0
+591,592,596,31.72424,-93.0963,LDH Region 7,Confirmed Deaths,Natchitoches,35,death,cumulative,111.0
+592,593,597,31.72424,-93.0963,LDH Region 7,Probable Deaths,Natchitoches,35,death,cumulative,31.0
+593,594,598,30.06821,-89.8826,LDH Region 1,Total Deaths,Orleans,36,death,cumulative,1019.0
+594,595,599,30.06821,-89.8826,LDH Region 1,Confirmed Deaths,Orleans,36,death,cumulative,939.0
+595,596,600,30.06821,-89.8826,LDH Region 1,Probable Deaths,Orleans,36,death,cumulative,80.0
+596,597,601,32.47851,-92.1548,LDH Region 8,Total Deaths,Ouachita,37,death,cumulative,618.0
+597,598,602,32.47851,-92.1548,LDH Region 8,Confirmed Deaths,Ouachita,37,death,cumulative,557.0
+598,599,603,32.47851,-92.1548,LDH Region 8,Probable Deaths,Ouachita,37,death,cumulative,61.0
+599,600,604,1.1,1.1,N/A,Total Deaths,Out of State,38,death,cumulative,0.0
+600,601,605,1.1,1.1,N/A,Confirmed Deaths,Out of State,38,death,cumulative,0.0
+601,602,606,1.1,1.1,N/A,Probable Deaths,Out of State,38,death,cumulative,0.0
+602,603,607,1.1,1.1,N/A,Total Deaths,Parish Under Investigation,39,death,cumulative,0.0
+603,604,608,1.1,1.1,N/A,Confirmed Deaths,Parish Under Investigation,39,death,cumulative,0.0
+604,605,609,1.1,1.1,N/A,Probable Deaths,Parish Under Investigation,39,death,cumulative,0.0
+605,606,610,29.63552,-89.8455,LDH Region 1,Total Deaths,Plaquemines,40,death,cumulative,41.0
+606,607,611,29.63552,-89.8455,LDH Region 1,Confirmed Deaths,Plaquemines,40,death,cumulative,38.0
+607,608,612,29.63552,-89.8455,LDH Region 1,Probable Deaths,Plaquemines,40,death,cumulative,3.0
+608,609,613,30.6081,-91.5663,LDH Region 2,Total Deaths,Pointe Coupee,41,death,cumulative,85.0
+609,610,614,30.6081,-91.5663,LDH Region 2,Confirmed Deaths,Pointe Coupee,41,death,cumulative,77.0
+610,611,615,30.6081,-91.5663,LDH Region 2,Probable Deaths,Pointe Coupee,41,death,cumulative,8.0
+611,612,616,31.199,-92.5332,LDH Region 6,Total Deaths,Rapides,42,death,cumulative,488.0
+612,613,617,31.199,-92.5332,LDH Region 6,Confirmed Deaths,Rapides,42,death,cumulative,428.0
+613,614,618,31.199,-92.5332,LDH Region 6,Probable Deaths,Rapides,42,death,cumulative,60.0
+614,615,619,32.09328,-93.3399,LDH Region 7,Total Deaths,Red River,43,death,cumulative,49.0
+615,616,620,32.09328,-93.3399,LDH Region 7,Confirmed Deaths,Red River,43,death,cumulative,33.0
+616,617,621,32.09328,-93.3399,LDH Region 7,Probable Deaths,Red River,43,death,cumulative,16.0
+617,618,622,32.46229,-91.7328,LDH Region 8,Total Deaths,Richland,44,death,cumulative,81.0
+618,619,623,32.46229,-91.7328,LDH Region 8,Confirmed Deaths,Richland,44,death,cumulative,59.0
+619,620,624,32.46229,-91.7328,LDH Region 8,Probable Deaths,Richland,44,death,cumulative,22.0
+620,621,625,31.57194,-93.5273,LDH Region 7,Total Deaths,Sabine,45,death,cumulative,100.0
+621,622,626,31.57194,-93.5273,LDH Region 7,Confirmed Deaths,Sabine,45,death,cumulative,76.0
+622,623,627,31.57194,-93.5273,LDH Region 7,Probable Deaths,Sabine,45,death,cumulative,24.0
+623,624,628,29.85727,-89.7757,LDH Region 1,Total Deaths,St. Bernard,46,death,cumulative,101.0
+624,625,629,29.85727,-89.7757,LDH Region 1,Confirmed Deaths,St. Bernard,46,death,cumulative,96.0
+625,626,630,29.85727,-89.7757,LDH Region 1,Probable Deaths,St. Bernard,46,death,cumulative,5.0
+626,627,631,29.88399,-90.3624,LDH Region 3,Total Deaths,St. Charles,47,death,cumulative,129.0
+627,628,632,29.88399,-90.3624,LDH Region 3,Confirmed Deaths,St. Charles,47,death,cumulative,120.0
+628,629,633,29.88399,-90.3624,LDH Region 3,Probable Deaths,St. Charles,47,death,cumulative,9.0
+629,630,634,30.82214,-90.7103,LDH Region 9,Total Deaths,St. Helena,48,death,cumulative,20.0
+630,631,635,30.82214,-90.7103,LDH Region 9,Confirmed Deaths,St. Helena,48,death,cumulative,16.0
+631,632,636,30.82214,-90.7103,LDH Region 9,Probable Deaths,St. Helena,48,death,cumulative,4.0
+632,633,637,30.02637,-90.7963,LDH Region 3,Total Deaths,St. James,49,death,cumulative,71.0
+633,634,638,30.02637,-90.7963,LDH Region 3,Confirmed Deaths,St. James,49,death,cumulative,53.0
+634,635,639,30.02637,-90.7963,LDH Region 3,Probable Deaths,St. James,49,death,cumulative,18.0
+635,636,640,30.07709,-90.5468,LDH Region 3,Total Deaths,St. John the Baptist,50,death,cumulative,173.0
+636,637,641,30.07709,-90.5468,LDH Region 3,Confirmed Deaths,St. John the Baptist,50,death,cumulative,160.0
+637,638,642,30.07709,-90.5468,LDH Region 3,Probable Deaths,St. John the Baptist,50,death,cumulative,13.0
+638,639,643,30.59914,-92.0058,LDH Region 4,Total Deaths,St. Landry,51,death,cumulative,354.0
+639,640,644,30.59914,-92.0058,LDH Region 4,Confirmed Deaths,St. Landry,51,death,cumulative,304.0
+640,641,645,30.59914,-92.0058,LDH Region 4,Probable Deaths,St. Landry,51,death,cumulative,50.0
+641,642,646,30.22836,-91.7268,LDH Region 4,Total Deaths,St. Martin,52,death,cumulative,164.0
+642,643,647,30.22836,-91.7268,LDH Region 4,Confirmed Deaths,St. Martin,52,death,cumulative,146.0
+643,644,648,30.22836,-91.7268,LDH Region 4,Probable Deaths,St. Martin,52,death,cumulative,18.0
+644,645,649,29.72383,-91.4516,LDH Region 3,Total Deaths,St. Mary,53,death,cumulative,236.0
+645,646,650,29.72383,-91.4516,LDH Region 3,Confirmed Deaths,St. Mary,53,death,cumulative,195.0
+646,647,651,29.72383,-91.4516,LDH Region 3,Probable Deaths,St. Mary,53,death,cumulative,41.0
+647,648,652,30.44685,-89.9387,LDH Region 9,Total Deaths,St. Tammany,54,death,cumulative,748.0
+648,649,653,30.44685,-89.9387,LDH Region 9,Confirmed Deaths,St. Tammany,54,death,cumulative,697.0
+649,650,654,30.44685,-89.9387,LDH Region 9,Probable Deaths,St. Tammany,54,death,cumulative,51.0
+650,651,655,30.64627,-90.412,LDH Region 9,Total Deaths,Tangipahoa,55,death,cumulative,538.0
+651,652,656,30.64627,-90.412,LDH Region 9,Confirmed Deaths,Tangipahoa,55,death,cumulative,432.0
+652,653,657,30.64627,-90.412,LDH Region 9,Probable Deaths,Tangipahoa,55,death,cumulative,106.0
+653,654,658,32.00193,-91.34,LDH Region 8,Total Deaths,Tensas,56,death,cumulative,10.0
+654,655,659,32.00193,-91.34,LDH Region 8,Confirmed Deaths,Tensas,56,death,cumulative,7.0
+655,656,660,32.00193,-91.34,LDH Region 8,Probable Deaths,Tensas,56,death,cumulative,3.0
+656,657,661,29.43787,-90.8475,LDH Region 3,Total Deaths,Terrebonne,57,death,cumulative,369.0
+657,658,662,29.43787,-90.8475,LDH Region 3,Confirmed Deaths,Terrebonne,57,death,cumulative,306.0
+658,659,663,29.43787,-90.8475,LDH Region 3,Probable Deaths,Terrebonne,57,death,cumulative,63.0
+659,660,664,32.8321,-92.3749,LDH Region 8,Total Deaths,Union,58,death,cumulative,114.0
+660,661,665,32.8321,-92.3749,LDH Region 8,Confirmed Deaths,Union,58,death,cumulative,94.0
+661,662,666,32.8321,-92.3749,LDH Region 8,Probable Deaths,Union,58,death,cumulative,20.0
+662,663,667,29.84602,-92.3236,LDH Region 4,Total Deaths,Vermilion,59,death,cumulative,196.0
+663,664,668,29.84602,-92.3236,LDH Region 4,Confirmed Deaths,Vermilion,59,death,cumulative,190.0
+664,665,669,29.84602,-92.3236,LDH Region 4,Probable Deaths,Vermilion,59,death,cumulative,6.0
+665,666,670,31.10859,-93.1841,LDH Region 6,Total Deaths,Vernon,60,death,cumulative,168.0
+666,667,671,31.10859,-93.1841,LDH Region 6,Confirmed Deaths,Vernon,60,death,cumulative,124.0
+667,668,672,31.10859,-93.1841,LDH Region 6,Probable Deaths,Vernon,60,death,cumulative,44.0
+668,669,673,30.85348,-90.0405,LDH Region 9,Total Deaths,Washington,61,death,cumulative,222.0
+669,670,674,30.85348,-90.0405,LDH Region 9,Confirmed Deaths,Washington,61,death,cumulative,193.0
+670,671,675,30.85348,-90.0405,LDH Region 9,Probable Deaths,Washington,61,death,cumulative,29.0
+671,672,676,32.71399,-93.335,LDH Region 7,Total Deaths,Webster,62,death,cumulative,155.0
+672,673,677,32.71399,-93.335,LDH Region 7,Confirmed Deaths,Webster,62,death,cumulative,123.0
+673,674,678,32.71399,-93.335,LDH Region 7,Probable Deaths,Webster,62,death,cumulative,32.0
+674,675,679,30.4635,-91.3128,LDH Region 2,Total Deaths,West Baton Rouge,63,death,cumulative,79.0
+675,676,680,30.4635,-91.3128,LDH Region 2,Confirmed Deaths,West Baton Rouge,63,death,cumulative,75.0
+676,677,681,30.4635,-91.3128,LDH Region 2,Probable Deaths,West Baton Rouge,63,death,cumulative,4.0
+677,678,682,32.78879,-91.4567,LDH Region 8,Total Deaths,West Carroll,64,death,cumulative,53.0
+678,679,683,32.78879,-91.4567,LDH Region 8,Confirmed Deaths,West Carroll,64,death,cumulative,49.0
+679,680,684,32.78879,-91.4567,LDH Region 8,Probable Deaths,West Carroll,64,death,cumulative,4.0
+680,681,685,30.87589,-91.4126,LDH Region 2,Total Deaths,West Feliciana,65,death,cumulative,41.0
+681,682,686,30.87589,-91.4126,LDH Region 2,Confirmed Deaths,West Feliciana,65,death,cumulative,38.0
+682,683,687,30.87589,-91.4126,LDH Region 2,Probable Deaths,West Feliciana,65,death,cumulative,3.0
+683,684,688,31.94449,-92.6367,LDH Region 6,Total Deaths,Winn,66,death,cumulative,58.0
+684,685,689,31.94449,-92.6367,LDH Region 6,Confirmed Deaths,Winn,66,death,cumulative,39.0
+685,686,690,31.94449,-92.6367,LDH Region 6,Probable Deaths,Winn,66,death,cumulative,19.0
