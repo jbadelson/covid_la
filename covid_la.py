@@ -266,7 +266,7 @@ def tableau_hosp():
             wb = ws.setFilter('Region', t, dashboardFilter=True)
             regionWs = wb.getWorksheet('Hospitalization and Ventilator Usage')
             df = pd.DataFrame(regionWs.data)
-            df = df.rename(columns = {'SUM(laggedCOVID Positive inHosp)-alias' : 'hospitalized - '+t, 'SUM(laggedCOVID Positive onVent)-alias' : 'on_vent - '+t, 'DAY(DateTime)-value' : 'date'})
+            df = df.rename(columns = {'SUM(laggedCOVID Positive inHosp)-alias' : 'hospitalized - '+t, 'SUM(laggedCOVID Positive onVent)-alias' : 'on_vent - '+t, 'DateTime-alias' : 'date'})
             df['date'] = pd.to_datetime(df['date']).dt.strftime('%m/%d/%Y')
             df = df.set_index('date')
             hosp = pd.concat([hosp, df[['hospitalized - '+t, 'on_vent - '+t]]], axis = 1)
@@ -290,9 +290,9 @@ def tableau_hosp():
         workbook = ts.getWorkbook()
         sheets = workbook.getSheets()
         ws = ts.getWorksheet('Deaths by date of death')
-        ws.data[['DAY(Timeframe)-value','SUM(Deaths)-value']].dtypes
+        ws.data[['Timeframe-alias','SUM(Deaths)-value']].dtypes
         deaths_dot = pd.DataFrame(ws.data)
-        deaths_dot = deaths_dot.rename(columns = {'DAY(Timeframe)-value' : 'date', 'SUM(Deaths)-value' : 'Date of Death'})
+        deaths_dot = deaths_dot.rename(columns = {'Timeframe-alias' : 'date', 'SUM(Deaths)-value' : 'Date of Death'})
         deaths_dot['date'] = pd.to_datetime(deaths_dot['date']).dt.strftime('%m/%d/%Y')
         deaths_dot = deaths_dot.set_index('date')
         deaths_dot[['Date of Death']].transpose().reset_index().rename(columns={'index' : 'Category'}).to_csv(f'{module_path}/data/symptoms_date_of_death.csv', index=False)
