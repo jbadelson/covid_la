@@ -134,13 +134,16 @@ def esri_cleaner(url):
     formatted_json = [feature['attributes'] for feature in raw_json['features']]
     return formatted_json
 
-def download(dataset):
+def download(dataset, table = 0):
     offset=0
     record_count = 2000
 
     combined = pd.DataFrame()
     while record_count == 2000:
-        batch_records = pd.DataFrame(esri_cleaner(url_prefix + dataset + url_suffix + f'&resultOffset={offset}'))
+        if table==0:
+            batch_records = pd.DataFrame(esri_cleaner(url_prefix + dataset + url_suffix + f'&resultOffset={offset}'))
+        else:
+            batch_records = pd.DataFrame(esri_cleaner(url_prefix + dataset + f'/FeatureServer/{table}/query?where=1%3D1&outFields=*&f=pjson&token' + f'&resultOffset={offset}'))
         combined = combined.append(batch_records)
         offset = len(combined)
         record_count = len(batch_records)
@@ -481,13 +484,13 @@ def vaccine_tracts():
 
 def vaccinations():
     try:
-        vaccines = download(needed_datasets['vaccine_primary'])
+        vaccines = download(needed_datasets['vaccine_primary'], table=3)
         vaccines['Category'] = vaccines['Measure']
         vaccines_primary = vaccines[vaccines['ValueType'] == 'count'].copy()
         vaccines_primary['Group_'] = vaccines_primary['Group_'].replace('N/A', 'State')
         vaccines_primary = vaccines_primary[['Group_', 'Category', 'Value']].rename(
             columns={'Value': update_date_string, 'Group_': 'Geography'})
-        vaccines_parish = download(needed_datasets['vaccine_parish'])
+        vaccines_parish = download(needed_datasets['vaccine_parish'], table=1)
         vaccines_parish['Geography'] = vaccines_parish['Parish']
         vaccines_parish_init = vaccines_parish[['Geography', 'SeriesInt']].copy()
         vaccines_parish_init['Category'] = 'Parish - Series Initiated'
@@ -531,7 +534,7 @@ def vaccinations():
 
         combined = pd.DataFrame()
         while record_count == 2000:
-            batch_records = pd.DataFrame(esri_cleaner(url_prefix + 'Louisiana_COVID_Vaccination_Demographics' + url_suffix + f'&resultOffset={offset}'))
+            batch_records = pd.DataFrame(esri_cleaner(url_prefix + 'Louisiana_COVID_Vaccination_Demographics' + '/FeatureServer/2/query?where=1%3D1&outFields=*&f=pjson&token' + f'&resultOffset={offset}'))
             combined = combined.append(batch_records)
             offset = len(batch_records)
             record_count = len(batch_records)
