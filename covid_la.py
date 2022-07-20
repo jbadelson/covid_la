@@ -449,7 +449,7 @@ def tracts():
             df = df.append(cdf)
         df.sort_values(by=['Tract', 'Category']).to_csv(f'{module_path}/data/cases_tests_tracts.csv')
 
-        tracts = download(needed_datasets['tracts'])
+        tracts = download(needed_datasets['tracts'], table=4)
         tracts = tracts.rename(columns={'GEOID': 'FIPS', 'CaseCount': update_date_string})
         tracts_file = csv_loader(f'{module_path}/data/tracts.csv', update_date_string)
         tracts_file.merge(tracts[['FIPS', update_date_string]],
@@ -680,8 +680,8 @@ def data_download(update_date):
         tableau_hosp()
 #        recovered(cases_deaths_primary)
         date_of_test()
-#        tracts()
-#        case_death_race()
+        tracts()
+        case_death_race()
     except Exception as e:
         logger.exception('Function data_download failed with exception')
         logger.error(str(e))
