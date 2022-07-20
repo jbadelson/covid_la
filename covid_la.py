@@ -680,7 +680,7 @@ def data_download(update_date):
         tableau_hosp()
 #        recovered(cases_deaths_primary)
         date_of_test()
-        tracts()
+#        tracts()
 #        case_death_race()
     except Exception as e:
         logger.exception('Function data_download failed with exception')
