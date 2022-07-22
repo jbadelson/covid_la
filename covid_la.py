@@ -484,13 +484,13 @@ def vaccine_tracts():
 
 def vaccinations():
     try:
-        vaccines = download(needed_datasets['vaccine_primary'])
+        vaccines = download(needed_datasets['vaccine_primary'], table=2)
         vaccines['Category'] = vaccines['Measure']
         vaccines_primary = vaccines[vaccines['ValueType'] == 'count'].copy()
         vaccines_primary['Group_'] = vaccines_primary['Group_'].replace('N/A', 'State')
         vaccines_primary = vaccines_primary[['Group_', 'Category', 'Value']].rename(
             columns={'Value': update_date_string, 'Group_': 'Geography'})
-        vaccines_parish = download(needed_datasets['vaccine_parish'])
+        vaccines_parish = download(needed_datasets['vaccine_parish'], table=3)
         vaccines_parish['Geography'] = vaccines_parish['Parish']
         vaccines_parish_init = vaccines_parish[['Geography', 'SeriesInt']].copy()
         vaccines_parish_init['Category'] = 'Parish - Series Initiated'
