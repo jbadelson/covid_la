@@ -484,7 +484,7 @@ def vaccine_tracts():
 
 def vaccinations():
     try:
-        vaccines = download(needed_datasets['vaccine_primary'], table=2)
+        vaccines = download(needed_datasets['vaccine_primary'], table=1)
         vaccines['Category'] = vaccines['Measure']
         vaccines_primary = vaccines[vaccines['ValueType'] == 'count'].copy()
         vaccines_primary['Group_'] = vaccines_primary['Group_'].replace('N/A', 'State')
