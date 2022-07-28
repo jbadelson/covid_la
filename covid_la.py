@@ -35,8 +35,8 @@ logger.addHandler(stdout_handler)
 with open(f'{module_path}/static_data.json') as f:
     static_data = json.load(f)
 
-#update_date = pd.to_datetime('2022-05-01')
-update_date = datetime.now()
+update_date = pd.to_datetime('2022-07-27')
+#update_date = datetime.now()
 if os.name == 'nt':
     update_date_string = update_date.strftime('%#m/%#d/%#Y')
 else:
@@ -624,7 +624,7 @@ def vaccinations():
 
 def case_death_race():
     try:
-        cases_race_parish = download(needed_datasets['cases_deaths_parish'])
+        cases_race_parish = download(needed_datasets['cases_deaths_parish'], table=1)
         for c in cases_race_parish.iloc[:, 6:16].columns:
             cases_race_parish[c] = pd.to_numeric(cases_race_parish[c], errors='coerce')
         cases_race_parish = (pd.melt(cases_race_parish,
