@@ -484,7 +484,7 @@ def vaccine_tracts():
 
 def vaccinations():
     try:
-        vaccines = download(needed_datasets['vaccine_primary'], table=1)
+        vaccines = download(needed_datasets['vaccine_primary'], table=3)
         vaccines['Category'] = vaccines['Measure']
         vaccines_primary = vaccines[vaccines['ValueType'] == 'count'].copy()
         vaccines_primary['Group_'] = vaccines_primary['Group_'].replace('N/A', 'State')
@@ -534,7 +534,7 @@ def vaccinations():
 
         combined = pd.DataFrame()
         while record_count == 2000:
-            batch_records = pd.DataFrame(esri_cleaner(url_prefix + 'Louisiana_COVID_Vaccination_Demographics' + '/FeatureServer/3/query?where=1%3D1&outFields=*&f=pjson&token' + f'&resultOffset={offset}'))
+            batch_records = pd.DataFrame(esri_cleaner(url_prefix + 'Louisiana_COVID_Vaccination_Demographics' + '/FeatureServer/1/query?where=1%3D1&outFields=*&f=pjson&token' + f'&resultOffset={offset}'))
             combined = combined.append(batch_records)
             offset = len(batch_records)
             record_count = len(batch_records)
@@ -669,7 +669,7 @@ def case_death_race():
 
 def data_download(update_date):
     try:
-        vaccinations()
+#        vaccinations()
         vaccine_tracts()
         cases_deaths_primary = download(needed_datasets['cases_deaths_primary'])
         cases_deaths(cases_deaths_primary)
