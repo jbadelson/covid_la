@@ -22,7 +22,7 @@ log_date_fmt = "%Y-%m-%d %H:%M:%S"
 # stdout_handler.setLevel(logging.DEBUG)
 # stdout_log_format = logging.Formatter('[%(asctime)s] {%(filename)s} %(levelname)s - %(message)s', log_date_fmt)
 # stdout_handler.setFormatter(stdout_log_format)
-logger.addHandler(stdout_handler)
+# logger.addHandler(stdout_handler)
 
 #with open(f'{module_path}/static_data.json') as f:
 #    static_data = json.load(f)
@@ -361,7 +361,7 @@ def vaccine_demos():
         df_export = pd.concat([df_export, df_temp[['Geography', 'Category', update_date_string]]])
     df_export = df_export[['Geography', 'Category', update_date_string]]
     vaccine_demo_file = csv_loader(f'{module_path}/data/vaccines_demo.csv', update_date_string)
-    vaccine_demo_file.merge(df_export, on=['Geography', 'Category'], how='outer').to_csv(f"{module_path}/data/vaccine_demo.csv", index=False)
+    vaccine_demo_file.merge(df_export, on=['Geography', 'Category'], how='outer').to_csv(f"{module_path}/data/vaccines_demo.csv", index=False)
     logger.info("COMPLETE: Vaccine demographic data downloaded and stored")
     
 def main():
