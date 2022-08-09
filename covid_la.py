@@ -18,10 +18,10 @@ logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 log_date_fmt = "%Y-%m-%d %H:%M:%S"
 
-stdout_handler = logging.StreamHandler(sys.stdout)
-stdout_handler.setLevel(logging.DEBUG)
-stdout_log_format = logging.Formatter('[%(asctime)s] {%(filename)s} %(levelname)s - %(message)s', log_date_fmt)
-stdout_handler.setFormatter(stdout_log_format)
+# stdout_handler = logging.StreamHandler(sys.stdout)
+# stdout_handler.setLevel(logging.DEBUG)
+# stdout_log_format = logging.Formatter('[%(asctime)s] {%(filename)s} %(levelname)s - %(message)s', log_date_fmt)
+# stdout_handler.setFormatter(stdout_log_format)
 logger.addHandler(stdout_handler)
 
 #with open(f'{module_path}/static_data.json') as f:
@@ -311,7 +311,7 @@ def vaccines():
     parishes['Category'] = parishes.apply(lambda x: f"Parish - {x['Category']}", axis=1)
     state['Category'] = state.apply(lambda x: f"Total {x['Category']}", axis=1)
     vaccines_export = pd.concat([state, parishes], axis=0)
-    vaccines_file = csv_loader(f"{module_path}/data/capacity.csv", update_date_string)
+    vaccines_file = csv_loader(f"{module_path}/data/vaccines.csv", update_date_string)
     vaccines_file.merge(vaccines_export, on=['Geography', 'Category'], how='outer').to_csv(f"{module_path}/data/vaccines.csv", index=False)
     logger.info('COMPLETE: Parish vaccine data downloaded and stored.')
 
