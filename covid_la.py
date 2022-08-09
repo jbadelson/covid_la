@@ -3,6 +3,7 @@ import os
 import sys
 
 module_path = os.path.abspath(os.path.dirname(__file__))
+moduel_path = 'c:/users/jadelson/downloads'
 if module_path not in sys.path:
     sys.path.append(module_path)
 from urllib.request import urlopen
@@ -10,6 +11,7 @@ import json
 from datetime import datetime, timedelta
 import pandas as pd
 from tableauscraper import TableauScraper as TS
+import time
 
 import logging
 
@@ -17,137 +19,47 @@ logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 log_date_fmt = "%Y-%m-%d %H:%M:%S"
 
-file_handler = logging.FileHandler(filename='covid_la.log', mode='w')
 stdout_handler = logging.StreamHandler(sys.stdout)
-
-file_handler.setLevel(logging.DEBUG)
 stdout_handler.setLevel(logging.DEBUG)
-
-file_log_format = logging.Formatter('[%(asctime)s] {%(filename)s:%(lineno)d} %(levelname)s - %(message)s', log_date_fmt)
-stdout_log_format = logging.Formatter('[%(asctime)s] {%(filename)s:%(lineno)d} %(levelname)s - %(message)s', log_date_fmt)
-
-file_handler.setFormatter(file_log_format)
+stdout_log_format = logging.Formatter('[%(asctime)s] {%(filename)s} %(levelname)s - %(message)s', log_date_fmt)
 stdout_handler.setFormatter(stdout_log_format)
-
-logger.addHandler(file_handler)
 logger.addHandler(stdout_handler)
 
-with open(f'{module_path}/static_data.json') as f:
-    static_data = json.load(f)
+#with open(f'{module_path}/static_data.json') as f:
+#    static_data = json.load(f)
 
-#update_date = pd.to_datetime('2022-07-27')
 update_date = datetime.now()
+#update_date = pd.to_datetime('2022-07-27')
+
 if os.name == 'nt':
     update_date_string = update_date.strftime('%#m/%#d/%#Y')
 else:
     update_date_string = update_date.strftime('%-m/%-d/%Y')
-file_date = f'{update_date.year}{update_date.month}{update_date.day}'
-url_prefix = 'https://services5.arcgis.com/O5K6bb5dZVZcTo5M/ArcGIS/rest/services/'
-url_suffix = '/FeatureServer/0/query?where=1%3D1&outFields=*&f=pjson&token='
 
-
-def tract_date():
-    if datetime.today().weekday() >= 2:
-        return update_date - timedelta(days=update_date.weekday())
-    else:
-        return update_date - timedelta(days=update_date.weekday(), weeks=1)
-
-
-needed_datasets = {'cases_deaths_primary' : 'Louisiana_COVID_Reporting',  # Main LDH cases, deaths and test data
-                   'cases_deaths_parish' : 'Cases_and_Deaths_by_Race_by_Parish',
-                   'cases_deaths_region' : 'Cases_and_Deaths_by_Region_by_Race',
-                   'vaccine_primary' : 'Louisiana_COVID_Vaccination_Info',
-                   'vaccine_parish' : 'Louisiana_COVID_Vaccination_by_Parish',
-                   'vaccine_tract': 'Louisiana_COVID_Vaccination_by_Tract',
-                   'vaccine_full_demo' : 'Louisiana_COVID_Vaccination_Demographics',
-                   'tracts': 'Louisiana_COVID_Cases_by_Tract'}
-
-
-def get_datasets():
-    try:
-        url = 'https://services5.arcgis.com/O5K6bb5dZVZcTo5M/ArcGIS/rest/services?f=pjson'
-        data = urlopen(url).read()
-        current_ldh_datasets = []
-        for j in json.loads(data)['services']:
-            if j['name'] == 'Cases and Deaths by Race by Parish and Region _ updated':
-                current_ldh_datasets.append('Cases%20and%20Deaths%20by%20Race%20by%20Parish%20and%20Region%20_%20updated')
-            else:
-                current_ldh_datasets.append(j['name'])
-        logger.info("Retrieved listing of current LDH datasets.")
-    except Exception as e:
-        logger.error('Failed to get LDH datasets')
-        logger.exception('Function get_datasets failed with exception')
-        logger.error(str(e))
-        sys.exit(1)
-    return current_ldh_datasets
-
-
-def compare_datasets(current_ldh_datasets):
-    try:
-        added = set(current_ldh_datasets) - set(static_data["prior_datasets"])
-        deleted = set(static_data["prior_datasets"]) - set(current_ldh_datasets)
-        logger.info("Comparing datasets list against known LDH datasets.")
-        if len(added) > 0:
-            logger.warning(f'Found {len(added)} new datasets:')
-            for a in added:
-                logger.warning(f'    {a}')
-        else:
-            logger.info("There are no new datasets.")
-        if len(deleted) > 1:
-            logger.warning(f"Found {len(deleted)} deleted datasets.")
-            for d in deleted:
-                logger.warning(f"    {d}")
-        else:
-            logger.info("There are no deleted datasets.")
-    except Exception as e:
-        logger.error('Failed to compare datasets')
-        logger.exception('Function compare_datasets failed with exception')
-        logger.error(str(e))
-        sys.exit(1)
-
-def check_datasets(current_ldh_datasets):
-    try:
-        logger.info("Checking to ensure all needed datasets are available.")
-        missing = []
-        for d in needed_datasets:
-            if needed_datasets[d] in current_ldh_datasets:
-                logger.info(f'FOUND: {needed_datasets[d]}')
-            else:
-                missing.append(needed_datasets[d])
-                logger.error(f"MISSING: {needed_datasets[d]}")
-
-        if len(missing) > 0:
-            logger.error('Datasets missing:')
-            for m in missing:
-                logger.error(f"    {m}")
-            logger.error('Missing needed datasets')
-            sys.exit(1)
-    except Exception as e:
-        logger.error('Failed to check datasets')
-        logger.exception('Function check_datasets failed with exception')
-        logger.error(str(e))
-        sys.exit(1)
-
-def esri_cleaner(url):
-    data = urlopen(url).read()
-    raw_json = json.loads(data)
-    formatted_json = [feature['attributes'] for feature in raw_json['features']]
-    return formatted_json
-
-def download(dataset, table = 0):
-    offset=0
-    record_count = 2000
-
-    combined = pd.DataFrame()
-    while record_count == 2000:
-        if table==0:
-            batch_records = pd.DataFrame(esri_cleaner(url_prefix + dataset + url_suffix + f'&resultOffset={offset}'))
-        else:
-            batch_records = pd.DataFrame(esri_cleaner(url_prefix + dataset + f'/FeatureServer/{table}/query?where=1%3D1&outFields=*&f=pjson&token' + f'&resultOffset={offset}'))
-        combined = combined.append(batch_records)
-        offset = len(combined)
-        record_count = len(batch_records)
-    return combined
+def retry(times):
+    """
+    Retry Decorator
+    Retries the wrapped function/method `times` times if the exceptions listed
+    in ``exceptions`` are thrown
+    :param times: The number of times to repeat the wrapped function/method
+    :type times: Int
+    """
+    def decorator(func):
+        def newfn(*args, **kwargs):
+            attempt = 0
+            while attempt < times:
+                try:
+                    return func(*args, **kwargs)
+                except:
+                    logger.error(
+                        'Exception thrown when attempting to run %s, attempt '
+                        '%d of %d' % (func, attempt, times)
+                    )
+                    attempt += 1
+                    time.sleep(5)
+            return func(*args, **kwargs)
+        return newfn
+    return decorator
 
 def csv_loader(file, date):
     df = pd.read_csv(file, dtype={'FIPS': object})
@@ -155,553 +67,313 @@ def csv_loader(file, date):
         df = df.drop(columns=date)
     return df
 
-def cases_deaths(cases_deaths_primary):
-    try:
-        categories = {'Confirmed Cases': 'cases',
-                      'Confirmed Deaths': 'deaths',
-                      'Probable Cases': 'cases_probable',
-                      'Probable Deaths': 'deaths_probable',
-                      'Total Cases': 'cases_total',
-                      'Total Deaths': 'deaths_total'}
-        for c in categories:
-            cdf = cases_deaths_primary[cases_deaths_primary['Measure'] == c].copy()
-            cdf['Value'] = cdf['Value'].fillna(0).astype(int)
-            cdf = cdf[['Group_', 'Value']].rename(columns={'Group_': 'County', 'Value': update_date_string})
-            cfile = csv_loader(f'{module_path}/data/{categories[c]}.csv', update_date_string)
-            cfile.merge(cdf,
-                        on='County',
-                        how='outer').to_csv(f'{module_path}/data/{categories[c]}.csv', index=False)
-            logger.info(f"COMPLETE: {c}")
-    except Exception as e:
-        logger.error('Failed to download cases and death data')
-        logger.exception('Function cases_deaths failed with exception')
-        logger.error(str(e))
-        sys.exit(1)
+@retry(times=5)
+def cases():
+    logger.info('STARTING: Parish case data by type.')
+    # load data from tableau workbook
+    url='https://analytics.la.gov/t/LDH/views/CasesChartsforDashboard/NewandPreviousCasesbyDate'
+    ts = TS()
+    ts.loads(url)
+    workbook = ts.getWorkbook()
+    # tabular data on total cases is in the Table: New and Previous Cases chart 
+    # in the Cases by Test Date tab of Covid-19 Cases by Test Collection Date
+    workbook = workbook.setParameter("New and Previous Cases Chart Selection", "Table: Cases by Type by Parish")
+    cases = pd.DataFrame(workbook.getWorksheet('Parish Cases List (2)').data)
+    cases = cases.rename(columns={'Parish-value' : 'County', 'SUM(Cases)-alias' : update_date_string})
+    case_types = {'%all%' : 'cases_total', 
+                    'Confirmed' : 'cases', 
+                    'Probable' : 'cases_probable', 
+                    'Reinfections' : 'cases_reinfections'}
 
-def tests(cases_deaths_primary):
-    try:
-        categories = {'Molecular Tests': 'tests_molecular',
-                      'Antigen Tests': 'tests_antigen'}
-        tdf = csv_loader(f'{module_path}/data/tests.csv', update_date_string)
-        df = pd.DataFrame()
-        for c in categories:
-            cdf = cases_deaths_primary[cases_deaths_primary['Measure'] == c].copy()
-            cdf = cdf.rename(columns={'Value': update_date_string, 'Group_': 'County'})
-            cdf['Category'] = c
-            cdf = cdf[['County', 'Category', update_date_string]]
-            cfile = csv_loader(f"{module_path}/data/{categories[c]}.csv", update_date_string)
-            df = df.append(cdf)
-            (cfile
-             .merge(cdf,
-                    left_on=['County', 'Category'],
-                    right_on=['County', 'Category'],
-                    how='outer')
-             .to_csv(f"{module_path}/data/{categories[c]}.csv", index=False))
-            logger.info(f"COMPLETE: {c}")
-        tdf = (tdf
-               .merge(df,
-                      left_on=['County', 'Category'],
-                      right_on=['County', 'Category'],
-                      how='outer'))
-        tdf.to_csv(f'{module_path}/data/tests.csv', index=False)
-        logger.info("COMPLETE: Total tests")
-    except Exception as e:
-        logger.error('Failed to download test data')
-        logger.exception('Function tests failed with exception')
-        logger.error(str(e))
-        sys.exit(1)
+    for category in case_types.keys():
+        df = cases[(cases['casetype-value'] == category) & (cases['County']!='%all%')][['County', update_date_string]]
+        # Summing all parish data because on launch West Feliciana had multiple rows
+        df = df.groupby('County').agg({update_date_string : 'sum'}).reset_index()
+        df_file = csv_loader(f"{module_path}/data/{case_types[category]}.csv", update_date_string)
+        df_file.merge(df, on='County', how='outer').to_csv(f"{module_path}/data/{case_types[category]}.csv", index=False)
+    logger.info('COMPLETE: Parish case data by type downloaded and stored.')
 
-def demos(cases_deaths_primary):
-    try:
-        categories = {'case': 'case_demo',
-                      'death': 'death_demo'}
-        for c in categories:
-            cdf = cases_deaths_primary[
-                (cases_deaths_primary['Measure'].isin(['Age', 'Gender'])) & (cases_deaths_primary['ValueType'] == c)].copy()
-            cdf = cdf.rename(columns={'Value': update_date_string, 'Group_': 'Category'})
-            cfile = csv_loader(f"{module_path}/data/{categories[c]}.csv", update_date_string)
-            (cfile.merge(cdf[['Category', update_date_string]],
-                         on='Category',
-                         how='outer').to_csv(f'{module_path}/data/{categories[c]}.csv', index=False))
-            logger.info(f"COMPLETE: {c} demographics")
-    except Exception as e:
-        logger.error('Failed to download demographic data')
-        logger.exception('Function demos failed with exception')
-        logger.error(str(e))
-        sys.exit(1)
+@retry(times=5)
+def deaths():
+    logger.info('STARTING: Parish death data by type.')
+    # load data from tableau workbook
+    url='https://analytics.la.gov/t/LDH/views/URLDashboardDeaths/DeathsbyParishList'
+    ts = TS()
+    ts.loads(url)
+    workbook = ts.getWorkbook()
+    deaths = pd.DataFrame(workbook.getWorksheet('Deaths by Parish and Region').data)
+    deaths = deaths.rename(columns = {'Parish-value' : 'County', 'SUM(Value)-alias' : update_date_string})
 
-def timelines(cases_deaths_primary):
-    try:
-        categories = {'COVID-positive': 'hospitalizations',
-                      'Date of Death': 'symptoms_date_of_death'}
-        for c in categories:
-            cdf = cases_deaths_primary[cases_deaths_primary['Measure'] == c].copy()
-            cdf = cdf[cdf['Timeframe'] != 'current']
-            cdf.loc[cdf["Timeframe"] != 'current', 'Date'] = cdf['Timeframe']
-            cdf.loc[cdf["Timeframe"] == 'current', 'Date'] = datetime.now()
-            cdf['Date'] = pd.to_datetime(cdf['Date'])
-#            cdf['Date'] = pd.to_datetime(cdf['Timeframe'])
-            if c == 'COVID-positive':
-                cdf = cdf.pivot(index='ValueType', columns='Date', values='Value')
-            else:
-                cdf = cdf.pivot(index='Measure', columns='Date', values='Value')
-            cdf.columns = cdf.columns.strftime('%m/%d/%Y')
-            cdf = cdf.reset_index().rename(columns={'ValueType': 'Category', 'Measure': 'Category'})
-            cdf.to_csv(f'{module_path}/data/{categories[c]}.csv', index=False)
-        logger.info("COMPLETE: Hospitalizations, ventilators and Date of Death")
-    except Exception as e:
-        logger.error('Failed to download hospitalizations, ventilators or date of death data')
-        logger.exception('Function timelines failed with exception')
-        logger.error(str(e))
-        sys.exit(1)
+    death_types = {'Total Deaths' : 'deaths_total',
+                    'Probable Deaths' : 'deaths_probable',
+                    'Confirmed Deaths' : 'deaths'}
+    for category in death_types.keys():
+        df = deaths[(deaths['Measure-value'] == category) & (deaths['County']!='%all%')][['County', update_date_string]]
+        df_file = csv_loader(f"{module_path}/data/{death_types[category]}.csv", update_date_string)
+        df_file.merge(df, on='County', how='outer').to_csv(f"{module_path}/data/{death_types[category]}.csv", index=False)
+    logger.info('COMPLETE: Parish death data by type downloaded and stored.')
 
-def tableau_hosp():
-    try:
-        url = 'https://analytics.la.gov/t/LDH/views/covid19_hosp_vent_reg/Hosp_vent_c'
-        ts = TS(logLevel='ERROR')
-        ts.loads(url)
-        workbook = ts.getWorkbook()
-        sheets = workbook.getSheets()
-        ws = ts.getWorksheet('Hospitalization and Ventilator Usage')
-        filters = ws.getFilters()
-        hosp = pd.DataFrame()
-        for t in filters[0]['values']:
+def case_demos():
+    logger.info('STARTING: Case demographics')
+    ts = TS()
+    url = 'https://analytics.la.gov/t/LDH/views/CasesChartsforDashboard/CasesbyAge'
+    ts.loads(url)
+    workbook = ts.getWorkbook()
+    workbook = workbook.setParameter("Select Age Range View", "Cumulative Cases Bar Chart")
+    ages = pd.DataFrame(workbook.getWorksheet('Cases by Age Cumulative').data)
+    age_converter = {
+        '0-4'   : '0 to 4',
+        '5-17'  : '5 to 17',
+        '18-29' : '18 to 29',
+        '30-39' : '30 to 39',
+        '40-49' : '40 to 49',
+        '50-59' : '50 to 59',
+        '60-69' : '60 to 69',
+        '+70'   : '70+'             
+                    }
+    ages['Date'] = update_date_string
+    ages = ages.rename(columns = {
+        'Age Range-value' : 'Category',
+        'Region-alias' : 'Geography',
+        'SUM(Cases)-value' : 'Cases'
+    })
+    ages['Category'] = ages['Category'].replace(age_converter)
+    age_export = pd.pivot(ages, index=['Category', 'Geography'], columns='Date', values='Cases').reset_index()
+    age_export['Geography'] = age_export['Geography'].apply(lambda x: f"Region {x.split(' - ')[0]}")
+    age_export_la = age_export.groupby('Category').sum().reset_index()
+    age_export_la['Geography'] = 'Louisiana'
+    age_export_la = age_export_la.rename(columns={'Date' : update_date_string})
+    logger.info('COMPLETE: Case demographics downloaded and saved.')
+    df_file = csv_loader(f"{module_path}/data/case_demo.csv", update_date_string)
+    df_file.merge(age_export_la, on=['Geography', 'Category'], how='outer').to_csv(f"{module_path}/data/case_demo.csv", index=False)
+
+
+@retry(times=5)
+def hospitalizations():
+    logger.info('STARTING: State hospitalization and ventilator data.')
+    url = 'https://analytics.la.gov/t/LDH/views/URLDashboardHospitalizations/HospitalCharts'
+    ts = TS()
+    ts.loads(url)
+    workbook = ts.getWorkbook()
+    hosp_worksheet = workbook.getWorksheet('Hospital and Vent Usage')
+    hosp = hosp_worksheet.data
+    hosp['DateTime-value'] = pd.to_datetime(hosp['DateTime-value']).dt.strftime('%m/%d/%Y')
+    hosp = hosp.rename(columns={'DateTime-value' : 'Category', 'SUM(Covid Positive in Hospital)-value' : 'hospitalized', 'SUM(Covid Positive on Vent)-alias' : 'on_vent'})
+    hosp = hosp[['Category', 'hospitalized', 'on_vent']].set_index('Category').transpose().reset_index().rename(columns={'index' : 'Category'})
+    hosp.to_csv(f'{module_path}/data/hospitalizations.csv', index=False)
+    logger.info('COMPLETE: State hospitalization data downloaded and stored.')
+
+@retry(times=5)
+def hosp_region():
+    logger.info('STARTING: Regional hospitalization and ventilator data.')
+    url = 'https://analytics.la.gov/t/LDH/views/URLDashboardHospitalizations/HospitalCharts'
+    ts = TS(logLevel='ERROR')
+    ts.loads(url)
+    workbook = ts.getWorkbook()
+    sheets = workbook.getSheets()
+    ws = ts.getWorksheet('Hospital and Vent Usage')
+    filters = ws.getFilters()
+    hosp = pd.DataFrame()
+    for t in filters[0]['values']:
+        if t != 'Under Investigation':
+            logger.info(f'    DOWNLOADED: {t} hospitalization and ventilator data')
             wb = ws.setFilter('Region', t, dashboardFilter=True)
-            regionWs = wb.getWorksheet('Hospitalization and Ventilator Usage')
+            regionWs = wb.getWorksheet('Hospital and Vent Usage')
             df = pd.DataFrame(regionWs.data)
-            df = df.rename(columns = {'SUM(laggedCOVID Positive inHosp)-alias' : 'hospitalized - '+t, 'SUM(laggedCOVID Positive onVent)-alias' : 'on_vent - '+t, 'DateTime-alias' : 'date'})
+            df = df.rename(columns = {'SUM(Covid Positive in Hospital)-value' : 'hospitalized - '+t, 'SUM(Covid Positive on Vent)-alias' : 'on_vent - '+t, 'DateTime-value' : 'date'})
             df['date'] = pd.to_datetime(df['date']).dt.strftime('%m/%d/%Y')
             df = df.set_index('date')
             hosp = pd.concat([hosp, df[['hospitalized - '+t, 'on_vent - '+t]]], axis = 1)
-        hosp = hosp.transpose().reset_index()
-        h = hosp['index'].str.split(' - ', expand=True).rename(columns={0 : 'Category', 1 : 'Geography'})
-        hosp = pd.concat([h[['Geography', 'Category']], hosp], axis=1)
-        hosp['Geography'] = 'Region '+hosp['Geography']
-        hosp = hosp.drop('index', axis=1)
-        hosp.to_csv(f'{module_path}/data/region_hosp.csv', index=False)
-        pd.concat([hosp[hosp['Category']=='hospitalized'].iloc[:,2:].sum().rename('hospitalized'),hosp[hosp['Category']=='on_vent'].iloc[:,2:].sum().rename('on_vent')], axis=1).transpose().reset_index().rename(columns={'index' : 'Category'}).to_csv(f'{module_path}/data/hospitalizations.csv', index=False)
-        logger.info('COMPLETE: Regional hospitalization data from Tableau')
-    except Exception as e:
-        logger.error('Failed to download regional hospitalization data')
-        logger.exception('Function tableau_hosp failed with exception')
-        logger.error(str(e))
-        sys.exit(1)
-    try:
-        url = 'https://analytics.la.gov/t/LDH/views/COVID19_deathsxtime/OverTime'
-        ts = TS(logLevel='ERROR')
-        ts.loads(url)
-        workbook = ts.getWorkbook()
-        sheets = workbook.getSheets()
-        ws = ts.getWorksheet('Deaths by date of death')
-        ws.data[['Timeframe-alias','SUM(Deaths)-value']].dtypes
-        deaths_dot = pd.DataFrame(ws.data)
-        deaths_dot = deaths_dot.rename(columns = {'Timeframe-alias' : 'date', 'SUM(Deaths)-value' : 'Date of Death'})
-        deaths_dot['date'] = pd.to_datetime(deaths_dot['date']).dt.strftime('%m/%d/%Y')
-        deaths_dot = deaths_dot.set_index('date')
-        deaths_dot[['Date of Death']].transpose().reset_index().rename(columns={'index' : 'Category'}).to_csv(f'{module_path}/data/symptoms_date_of_death.csv', index=False)
-    except Exception as e:
-        logger.error('Failed to download date of death data')
-        logger.exception('Function tableau_hosp failed with exception')
-        logger.error(str(e))
-        sys.exit(1)
-    try:
-        url = 'https://analytics.la.gov/t/LDH/views/extracovidinfo/Dashboard1'
-        ts = TS()
-        ts.loads(url)
-        ws = ts.getWorksheet('New Reinfections')
-        new_reinfections = ws.data['AGG(SUM(INT([Value])))-alias'][0]
-        ws = ts.getWorksheet('Total Reinfections')
-        total_reinfections = ws.data['AGG(SUM(INT([Value])))-alias'][0]
-        reinfect = pd.DataFrame({'Category' : ['New Reinfections', 'Total Reinfections'], update_date_string : [new_reinfections, total_reinfections]})
-        reinfect_file = csv_loader(f'{module_path}/data/reinfect.csv', update_date_string)
-        reinfect_file = reinfect_file.merge(reinfect, on='Category', how='outer')
-        reinfect_file.to_csv(f'{module_path}/data/reinfect.csv', index=False)
-    except Exception as e:
-        logger.error('Failed to download reinfection info')
-        logger.exception('Function tableau_hosp failed with exception')
-        logger.error(str(e))
-        #sys.exit(1)
-    try:
-        variants_file = pd.read_csv(f'{module_path}/data/variants.csv')
-        url = 'https://analytics.la.gov/t/LDH/views/extracovidinfo/Dashboard1'
-        ts = TS()
-        ts.loads(url)
-        workbook = ts.getWorkbook()
-        sheets = workbook.getSheets()
-        ws = ts.getWorksheet('Variants')
-        variants = ws.data
-        variants_dict = {}
-        variants_date = variants['Timeframe-alias'][0]
-        for i,r in variants.iterrows():
-            variants_dict[r['Group-alias']] = r['AGG(SUM(FLOAT([Value])))-alias']/100
-        for k in variants_dict:
-            variants_file.loc[variants_date, k] = variants_dict[k]
-        variants_file.to_csv(f'{module_path}/data/variants.csv')
-    except Exception as e:
-        logger.error('Failed to download variant info')
-        logger.exception('Function tableau_hosp failed with exception')
-        logger.error(str(e))
-        #sys.exit(1)
-    try:
-        url = 'https://analytics.la.gov/t/LDH/views/casesxcollection_reinf/FirstandReinfections?%3Aembed=y&%3AisGuestRedirectFromVizportal=y'
-        ts = TS()
-        ts.loads(url)
-        sheets = workbook.getSheets()
-        ws = ts.getWorksheet('First and Reinfections by Collection Date')
-        filters = ws.getFilters()
-        # wb = ws.setFilter('region', '2 - Baton Rouge')
-        # regionWs = wb.getWorksheet('First and Reinfections by Collection Date')
-        reinfections = pd.DataFrame()
-        for t in filters[0]['values']:
-            wb = ws.setFilter('region', t)
-            regionWs = wb.getWorksheet('First and Reinfections by Collection Date')
-            df = pd.DataFrame(regionWs.data)
-            df = df.rename(columns={'SUM(Number of Rows (Aggregated))-value' : 'infections', 'collectdate-value' : 'date', 'casetype (group)-alias' : 'type'})
-            # df['date'] = pd.to_datetime(df['date']).dt.strftime('%m/%d/%Y')
-            df = pd.pivot(df, index='date', columns='type', values = 'infections').rename(columns={'First Infections' : 'First Infections - '+t, 'Reinfections' : 'Reinfections - '+t})
-            reinfections = pd.concat([reinfections, df[['First Infections - '+t, 'Reinfections - '+t]]], axis=1)
-        reinfections = reinfections.transpose().reset_index()
-        r = reinfections['type'].str.split(' - ',expand=True).rename(columns={0:'Category', 1:'Geography'})
-        reinfections = pd.concat([r[['Geography', 'Category']], reinfections], axis=1)
-        reinfections['Geography'] = 'Region '+reinfections['Geography']
-        reinfections = reinfections.drop('type',axis=1).fillna(0)
-        reinfections.to_csv(f'{module_path}/data/reinfections.csv')
-    except Exception as e:
-        logger.error('Failed to download variant info')
-        logger.exception('Function tableau_hosp failed with exception')
-        logger.error(str(e))
+    hosp = hosp.transpose().reset_index()
+    h = hosp['index'].str.split(' - ', expand=True).rename(columns={0 : 'Category', 1 : 'Geography'})
+    hosp = pd.concat([h[['Geography', 'Category']], hosp], axis=1)
+    hosp['Geography'] = 'Region '+hosp['Geography']
+    hosp = hosp.drop('index', axis=1)
+    hosp.to_csv(f'{module_path}/data/region_hosp.csv', index=False)
+    logger.info('COMPLETE: Regional hospitalization and ventilator data downloaded and stored.')
 
-def capacity(cases_deaths_primary):
-    try:
-        capacity = cases_deaths_primary[cases_deaths_primary['Measure'].isin(['Hospital Vents', 'Beds', 'ICU Beds'])].copy()
-        capacity['LDH Region'] = capacity['Geography'].str[4:]
-        capacity = capacity.replace({'Measure':
-                                         {'Hospital Vents': 'Ventilators',
-                                          'Beds': 'Hospital Beds',
-                                          'ICU Beds': 'ICU'}})
-        capacity_total = capacity.groupby(['LDH Region', 'Measure']).agg({'Value': 'sum'}).reset_index()
-        capacity_total['Group_'] = 'Total'
-        capacity = capacity.append(capacity_total, sort=True).rename(columns={'Value': update_date_string})
-        capacity['Category'] = capacity['Measure'] + ' ' + capacity['Group_']
-        capacity_file = csv_loader(f'{module_path}/data/capacity.csv', update_date_string)
-        capacity_file.merge(capacity[['LDH Region', 'Category', update_date_string]], on=['Category', 'LDH Region'],
-                            how='outer').to_csv(f'{module_path}/data/capacity.csv', index=False)
-        logger.info('COMPLETE: Capacity')
-    except Exception as e:
-        logger.error('Failed to download capacity data')
-        logger.exception('Function capacity failed with exception')
-        logger.error(str(e))
-        sys.exit(1)
+@retry(times=5)
+def capacity():
+    logger.info('STARTING: Hospital capacity data.')
+    ts = TS()
+    url = 'https://analytics.la.gov/t/LDH/views/URLDashboardHospitalizations/RegBedAvailability'
+    ts.loads(url)
+    workbook = ts.getWorkbook()
+    worksheet = workbook.getWorksheet('Hospital Reg Bed Availability')
+    beds = pd.DataFrame(worksheet.data)
+    beds_tot_avail = (
+        beds[beds['Bed Status-alias'] == 'Available']
+        .rename(
+            columns={
+                'Region-alias' : 'LDH Region', 
+                'SUM(Abs Diverging)-alias' : 'Hospital Beds Still Available', 
+                'SUM(Bed Count)-alias' : 'Hospital Beds Total'
+                }
+            )
+    )
+    beds_in_use = (
+        beds[beds['Bed Status-alias'] == 'In Use']
+        .rename(
+            columns = {
+                'Region-alias' : 'LDH Region', 
+                'SUM(Abs Diverging)-alias' : 'Hospital Beds In Use'
+                }
+            )
+    )
+    beds_all = (
+        beds_tot_avail[
+            [
+                'LDH Region', 
+                'Hospital Beds Still Available', 
+                'Hospital Beds Total'
+                ]
+            ]
+            .merge(
+                beds_in_use[
+                    [
+                        'LDH Region', 
+                        'Hospital Beds In Use'
+                        ]
+                    ], 
+                    on="LDH Region"
+                )
+    )
+    beds_all['LDH Region'] = beds_all['LDH Region'].apply(lambda x: f"Region {x.split(' - ')[0]}")
+    beds_all = pd.melt(beds_all, id_vars = 'LDH Region', value_vars=['Hospital Beds Still Available', 'Hospital Beds In Use', 'Hospital Beds Total'])
 
-def recovered(cases_deaths_primary):
-    try:
-        recovered_file = pd.read_csv(f'{module_path}/data/recovered.csv')
-        recovered_file[update_date_string] = \
-        cases_deaths_primary[cases_deaths_primary['Measure'] == 'Presumed Recovered']['Value'].values[0]
-        recovered_file.to_csv(f'{module_path}/data/recovered.csv', index=False)
-        logger.info("COMPLETE: Recoveries")
-    except Exception as e:
-        logger.error('Failed to download recovery data')
-        logger.exception('Function recovered failed with exception')
-        logger.error(str(e))
-        sys.exit(1)
+    ts = TS()
+    url = 'https://analytics.la.gov/t/LDH/views/URLDashboardHospitalizations/ICUBedAvailability'
+    ts.loads(url)
+    workbook = ts.getWorkbook()
+    worksheet = workbook.getWorksheet('Hospital ICU Bed Availability')
+    icu = pd.DataFrame(worksheet.data)
+    icu_avail = (
+        icu[icu['Bed Status-alias'] == 'Available']
+        .rename(
+            columns={
+                'Region-alias' : 'LDH Region', 
+                'SUM(Abs Diverging)-alias' : 'ICU Still Available', 
+                'SUM(Bed Count)-alias' : 'ICU Total'
+                }
+            )
+    )
+    icu_tot_in_use = (
+        icu[icu['Bed Status-alias'] == 'In Use']
+        .rename(
+            columns = {
+                'Region-alias' : 'LDH Region', 
+                'SUM(Abs Diverging)-alias' : 'ICU In Use', 
+                'SUM(Bed Count)-alias' : 'ICU Total'
+                }
+            )
+    )
+    icu_all = (
+        icu_avail[
+            [
+                'LDH Region', 
+                'ICU Still Available'
+                ]
+            ]
+            .merge(
+                icu_tot_in_use[
+                    [
+                        'LDH Region', 
+                        'ICU In Use', 
+                        'ICU Total'
+                        ]
+                    ], 
+                    on='LDH Region'
+                )
+    )
+    icu_all['LDH Region'] = icu_all['LDH Region'].apply(lambda x: f"Region {x.split(' - ')[0]}")
+    icu_all = pd.melt(icu_all, id_vars = 'LDH Region', value_vars=['ICU Still Available', 'ICU In Use', 'ICU Total'])
 
-def date_of_test():
-    try:
-        dot = pd.read_excel('http://ldh.la.gov/assets/oph/Coronavirus/data/LA_COVID_TESTBYDAY_PARISH_PUBLICUSE.xlsx')
-        dot['Lab Collection Date'] = dot['Lab Collection Date'].apply(lambda x: x.strftime('%m/%d/%Y'))
+    cap = pd.concat([beds_all, icu_all], axis=0)
+    cap = cap.rename(columns = {'variable' : 'Category', 'value' : update_date_string})
+    cap_file = csv_loader(f"{module_path}/data/capacity.csv", update_date_string)
+    cap_file.merge(cap, on=['LDH Region', 'Category'], how='outer').to_csv(f"{module_path}/data/capacity.csv", index=False)
 
-        categories = ['Daily Test Count',
-                      'Daily Case Count',
-                      'Daily Negative Test Count',
-                      'Daily Positive Test Count', ]
+    logger.info('COMPLETE: Hospital capacity data downloaded and stored.')
 
-        df = pd.DataFrame()
-
-        for c in categories:
-            cdf = pd.pivot(dot,
-                           index='Parish',
-                           columns='Lab Collection Date',
-                           values=c)
-            cdf.insert(0, 'Category', '')
-            cdf['Category'] = c
-            df = df.append(cdf)
-        df.sort_values(by=['Parish', 'Category']).to_csv(f'{module_path}/data/cases_tests_dot.csv')
-        logger.info('COMPLETE: Date of Test')
-    except Exception as e:
-        logger.error('Failed to download date of test data')
-        logger.exception('Function date_of_test failed with exception')
-        logger.error(str(e))
-        sys.exit(1)
-
-def tracts():
-    try:
-        tract_week = pd.read_excel(
-            'https://ldh.la.gov/assets/oph/Coronavirus/data/LA_COVID_TESTBYWEEK_TRACT_PUBLICUSE.xlsx')
-        categories = ['Weekly Case Count', 'Weekly Negative Test Count', 'Weekly Positive Test Count', 'Weekly Test Count']
-        df = pd.DataFrame()
-        for c in categories:
-            cdf = pd.pivot(tract_week,
-                           index='Tract',
-                           columns='Date for end of week',
-                           values=c)
-            cdf['Category'] = c
-            df = df.append(cdf)
-        df.sort_values(by=['Tract', 'Category']).to_csv(f'{module_path}/data/cases_tests_tracts.csv')
-
-        tracts = download(needed_datasets['tracts'], table=4)
-        tracts = tracts.rename(columns={'GEOID': 'FIPS', 'CaseCount': update_date_string})
-        tracts_file = csv_loader(f'{module_path}/data/tracts.csv', update_date_string)
-        tracts_file.merge(tracts[['FIPS', update_date_string]],
-                          on='FIPS',
-                          how='outer').to_csv(f'{module_path}/data/tracts.csv', index=False)
-        logger.info('COMPLETE: Tracts')
-    except Exception as e:
-        logger.error('Failed to download tract data')
-        logger.exception('Function tracts failed with exception')
-        logger.error(str(e))
-        sys.exit(1)
-
-def vaccine_tracts():
-    try:
-        vaccine_tracts = download(needed_datasets['vaccine_tract'], table=11)
-        vaccine_tracts['TractID'] = vaccine_tracts['TractID'].astype(str)
-        vaccine_tracts = pd.melt(vaccine_tracts, id_vars=['TractID'], value_vars=['SeriesInt', 'SeriesComp'])
-        vaccine_tracts = vaccine_tracts.rename(columns = {'variable' : 'Category', 'value' : update_date_string})
-        vaccine_tracts_file = csv_loader(f'{module_path}/data/vaccine_tracts.csv', update_date_string)
-        vaccine_tracts_file['TractID'] = vaccine_tracts_file['TractID'].astype(str)
-        (vaccine_tracts_file
-         .merge(
-             vaccine_tracts,
-                 on=['TractID', 'Category'],
-                 how='outer').to_csv(f'{module_path}/data/vaccine_tracts.csv', index=False))
-        logger.info('COMPLETE: Vaccine Tracts')
-    except Exception as e:
-        logger.error('FAILED: Vaccine Tracts')
-        logger.exception('Vaccine Tracts failed with exception')
-        logger.error(str(e))
-        sys.exit(1)
-
-def vaccinations():
-    try:
-        vaccines = download(needed_datasets['vaccine_primary'], table=3)
-        vaccines['Category'] = vaccines['Measure']
-        vaccines_primary = vaccines[vaccines['ValueType'] == 'count'].copy()
-        vaccines_primary['Group_'] = vaccines_primary['Group_'].replace('N/A', 'State')
-        vaccines_primary = vaccines_primary[['Group_', 'Category', 'Value']].rename(
-            columns={'Value': update_date_string, 'Group_': 'Geography'})
-        vaccines_parish = download(needed_datasets['vaccine_parish'], table=2)
-        vaccines_parish['Geography'] = vaccines_parish['Parish']
-        vaccines_parish_init = vaccines_parish[['Geography', 'SeriesInt']].copy()
-        vaccines_parish_init['Category'] = 'Parish - Series Initiated'
-        vaccines_parish_init = vaccines_parish_init.rename(columns={'SeriesInt': update_date_string})
-        vaccines_parish_comp = vaccines_parish[['Geography', 'SeriesComp']].copy()
-        vaccines_parish_comp['Category'] = 'Parish - Series Completed'
-        vaccines_parish_comp = vaccines_parish_comp.rename(columns={'SeriesComp': update_date_string})
-        vaccines_file = csv_loader(f'{module_path}/data/vaccines.csv', update_date_string)
-        (vaccines_file
-         .merge(
-            vaccines_primary
-                .append(vaccines_parish_init)
-                .append(vaccines_parish_comp),
-            on=['Geography', 'Category'],
-            how='outer').to_csv(f'{module_path}/data/vaccines.csv', index=False))
-    except Exception as e:
-        logger.error('FAILED: Vaccinations')
-        logger.exception('Vaccinations failed with exception')
-        logger.error(str(e))
-        sys.exit(1)
-    try:
-        vaccines_state_demo = vaccines[vaccines['ValueType'] == 'percentage'].copy()
-        vaccines_state_demo['Group_'] = vaccines_state_demo['Group_'].replace(static_data['age_replace'])
-        vaccines_state_demo['Category'] = vaccines_state_demo['Measure'] + ' : ' + vaccines_state_demo['Group_']
-        vaccines_state_demo['Value'] = vaccines_state_demo['Value'] / 100
-        vaccines_state_demo = vaccines_state_demo[['Geography', 'Category', 'Value']].rename(
-            columns={'Value': update_date_string})
-        vaccines_parish_demo = pd.melt(vaccines_parish, id_vars='Parish', value_vars=static_data['parish_demos'])
-        vaccines_parish_demo = vaccines_parish_demo.rename(columns={'variable': 'Category', 'value': update_date_string, 'Parish': 'Geography'})
-        vaccines_parish_demo['Category'] = vaccines_parish_demo['Category'].replace(static_data['parish_replace'])
-        vaccines_parish_demo[update_date_string] = vaccines_parish_demo[update_date_string] / 100
-        vaccines_demo = vaccines_state_demo.append(vaccines_parish_demo)
-        demo_replace = vaccines_demo[~vaccines_demo.Category.str.contains("Pct")]['Category'].to_list()
-        demo_replace_dict = {}
-        for d in demo_replace:
-                demo_replace_dict[d] = d.split(':')[0]+" (Pct) : "+d.split(':')[1]
-        vaccines_demo['Category'] = vaccines_demo['Category'].replace(demo_replace_dict)
-
-        offset=0
-        record_count = 2000
-
-        combined = pd.DataFrame()
-        while record_count == 2000:
-            batch_records = pd.DataFrame(esri_cleaner(url_prefix + 'Louisiana_COVID_Vaccination_Demographics' + '/FeatureServer/1/query?where=1%3D1&outFields=*&f=pjson&token' + f'&resultOffset={offset}'))
-            combined = combined.append(batch_records)
-            offset = len(batch_records)
-            record_count = len(batch_records)
-        combined['area'] = combined['area'].replace({"_Region 4" : "LDH Region 4",
-                                                     "_Region 5" : "LDH Region 5",
-                                                     "_Region 6" : "LDH Region 6",
-                                                     "_Region 7" : "LDH Region 7",
-                                                     "_Region 8" : "LDH Region 8",
-                                                     "_Region 9" : "LDH Region 9",
-                                                     "_Louisiana" : "Louisiana",
-                                                     "_Region 1" : "LDH Region 1",
-                                                     "_Region 2" : "LDH Region 2",
-                                                     "_Region 3" : "LDH Region 3"})
-        combined_pivot = pd.pivot(combined, index='area', columns=['value_type', 'measure'], values='value')
-        combined_pivot['Incomplete'] = combined_pivot['Complete']+combined_pivot['Incomplete']
-        combined_pivot['Unvaccinated'] = combined_pivot['Incomplete']+combined_pivot['Unvaccinated']
-        combined_pivot= combined_pivot.reset_index()
-        combined_melt = pd.melt(combined_pivot, id_vars='area')
-
-        # Clean up this mess
-        combined_melt.loc[(combined_melt['value_type'] == 'Complete') & (combined_melt['measure'] == 'Aged 0-4'), 'Category'] = 'Age - Series Complete : 0 to 4 Years'
-        combined_melt.loc[(combined_melt['value_type'] == 'Complete') & (combined_melt['measure'] == 'Aged 5-17'), 'Category'] = 'Age - Series Complete : 5 to 17 Years'
-        combined_melt.loc[(combined_melt['value_type'] == 'Complete') & (combined_melt['measure'] == 'Aged 18-29'), 'Category'] = 'Age - Series Complete : 18 to 29 Years'
-        combined_melt.loc[(combined_melt['value_type'] == 'Complete') & (combined_melt['measure'] == 'Aged 30-39'), 'Category'] = 'Age - Series Complete : 30 to 39 Years'
-        combined_melt.loc[(combined_melt['value_type'] == 'Complete') & (combined_melt['measure'] == 'Aged 40-49'), 'Category'] = 'Age - Series Complete : 40 to 49 Years'
-        combined_melt.loc[(combined_melt['value_type'] == 'Complete') & (combined_melt['measure'] == 'Aged 50-59'), 'Category'] = 'Age - Series Complete : 50 to 59 Years'
-        combined_melt.loc[(combined_melt['value_type'] == 'Complete') & (combined_melt['measure'] == 'Aged 60-69'), 'Category'] = 'Age - Series Complete : 60 to 69 Years'
-        combined_melt.loc[(combined_melt['value_type'] == 'Complete') & (combined_melt['measure'] == 'Aged 70 plus'), 'Category'] = 'Age - Series Complete : 70+ Years'
-        combined_melt.loc[(combined_melt['value_type'] == 'Complete') & (combined_melt['measure'] == 'Age Unknown'), 'Category'] = 'Age - Series Complete : Unknown'
-        combined_melt.loc[(combined_melt['value_type'] == 'Complete') & (combined_melt['measure'] == 'White'), 'Category'] = 'Race - Series Complete : White'
-        combined_melt.loc[(combined_melt['value_type'] == 'Complete') & (combined_melt['measure'] == 'Black'), 'Category'] = 'Race - Series Complete : Black'
-        combined_melt.loc[(combined_melt['value_type'] == 'Complete') & (combined_melt['measure'] == 'Other Race'), 'Category'] = 'Race - Series Complete : Other'
-        combined_melt.loc[(combined_melt['value_type'] == 'Complete') & (combined_melt['measure'] == 'Unknown Race'), 'Category'] = 'Race - Series Complete : Unknown Race'
-        combined_melt.loc[(combined_melt['value_type'] == 'Complete') & (combined_melt['measure'] == 'Female'), 'Category'] = 'Sex - Series Complete : Female'
-        combined_melt.loc[(combined_melt['value_type'] == 'Complete') & (combined_melt['measure'] == 'Male'), 'Category'] = 'Sex - Series Complete : Male'
-        combined_melt.loc[(combined_melt['value_type'] == 'Complete') & (combined_melt['measure'] == 'Gender Unknown'), 'Category'] = 'Sex - Series Complete : Gender Unknown'
-        # LDH has a typo spelling Gender Unknown as Gender Unkown. Leave both versions in until they fix it.
-        combined_melt.loc[(combined_melt['value_type'] == 'Complete') & (combined_melt['measure'] == 'Gender Unkown'), 'Category'] = 'Sex - Series Complete : Gender Unknown'
-
-        combined_melt.loc[(combined_melt['value_type'] == 'Incomplete') & (combined_melt['measure'] == 'Aged 0-4'), 'Category'] = 'Age - Series Initiated : 0 to 4 Years'
-        combined_melt.loc[(combined_melt['value_type'] == 'Incomplete') & (combined_melt['measure'] == 'Aged 5-17'), 'Category'] = 'Age - Series Initiated : 5 to 17 Years'
-        combined_melt.loc[(combined_melt['value_type'] == 'Incomplete') & (combined_melt['measure'] == 'Aged 18-29'), 'Category'] = 'Age - Series Initiated : 18 to 29 Years'
-        combined_melt.loc[(combined_melt['value_type'] == 'Incomplete') & (combined_melt['measure'] == 'Aged 30-39'), 'Category'] = 'Age - Series Initiated : 30 to 39 Years'
-        combined_melt.loc[(combined_melt['value_type'] == 'Incomplete') & (combined_melt['measure'] == 'Aged 40-49'), 'Category'] = 'Age - Series Initiated : 40 to 49 Years'
-        combined_melt.loc[(combined_melt['value_type'] == 'Incomplete') & (combined_melt['measure'] == 'Aged 50-59'), 'Category'] = 'Age - Series Initiated : 50 to 59 Years'
-        combined_melt.loc[(combined_melt['value_type'] == 'Incomplete') & (combined_melt['measure'] == 'Aged 60-69'), 'Category'] = 'Age - Series Initiated : 60 to 69 Years'
-        combined_melt.loc[(combined_melt['value_type'] == 'Incomplete') & (combined_melt['measure'] == 'Aged 70 plus'), 'Category'] = 'Age - Series Initiated : 70+ Years'
-        combined_melt.loc[(combined_melt['value_type'] == 'Incomplete') & (combined_melt['measure'] == 'Age Unknown'), 'Category'] = 'Age - Series Initiated : Unknown'
-        combined_melt.loc[(combined_melt['value_type'] == 'Incomplete') & (combined_melt['measure'] == 'White'), 'Category'] = 'Race - Series Initiated : White'
-        combined_melt.loc[(combined_melt['value_type'] == 'Incomplete') & (combined_melt['measure'] == 'Black'), 'Category'] = 'Race - Series Initiated : Black'
-        combined_melt.loc[(combined_melt['value_type'] == 'Incomplete') & (combined_melt['measure'] == 'Other Race'), 'Category'] = 'Race - Series Initiated : Other'
-        combined_melt.loc[(combined_melt['value_type'] == 'Incomplete') & (combined_melt['measure'] == 'Unknown Race'), 'Category'] = 'Race - Series Initiated : Unknown Race'
-        combined_melt.loc[(combined_melt['value_type'] == 'Incomplete') & (combined_melt['measure'] == 'Female'), 'Category'] = 'Sex - Series Initiated : Female'
-        combined_melt.loc[(combined_melt['value_type'] == 'Incomplete') & (combined_melt['measure'] == 'Male'), 'Category'] = 'Sex - Series Initiated : Male'
-        combined_melt.loc[(combined_melt['value_type'] == 'Incomplete') & (combined_melt['measure'] == 'Gender Unknown'), 'Category'] = 'Sex - Series Initiated : Gender Unknown'
-        # LDH has a typo spelling Gender Unknown as Gender Unkown. Leave both versions in until they fix it.
-        combined_melt.loc[(combined_melt['value_type'] == 'Incomplete') & (combined_melt['measure'] == 'Gender Unkown'), 'Category'] = 'Race - Series Complete : Gender Unknown'
-
-        combined_melt.loc[(combined_melt['value_type'] == 'Unvaccinated') & (combined_melt['measure'] == 'Aged 0-4'), 'Category'] = 'Age - Total Population : 0 to 4 Years'
-        combined_melt.loc[(combined_melt['value_type'] == 'Unvaccinated') & (combined_melt['measure'] == 'Aged 5-17'), 'Category'] = 'Age - Total Population : 5 to 17 Years'
-        combined_melt.loc[(combined_melt['value_type'] == 'Unvaccinated') & (combined_melt['measure'] == 'Aged 18-29'), 'Category'] = 'Age - Total Population : 18 to 29 Years'
-        combined_melt.loc[(combined_melt['value_type'] == 'Unvaccinated') & (combined_melt['measure'] == 'Aged 30-39'), 'Category'] = 'Age - Total Population : 30 to 39 Years'
-        combined_melt.loc[(combined_melt['value_type'] == 'Unvaccinated') & (combined_melt['measure'] == 'Aged 40-49'), 'Category'] = 'Age - Total Population : 40 to 49 Years'
-        combined_melt.loc[(combined_melt['value_type'] == 'Unvaccinated') & (combined_melt['measure'] == 'Aged 50-59'), 'Category'] = 'Age - Total Population : 50 to 59 Years'
-        combined_melt.loc[(combined_melt['value_type'] == 'Unvaccinated') & (combined_melt['measure'] == 'Aged 60-69'), 'Category'] = 'Age - Total Population : 60 to 69 Years'
-        combined_melt.loc[(combined_melt['value_type'] == 'Unvaccinated') & (combined_melt['measure'] == 'Aged 70 plus'), 'Category'] = 'Age - Total Population : 70+ Years'
-        combined_melt.loc[(combined_melt['value_type'] == 'Unvaccinated') & (combined_melt['measure'] == 'White'), 'Category'] = 'Race - Total Population : White'
-        combined_melt.loc[(combined_melt['value_type'] == 'Unvaccinated') & (combined_melt['measure'] == 'Black'), 'Category'] = 'Race - Total Population : Black'
-        combined_melt.loc[(combined_melt['value_type'] == 'Unvaccinated') & (combined_melt['measure'] == 'Other Race'), 'Category'] = 'Race - Total Population : Other'
-        combined_melt.loc[(combined_melt['value_type'] == 'Unvaccinated') & (combined_melt['measure'] == 'Female'), 'Category'] = 'Sex - Total Population : Female'
-        combined_melt.loc[(combined_melt['value_type'] == 'Unvaccinated') & (combined_melt['measure'] == 'Male'), 'Category'] = 'Sex - Total Population : Male'
-
-        combined_melt = combined_melt[combined_melt['Category'].notnull()][['area', 'Category', 'value']]
-        combined_melt = combined_melt.rename(columns = {'area' : 'Geography', 'value' : update_date_string})
-
-        vaccines_demo = vaccines_demo.append(combined_melt)
-        vaccines_demo_file = csv_loader(f'{module_path}/data/vaccines_demo.csv', update_date_string)
-        vaccines_demo_file.merge(vaccines_demo, on=['Geography', 'Category'], how='outer').to_csv(f'{module_path}/data/vaccines_demo.csv', float_format='%.10f', index=False)
-        if len(vaccines_demo_file.merge(vaccines_demo, on=['Geography', 'Category'], how='outer')) > 6560:
-            logger.error('Vaccines Demo File Has Too Many Records')
-        logger.info('COMPLETE: Vaccinations')
-    except Exception as e:
-        logger.error('FAILED: Vaccination demographics')
-        logger.exception('Vaccination demographics failed with exception')
-        logger.error(str(e))
-        sys.exit(1)
-
-def case_death_race():
-    try:
-        cases_race_parish = download(needed_datasets['cases_deaths_parish'], table=1)
-        for c in cases_race_parish.iloc[:, 6:16].columns:
-            cases_race_parish[c] = pd.to_numeric(cases_race_parish[c], errors='coerce')
-        cases_race_parish = (pd.melt(cases_race_parish,
-                                     id_vars=['PFIPS',
-                                              'Parish',
-                                              'LDHH'],
-                                     value_vars=['Deaths_Black',
-                                                 'Deaths_White',
-                                                 'Deaths_Other',
-                                                 'Deaths_Unknown',
-                                                 'Cases_Black',
-                                                 'Cases_White',
-                                                 'Cases_Other',
-                                                 'Cases_Unknown'])
-                             .sort_values(by='PFIPS'))
-        cases_race_parish['PFIPS'] = cases_race_parish.astype(str)
-        cases_race_parish = cases_race_parish.rename(columns={'variable': 'Race',
-                                                              'PFIPS': 'FIPS',
-                                                              'value': update_date_string})
-        cases_race_parish_file = csv_loader(f'{module_path}/data/cases_deaths_by_race_parish.csv', update_date_string)
-        cases_race_parish_file.merge(cases_race_parish[['FIPS', 'Race', update_date_string]],
-                                     on=['FIPS', 'Race'],
-                                     how='outer').to_csv(f'{module_path}/data/cases_deaths_by_race_parish.csv', index=False)
-        logger.info('COMPLETE: Cases and deaths by race and parish')
-
-        cases_deaths_race_region = download(needed_datasets['cases_deaths_region'])
-        cases_deaths_race_region = (
-            pd.melt(cases_deaths_race_region, id_vars=['LDH_Region', 'Race'], value_vars=['Deaths', 'Cases'])).sort_values(
-            by='LDH_Region')
-        cases_deaths_race_region = cases_deaths_race_region.rename(columns={'value': update_date_string})
-        cases_deaths_race_region_file = csv_loader(f'{module_path}/data/cases_deaths_by_race_region.csv', update_date_string)
-        cases_deaths_race_region_file.merge(
-            cases_deaths_race_region[['LDH_Region', 'Race', 'variable', update_date_string]],
-            on=['LDH_Region', 'Race', 'variable'],
-            how='outer').to_csv(f'{module_path}/data/cases_deaths_by_race_region.csv', index=False)
-        logger.info('COMPLETE: Cases and deaths by race and region')
-    except Exception as e:
-        logger.error('Failed to case and death by parish and region data')
-        logger.exception('Function case_death_race failed with exception')
-        logger.error(str(e))
-        sys.exit(1)
-
-def data_download(update_date):
-    try:
-#        vaccinations()
-        vaccine_tracts()
-        cases_deaths_primary = download(needed_datasets['cases_deaths_primary'])
-        cases_deaths(cases_deaths_primary)
-        tests(cases_deaths_primary)
-        demos(cases_deaths_primary)
-#        timelines(cases_deaths_primary)
-        capacity(cases_deaths_primary)
-        tableau_hosp()
-#        recovered(cases_deaths_primary)
-        date_of_test()
-        tracts()
-        case_death_race()
-    except Exception as e:
-        logger.exception('Function data_download failed with exception')
-        logger.error(str(e))
-        sys.exit(1)
+@retry(times=5)
+def vaccines():
+    logger.info('STARTING: Parish vaccine data.')
+    ts = TS()
+    url = 'https://analytics.la.gov/t/LDH/views/VaccinationDashboard2/VaccinationStatusbyAgeRaceGender2'
+    ts.loads(url)
+    workbook = ts.getWorkbook()
+    worksheet = workbook.getWorksheet('Cumulative % Totals Demo Tables').data
+    parishes = worksheet.groupby('Parish-value').agg({'ATTR(Completed)-alias' : 'max', 'ATTR(Initiated)-alias' : 'max'})
+    parishes = parishes.reset_index()
+    parishes = parishes.rename(columns = {'ATTR(Completed)-alias' : 'Series Completed', 'ATTR(Initiated)-alias' : 'Series Initiated', 'Parish-value' : 'Geography'})
+    parishes = pd.melt(parishes, id_vars=['Geography'], value_vars=['Series Completed', 'Series Initiated']).rename(columns = {'variable' : 'Category', 'value' : update_date_string})
+    state = parishes.groupby('Category').sum().reset_index()
+    state['Geography'] = 'State'
+    parishes['Category'] = parishes.apply(lambda x: f"Parish - {x['Category']}", axis=1)
+    state['Category'] = state.apply(lambda x: f"Total {x['Category']}", axis=1)
+    vaccines_export = pd.concat([state, parishes], axis=0)
+    vaccines_file = csv_loader(f"{module_path}/data/capacity.csv", update_date_string)
+    vaccines_file.merge(vaccines_export, on=['Geography', 'Category'], how='outer').to_csv(f"{module_path}/data/vaccines.csv", index=False)
+    logger.info('COMPLETE: Parish vaccine data downloaded and stored.')
 
 
+@retry(times=5)
+def vaccine_demos():
+    logger.info('STARTING: Vaccine demographic data.')
+    age_converter = {
+        '0 - 4'   : '0 to 4 Years',
+        '18 - 29' : '18 to 29 Years',
+        '30 - 39' : '30 to 39 Years',
+        '40 - 49' : '40 to 49 Years',
+        '5 - 17'  : '5 to 17 Years',
+        '50 - 59' : '50 to 59 Years',
+        '60 - 69' : '60 to 69 Years',
+        '70+'     : '70+ Years'
+    }
+    ts = TS(logLevel='ERROR')
+    url = 'https://analytics.la.gov/t/LDH/views/VaccinationDashboard2/VaccinationStatusbyAgeRaceGender'
+    df_export = pd.DataFrame()
+    ts.loads(url)
+    workbook = ts.getWorkbook()
+    worksheet = ts.getWorksheet('Cumulative Totals by Demographics')
+    print(worksheet.getFilters())
+    for geography in worksheet.getFilters()[2]['values']:
+        logger.info(f"    DOWNLOADING: {geography} vaccine demographics")
+        area = worksheet.setFilter('area', geography)
+        area = area.getWorksheet('Cumulative Totals by Demographics')
+        df_temp = pd.DataFrame()
+        for measure in ['Race', 'Gender', 'Age']:
+            logger.info(f"        DOWNLOADING: {geography} {measure} data")
+            category = area.setFilter('Measure Group', measure)
+            category = category.getWorksheet('Cumulative Totals by Demographics')
+            df_temp = pd.concat([df_temp, category.data], axis=0)
+        df_temp['Vaccination Status-value'] = df_temp['Vaccination Status-value'].replace({'Complete' : 'Series Complete'})
+        df_temp['Vaccination Status-value'] = df_temp['Vaccination Status-value'].replace({'Incomplete' : 'Series Initiated'})
+        df_temp['Measure Group-alias'] = df_temp['Measure Group-alias'].str.replace('Gender', 'Sex')
+        df_temp['Measure-value'] = df_temp['Measure-value'].replace(age_converter)
+        df_temp['Measure-value'] = df_temp['Measure-value'].replace({'Unknown Gender' : 'Gender Unknown'})
+        df_temp['SUM(Value)-alias'] = pd.to_numeric(df_temp['SUM(Value)-alias'], errors='coerce')
+        df_total = df_temp.groupby(['Measure Group-alias', 'Measure-value']).agg({'SUM(Value)-alias' : 'sum'}).reset_index()
+        df_total['Category'] = df_total.apply(lambda x: f"{x['Measure Group-alias']} - Total Population : {x['Measure-value']}", axis=1)
+        df_temp['Category'] = df_temp.apply(lambda x: f"{x['Measure Group-alias']} - {x['Vaccination Status-value']} : {x['Measure-value']}", axis=1)
+        df_temp = pd.concat([df_temp, df_total], axis=0)
+        df_temp['Geography'] = geography.replace('_','')
+        df_temp = df_temp.rename(columns={'SUM(Value)-alias' : update_date_string})
+        df_export = pd.concat([df_export, df_temp[['Geography', 'Category', update_date_string]]])
+    df_export = df_export[['Geography', 'Category', update_date_string]]
+    vaccine_demo_file = csv_loader(f'{module_path}/data/vaccines_demo.csv', update_date_string)
+    vaccine_demo_file.merge(df_export, on=['Geography', 'Category'], how='outer').to_csv(f"{module_path}/data/vaccine_demo.csv", index=False)
+    logger.info("COMPLETE: Vaccine demographic data downloaded and stored")
+    
 def main():
-    try:
-        current_ldh_datasets = get_datasets()
-        compare_datasets(current_ldh_datasets)
-        check_datasets(current_ldh_datasets)
-        data_download(update_date_string)
-        static_data["prior_datasets"] = current_ldh_datasets
-        with open(f"{module_path}/static_data.json", "w") as outfile:
-            json.dump(static_data, outfile)
-    except Exception as e:
-        logger.exception('Function main failed with exception')
-        logger.error(str(e))
-
-        sys.exit(1)
+    cases()
+    case_demos()
+    deaths()
+    hospitalizations()
+    hosp_region()
+    capacity()
+    vaccines()
+    vaccine_demos()
 
 if __name__ == "__main__":
     main()
