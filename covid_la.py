@@ -78,12 +78,12 @@ def cases():
     # in the Cases by Test Date tab of Covid-19 Cases by Test Collection Date
     workbook = workbook.setParameter("New and Previous Cases Chart Selection", "Table: Cases by Type by Parish")
     cases = pd.DataFrame(workbook.getWorksheet('Parish Cases List (2)').data)
-    cases = cases.rename(columns={'Parish-value' : 'County', 'SUM(Cases)-alias' : update_date_string})
+    cases = cases.rename(columns={'parish-value' : 'County', 'SUM(Cases)-alias' : update_date_string})
     case_types = {'%all%' : 'cases_total', 
                     'Confirmed' : 'cases', 
                     'Probable' : 'cases_probable', 
                     'Reinfections' : 'cases_reinfections'}
-
+    print(cases.columns)
     for category in case_types.keys():
         df = cases[(cases['casetype-value'] == category) & (cases['County']!='%all%')][['County', update_date_string]]
         # Summing all parish data because on launch West Feliciana had multiple rows
@@ -102,7 +102,7 @@ def deaths():
     workbook = ts.getWorkbook()
     deaths = pd.DataFrame(workbook.getWorksheet('Deaths by Parish and Region').data)
     deaths = deaths.rename(columns = {'Parish-value' : 'County', 'SUM(Value)-alias' : update_date_string})
-
+    print(deaths.columns)
     death_types = {'Total Deaths' : 'deaths_total',
                     'Probable Deaths' : 'deaths_probable',
                     'Confirmed Deaths' : 'deaths'}
@@ -131,9 +131,10 @@ def case_demos():
         '+70'   : '70+'             
                     }
     ages['Date'] = update_date_string
+    print(ages.columns)
     ages = ages.rename(columns = {
         'Age Range-value' : 'Category',
-        'Region-alias' : 'Geography',
+        'region-alias' : 'Geography',
         'SUM(Cases)-value' : 'Cases'
     })
     ages['Category'] = ages['Category'].replace(age_converter)
@@ -370,7 +371,7 @@ def main():
     deaths()
     hospitalizations()
     hosp_region()
-    capacity()
+#    capacity()
     vaccines()
     vaccine_demos()
 
