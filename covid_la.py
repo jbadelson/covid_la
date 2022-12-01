@@ -28,7 +28,7 @@ log_date_fmt = "%Y-%m-%d %H:%M:%S"
 #    static_data = json.load(f)
 
 update_date = datetime.now()
-update_date = pd.to_datetime('2022-11-30')
+#update_date = pd.to_datetime('2022-11-30')
 
 if os.name == 'nt':
     update_date_string = update_date.strftime('%#m/%#d/%#Y')
